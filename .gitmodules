@@ -1,0 +1,24 @@
+[submodule "_qios_master_blueprint"]
+	path = _qios_master_blueprint
+	url = https://github.com/qiallyme/__QiOS_Master_Blueprint_v0.4.git
+[submodule "apps/experiments/USBLegalAidv2"]
+	path = apps/experiments/USBLegalAidv2
+	url = https://github.com/qiallyme/caseaid.one.qially.com.git
+[submodule "apps/qione-portal/src/features/qinote"]
+	path = apps/qione-portal/src/features/qinote
+	url = https://github.com/qiallyme/app_QiNoteOS_ph00.git
+[submodule "apps/qione-portal/src/features/qistory/cre_QiStory_Pole_To_Power"]
+	path = apps/qione-portal/src/features/qistory/cre_QiStory_Pole_To_Power
+	url = https://github.com/qiallyme/cre_QiStory_What_Stripping_Taught_Me_About_Power_Money_and_Self-Worth.git
+[submodule "apps/qione-portal/src/features/qistory/cre_QiStory_Silence-Isnt-Distance"]
+	path = apps/qione-portal/src/features/qistory/cre_QiStory_Silence-Isnt-Distance
+	url = https://github.com/qiallyme/QiStory_Silence-Isnt-Distance.git
+[submodule "python_core/document-ingestion"]
+	path = python_core/document-ingestion
+	url = https://github.com/qiallyme/QiOne_sub-repo_fcfcu-document-ingestion.git
+[submodule "sites/qially-web/client-portals/dmejiasmartinez"]
+	path = sites/qially-web/client-portals/dmejiasmartinez
+	url = https://github.com/qiallyme/D.mejias-martinez-2025-temp.git
+[submodule "sites/qsaysit-web"]
+	path = sites/qsaysit-web
+	url = https://github.com/qiallyme/qsaysit-web.git

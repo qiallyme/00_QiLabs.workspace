@@ -1,0 +1,15 @@
+{
+  "name": "qione-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm -r run dev",
+    "build": "pnpm -r run build",
+    "lint": "pnpm -r run lint"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.101.1",
+    "codex": "^0.2.3"
+  }
+}
