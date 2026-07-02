@@ -1,0 +1,12 @@
+plugin_id: beta.audio
+tool_id: beta.audio
+name: Audio
+category: beta
+version: 0.1.0
+enabled: true
+description: Audio plugin.
+entry:
+  type: script
+  target: render.py
+  class_name: ""
+requirements:

@@ -1,0 +1,48 @@
+plugin_id: system.housekeeping.console
+tool_id: system.housekeeping.console
+name: Housekeeping Console
+category: system
+version: 0.1.0
+enabled: true
+description: Opens the QiLabs Housekeeping Console and gives quick access to plans, reports, summaries, logs, and manifests.
+tags:
+  - toolbox
+  - system
+  - housekeeping
+  - cleanup
+entry:
+  type: plugin_v2
+  target: housekeeping_console.py
+  class_name: QiPlugin
+  working_dir: .
+  open_console: false
+launch:
+  type: python
+  target: housekeeping_console.py
+  working_dir: .
+  open_console: false
+module:
+  package: tools.system.housekeeping_console
+  file: housekeeping_console.py
+  class_name: HousekeepingConsoleTool
+  entrypoint: HousekeepingConsoleTool
+toolbox:
+  ui_enabled: true
+  bucket: system
+  category: system
+  launch_surface:
+    - QiLabs Toolbox
+  requires_target_directory: false
+runtime:
+  requires_network: false
+  requires_secrets: false
+safety:
+  supports_dry_run: false
+  supports_live_run: true
+  deletes_files: false
+  moves_files: false
+  modifies_files: false
+  review_before_live: false
+paths:
+  source: tools/system/housekeeping_console/housekeeping_console.py
+  readme: tools/system/housekeeping_console/README.md

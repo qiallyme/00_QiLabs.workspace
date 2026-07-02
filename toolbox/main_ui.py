@@ -1,790 +1,492 @@
-import os
+from __future__ import annotations
+
 import queue
-import threading
+import sys
 import traceback
-from datetime import datetime
+from pathlib import Path
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 
-# --- AUTO-IMPORTS START ---
-from tools.build.tool_template import CustomModuleTool
-from tools.dev.export_blueprint import ExportBlueprintTool
-from tools.dev.extractor import TextExtractorTool
-from tools.dev.git_push import GitPushTool
-from tools.dev.repo_triage import RepoTriageTool
-from tools.dev.rule_tester import RuleTesterTool
-from tools.docs.pdf_splitter import BulkPdfSplitterTool
-from tools.finance.firefly_bills_importer import FireflyBillsImporterTool
-from tools.finance.tax_compiler import TaxPdfCompilerTool
-from tools.finance.zai_ledger_importer import ZaiLedgerImporterTool
-from tools.media.video_converter import VideoConverterTool
-from tools.organize.archivist import ArchiveRouterTool
-from tools.organize.bloat_destroyer import DestroyerTool
-from tools.organize.downloads_inspector import DownloadsInspectorTool
-from tools.organize.file_cleaner import FilenameCleanerTool
-from tools.organize.folder_flattener import FolderFlattenerTool
-from tools.organize.unlock_downloads import UnblockDownloadsTool
-from tools.organize.unzip_sync import UnzipSyncTool
-from tools.organize.vault_router import VaultRouterTool
-from tools.system.qilabs_structure_checker import QiLabsStructureCheckerTool
-from tools.system.sys_directory_markmind_mapper import DirectoryMarkmindMapperTool
-from tools.system.sys_docs_compiler import SysDocsCompilerTool
-# --- AUTO-IMPORTS END ---
+ROOT = Path(sys.executable).resolve().parent if getattr(sys, "frozen", False) else Path(__file__).resolve().parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from toolbox_core.plugin_autofix import autofix_all
+from toolbox_core.plugin_creator import create_plugin as scaffold_plugin
+from toolbox_core.plugin_host import PluginHost
+from toolbox_core.plugin_loader import load_plugins
+from toolbox_core.plugin_registry import load_registry, save_registry
 
 
-class SnapshotVar:
-    def __init__(self, value):
-        self._value = value
+COLORS = {
+    "bg": "#090d13",
+    "bg_2": "#0d131b",
+    "sidebar": "#0f1722",
+    "sidebar_2": "#121d2a",
+    "panel": "#151f2b",
+    "panel_2": "#1b2937",
+    "panel_3": "#26384a",
+    "panel_soft": "#101923",
+    "border": "#2f455a",
+    "border_soft": "#223244",
+    "text": "#f4f7fb",
+    "muted": "#9aabba",
+    "muted_2": "#6f8294",
+    "accent": "#65dbc8",
+    "accent_2": "#98f0e5",
+    "accent_dark": "#143b43",
+    "success": "#72e08f",
+    "danger": "#ff6b7a",
+    "warning": "#ffd166",
+    "console_bg": "#061019",
+    "console_text": "#dcffe8",
+}
 
-    def get(self):
-        return self._value
 
-    def set(self, value):
-        self._value = value
+class CreatePluginDialog(tk.Toplevel):
+    def __init__(self, master: tk.Tk):
+        super().__init__(master)
+        self.title("Create Plugin")
+        self.geometry("700x560")
+        self.configure(bg=COLORS["bg"])
+        self.result = None
+
+        self.name_var = tk.StringVar()
+        self.category_var = tk.StringVar(value="custom")
+        self.description_var = tk.StringVar()
+        self.type_var = tk.StringVar(value="native")
+
+        body = tk.Frame(self, bg=COLORS["panel"], padx=14, pady=14, highlightthickness=1, highlightbackground=COLORS["border_soft"])
+        body.pack(fill="both", expand=True, padx=10, pady=10)
+
+        tk.Label(body, text="Create Plugin", bg=COLORS["panel"], fg=COLORS["text"], font=("Segoe UI", 17, "bold")).pack(anchor="w")
+        tk.Label(body, text="Scaffold a valid plugin folder under tools/<category>/<name>.", bg=COLORS["panel"], fg=COLORS["muted"], font=("Segoe UI", 9)).pack(anchor="w", pady=(2, 8))
+        self._field(body, "Plugin name", self.name_var)
+        self._field(body, "Category", self.category_var)
+        self._field(body, "Description", self.description_var)
+
+        tk.Label(body, text="Plugin type", bg=COLORS["panel"], fg=COLORS["accent"], font=("Segoe UI", 8, "bold")).pack(anchor="w", pady=(8, 3))
+        type_row = tk.Frame(body, bg=COLORS["panel"])
+        type_row.pack(fill="x")
+        for label, value in (("Native", "native"), ("Legacy BaseTool", "legacy"), ("Script", "script")):
+            ttk.Radiobutton(type_row, text=label, value=value, variable=self.type_var).pack(side="left", padx=(0, 12))
+
+        tk.Label(body, text="Optional Python body", bg=COLORS["panel"], fg=COLORS["accent"], font=("Segoe UI", 8, "bold")).pack(anchor="w", pady=(10, 3))
+        self.body_text = tk.Text(body, height=10, bg=COLORS["console_bg"], fg=COLORS["console_text"], insertbackground=COLORS["console_text"], relief="flat", wrap="none", padx=8, pady=8)
+        self.body_text.pack(fill="both", expand=True)
+        self.body_text.insert("1.0", 'print("Hello from my new QiLabs plugin.")')
+
+        buttons = tk.Frame(body, bg=COLORS["panel"])
+        buttons.pack(fill="x", pady=(10, 0))
+        self._button(buttons, "Create", self.ok, COLORS["accent"], "#061014").pack(side="left")
+        self._button(buttons, "Cancel", self.destroy, COLORS["panel_3"], COLORS["text"]).pack(side="left", padx=(8, 0))
+
+        self.transient(master)
+        self.grab_set()
+        self.wait_window(self)
+
+    def _button(self, parent, text, command, bg, fg):
+        return tk.Button(parent, text=text, command=command, bg=bg, fg=fg, activebackground=bg, activeforeground=fg, relief="flat", bd=0, padx=12, pady=7, cursor="hand2", font=("Segoe UI", 9, "bold"))
+
+    def _field(self, parent: tk.Widget, label: str, var: tk.StringVar) -> None:
+        tk.Label(parent, text=label, bg=COLORS["panel"], fg=COLORS["accent"], font=("Segoe UI", 8, "bold")).pack(anchor="w", pady=(8, 3))
+        tk.Entry(parent, textvariable=var, bg=COLORS["panel_2"], fg=COLORS["text"], insertbackground=COLORS["text"], relief="flat").pack(fill="x", ipady=7)
+
+    def ok(self) -> None:
+        self.result = {
+            "name": self.name_var.get().strip(),
+            "category": self.category_var.get().strip(),
+            "description": self.description_var.get().strip(),
+            "plugin_type": self.type_var.get(),
+            "script_body": self.body_text.get("1.0", "end").strip(),
+        }
+        self.destroy()
 
 
-class SnapshotText:
-    def __init__(self, value):
-        self._value = value
-
-    def get(self, *_args, **_kwargs):
-        return self._value
-
-
-class QiOneShell:
-    BG = "#0b1020"
-    PANEL = "#121a2b"
-    PANEL_2 = "#182338"
-    PANEL_3 = "#202d45"
-    SIDEBAR = "#0d1423"
-    BORDER = "#2a3b58"
-    TEXT = "#edf3ff"
-    MUTED = "#8ea2c7"
-    ACCENT = "#4ecdc4"
-    ACCENT_2 = "#7ee7de"
-    ACCENT_3 = "#315c8d"
-    SUCCESS = "#47d16c"
-    DANGER = "#ff6b6b"
-    WARNING = "#ffc857"
-    INFO = "#6ea8fe"
-    CONSOLE_BG = "#08111e"
-    CONSOLE_TEXT = "#d4f7db"
-    SEARCH_BG = "#10192a"
-
-    def __init__(self, root):
-        self.root = root
-        self.root.title("QiOne Desktop Tools")
-        self.root.geometry("1480x920")
-        self.root.minsize(1180, 760)
-        self.root.configure(bg=self.BG)
-
-        # --- AUTO-REGISTER START ---
-        self.tools = [CustomModuleTool(), ExportBlueprintTool(), TextExtractorTool(), GitPushTool(), RepoTriageTool(), RuleTesterTool(), BulkPdfSplitterTool(), FireflyBillsImporterTool(), TaxPdfCompilerTool(), ZaiLedgerImporterTool(), VideoConverterTool(), ArchiveRouterTool(), DestroyerTool(), DownloadsInspectorTool(), FilenameCleanerTool(), FolderFlattenerTool(), UnblockDownloadsTool(), UnzipSyncTool(), VaultRouterTool(), QiLabsStructureCheckerTool(), DirectoryMarkmindMapperTool(), SysDocsCompilerTool()]
-        # --- AUTO-REGISTER END ---
-
-        self.tool_specs = self._build_tool_specs(self.tools)
-        self.active_tool = None
-        self.active_tool_card = None
-        self.run_sessions = []
-        self.run_counter = 0
-        self.shared_path = tk.StringVar(value=os.getcwd())
+class QiLabsToolbox(tk.Tk):
+    def __init__(self):
+        super().__init__()
+        self.title("QiLabs Toolbox")
+        self.geometry("1380x840")
+        self.minsize(980, 640)
+        self.configure(bg=COLORS["bg"])
+        self.colors = COLORS
+        self.ui_queue: "queue.Queue[callable]" = queue.Queue()
+        self.workspace_var = tk.StringVar(value=str(Path.cwd()))
         self.search_var = tk.StringVar()
         self.status_var = tk.StringVar(value="Ready")
-        self.summary_var = tk.StringVar(value="0 running  0 completed")
-        self.selected_tool_var = tk.StringVar(value="No tool selected")
-        self.selected_bucket_var = tk.StringVar(value="Choose a tool from the left rail.")
-        self.ui_queue = queue.Queue()
+        self.active_name_var = tk.StringVar(value="Select a plugin")
+        self.active_meta_var = tk.StringVar(value="Refresh plugins if the list is empty.")
+        self.validation_var = tk.StringVar(value="Validation not run")
+        self.adapters = []
+        self.active_adapter = None
+        self.card_by_id: dict[str, tk.Frame] = {}
+        self.console_visible = True
+
+        self.host = PluginHost(
+            ROOT,
+            workspace_getter=lambda: self.workspace_var.get(),
+            workspace_setter=lambda value: self.workspace_var.set(value),
+            log_callback=self.log,
+            status_callback=lambda value: self.status_var.set(value),
+            refresh_callback=self.refresh_plugins,
+            ui_dispatch=self.dispatch,
+            colors=self.colors,
+        )
 
         self.setup_styles()
-        self.build_shell()
-        self.search_var.trace_add("write", lambda *_args: self.refresh_tool_list())
-        self.root.after(50, self.process_ui_queue)
+        self.build_layout()
+        self.search_var.trace_add("write", lambda *_: self.populate_sidebar())
+        self.after(50, self.process_queue)
+        self.refresh_plugins()
 
-        if self.tool_specs:
-            self.load_tool(self.tool_specs[0]["tool"])
-
-    def _build_tool_specs(self, tools):
-        specs = []
-        for tool in tools:
-            module_parts = tool.__module__.split(".")
-            bucket = module_parts[1] if len(module_parts) > 2 else "misc"
-            specs.append({
-                "tool": tool,
-                "bucket": bucket,
-                "bucket_label": bucket.replace("_", " ").title(),
-                "name": tool.get_name(),
-            })
-        return sorted(specs, key=lambda spec: (spec["bucket"], spec["name"].lower()))
-
-    def setup_styles(self):
+    def setup_styles(self) -> None:
         style = ttk.Style()
         style.theme_use("clam")
+        style.configure("TButton", padding=(9, 6), borderwidth=0, font=("Segoe UI", 9))
+        style.configure("TFrame", background=COLORS["bg"])
+        style.configure("TRadiobutton", background=COLORS["panel"], foreground=COLORS["text"])
+        style.configure("Vertical.TScrollbar", background=COLORS["panel_2"], troughcolor=COLORS["sidebar"], bordercolor=COLORS["sidebar"], arrowcolor=COLORS["muted"])
+        style.map("TButton", background=[("active", COLORS["accent_2"])])
 
-        style.configure("TFrame", background=self.BG)
-        style.configure("Header.TLabel", background=self.BG, foreground=self.TEXT, font=("Segoe UI", 22, "bold"))
-        style.configure("SubHeader.TLabel", background=self.BG, foreground=self.MUTED, font=("Segoe UI", 10))
-        style.configure("CardTitle.TLabel", background=self.PANEL, foreground=self.TEXT, font=("Segoe UI", 11, "bold"))
-        style.configure("CardBody.TLabel", background=self.PANEL, foreground=self.MUTED, font=("Segoe UI", 9))
-        style.configure("Status.TLabel", background=self.BG, foreground=self.ACCENT_2, font=("Segoe UI", 9, "bold"))
-        style.configure("Qi.Horizontal.TProgressbar", troughcolor=self.PANEL_3, background=self.ACCENT, bordercolor=self.BORDER, lightcolor=self.ACCENT, darkcolor=self.ACCENT)
-        style.configure("Qi.TNotebook", background=self.PANEL, borderwidth=0)
-        style.configure("Qi.TNotebook.Tab", background=self.PANEL_2, foreground=self.MUTED, padding=(12, 8), borderwidth=0)
-        style.map("Qi.TNotebook.Tab", background=[("selected", self.PANEL_3)], foreground=[("selected", self.TEXT)])
-
-    def make_card(self, parent, *, fill="x", expand=False, pad=16):
-        card = tk.Frame(parent, bg=self.PANEL, highlightthickness=1, highlightbackground=self.BORDER, bd=0)
-        card.pack(fill=fill, expand=expand, pady=(0, 14))
-        inner = tk.Frame(card, bg=self.PANEL, padx=pad, pady=pad)
-        inner.pack(fill="both", expand=True)
-        return card, inner
-
-    def build_shell(self):
-        outer = tk.Frame(self.root, bg=self.BG)
-        outer.pack(fill="both", expand=True)
-
-        self.sidebar = tk.Frame(outer, bg=self.SIDEBAR, width=300)
-        self.sidebar.pack(side="left", fill="y")
-        self.sidebar.pack_propagate(False)
-
-        self.main_area = tk.Frame(outer, bg=self.BG, padx=18, pady=18)
-        self.main_area.pack(side="right", fill="both", expand=True)
-
-        self.build_sidebar()
-        self.build_main_area()
-
-    def build_sidebar(self):
-        brand = tk.Frame(self.sidebar, bg=self.SIDEBAR, padx=20, pady=18)
-        brand.pack(fill="x")
-
-        tk.Label(brand, text="QiOne Toolbox", bg=self.SIDEBAR, fg=self.TEXT, font=("Segoe UI Semibold", 19)).pack(anchor="w")
-        tk.Label(brand, text="Admin and developer operations cockpit", bg=self.SIDEBAR, fg=self.MUTED, font=("Segoe UI", 9)).pack(anchor="w", pady=(4, 0))
-
-        search_wrap = tk.Frame(self.sidebar, bg=self.SIDEBAR, padx=18, pady=4)
-        search_wrap.pack(fill="x")
-
-        self.search_entry = tk.Entry(
-            search_wrap,
-            textvariable=self.search_var,
-            bg=self.SEARCH_BG,
-            fg=self.TEXT,
-            insertbackground=self.TEXT,
-            relief="flat",
-            bd=0,
-            font=("Segoe UI", 10),
-        )
-        self.search_entry.pack(fill="x", ipady=10, padx=2)
-
-        rail_header = tk.Frame(self.sidebar, bg=self.SIDEBAR, padx=20, pady=8)
-        rail_header.pack(fill="x", pady=(0, 2))
-        tk.Label(rail_header, text="TOOLS", bg=self.SIDEBAR, fg=self.MUTED, font=("Segoe UI", 9, "bold")).pack(side="left")
-        self.tool_count_label = tk.Label(rail_header, text="", bg=self.SIDEBAR, fg=self.ACCENT_2, font=("Segoe UI", 9, "bold"))
-        self.tool_count_label.pack(side="right")
-
-        self.sidebar_canvas = tk.Canvas(self.sidebar, bg=self.SIDEBAR, highlightthickness=0, bd=0)
-        sidebar_scrollbar = ttk.Scrollbar(self.sidebar, orient="vertical", command=self.sidebar_canvas.yview)
-        self.sidebar_inner = tk.Frame(self.sidebar_canvas, bg=self.SIDEBAR)
-
-        self.sidebar_inner.bind("<Configure>", lambda _event: self.sidebar_canvas.configure(scrollregion=self.sidebar_canvas.bbox("all")))
-        self.sidebar_canvas.create_window((0, 0), window=self.sidebar_inner, anchor="nw", width=280)
-        self.sidebar_canvas.configure(yscrollcommand=sidebar_scrollbar.set)
-
-        # Mouse wheel scrolling for Windows
-        def _on_sidebar_mousewheel(event):
-            self.sidebar_canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
-
-        def _bind_sidebar_wheel(_event=None):
-            self.sidebar_canvas.bind_all("<MouseWheel>", _on_sidebar_mousewheel)
-
-        def _unbind_sidebar_wheel(_event=None):
-            self.sidebar_canvas.unbind_all("<MouseWheel>")
-
-        self.sidebar_canvas.bind("<Enter>", _bind_sidebar_wheel)
-        self.sidebar_canvas.bind("<Leave>", _unbind_sidebar_wheel)
-        self.sidebar_inner.bind("<Enter>", _bind_sidebar_wheel)
-        self.sidebar_inner.bind("<Leave>", _unbind_sidebar_wheel)
-
-        self.sidebar_canvas.pack(side="left", fill="both", expand=True, padx=(10, 0), pady=(0, 10))
-        sidebar_scrollbar.pack(side="right", fill="y", pady=(0, 10))
-
-        self.refresh_tool_list()
-
-    def build_main_area(self):
-        topbar = tk.Frame(self.main_area, bg=self.BG)
-        topbar.pack(fill="x", pady=(0, 14))
-
-        left = tk.Frame(topbar, bg=self.BG)
-        left.pack(side="left", fill="x", expand=True)
-        ttk.Label(left, text="QiOne Desktop Tools", style="Header.TLabel").pack(anchor="w")
-        ttk.Label(left, text="Parallel runs, isolated tool sessions, and repo utility workflows.", style="SubHeader.TLabel").pack(anchor="w", pady=(2, 0))
-
-        right = tk.Frame(topbar, bg=self.BG)
-        right.pack(side="right")
-        ttk.Label(right, textvariable=self.status_var, style="Status.TLabel").pack(anchor="e")
-        tk.Label(right, textvariable=self.summary_var, bg=self.BG, fg=self.MUTED, font=("Segoe UI", 9)).pack(anchor="e", pady=(4, 0))
-
-        _, path_inner = self.make_card(self.main_area)
-        tk.Label(path_inner, text="Workspace Target", bg=self.PANEL, fg=self.TEXT, font=("Segoe UI", 11, "bold")).pack(anchor="w")
-        tk.Label(path_inner, text="Each launched run snapshots this path and the current tool settings.", bg=self.PANEL, fg=self.MUTED, font=("Segoe UI", 9)).pack(anchor="w", pady=(2, 10))
-
-        path_row = tk.Frame(path_inner, bg=self.PANEL)
-        path_row.pack(fill="x")
-
-        self.path_entry = tk.Entry(
-            path_row,
-            textvariable=self.shared_path,
-            bg=self.SEARCH_BG,
-            fg=self.TEXT,
-            insertbackground=self.TEXT,
-            relief="flat",
-            bd=0,
-            font=("Segoe UI", 11),
-        )
-        self.path_entry.pack(side="left", fill="x", expand=True, ipady=10, padx=(0, 10))
-
-        self.make_button(path_row, "Repo Root", self.use_repo_root, bg=self.PANEL_3, fg=self.TEXT).pack(side="right", padx=(8, 0))
-        self.make_button(path_row, "Browse", self.browse, bg=self.ACCENT, fg="#08111e").pack(side="right")
-
-        body = tk.PanedWindow(self.main_area, orient="horizontal", bg=self.BG, sashwidth=8, showhandle=False)
-        body.pack(fill="both", expand=True)
-
-        editor_panel = tk.Frame(body, bg=self.BG, width=470)
-        runner_panel = tk.Frame(body, bg=self.BG)
-        body.add(editor_panel, minsize=360)
-        body.add(runner_panel, minsize=480)
-
-        self.build_editor_panel(editor_panel)
-        self.build_runner_panel(runner_panel)
-
-    def build_editor_panel(self, parent):
-        _, tool_inner = self.make_card(parent, fill="both", expand=True)
-
-        header = tk.Frame(tool_inner, bg=self.PANEL)
-        header.pack(fill="x", pady=(0, 10))
-
-        label_col = tk.Frame(header, bg=self.PANEL)
-        label_col.pack(side="left", fill="x", expand=True)
-
-        tk.Label(label_col, textvariable=self.selected_tool_var, bg=self.PANEL, fg=self.TEXT, font=("Segoe UI", 13, "bold")).pack(anchor="w")
-        tk.Label(label_col, textvariable=self.selected_bucket_var, bg=self.PANEL, fg=self.ACCENT_2, font=("Segoe UI", 9, "bold")).pack(anchor="w", pady=(4, 0))
-
-        hint = tk.Frame(tool_inner, bg=self.PANEL_2, padx=12, pady=10)
-        hint.pack(fill="x", pady=(0, 12))
-        tk.Label(
-            hint,
-            text="Launches create independent run sessions, so you can keep scans, imports, and builds running together.",
-            bg=self.PANEL_2,
-            fg=self.MUTED,
-            justify="left",
-            wraplength=360,
-            font=("Segoe UI", 9),
-        ).pack(anchor="w")
-
-        settings_shell = tk.Frame(tool_inner, bg=self.PANEL)
-        settings_shell.pack(fill="both", expand=True)
-
-        self.tool_settings_canvas = tk.Canvas(settings_shell, bg=self.PANEL, highlightthickness=0, bd=0)
-        settings_scroll = ttk.Scrollbar(settings_shell, orient="vertical", command=self.tool_settings_canvas.yview)
-        self.tool_ui_container = tk.Frame(self.tool_settings_canvas, bg=self.PANEL)
-
-        self.tool_ui_container.bind("<Configure>", lambda _event: self.tool_settings_canvas.configure(scrollregion=self.tool_settings_canvas.bbox("all")))
-        self.tool_settings_canvas.create_window((0, 0), window=self.tool_ui_container, anchor="nw", width=420)
-        self.tool_settings_canvas.configure(yscrollcommand=settings_scroll.set)
-
-        def _on_settings_mousewheel(event):
-            self.tool_settings_canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
-
-        def _bind_settings_wheel(_event=None):
-            self.tool_settings_canvas.bind_all("<MouseWheel>", _on_settings_mousewheel)
-
-        def _unbind_settings_wheel(_event=None):
-            self.tool_settings_canvas.unbind_all("<MouseWheel>")
-
-        self.tool_settings_canvas.bind("<Enter>", _bind_settings_wheel)
-        self.tool_settings_canvas.bind("<Leave>", _unbind_settings_wheel)
-        self.tool_ui_container.bind("<Enter>", _bind_settings_wheel)
-        self.tool_ui_container.bind("<Leave>", _unbind_settings_wheel)
-
-        self.tool_settings_canvas.pack(side="left", fill="both", expand=True)
-        settings_scroll.pack(side="right", fill="y")
-
-        _, action_inner = self.make_card(parent)
-        tk.Label(action_inner, text="Launch", bg=self.PANEL, fg=self.TEXT, font=("Segoe UI", 11, "bold")).pack(anchor="w")
-        tk.Label(action_inner, text="Queue a dry run or a live execution without interrupting existing sessions.", bg=self.PANEL, fg=self.MUTED, font=("Segoe UI", 9)).pack(anchor="w", pady=(2, 10))
-
-        btn_row = tk.Frame(action_inner, bg=self.PANEL)
-        btn_row.pack(fill="x")
-
-        self.make_button(btn_row, "Queue Scan", lambda: self.queue_run(False), bg=self.SUCCESS, fg="#08111e", expand=True).pack(side="left", fill="x", expand=True, padx=(0, 6))
-        self.make_button(btn_row, "Queue Execute", lambda: self.queue_run(True), bg=self.DANGER, fg="white", expand=True).pack(side="left", fill="x", expand=True, padx=6)
-        self.make_button(btn_row, "Cancel Active View", self.cancel_selected_run, bg=self.WARNING, fg="#08111e", expand=True).pack(side="left", fill="x", expand=True, padx=(6, 0))
-
-    def build_runner_panel(self, parent):
-        _, run_inner = self.make_card(parent)
-
-        header = tk.Frame(run_inner, bg=self.PANEL)
-        header.pack(fill="x", pady=(0, 10))
-        title_col = tk.Frame(header, bg=self.PANEL)
-        title_col.pack(side="left", fill="x", expand=True)
-        tk.Label(title_col, text="Run Queue", bg=self.PANEL, fg=self.TEXT, font=("Segoe UI", 12, "bold")).pack(anchor="w")
-        tk.Label(title_col, text="Each card represents an isolated execution session.", bg=self.PANEL, fg=self.MUTED, font=("Segoe UI", 9)).pack(anchor="w", pady=(2, 0))
-
-        action_col = tk.Frame(header, bg=self.PANEL)
-        action_col.pack(side="right")
-        self.make_button(action_col, "Clear Completed", self.clear_completed_sessions, bg=self.PANEL_3, fg=self.TEXT).pack(side="right")
-
-        self.run_list_canvas = tk.Canvas(run_inner, bg=self.PANEL, highlightthickness=0, bd=0, height=240)
-        run_scroll = ttk.Scrollbar(run_inner, orient="vertical", command=self.run_list_canvas.yview)
-        self.run_list_inner = tk.Frame(self.run_list_canvas, bg=self.PANEL)
-
-        self.run_list_inner.bind("<Configure>", lambda _event: self.run_list_canvas.configure(scrollregion=self.run_list_canvas.bbox("all")))
-        self.run_list_canvas.create_window((0, 0), window=self.run_list_inner, anchor="nw", width=730)
-        self.run_list_canvas.configure(yscrollcommand=run_scroll.set)
-
-        def _on_runlist_mousewheel(event):
-            self.run_list_canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
-
-        def _bind_runlist_wheel(_event=None):
-            self.run_list_canvas.bind_all("<MouseWheel>", _on_runlist_mousewheel)
-
-        def _unbind_runlist_wheel(_event=None):
-            self.run_list_canvas.unbind_all("<MouseWheel>")
-
-        self.run_list_canvas.bind("<Enter>", _bind_runlist_wheel)
-        self.run_list_canvas.bind("<Leave>", _unbind_runlist_wheel)
-        self.run_list_inner.bind("<Enter>", _bind_runlist_wheel)
-        self.run_list_inner.bind("<Leave>", _unbind_runlist_wheel)
-
-        self.run_list_canvas.pack(side="left", fill="both", expand=True)
-        run_scroll.pack(side="right", fill="y")
-
-        _, console_inner = self.make_card(parent, fill="both", expand=True)
-        console_header = tk.Frame(console_inner, bg=self.PANEL)
-        console_header.pack(fill="x", pady=(0, 10))
-        tk.Label(console_header, text="Run Console", bg=self.PANEL, fg=self.TEXT, font=("Segoe UI", 12, "bold")).pack(side="left")
-        tk.Label(console_header, text="Select a run card to focus its logs.", bg=self.PANEL, fg=self.MUTED, font=("Segoe UI", 9)).pack(side="left", padx=(12, 0))
-
-        self.console_notebook = ttk.Notebook(console_inner, style="Qi.TNotebook")
-        self.console_notebook.pack(fill="both", expand=True)
-
-        self.empty_console = tk.Frame(self.console_notebook, bg=self.CONSOLE_BG)
-        tk.Label(
-            self.empty_console,
-            text="No runs launched yet.\nQueue a scan or execute run to start collecting logs.",
-            bg=self.CONSOLE_BG,
-            fg=self.MUTED,
-            font=("Segoe UI", 10),
-            justify="center",
-        ).pack(expand=True)
-        self.console_notebook.add(self.empty_console, text="Overview")
-
-    def make_button(self, parent, text, command, *, bg, fg, expand=False):
+    def button(self, parent, text, command, bg=None, fg=None, bold=False):
         return tk.Button(
             parent,
             text=text,
             command=command,
-            bg=bg,
-            fg=fg,
-            activebackground=bg,
-            activeforeground=fg,
+            bg=bg or COLORS["panel_3"],
+            fg=fg or COLORS["text"],
+            activebackground=bg or COLORS["panel_3"],
+            activeforeground=fg or COLORS["text"],
             relief="flat",
             bd=0,
-            padx=14,
-            pady=10,
-            font=("Segoe UI", 10, "bold" if expand else "normal"),
+            padx=10,
+            pady=6,
             cursor="hand2",
+            font=("Segoe UI", 9, "bold" if bold else "normal"),
         )
 
-    def refresh_tool_list(self):
-        for widget in self.sidebar_inner.winfo_children():
-            widget.destroy()
+    def build_layout(self) -> None:
+        outer = tk.Frame(self, bg=COLORS["bg"])
+        outer.pack(fill="both", expand=True)
 
-        search = self.search_var.get().strip().lower()
-        visible_specs = [spec for spec in self.tool_specs if search in spec["name"].lower() or search in spec["bucket_label"].lower()]
+        self.sidebar = tk.Frame(outer, bg=COLORS["sidebar"], width=305)
+        self.sidebar.pack(side="left", fill="y")
+        self.sidebar.pack_propagate(False)
 
-        self.tool_count_label.configure(text=f"{len(visible_specs)} shown")
+        main = tk.Frame(outer, bg=COLORS["bg"])
+        main.pack(side="left", fill="both", expand=True)
 
-        current_bucket = None
-        for spec in visible_specs:
-            if spec["bucket"] != current_bucket:
-                current_bucket = spec["bucket"]
-                tk.Label(
-                    self.sidebar_inner,
-                    text=spec["bucket_label"].upper(),
-                    bg=self.SIDEBAR,
-                    fg=self.MUTED,
-                    font=("Segoe UI", 8, "bold"),
-                    padx=12,
-                    pady=6,
-                    anchor="w",
-                ).pack(fill="x", pady=(10, 2))
+        self.build_sidebar()
+        self.build_header(main)
+        self.build_workspace(main)
 
-            card = tk.Frame(
-                self.sidebar_inner,
-                bg=self.ACCENT_3 if spec["tool"] == self.active_tool else "#142038",
-                highlightthickness=1,
-                highlightbackground=self.ACCENT if spec["tool"] == self.active_tool else self.BORDER,
-                bd=0,
-                cursor="hand2",
-            )
-            card.pack(fill="x", padx=8, pady=4)
+        self.content = tk.PanedWindow(main, orient="vertical", bg=COLORS["bg"], sashwidth=5, bd=0, showhandle=False)
+        self.content.pack(fill="both", expand=True, padx=10, pady=(0, 8))
+        self.plugin_container = tk.Frame(self.content, bg=COLORS["panel"], padx=10, pady=10, highlightthickness=1, highlightbackground=COLORS["border_soft"])
+        self.console_panel = tk.Frame(self.content, bg=COLORS["panel_soft"], padx=8, pady=8, highlightthickness=1, highlightbackground=COLORS["border_soft"])
+        self.content.add(self.plugin_container, minsize=330)
+        self.content.add(self.console_panel, minsize=145)
+        self.build_console()
+        self.build_footer(main)
 
-            inner = tk.Frame(card, bg=card["bg"], padx=12, pady=10, cursor="hand2")
-            inner.pack(fill="both", expand=True)
+    def build_sidebar(self) -> None:
+        brand = tk.Frame(self.sidebar, bg=COLORS["sidebar"], padx=14, pady=12)
+        brand.pack(fill="x")
+        tk.Label(brand, text="QiLabs", bg=COLORS["sidebar"], fg=COLORS["text"], font=("Segoe UI Semibold", 19)).pack(anchor="w")
+        tk.Label(brand, text="Toolbox plugin host", bg=COLORS["sidebar"], fg=COLORS["muted"], font=("Segoe UI", 9)).pack(anchor="w", pady=(1, 0))
 
-            title = tk.Label(inner, text=spec["name"], bg=card["bg"], fg=self.TEXT, font=("Segoe UI", 10, "bold"), anchor="w", justify="left", wraplength=228, cursor="hand2")
-            title.pack(anchor="w")
+        search = tk.Frame(self.sidebar, bg=COLORS["sidebar"], padx=12, pady=4)
+        search.pack(fill="x")
+        tk.Entry(search, textvariable=self.search_var, bg=COLORS["sidebar_2"], fg=COLORS["text"], insertbackground=COLORS["text"], relief="flat").pack(fill="x", ipady=8)
 
-            subtitle = tk.Label(inner, text=spec["bucket_label"], bg=card["bg"], fg=self.ACCENT_2 if spec["tool"] == self.active_tool else self.MUTED, font=("Segoe UI", 8), anchor="w", cursor="hand2")
-            subtitle.pack(anchor="w", pady=(4, 0))
+        controls = tk.Frame(self.sidebar, bg=COLORS["sidebar"], padx=12, pady=8)
+        controls.pack(fill="x")
+        self.button(controls, "Refresh", self.refresh_plugins).pack(side="left")
+        self.button(controls, "Validate", lambda: self.host.validate_plugin()).pack(side="left", padx=(6, 0))
+        self.button(controls, "Fix", self.autofix).pack(side="left", padx=(6, 0))
+        self.button(controls, "+", self.create_plugin, bg=COLORS["accent"], fg="#061014", bold=True).pack(side="left", padx=(6, 0))
 
-            for widget in (card, inner, title, subtitle):
-                widget.bind("<Button-1>", lambda _event, tool=spec["tool"]: self.load_tool(tool))
+        self.sidebar_canvas = tk.Canvas(self.sidebar, bg=COLORS["sidebar"], highlightthickness=0, bd=0)
+        scroll = ttk.Scrollbar(self.sidebar, orient="vertical", command=self.sidebar_canvas.yview)
+        self.plugin_list = tk.Frame(self.sidebar_canvas, bg=COLORS["sidebar"])
+        self.plugin_list.bind("<Configure>", lambda _e: self.sidebar_canvas.configure(scrollregion=self.sidebar_canvas.bbox("all")))
+        self.sidebar_canvas.create_window((0, 0), window=self.plugin_list, anchor="nw", width=287)
+        self.sidebar_canvas.configure(yscrollcommand=scroll.set)
+        self.sidebar_canvas.pack(side="left", fill="both", expand=True, padx=(8, 0), pady=(0, 8))
+        scroll.pack(side="right", fill="y", pady=(0, 8))
 
-        if not visible_specs:
-            tk.Label(
-                self.sidebar_inner,
-                text="No tools match the current search.",
-                bg=self.SIDEBAR,
-                fg=self.MUTED,
-                font=("Segoe UI", 9),
-                padx=12,
-                pady=18,
-                anchor="w",
-                justify="left",
-            ).pack(fill="x")
-
-        self.sidebar_canvas.after_idle(lambda: self.sidebar_canvas.configure(scrollregion=self.sidebar_canvas.bbox("all")))
-        self.sidebar_canvas.after_idle(lambda: self.sidebar_canvas.yview_moveto(0))
-
-    def browse(self):
-        path = filedialog.askdirectory(title="Select target directory")
-        if path:
-            self.shared_path.set(path)
-            self.status_var.set("Target directory updated")
-
-    def use_repo_root(self):
-        self.shared_path.set(os.getcwd())
-        self.status_var.set("Target reset to repo root")
-
-    def load_tool(self, tool):
-        self.active_tool = tool
-        bucket = "Misc"
-        module_parts = tool.__module__.split(".")
-        if len(module_parts) > 2:
-            bucket = module_parts[1].replace("_", " ").title()
-
-        self.selected_tool_var.set(tool.get_name())
-        self.selected_bucket_var.set(f"{bucket} bucket")
-        self.status_var.set(f"Loaded: {tool.get_name()}")
-
-        for widget in self.tool_ui_container.winfo_children():
-            widget.destroy()
-
-        tool.build_ui(self.tool_ui_container)
-        self.refresh_tool_list()
-
-    def capture_tool_state(self, tool):
-        snapshot = {}
-        for name, value in vars(tool).items():
-            if isinstance(value, tk.Variable):
-                snapshot[name] = ("variable", self.snapshot_variable_value(value))
-            elif isinstance(value, tk.Text):
-                snapshot[name] = ("text", value.get("1.0", tk.END))
-        return snapshot
-
-    def snapshot_variable_value(self, variable):
-        try:
-            return variable.get()
-        except tk.TclError:
-            try:
-                return variable._tk.globalgetvar(variable._name)
-            except Exception:
-                return ""
-
-    def create_execution_tool(self, tool_class, snapshot):
-        tool = tool_class()
-        for name, payload in snapshot.items():
-            state_type, value = payload
-            if state_type == "variable":
-                setattr(tool, name, SnapshotVar(value))
-            elif state_type == "text":
-                setattr(tool, name, SnapshotText(value))
-        if hasattr(tool, "cancel_requested"):
-            tool.cancel_requested = False
-        if hasattr(tool, "reset_run_state"):
-            tool.reset_run_state()
-        return tool
-
-    def get_tool_outcome(self, tool):
-        if hasattr(tool, "get_run_status"):
-            return tool.get_run_status()
-        return "success", ""
-
-    def queue_run(self, is_live):
-        if not self.active_tool:
-            messagebox.showinfo("No Tool Selected", "Choose a tool before launching a run.")
-            return
-
-        target_path = self.shared_path.get().strip()
-        if not os.path.isdir(target_path):
-            messagebox.showerror("Invalid Directory", "The selected target directory does not exist.")
-            self.status_var.set("Invalid target directory")
-            return
-
-        if is_live and not messagebox.askyesno(
-            "Confirm Live Execution",
-            "Launch a live run against the selected directory?\n\nThis will not stop existing runs.",
-        ):
-            return
-
-        snapshot = self.capture_tool_state(self.active_tool)
-        run_tool = self.create_execution_tool(self.active_tool.__class__, snapshot)
-        session = self.create_run_session(run_tool, self.active_tool.get_name(), target_path, is_live)
-
-        self.status_var.set(f"Queued: {session['name']}")
-        self.append_run_log(session, f"[{session['started_at']}] Session queued")
-        self.append_run_log(session, f"Mode: {session['mode']}")
-        self.append_run_log(session, f"Target: {session['path']}")
-        self.append_run_log(session, "-" * 56)
-
-        thread = threading.Thread(target=self._run_session, args=(session,), daemon=True)
-        session["thread"] = thread
-        thread.start()
-        self.select_run(session)
-        self.update_summary()
-
-    def create_run_session(self, tool, name, path, is_live):
-        self.run_counter += 1
-        started_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        session_id = f"R{self.run_counter:02d}"
-        mode = "EXECUTE" if is_live else "SCAN"
-
-        if len(self.console_notebook.tabs()) == 1 and self.console_notebook.tabs()[0] == str(self.empty_console):
-            self.console_notebook.forget(self.empty_console)
-
-        card = tk.Frame(self.run_list_inner, bg=self.PANEL_2, highlightthickness=1, highlightbackground=self.BORDER, bd=0)
-        card.pack(fill="x", pady=6)
-        inner = tk.Frame(card, bg=self.PANEL_2, padx=12, pady=12)
-        inner.pack(fill="both", expand=True)
-
-        header = tk.Frame(inner, bg=self.PANEL_2)
+    def build_header(self, parent: tk.Widget) -> None:
+        header = tk.Frame(parent, bg=COLORS["bg"], padx=12, pady=10)
         header.pack(fill="x")
+        left = tk.Frame(header, bg=COLORS["bg"])
+        left.pack(side="left", fill="x", expand=True)
+        tk.Label(left, textvariable=self.active_name_var, bg=COLORS["bg"], fg=COLORS["text"], font=("Segoe UI", 20, "bold")).pack(anchor="w")
+        tk.Label(left, textvariable=self.active_meta_var, bg=COLORS["bg"], fg=COLORS["muted"], font=("Segoe UI", 9)).pack(anchor="w")
+        right = tk.Frame(header, bg=COLORS["bg"])
+        right.pack(side="right")
+        tk.Label(right, textvariable=self.status_var, bg=COLORS["bg"], fg=COLORS["accent_2"], font=("Segoe UI", 9, "bold")).pack(anchor="e")
+        tk.Label(right, textvariable=self.validation_var, bg=COLORS["bg"], fg=COLORS["muted_2"], font=("Segoe UI", 8)).pack(anchor="e", pady=(2, 0))
 
-        title = tk.Label(header, text=f"{session_id}  {name}", bg=self.PANEL_2, fg=self.TEXT, font=("Segoe UI", 10, "bold"), anchor="w")
-        title.pack(side="left", fill="x", expand=True)
+    def build_workspace(self, parent: tk.Widget) -> None:
+        wrap = tk.Frame(parent, bg=COLORS["panel_soft"], padx=10, pady=8, highlightthickness=1, highlightbackground=COLORS["border_soft"])
+        wrap.pack(fill="x", padx=10, pady=(0, 8))
+        row = tk.Frame(wrap, bg=COLORS["panel_soft"])
+        row.pack(fill="x")
+        tk.Label(row, text="Workspace", bg=COLORS["panel_soft"], fg=COLORS["accent"], font=("Segoe UI", 8, "bold"), width=10, anchor="w").pack(side="left")
+        tk.Entry(row, textvariable=self.workspace_var, bg=COLORS["panel_2"], fg=COLORS["text"], insertbackground=COLORS["text"], relief="flat").pack(side="left", fill="x", expand=True, ipady=7)
+        self.button(row, "Browse", self.browse_workspace).pack(side="left", padx=(6, 0))
+        self.button(row, "Open", lambda: self.host.open_folder(self.workspace_var.get())).pack(side="left", padx=(6, 0))
+        self.button(row, "Console", self.toggle_console).pack(side="left", padx=(6, 0))
 
-        status_var = tk.StringVar(value="Queued")
-        status_label = tk.Label(header, textvariable=status_var, bg=self.PANEL_2, fg=self.INFO, font=("Segoe UI", 9, "bold"))
-        status_label.pack(side="right")
+    def build_console(self) -> None:
+        top = tk.Frame(self.console_panel, bg=COLORS["panel_soft"])
+        top.pack(fill="x", pady=(0, 5))
+        tk.Label(top, text="Output", bg=COLORS["panel_soft"], fg=COLORS["text"], font=("Segoe UI", 10, "bold")).pack(side="left")
+        self.button(top, "Clear", lambda: self.console.delete("1.0", "end")).pack(side="right")
+        self.console = tk.Text(self.console_panel, height=8, bg=COLORS["console_bg"], fg=COLORS["console_text"], insertbackground=COLORS["console_text"], relief="flat", wrap="word", padx=8, pady=8, font=("Cascadia Code", 9))
+        self.console.pack(fill="both", expand=True)
 
-        meta = tk.Label(inner, text=f"{mode}  {path}", bg=self.PANEL_2, fg=self.MUTED, font=("Segoe UI", 8), anchor="w", justify="left", wraplength=640)
-        meta.pack(fill="x", pady=(6, 8))
+    def build_footer(self, parent: tk.Widget) -> None:
+        footer = tk.Frame(parent, bg=COLORS["bg"], padx=12, pady=0)
+        footer.pack(fill="x", pady=(0, 8))
+        self.footer_var = tk.StringVar(value=f"Root: {ROOT}")
+        tk.Label(footer, textvariable=self.footer_var, bg=COLORS["bg"], fg=COLORS["muted_2"], font=("Segoe UI", 8)).pack(anchor="w")
 
-        progress = ttk.Progressbar(inner, mode="determinate", style="Qi.Horizontal.TProgressbar")
-        progress.pack(fill="x")
+    def toggle_console(self) -> None:
+        if self.console_visible:
+            self.content.forget(self.console_panel)
+            self.console_visible = False
+        else:
+            self.content.add(self.console_panel, minsize=145)
+            self.console_visible = True
 
-        card_buttons = tk.Frame(inner, bg=self.PANEL_2)
-        card_buttons.pack(fill="x", pady=(10, 0))
+    def dispatch(self, callback) -> None:
+        self.ui_queue.put(callback)
 
-        view_btn = self.make_button(card_buttons, "View", lambda: self.select_run(session), bg=self.PANEL_3, fg=self.TEXT)
-        view_btn.pack(side="left")
+    def process_queue(self) -> None:
+        while True:
+            try:
+                callback = self.ui_queue.get_nowait()
+            except queue.Empty:
+                break
+            try:
+                callback()
+            except Exception:
+                self.log("UI DISPATCH ERROR:\n" + traceback.format_exc())
+        self.after(50, self.process_queue)
 
-        cancel_btn = self.make_button(card_buttons, "Cancel", lambda: self.cancel_session(session), bg=self.WARNING, fg="#08111e")
-        cancel_btn.pack(side="left", padx=8)
+    def log(self, message: str) -> None:
+        self.console.insert("end", str(message).rstrip() + "\n")
+        self.console.see("end")
 
-        remove_btn = self.make_button(card_buttons, "Remove", lambda: self.remove_session(session), bg=self.PANEL_3, fg=self.TEXT)
-        remove_btn.pack(side="left")
-        remove_btn.configure(state="disabled")
+    def browse_workspace(self) -> None:
+        path = filedialog.askdirectory(initialdir=self.workspace_var.get() or str(ROOT))
+        if path:
+            self.workspace_var.set(path)
 
-        tab = tk.Frame(self.console_notebook, bg=self.CONSOLE_BG)
-        tab_header = tk.Frame(tab, bg=self.CONSOLE_BG)
-        tab_header.pack(fill="x", padx=12, pady=(12, 8))
-        tk.Label(tab_header, text=f"{session_id}  {name}", bg=self.CONSOLE_BG, fg=self.TEXT, font=("Segoe UI", 10, "bold")).pack(side="left")
-        tk.Label(tab_header, text=f"{mode}  {path}", bg=self.CONSOLE_BG, fg=self.MUTED, font=("Segoe UI", 8)).pack(side="right")
-
-        text_wrap = tk.Frame(tab, bg=self.CONSOLE_BG)
-        text_wrap.pack(fill="both", expand=True, padx=12, pady=(0, 12))
-
-        log_text = tk.Text(
-            text_wrap,
-            bg=self.CONSOLE_BG,
-            fg=self.CONSOLE_TEXT,
-            insertbackground=self.CONSOLE_TEXT,
-            font=("Cascadia Code", 10),
-            borderwidth=0,
-            relief="flat",
-            padx=12,
-            pady=12,
-            wrap="word",
-        )
-        log_text.pack(side="left", fill="both", expand=True)
-
-        log_scroll = ttk.Scrollbar(text_wrap, orient="vertical", command=log_text.yview)
-        log_scroll.pack(side="right", fill="y")
-        log_text.configure(yscrollcommand=log_scroll.set)
-
-        self.console_notebook.add(tab, text=f"{session_id} {mode}")
-
-        session = {
-            "id": session_id,
-            "name": name,
-            "mode": mode,
-            "path": path,
-            "tool": tool,
-            "is_live": is_live,
-            "started_at": started_at,
-            "status": status_var,
-            "status_label": status_label,
-            "progress": progress,
-            "card": card,
-            "tab": tab,
-            "log_text": log_text,
-            "cancel_button": cancel_btn,
-            "remove_button": remove_btn,
-            "view_button": view_btn,
-            "complete": False,
-            "thread": None,
-        }
-
-        self.run_sessions.append(session)
-
-        for widget in (card, inner, title, meta, progress):
-            widget.bind("<Button-1>", lambda _event, target=session: self.select_run(target))
-
-        return session
-
-    def append_run_log(self, session, message):
-        self.enqueue_ui(self._append_run_log, session, message)
-
-    def _append_run_log(self, session, message):
-        session["log_text"].insert(tk.END, f"{message}\n")
-        session["log_text"].see(tk.END)
-
-    def set_run_progress(self, session, value):
-        self.enqueue_ui(self._set_run_progress, session, value)
-
-    def _set_run_progress(self, session, value):
-        session["progress"].configure(value=max(0, min(100, value)))
-
-    def set_session_status(self, session, label, color):
-        self.enqueue_ui(self._set_session_status, session, label, color)
-
-    def _set_session_status(self, session, label, color):
-        session["status"].set(label)
-        session["status_label"].configure(fg=color)
-
-    def _run_session(self, session):
-        self.set_session_status(session, "Running", self.ACCENT_2)
+    def refresh_plugins(self) -> None:
         try:
-            session["tool"].execute(
-                session["path"],
-                session["is_live"],
-                lambda message: self.append_run_log(session, message),
-                lambda value: self.set_run_progress(session, value),
-            )
-            if getattr(session["tool"], "cancel_requested", False):
-                final_status = ("Canceled", self.WARNING)
-            else:
-                run_status, run_message = self.get_tool_outcome(session["tool"])
-                if run_message:
-                    self.append_run_log(session, f"Outcome: {run_message}")
-                if run_status == "failed":
-                    final_status = ("Failed", self.DANGER)
-                elif run_status == "warning":
-                    final_status = ("Completed with issues", self.WARNING)
-                else:
-                    final_status = ("Completed", self.SUCCESS)
-                    self.set_run_progress(session, 100)
+            save_registry(ROOT)
+            self.adapters = load_plugins(ROOT)
+            registry = load_registry(ROOT)
+            self.validation_var.set(f"{registry.get('errors', 0)} errors / {registry.get('warnings', 0)} warnings / {len(self.adapters)} loaded")
+            self.populate_sidebar()
+            self.log(f"Refreshed plugins: {len(self.adapters)} loaded")
+            if self.adapters and self.active_adapter is None:
+                self.select_plugin(self.adapters[0])
         except Exception:
-            self.append_run_log(session, "ERROR: Unhandled exception")
-            self.append_run_log(session, traceback.format_exc())
-            final_status = ("Failed", self.DANGER)
-        finally:
-            self.enqueue_ui(self.finish_session, session, final_status[0], final_status[1])
+            messagebox.showerror("Refresh failed", traceback.format_exc())
+            self.log("REFRESH FAILED:\n" + traceback.format_exc())
 
-    def finish_session(self, session, label, color):
-        session["complete"] = True
-        session["cancel_button"].configure(state="disabled")
-        session["remove_button"].configure(state="normal")
-        self._set_session_status(session, label, color)
-        self.status_var.set(f"{label}: {session['name']}")
-        self.update_summary()
+    def populate_sidebar(self) -> None:
+        for child in self.plugin_list.winfo_children():
+            child.destroy()
+        self.card_by_id.clear()
+        query = self.search_var.get().strip().lower()
+        adapters = [a for a in self.adapters if query in f"{a.name} {a.category} {a.plugin_id} {a.description}".lower()]
+        current_category = None
+        for adapter in adapters:
+            if adapter.category != current_category:
+                current_category = adapter.category
+                tk.Label(self.plugin_list, text=current_category.upper(), bg=COLORS["sidebar"], fg=COLORS["accent"], font=("Segoe UI", 8, "bold")).pack(anchor="w", padx=8, pady=(9, 4))
+            self._plugin_card(adapter)
+        if not adapters:
+            tk.Label(self.plugin_list, text="No plugins found.", bg=COLORS["sidebar"], fg=COLORS["muted"], font=("Segoe UI", 9)).pack(anchor="w", padx=10, pady=16)
 
-    def select_run(self, session):
-        for item in self.run_sessions:
-            is_selected = item is session
-            item["card"].configure(highlightbackground=self.ACCENT if is_selected else self.BORDER)
-            bg = self.PANEL_3 if is_selected else self.PANEL_2
-            item["card"].configure(bg=bg)
-            item["card"].winfo_children()[0].configure(bg=bg)
-            for child in item["card"].winfo_children()[0].winfo_children():
-                if isinstance(child, tk.Frame):
-                    child.configure(bg=bg)
-                    for grandchild in child.winfo_children():
-                        if isinstance(grandchild, tk.Label):
-                            grandchild.configure(bg=bg)
-                elif isinstance(child, tk.Label):
-                    child.configure(bg=bg)
+    def _plugin_card(self, adapter) -> None:
+        active = self.active_adapter is adapter
+        bg = COLORS["accent_dark"] if active else COLORS["sidebar_2"]
+        border = COLORS["accent"] if active else COLORS["border_soft"]
+        card = tk.Frame(self.plugin_list, bg=bg, padx=9, pady=7, highlightthickness=1, highlightbackground=border, cursor="hand2")
+        card.pack(fill="x", padx=7, pady=(0, 6))
+        title = tk.Label(card, text=adapter.name, bg=bg, fg=COLORS["text"], font=("Segoe UI", 9, "bold"), anchor="w")
+        title.pack(fill="x")
+        meta = tk.Label(card, text=adapter.plugin_id, bg=bg, fg=COLORS["muted"], font=("Segoe UI", 7), anchor="w")
+        meta.pack(fill="x", pady=(2, 0))
+        for widget in (card, title, meta):
+            widget.bind("<Button-1>", lambda _e, item=adapter: self.select_plugin(item))
+        self.card_by_id[adapter.plugin_id] = card
 
-        self.console_notebook.select(session["tab"])
-
-    def cancel_session(self, session):
-        if session["complete"]:
-            return
-        if hasattr(session["tool"], "cancel_requested"):
-            session["tool"].cancel_requested = True
-        self.set_session_status(session, "Canceling", self.WARNING)
-        self.append_run_log(session, "Cancellation requested by user.")
-        self.status_var.set(f"Cancel requested: {session['name']}")
-
-    def cancel_selected_run(self):
-        current = self.console_notebook.select()
-        for session in self.run_sessions:
-            if str(session["tab"]) == current:
-                self.cancel_session(session)
-                return
-
-    def remove_session(self, session):
-        if not session["complete"]:
-            return
-        if str(session["tab"]) in self.console_notebook.tabs():
-            self.console_notebook.forget(session["tab"])
-        session["card"].destroy()
-        self.run_sessions = [item for item in self.run_sessions if item is not session]
-        if not self.run_sessions and self.empty_console not in [self.root.nametowidget(tab) for tab in self.console_notebook.tabs()]:
-            self.console_notebook.add(self.empty_console, text="Overview")
-        self.update_summary()
-        self.status_var.set("Run removed")
-
-    def clear_completed_sessions(self):
-        completed = [session for session in list(self.run_sessions) if session["complete"]]
-        for session in completed:
-            self.remove_session(session)
-        if completed:
-            self.status_var.set("Completed runs cleared")
-
-    def update_summary(self):
-        running = sum(1 for session in self.run_sessions if not session["complete"])
-        completed = sum(1 for session in self.run_sessions if session["complete"])
-        self.summary_var.set(f"{running} running  {completed} completed")
-
-    def enqueue_ui(self, callback, *args):
-        self.ui_queue.put((callback, args))
-
-    def process_ui_queue(self):
+    def select_plugin(self, adapter) -> None:
+        if self.active_adapter is not None:
+            try:
+                self.active_adapter.deactivate(self.host)
+            except Exception:
+                self.log("DEACTIVATE ERROR:\n" + traceback.format_exc())
+        self.active_adapter = adapter
+        for child in self.plugin_container.winfo_children():
+            child.destroy()
+        self.populate_sidebar()
+        self.active_name_var.set(adapter.name)
+        self.active_meta_var.set(f"{adapter.category} / {adapter.plugin_id}")
+        self.footer_var.set(f"Workspace: {self.workspace_var.get()}    Selected: {adapter.plugin_id}    Root: {ROOT}")
+        self.log(f"OPEN: {adapter.plugin_id} [{adapter.__class__.__name__}]")
         try:
-            while True:
-                callback, args = self.ui_queue.get_nowait()
-                callback(*args)
-        except queue.Empty:
+            adapter.activate(self.host)
+            adapter.build_view(self.host, self.plugin_container)
+            self.status_var.set(f"Loaded {adapter.name}")
+        except Exception:
+            tb = traceback.format_exc()
+            self.log("PLUGIN VIEW ERROR:\n" + tb)
+            self.status_var.set(f"Plugin failed: {adapter.name}")
+            tk.Label(self.plugin_container, text=f"Plugin failed to open: {adapter.name}", bg=COLORS["panel"], fg=COLORS["danger"], font=("Segoe UI", 15, "bold")).pack(anchor="w")
+            tk.Label(self.plugin_container, text=str(adapter.manifest_path), bg=COLORS["panel"], fg=COLORS["muted"], wraplength=850, justify="left").pack(anchor="w", pady=(4, 8))
+            err = tk.Text(self.plugin_container, bg=COLORS["console_bg"], fg=COLORS["console_text"], relief="flat", wrap="word", padx=8, pady=8)
+            err.pack(fill="both", expand=True)
+            err.insert("1.0", tb)
+            err.configure(state="disabled")
+
+    def autofix(self) -> None:
+        preview = autofix_all(ROOT, apply=False)
+        count = len(preview.get("actions", []))
+        if count == 0:
+            self.log("Auto-Fix preview found no actions.")
+            return
+        if not messagebox.askyesno("Auto-Fix", f"Preview found {count} safe actions. Apply them now?"):
+            return
+        result = autofix_all(ROOT, apply=True)
+        self.log(f"Auto-Fix applied {len(result.get('actions', []))} actions.")
+        self.refresh_plugins()
+
+    def create_plugin(self) -> None:
+        dialog = CreatePluginDialog(self)
+        if not dialog.result:
+            return
+        data = dialog.result
+        if not data["name"]:
+            messagebox.showerror("Missing name", "Plugin name is required.")
+            return
+        try:
+            plugin_dir = scaffold_plugin(ROOT, **data)
+            self.log(f"Created plugin: {plugin_dir}")
+            self.refresh_plugins()
+            for adapter in self.adapters:
+                if Path(adapter.plugin_dir) == plugin_dir:
+                    self.select_plugin(adapter)
+                    break
+        except Exception:
+            messagebox.showerror("Create plugin failed", traceback.format_exc())
+            self.log("CREATE FAILED:\n" + traceback.format_exc())
+
+
+
+# --- QILABS V0.6 SIDEBAR SCROLL PATCH ---
+def _qilabs_v06_is_descendant(widget, ancestor):
+    try:
+        while widget is not None:
+            if widget == ancestor:
+                return True
+            widget = getattr(widget, "master", None)
+    except Exception:
+        return False
+    return False
+
+
+def _qilabs_v06_enable_sidebar_scroll(self):
+    """Force reliable mousewheel + resize behavior for the toolbox sidebar."""
+    canvas = getattr(self, "sidebar_canvas", None)
+    inner = getattr(self, "sidebar_inner", None)
+    sidebar = getattr(self, "sidebar", None)
+    if canvas is None or inner is None or sidebar is None:
+        return
+
+    def sync_scrollregion(_event=None):
+        try:
+            canvas.configure(scrollregion=canvas.bbox("all"))
+        except Exception:
             pass
+
+    def sync_width(event=None):
         try:
-            self.root.after(50, self.process_ui_queue)
-        except tk.TclError:
-            return
+            width = max(220, canvas.winfo_width() - 6)
+            for item in canvas.find_all():
+                if canvas.type(item) == "window":
+                    canvas.itemconfigure(item, width=width)
+        except Exception:
+            pass
+        sync_scrollregion()
+
+    def wheel(event):
+        try:
+            target = self.winfo_containing(self.winfo_pointerx(), self.winfo_pointery())
+        except Exception:
+            target = None
+        if not _qilabs_v06_is_descendant(target, sidebar):
+            return None
+        try:
+            if getattr(event, "num", None) == 4:
+                canvas.yview_scroll(-3, "units")
+            elif getattr(event, "num", None) == 5:
+                canvas.yview_scroll(3, "units")
+            else:
+                delta = int(getattr(event, "delta", 0))
+                if delta == 0:
+                    return "break"
+                canvas.yview_scroll(-1 * int(delta / 120) * 3, "units")
+            sync_scrollregion()
+            return "break"
+        except Exception:
+            return None
+
+    # Bind globally but only act when the pointer is inside the sidebar.
+    try:
+        self.bind_all("<MouseWheel>", wheel, add="+")
+        self.bind_all("<Button-4>", wheel, add="+")
+        self.bind_all("<Button-5>", wheel, add="+")
+    except Exception:
+        pass
+
+    try:
+        inner.bind("<Configure>", sync_scrollregion, add="+")
+        canvas.bind("<Configure>", sync_width, add="+")
+        canvas.after_idle(sync_width)
+        canvas.after_idle(sync_scrollregion)
+    except Exception:
+        pass
 
 
+def _qilabs_v06_patch_sidebar_scroll_for_class(cls):
+    original = getattr(cls, "build_sidebar", None)
+    if original is None or getattr(original, "_qilabs_v06_patched", False):
+        return
+
+    def wrapped(self, *args, **kwargs):
+        result = original(self, *args, **kwargs)
+        _qilabs_v06_enable_sidebar_scroll(self)
+        return result
+
+    wrapped._qilabs_v06_patched = True
+    setattr(cls, "build_sidebar", wrapped)
+
+
+try:
+    _qilabs_v06_patch_sidebar_scroll_for_class(QiLabsToolbox)
+except NameError:
+    try:
+        _qilabs_v06_patch_sidebar_scroll_for_class(QiOneShell)
+    except NameError:
+        pass
+# --- END QILABS V0.6 SIDEBAR SCROLL PATCH ---
 if __name__ == "__main__":
-    app_root = tk.Tk()
-    shell = QiOneShell(app_root)
-    app_root.mainloop()
+    QiLabsToolbox().mainloop()

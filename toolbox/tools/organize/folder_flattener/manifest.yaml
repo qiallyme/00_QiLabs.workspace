@@ -1,16 +1,29 @@
-id: toolbox.organize.folder_flattener
+tool_id: organize.folder.flattener
 name: Folder Flattener
+category: organize
+version: 0.1.0
+enabled: true
+description: Folder Flattener tool.
+tags:
+  - toolbox
+  - organize
+  - qione
+launch:
+  type: python
+  target: folder_flattener.py
+  working_dir: .
+  open_console: true
+conflicts:
+id: toolbox.organize.folder_flattener
 type: toolbox_tool
 language: python
 status: active
 owner: QiLabs
-
 module:
   package: tools.organize.folder_flattener
   file: folder_flattener.py
   class_name: FolderFlattenerTool
   entrypoint: FolderFlattenerTool
-
 toolbox:
   ui_enabled: true
   bucket: organize
@@ -18,11 +31,9 @@ toolbox:
   launch_surface:
     - QiOne Desktop Tools
   requires_target_directory: true
-
 runtime:
   requires_network: false
   requires_secrets: false
-
 safety:
   supports_dry_run: true
   supports_live_run: true
@@ -30,12 +41,6 @@ safety:
   moves_files: unknown
   modifies_files: unknown
   review_before_live: true
-
 paths:
   source: tools/organize/folder_flattener/folder_flattener.py
   readme: tools/organize/folder_flattener/README.md
-
-tags:
-  - toolbox
-  - organize
-  - qione

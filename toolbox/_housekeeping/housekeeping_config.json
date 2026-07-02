@@ -1,0 +1,200 @@
+{
+  "tool_name": "QiLabs Housekeeping Console",
+  "version": "0.4.0",
+  "install_path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\_housekeeping",
+  "qilabs_root": "C:\\QiLabs",
+  "workspace_root": "C:\\QiLabs\\00_QiLabs.workspace",
+  "vault_root": "C:\\QiLabs\\40_QiVault",
+  "tree_file": "C:\\QiLabs\\40_QiVault\\qilabs_full_tree.md",
+  "master_template_file": "C:\\QiLabs\\_qiconfig\\master_template.md",
+  "tags_file": "C:\\QiLabs\\_qiconfig\\tags.json",
+  "git_roots": [
+    "C:\\QiLabs"
+  ],
+  "default_scope_roots": [
+    "C:\\QiLabs\\10_QiSpark",
+    "C:\\QiLabs\\20_QiServer",
+    "C:\\QiLabs\\40_QiVault"
+  ],
+  "ignore_dirs": [
+    ".git",
+    ".obsidian",
+    ".smart-env",
+    "node_modules",
+    ".venv",
+    "venv",
+    "__pycache__",
+    ".pytest_cache",
+    "dist",
+    "build",
+    ".next",
+    ".turbo",
+    ".cache",
+    ".docusaurus"
+  ],
+  "ignore_globs": [
+    "**/.git/**",
+    "**/.obsidian/**",
+    "**/.smart-env/**",
+    "**/node_modules/**",
+    "**/.venv/**",
+    "**/venv/**",
+    "**/__pycache__/**",
+    "**/dist/**",
+    "**/build/**"
+  ],
+  "protected_globs": [
+    "**/_qiconfig/**",
+    "**/00_QiCode/**",
+    "**/10_QiSpark/00_QiCode/**",
+    "**/10_QiSpark/90_legacy_doctrine/**",
+    "**/legal/**",
+    "**/records/**",
+    "**/evidence/**",
+    "**/Evidence/**"
+  ],
+  "qicode_manifest_files": [
+    "C:\\QiLabs\\40_QiVault\\_qiconfig\\qicode_legal_labels_manifest.csv",
+    "C:\\QiLabs\\40_QiVault\\_qiconfig\\qicode_personal_doctrine_manifest.csv",
+    "C:\\QiLabs\\40_QiVault\\_qiconfig\\qicode_root_manifest.csv"
+  ],
+  "frontmatter": {
+    "required_base_keys": [
+      "layout",
+      "title",
+      "slug",
+      "summary",
+      "status",
+      "created_at",
+      "updated_at",
+      "author",
+      "owner",
+      "tags",
+      "keywords",
+      "aliases",
+      "context",
+      "sensitivity",
+      "classification",
+      "realm_label",
+      "uid",
+      "canonical_ref",
+      "source_type",
+      "template_key"
+    ],
+    "default_values": {
+      "layout": "page",
+      "slug": "",
+      "summary": "",
+      "status": "active",
+      "author": "",
+      "owner": "",
+      "tags": [],
+      "keywords": [],
+      "aliases": [],
+      "context": "",
+      "sensitivity": "internal",
+      "classification": "business_internal",
+      "realm_label": "",
+      "uid": "",
+      "canonical_ref": "",
+      "source_type": "manual",
+      "template_key": "master-template"
+    },
+    "dynamic_keys_by_type": {
+      "person": [
+        "role",
+        "relationship",
+        "location",
+        "contact_status"
+      ],
+      "record": [
+        "record_date",
+        "entities",
+        "evidence",
+        "financial_impact",
+        "legal_relevance"
+      ],
+      "project": [
+        "project",
+        "priority",
+        "next_action",
+        "due_date"
+      ],
+      "index": [
+        "index_scope",
+        "generated_by",
+        "generated_at"
+      ],
+      "template": [
+        "template_key",
+        "template_version"
+      ]
+    },
+    "do_not_overwrite_existing_values": true
+  },
+  "filename_rules": {
+    "apply_by_default": false,
+    "markdown_only": true,
+    "preserve": [
+      "README.md",
+      "LICENSE.md",
+      "_index.md",
+      "index.md",
+      "CHANGELOG.md"
+    ],
+    "date_separator": "_",
+    "word_separator": "-",
+    "lowercase": true
+  },
+  "tags": {
+    "global_enforcement": true,
+    "profile_name": "qilabs_global_tag_registry",
+    "scan_scope_roots": [
+      "C:\\QiLabs\\10_QiSpark",
+      "C:\\QiLabs\\20_QiServer",
+      "C:\\QiLabs\\40_QiVault"
+    ],
+    "do_not_auto_add_always_include_globally": true,
+    "warn_on_project_specific_always_include": true,
+    "style_exceptions": {
+      "allow_uppercase_exhibit_letters": true
+    }
+  },
+  "indexing": {
+    "managed_block_start": "<!-- QILABS:HOUSEKEEPING_INDEX_START -->",
+    "managed_block_end": "<!-- QILABS:HOUSEKEEPING_INDEX_END -->",
+    "index_filename": "_index.md",
+    "max_items_per_folder": 200
+  },
+  "git": {
+    "recursive": true,
+    "discover_roots": [
+      "C:\\QiLabs"
+    ],
+    "manifest_file": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\_housekeeping\\git_manifest.json",
+    "manifest_mirror_files": [
+      "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\git_manifest.json"
+    ],
+    "require_clean_before_apply": false,
+    "commit_message_prefix": "chore: QiLabs housekeeping",
+    "push_default": false,
+    "commit_order": "deepest_first",
+    "push_order": "deepest_first",
+    "skip_unregistered_nested_repos_in_parent": true,
+    "push_clean_repos_with_ahead_commits": true,
+    "set_upstream_when_missing": true
+  },
+  "transaction_mode": {
+    "default_flow": "preview_then_approve_saved_plan",
+    "apply_reuses_saved_plan": true,
+    "verify_before_hash_before_writing": true,
+    "backup_before_apply": true,
+    "full_run_excludes_live_git_until_after_apply": true,
+    "filename_renames_require_explicit_checkbox": true,
+    "write_apply_run_manifest": true,
+    "one_click_undo_last_apply": true,
+    "undo_skips_changed_or_moved_files": true,
+    "undo_does_not_revert_git_pushes": true,
+    "short_summary_first": true
+  }
+}

@@ -2,10 +2,12 @@
 	"folders": [
 		{
 			"path": ".."
+		},
+		{
+			"path": "../../Users/crice/Downloads"
 		}
 	],
 	"settings": {
-		"python.defaultInterpreterPath": "C:\\Python314\\python.exe",
-		"files.autoSave": "afterDelay"
+		"powershell.cwd": "QiLabs"
 	}
 }

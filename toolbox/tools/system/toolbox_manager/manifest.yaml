@@ -1,0 +1,16 @@
+tool_id: system.toolbox_manager
+name: Toolbox Manager
+category: system
+version: 0.2.0
+enabled: true
+description: "Dynamic QiLabs toolbox manager with validation, auto-fix, and tool creation."
+tags:
+  - system
+  - toolbox
+  - manager
+launch:
+  type: python
+  target: toolbox_manager.py
+  working_dir: .
+  open_console: true
+conflicts:

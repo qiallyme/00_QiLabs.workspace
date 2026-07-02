@@ -1,0 +1,6 @@
+{
+  "schema": "qilabs.toolbox.manifest.v1",
+  "required": ["tool_id", "name", "category", "enabled", "launch"],
+  "launch_required": ["type", "target", "working_dir"],
+  "notes": "This is a lightweight reference schema. The Python validator is the enforcement layer."
+}

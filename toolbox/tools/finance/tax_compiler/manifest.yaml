@@ -1,16 +1,29 @@
-id: toolbox.finance.tax_compiler
+tool_id: finance.tax.compiler
 name: Tax Compiler
+category: finance
+version: 0.1.0
+enabled: true
+description: Tax Compiler tool.
+tags:
+  - toolbox
+  - finance
+  - qione
+launch:
+  type: python
+  target: tax_compiler.py
+  working_dir: .
+  open_console: true
+conflicts:
+id: toolbox.finance.tax_compiler
 type: toolbox_tool
 language: python
 status: active
 owner: QiLabs
-
 module:
   package: tools.finance.tax_compiler
   file: tax_compiler.py
   class_name: TaxPdfCompilerTool
   entrypoint: TaxPdfCompilerTool
-
 toolbox:
   ui_enabled: true
   bucket: finance
@@ -18,11 +31,9 @@ toolbox:
   launch_surface:
     - QiOne Desktop Tools
   requires_target_directory: true
-
 runtime:
   requires_network: false
   requires_secrets: false
-
 safety:
   supports_dry_run: true
   supports_live_run: true
@@ -30,12 +41,6 @@ safety:
   moves_files: unknown
   modifies_files: unknown
   review_before_live: true
-
 paths:
   source: tools/finance/tax_compiler/tax_compiler.py
   readme: tools/finance/tax_compiler/README.md
-
-tags:
-  - toolbox
-  - finance
-  - qione

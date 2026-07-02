@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "toolbox_root": "C:/QiLabs/00_QiLabs.workspace/toolbox",
+  "tool_roots": [
+    "tools",
+    "_housekeeping"
+  ],
+  "registry_output": "toolbox_registry.json",
+  "validation_report_output": "toolbox_validation_report.md",
+  "ignore_dirs": [
+    ".git",
+    "__pycache__",
+    ".pytest_cache",
+    "node_modules",
+    "venv",
+    ".venv",
+    "dist",
+    "build",
+    "backups",
+    "logs",
+    "reports",
+    "plans",
+    "payloads",
+    "manifests",
+    "summaries"
+  ],
+  "pending_dirs": [
+    "tools/_pending"
+  ],
+  "include_pending": false,
+  "allow_manifest_files": [
+    "manifest.yaml",
+    "manifest.yml",
+    "manifest.json"
+  ],
+  "duplicate_name_policy": "warn",
+  "duplicate_tool_id_policy": "error",
+  "missing_readme_policy": "warn",
+  "missing_init_policy": "info",
+  "default_open_console": true
+}

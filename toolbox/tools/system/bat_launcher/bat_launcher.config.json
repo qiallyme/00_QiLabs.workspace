@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0",
+  "scan_roots": [
+    "C:\\QiLabs"
+  ],
+  "include_extensions": [
+    ".bat"
+  ],
+  "include_cmd_files": false,
+  "confirm_before_run": true,
+  "open_in_new_console": true,
+  "keep_console_open": true,
+  "max_preview_lines": 120,
+  "exclude_dir_names": [
+    ".git",
+    ".hg",
+    ".svn",
+    ".venv",
+    "venv",
+    "env",
+    "node_modules",
+    "__pycache__",
+    "dist",
+    "build",
+    ".next",
+    ".turbo",
+    ".cache",
+    "site-packages",
+    "$Recycle.Bin",
+    "System Volume Information",
+    "Windows",
+    "Program Files",
+    "Program Files (x86)",
+    "ProgramData",
+    "AppData",
+    "Microsoft",
+    "OneDriveTemp"
+  ],
+  "exclude_path_contains": [
+    "\\Windows\\",
+    "\\Program Files\\",
+    "\\Program Files (x86)\\",
+    "\\ProgramData\\",
+    "\\AppData\\",
+    "\\node_modules\\",
+    "\\.git\\",
+    "\\.venv\\",
+    "\\venv\\",
+    "\\__pycache__\\"
+  ],
+  "high_risk_patterns": [
+    "format ",
+    "diskpart",
+    "bcdedit",
+    "reg delete",
+    "shutdown ",
+    "cipher /w",
+    "takeown ",
+    "icacls ",
+    "del /s",
+    "erase /s",
+    "rmdir /s",
+    "rd /s",
+    "remove-item",
+    "powershell -enc",
+    "set-executionpolicy",
+    "net user",
+    "sc delete",
+    "schtasks /delete"
+  ],
+  "metadata_patterns": {
+    "title": [
+      "^\\s*(?:rem|::)\\s*(?:tool|title|name)\\s*:\\s*(.+)$"
+    ],
+    "description": [
+      "^\\s*(?:rem|::)\\s*(?:description|desc|summary)\\s*:\\s*(.+)$"
+    ],
+    "category": [
+      "^\\s*(?:rem|::)\\s*(?:category|group)\\s*:\\s*(.+)$"
+    ],
+    "safe": [
+      "^\\s*(?:rem|::)\\s*(?:safe|risk)\\s*:\\s*(.+)$"
+    ]
+  }
+}

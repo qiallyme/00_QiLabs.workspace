@@ -1,0 +1,12 @@
+plugin_id: system.plugin_host_demo
+tool_id: system.plugin_host_demo
+name: Plugin Host Demo
+category: system
+version: 0.1.0
+enabled: true
+description: Demonstrates a native interactive QiPlugin v2 view.
+entry:
+  type: plugin_v2
+  target: plugin_host_demo.py
+  class_name: QiPlugin
+requirements:

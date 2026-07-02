@@ -1,16 +1,31 @@
-id: toolbox.finance.firefly_bills_importer
+tool_id: finance.firefly.bills.importer
 name: Firefly Bills Importer
+category: finance
+version: 0.1.0
+enabled: true
+description: Firefly Bills Importer tool.
+tags:
+  - toolbox
+  - finance
+  - firefly
+  - bills
+  - api
+launch:
+  type: python
+  target: firefly_bills_importer.py
+  working_dir: .
+  open_console: true
+conflicts:
+id: toolbox.finance.firefly_bills_importer
 type: toolbox_tool
 language: python
 status: active
 owner: QiLabs
-
 module:
   package: tools.finance.firefly_bills_importer
   file: firefly_bills_importer.py
   class_name: FireflyBillsImporterTool
   entrypoint: FireflyBillsImporterTool
-
 toolbox:
   ui_enabled: true
   bucket: finance
@@ -18,13 +33,11 @@ toolbox:
   launch_surface:
     - QiOne Desktop Tools
   requires_target_directory: false
-
 runtime:
   requires_network: true
   requires_secrets: true
   dependencies:
     - requests
-
 safety:
   supports_dry_run: true
   supports_live_run: true
@@ -33,15 +46,6 @@ safety:
   modifies_files: false
   writes_generated_files: false
   review_before_live: true
-
 paths:
   source: tools/finance/firefly_bills_importer/firefly_bills_importer.py
   readme: tools/finance/firefly_bills_importer/README.md
-
-tags:
-  - toolbox
-  - finance
-  - firefly
-  - bills
-  - api
-

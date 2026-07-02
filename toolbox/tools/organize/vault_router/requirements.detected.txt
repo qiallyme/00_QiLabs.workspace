@@ -1,0 +1,3 @@
+core
+rapidfuzz
+send2trash

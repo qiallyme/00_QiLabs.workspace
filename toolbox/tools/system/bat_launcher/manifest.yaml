@@ -1,0 +1,28 @@
+tool_id: system.bat.launcher
+name: bat_launcher
+category: system
+version: 0.1.0
+enabled: true
+description: "Scans C:\\\\\\\\\\\\\\\\QiLabs for .bat files and opens a searchable click-to-run menu for QiLabs mini-tools."
+tags:
+  - system
+  - bat_launcher
+launch:
+  type: python
+  target: bat_launcher.py
+  working_dir: .
+  open_console: true
+conflicts:
+schema_version: 1.0
+display_name: QiLabs BAT Launcher
+type: python_gui
+entrypoint: bat_launcher.py
+launcher: launch_bat_launcher.bat
+scan_scope: "C:\\\\\\\\\\\\\\\\QiLabs only"
+outputs:
+  - bat_registry.json
+  - logs/bat_launcher_runs.jsonl
+safety:
+  confirm_before_run: true
+  excludes_system_paths: true
+  warns_on_high_risk_patterns: true

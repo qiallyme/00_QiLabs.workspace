@@ -1,0 +1,8 @@
+backups/
+logs/*.jsonl
+reports/*.json
+plans/
+manifests/
+summaries/
+
+!.gitkeep

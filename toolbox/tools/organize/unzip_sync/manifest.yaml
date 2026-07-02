@@ -1,16 +1,29 @@
-id: toolbox.organize.unzip_sync
+tool_id: organize.unzip.sync
 name: Unzip Sync
+category: organize
+version: 0.1.0
+enabled: true
+description: Unzip Sync tool.
+tags:
+  - toolbox
+  - organize
+  - qione
+launch:
+  type: python
+  target: unzip_sync.py
+  working_dir: .
+  open_console: true
+conflicts:
+id: toolbox.organize.unzip_sync
 type: toolbox_tool
 language: python
 status: active
 owner: QiLabs
-
 module:
   package: tools.organize.unzip_sync
   file: unzip_sync.py
   class_name: UnzipSyncTool
   entrypoint: UnzipSyncTool
-
 toolbox:
   ui_enabled: true
   bucket: organize
@@ -18,11 +31,9 @@ toolbox:
   launch_surface:
     - QiOne Desktop Tools
   requires_target_directory: true
-
 runtime:
   requires_network: false
   requires_secrets: false
-
 safety:
   supports_dry_run: true
   supports_live_run: true
@@ -30,12 +41,6 @@ safety:
   moves_files: unknown
   modifies_files: unknown
   review_before_live: true
-
 paths:
   source: tools/organize/unzip_sync/unzip_sync.py
   readme: tools/organize/unzip_sync/README.md
-
-tags:
-  - toolbox
-  - organize
-  - qione

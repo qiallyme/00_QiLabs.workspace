@@ -1,16 +1,29 @@
-id: toolbox.organize.bloat_destroyer
+tool_id: organize.bloat.destroyer
 name: Bloat Destroyer
+category: organize
+version: 0.1.0
+enabled: true
+description: Bloat Destroyer tool.
+tags:
+  - toolbox
+  - organize
+  - qione
+launch:
+  type: python
+  target: bloat_destroyer.py
+  working_dir: .
+  open_console: true
+conflicts:
+id: toolbox.organize.bloat_destroyer
 type: toolbox_tool
 language: python
 status: active
 owner: QiLabs
-
 module:
   package: tools.organize.bloat_destroyer
   file: bloat_destroyer.py
   class_name: DestroyerTool
   entrypoint: DestroyerTool
-
 toolbox:
   ui_enabled: true
   bucket: organize
@@ -18,11 +31,9 @@ toolbox:
   launch_surface:
     - QiOne Desktop Tools
   requires_target_directory: true
-
 runtime:
   requires_network: false
   requires_secrets: false
-
 safety:
   supports_dry_run: true
   supports_live_run: true
@@ -30,12 +41,6 @@ safety:
   moves_files: unknown
   modifies_files: unknown
   review_before_live: true
-
 paths:
   source: tools/organize/bloat_destroyer/bloat_destroyer.py
   readme: tools/organize/bloat_destroyer/README.md
-
-tags:
-  - toolbox
-  - organize
-  - qione

@@ -1,0 +1,12 @@
+{
+  "roots": [
+    "00_QiLabs.workspace",
+    "10_QiSpark",
+    "20_QiServer",
+    "25_QiWorkers",
+    "30_QiDrive",
+    "40_QiVault",
+    "60_QiApps",
+    "70_QiSites"
+  ]
+}

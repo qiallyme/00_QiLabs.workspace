@@ -1,16 +1,29 @@
-id: toolbox.system.remote_ssh
+tool_id: system.remote.ssh
 name: Remote Ssh
+category: system
+version: 0.1.0
+enabled: true
+description: Remote Ssh tool.
+tags:
+  - toolbox
+  - system
+  - qione
+launch:
+  type: python
+  target: remote_ssh.py
+  working_dir: .
+  open_console: true
+conflicts:
+id: toolbox.system.remote_ssh
 type: toolbox_tool
 language: python
 status: active
 owner: QiLabs
-
 module:
   package: tools.system.remote_ssh
   file: remote_ssh.py
   class_name: UNKNOWN
   entrypoint: UNKNOWN
-
 toolbox:
   ui_enabled: true
   bucket: system
@@ -18,11 +31,9 @@ toolbox:
   launch_surface:
     - QiOne Desktop Tools
   requires_target_directory: true
-
 runtime:
   requires_network: false
   requires_secrets: false
-
 safety:
   supports_dry_run: true
   supports_live_run: true
@@ -30,12 +41,6 @@ safety:
   moves_files: unknown
   modifies_files: unknown
   review_before_live: true
-
 paths:
   source: tools/system/remote_ssh/remote_ssh.py
   readme: tools/system/remote_ssh/README.md
-
-tags:
-  - toolbox
-  - system
-  - qione

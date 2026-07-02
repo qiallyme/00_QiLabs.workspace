@@ -1,0 +1,12 @@
+plugin_id: system.creator_smoke_plugin
+tool_id: system.creator_smoke_plugin
+name: Creator Smoke Plugin
+category: system
+version: 0.1.0
+enabled: true
+description: Created by validation to confirm the New Tool flow.
+entry:
+  type: plugin_v2
+  target: creator_smoke_plugin.py
+  class_name: QiPlugin
+requirements:

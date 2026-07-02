@@ -1,0 +1,17 @@
+tool_id: category.my_tool
+name: My Tool
+category: category
+version: "0.1.0"
+enabled: true
+description: One sentence explaining what this tool does.
+tags:
+  - example
+launch:
+  type: python
+  target: my_tool.py
+  working_dir: "."
+  open_console: true
+requires:
+  files:
+    - my_tool.py
+conflicts: []

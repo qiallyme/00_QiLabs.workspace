@@ -1,0 +1,10 @@
+group,title,url,description,tags,priority,enabled
+Major Players,QiAccess,https://access.qially.com,Access/cockpit entry point for QiAlly/QiLabs workflows.,"qiaccess,cockpit,major",10,true
+Major Players,QiSaysIt,https://qsaysit.com,Public writing / posts / publishing surface.,"public,writing,site,major",20,true
+Major Players,QiAlly,https://qially.com,Primary QiAlly public/domain hub.,"qially,public,major",30,true
+Major Players,QiSpark / Cockpit placeholder,,Add the exact QiSpark or cockpit URL here once finalized.,"qispark,cockpit,placeholder",40,false
+Local Toolbox,Toolbox Folder,file:///C:/QiLabs/00_QiLabs.workspace/toolbox,Local toolbox root folder.,"local,toolbox,folder",10,true
+Local Toolbox,QiLabs Root,file:///C:/QiLabs,Local QiLabs root folder.,"local,qilabs,folder",20,true
+Docs / Static,QiSpark Static Site placeholder,,Add the final static QiSpark URL here.,"qispark,docs,placeholder",10,false
+Admin,Supabase Dashboard placeholder,,Paste project dashboard URL if you want it here.,"supabase,admin,placeholder",10,false
+Admin,Cloudflare Dashboard placeholder,,Paste Cloudflare dashboard URL if you want it here.,"cloudflare,admin,placeholder",20,false

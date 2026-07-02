@@ -1,0 +1,12 @@
+plugin_id: access.qiaccess.bookmarks
+tool_id: access.qiaccess.bookmarks
+name: QiAccess Bookmarks
+category: access
+version: 0.2.0
+enabled: true
+description: Local QiAccess-style bookmarks and links cockpit with CSV import/export and editable link groups.
+entry:
+  type: plugin_v2
+  target: qiaccess_bookmarks.py
+  class_name: QiPlugin
+requirements: []

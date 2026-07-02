@@ -1,0 +1,3720 @@
+{
+  "schema": "qilabs.toolbox.registry.v2",
+  "generated_at": "2026-07-01T23:32:04",
+  "toolbox_root": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox",
+  "plugin_count": 26,
+  "plugins": [
+    {
+      "plugin_id": "access.qiaccess.bookmarks",
+      "tool_id": "access.qiaccess.bookmarks",
+      "name": "QiAccess Bookmarks",
+      "category": "access",
+      "description": "Local QiAccess-style bookmarks and links cockpit with CSV import/export and editable link groups.",
+      "version": "0.2.0",
+      "enabled": true,
+      "requirements": [
+        "dataclasses"
+      ],
+      "entry": {
+        "type": "plugin_v2",
+        "target": "qiaccess_bookmarks.py",
+        "class_name": "QiPlugin",
+        "working_dir": ".",
+        "open_console": false
+      },
+      "actions": [],
+      "raw": {
+        "plugin_id": "access.qiaccess.bookmarks",
+        "tool_id": "access.qiaccess.bookmarks",
+        "name": "QiAccess Bookmarks",
+        "category": "access",
+        "version": "0.2.0",
+        "enabled": true,
+        "description": "Local QiAccess-style bookmarks and links cockpit with CSV import/export and editable link groups.",
+        "entry": {
+          "type": "plugin_v2",
+          "target": "qiaccess_bookmarks.py",
+          "class_name": "QiPlugin"
+        },
+        "requirements": "[]"
+      },
+      "path": "tools/access/qiaccess_bookmarks",
+      "manifest_path": "tools/access/qiaccess_bookmarks/manifest.yaml"
+    },
+    {
+      "plugin_id": "beta.audio",
+      "tool_id": "beta.audio",
+      "name": "Audio",
+      "category": "beta",
+      "description": "Audio plugin.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [],
+      "entry": {
+        "type": "script",
+        "target": "render.py",
+        "class_name": "",
+        "working_dir": ".",
+        "open_console": false
+      },
+      "actions": [],
+      "raw": {
+        "plugin_id": "beta.audio",
+        "tool_id": "beta.audio",
+        "name": "Audio",
+        "category": "beta",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Audio plugin.",
+        "entry": {
+          "type": "script",
+          "target": "render.py",
+          "class_name": ""
+        },
+        "requirements": {}
+      },
+      "path": "tools/beta/audio",
+      "manifest_path": "tools/beta/audio/manifest.yaml"
+    },
+    {
+      "plugin_id": "beta.notion_pipeline",
+      "tool_id": "beta.notion_pipeline",
+      "name": "Notion Pipeline",
+      "category": "beta",
+      "description": "Notion Pipeline plugin.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "dlt",
+        "notion"
+      ],
+      "entry": {
+        "type": "script",
+        "target": "notion_pipeline.py",
+        "class_name": "",
+        "working_dir": ".",
+        "open_console": false
+      },
+      "actions": [],
+      "raw": {
+        "plugin_id": "beta.notion_pipeline",
+        "tool_id": "beta.notion_pipeline",
+        "name": "Notion Pipeline",
+        "category": "beta",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Notion Pipeline plugin.",
+        "entry": {
+          "type": "script",
+          "target": "notion_pipeline.py",
+          "class_name": ""
+        },
+        "requirements": [
+          "dlt",
+          "notion"
+        ]
+      },
+      "path": "tools/beta/notion_pipeline",
+      "manifest_path": "tools/beta/notion_pipeline/manifest.yaml"
+    },
+    {
+      "plugin_id": "finance.cashapp.to.sample.bankstatement",
+      "tool_id": "finance.cashapp.to.sample.bankstatement",
+      "name": "Cashapp To Sample Bankstatement",
+      "category": "finance",
+      "description": "Cashapp To Sample Bankstatement tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "decimal"
+      ],
+      "entry": {
+        "type": "script",
+        "target": "cashapp_to_sample_bankstatement.py",
+        "class_name": "",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "finance.cashapp.to.sample.bankstatement",
+        "name": "Cashapp To Sample Bankstatement",
+        "category": "finance",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Cashapp To Sample Bankstatement tool.",
+        "tags": [
+          "toolbox",
+          "finance",
+          "qione"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "cashapp_to_sample_bankstatement.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.cashapp_to_sample_bankstatement",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.cashapp_to_sample_bankstatement",
+          "file": "cashapp_to_sample_bankstatement.py",
+          "class_name": "UNKNOWN",
+          "entrypoint": "UNKNOWN"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "category": "finance",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/cashapp_to_sample_bankstatement/cashapp_to_sample_bankstatement.py",
+          "readme": "tools/cashapp_to_sample_bankstatement/README.md"
+        }
+      },
+      "path": "tools/finance/cashapp_to_sample_bankstatement",
+      "manifest_path": "tools/finance/cashapp_to_sample_bankstatement/manifest.yaml"
+    },
+    {
+      "plugin_id": "finance.firefly.bills.importer",
+      "tool_id": "finance.firefly.bills.importer",
+      "name": "Firefly Bills Importer",
+      "category": "finance",
+      "description": "Firefly Bills Importer tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "core",
+        "requests"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "firefly_bills_importer.py",
+        "class_name": "FireflyBillsImporterTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "finance.firefly.bills.importer",
+        "name": "Firefly Bills Importer",
+        "category": "finance",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Firefly Bills Importer tool.",
+        "tags": [
+          "toolbox",
+          "finance",
+          "firefly",
+          "bills",
+          "api"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "firefly_bills_importer.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.finance.firefly_bills_importer",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.finance.firefly_bills_importer",
+          "file": "firefly_bills_importer.py",
+          "class_name": "FireflyBillsImporterTool",
+          "entrypoint": "FireflyBillsImporterTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "finance",
+          "category": "finance",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": false
+        },
+        "runtime": {
+          "requires_network": true,
+          "requires_secrets": true,
+          "dependencies": [
+            "requests"
+          ]
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": false,
+          "moves_files": false,
+          "modifies_files": false,
+          "writes_generated_files": false,
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/finance/firefly_bills_importer/firefly_bills_importer.py",
+          "readme": "tools/finance/firefly_bills_importer/README.md"
+        }
+      },
+      "path": "tools/finance/firefly_bills_importer",
+      "manifest_path": "tools/finance/firefly_bills_importer/manifest.yaml"
+    },
+    {
+      "plugin_id": "finance.tax.compiler",
+      "tool_id": "finance.tax.compiler",
+      "name": "Tax Compiler",
+      "category": "finance",
+      "description": "Tax Compiler tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "core",
+        "pillow",
+        "pillow_heif"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "tax_compiler.py",
+        "class_name": "TaxPdfCompilerTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "finance.tax.compiler",
+        "name": "Tax Compiler",
+        "category": "finance",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Tax Compiler tool.",
+        "tags": [
+          "toolbox",
+          "finance",
+          "qione"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "tax_compiler.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.finance.tax_compiler",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.finance.tax_compiler",
+          "file": "tax_compiler.py",
+          "class_name": "TaxPdfCompilerTool",
+          "entrypoint": "TaxPdfCompilerTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "finance",
+          "category": "finance",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/finance/tax_compiler/tax_compiler.py",
+          "readme": "tools/finance/tax_compiler/README.md"
+        }
+      },
+      "path": "tools/finance/tax_compiler",
+      "manifest_path": "tools/finance/tax_compiler/manifest.yaml"
+    },
+    {
+      "plugin_id": "finance.zai.ledger.importer",
+      "tool_id": "finance.zai.ledger.importer",
+      "name": "Zai Ledger Importer",
+      "category": "finance",
+      "description": "Zai Ledger Importer tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "core",
+        "requests"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "zai_ledger_importer.py",
+        "class_name": "ZaiLedgerImporterTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "finance.zai.ledger.importer",
+        "name": "Zai Ledger Importer",
+        "category": "finance",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Zai Ledger Importer tool.",
+        "tags": [
+          "toolbox",
+          "finance",
+          "firefly",
+          "ledger",
+          "transactions"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "zai_ledger_importer.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.finance.zai_ledger_importer",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.finance.zai_ledger_importer",
+          "file": "zai_ledger_importer.py",
+          "class_name": "ZaiLedgerImporterTool",
+          "entrypoint": "ZaiLedgerImporterTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "finance",
+          "category": "finance",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": false
+        },
+        "runtime": {
+          "requires_network": true,
+          "requires_secrets": true,
+          "dependencies": [
+            "requests"
+          ]
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": false,
+          "moves_files": false,
+          "modifies_files": false,
+          "writes_generated_files": false,
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/finance/zai_ledger_importer/zai_ledger_importer.py",
+          "readme": "tools/finance/zai_ledger_importer/README.md"
+        }
+      },
+      "path": "tools/finance/zai_ledger_importer",
+      "manifest_path": "tools/finance/zai_ledger_importer/manifest.yaml"
+    },
+    {
+      "plugin_id": "media.video.converter",
+      "tool_id": "media.video.converter",
+      "name": "Video Converter",
+      "category": "media",
+      "description": "Video Converter tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "concurrent",
+        "core"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "video_converter.py",
+        "class_name": "VideoConverterTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "media.video.converter",
+        "name": "Video Converter",
+        "category": "media",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Video Converter tool.",
+        "tags": [
+          "toolbox",
+          "media",
+          "qione"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "video_converter.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.media.video_converter",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.media.video_converter",
+          "file": "video_converter.py",
+          "class_name": "VideoConverterTool",
+          "entrypoint": "VideoConverterTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "media",
+          "category": "media",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/media/video_converter/video_converter.py",
+          "readme": "tools/media/video_converter/README.md"
+        }
+      },
+      "path": "tools/media/video_converter",
+      "manifest_path": "tools/media/video_converter/manifest.yaml"
+    },
+    {
+      "plugin_id": "organize.archivist",
+      "tool_id": "organize.archivist",
+      "name": "Archivist",
+      "category": "organize",
+      "description": "Archivist tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "core"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "archivist.py",
+        "class_name": "ArchiveRouterTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "organize.archivist",
+        "name": "Archivist",
+        "category": "organize",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Archivist tool.",
+        "tags": [
+          "toolbox",
+          "organize",
+          "qione"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "archivist.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.organize.archivist",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.organize.archivist",
+          "file": "archivist.py",
+          "class_name": "ArchiveRouterTool",
+          "entrypoint": "ArchiveRouterTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "organize",
+          "category": "organize",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/organize/archivist/archivist.py",
+          "readme": "tools/organize/archivist/README.md"
+        }
+      },
+      "path": "tools/organize/archivist",
+      "manifest_path": "tools/organize/archivist/manifest.yaml"
+    },
+    {
+      "plugin_id": "organize.bloat.destroyer",
+      "tool_id": "organize.bloat.destroyer",
+      "name": "Bloat Destroyer",
+      "category": "organize",
+      "description": "Bloat Destroyer tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "collections",
+        "concurrent",
+        "core"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "bloat_destroyer.py",
+        "class_name": "DestroyerTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "organize.bloat.destroyer",
+        "name": "Bloat Destroyer",
+        "category": "organize",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Bloat Destroyer tool.",
+        "tags": [
+          "toolbox",
+          "organize",
+          "qione"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "bloat_destroyer.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.organize.bloat_destroyer",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.organize.bloat_destroyer",
+          "file": "bloat_destroyer.py",
+          "class_name": "DestroyerTool",
+          "entrypoint": "DestroyerTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "organize",
+          "category": "organize",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/organize/bloat_destroyer/bloat_destroyer.py",
+          "readme": "tools/organize/bloat_destroyer/README.md"
+        }
+      },
+      "path": "tools/organize/bloat_destroyer",
+      "manifest_path": "tools/organize/bloat_destroyer/manifest.yaml"
+    },
+    {
+      "plugin_id": "organize.downloads.inspector",
+      "tool_id": "organize.downloads.inspector",
+      "name": "Downloads Inspector",
+      "category": "organize",
+      "description": "Downloads Inspector tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "core"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "downloads_inspector.py",
+        "class_name": "DownloadsInspectorTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "organize.downloads.inspector",
+        "name": "Downloads Inspector",
+        "category": "organize",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Downloads Inspector tool.",
+        "tags": [
+          "toolbox",
+          "organize",
+          "qione"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "downloads_inspector.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.organize.downloads_inspector",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.organize.downloads_inspector",
+          "file": "downloads_inspector.py",
+          "class_name": "DownloadsInspectorTool",
+          "entrypoint": "DownloadsInspectorTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "organize",
+          "category": "organize",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/organize/downloads_inspector/downloads_inspector.py",
+          "readme": "tools/organize/downloads_inspector/README.md"
+        }
+      },
+      "path": "tools/organize/downloads_inspector",
+      "manifest_path": "tools/organize/downloads_inspector/manifest.yaml"
+    },
+    {
+      "plugin_id": "organize.file.cleaner",
+      "tool_id": "organize.file.cleaner",
+      "name": "File Cleaner",
+      "category": "organize",
+      "description": "File Cleaner tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "core"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "file_cleaner.py",
+        "class_name": "FilenameCleanerTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "organize.file.cleaner",
+        "name": "File Cleaner",
+        "category": "organize",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "File Cleaner tool.",
+        "tags": [
+          "toolbox",
+          "organize",
+          "qione"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "file_cleaner.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.organize.file_cleaner",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.organize.file_cleaner",
+          "file": "file_cleaner.py",
+          "class_name": "FilenameCleanerTool",
+          "entrypoint": "FilenameCleanerTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "organize",
+          "category": "organize",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/organize/file_cleaner/file_cleaner.py",
+          "readme": "tools/organize/file_cleaner/README.md"
+        }
+      },
+      "path": "tools/organize/file_cleaner",
+      "manifest_path": "tools/organize/file_cleaner/manifest.yaml"
+    },
+    {
+      "plugin_id": "organize.folder.flattener",
+      "tool_id": "organize.folder.flattener",
+      "name": "Folder Flattener",
+      "category": "organize",
+      "description": "Folder Flattener tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "core"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "folder_flattener.py",
+        "class_name": "FolderFlattenerTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "organize.folder.flattener",
+        "name": "Folder Flattener",
+        "category": "organize",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Folder Flattener tool.",
+        "tags": [
+          "toolbox",
+          "organize",
+          "qione"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "folder_flattener.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.organize.folder_flattener",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.organize.folder_flattener",
+          "file": "folder_flattener.py",
+          "class_name": "FolderFlattenerTool",
+          "entrypoint": "FolderFlattenerTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "organize",
+          "category": "organize",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/organize/folder_flattener/folder_flattener.py",
+          "readme": "tools/organize/folder_flattener/README.md"
+        }
+      },
+      "path": "tools/organize/folder_flattener",
+      "manifest_path": "tools/organize/folder_flattener/manifest.yaml"
+    },
+    {
+      "plugin_id": "organize.unlock.downloads",
+      "tool_id": "organize.unlock.downloads",
+      "name": "Unlock Downloads",
+      "category": "organize",
+      "description": "Unlock Downloads tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "core"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "unlock_downloads.py",
+        "class_name": "UnblockDownloadsTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "organize.unlock.downloads",
+        "name": "Unlock Downloads",
+        "category": "organize",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Unlock Downloads tool.",
+        "tags": [
+          "toolbox",
+          "organize",
+          "qione"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "unlock_downloads.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.organize.unlock_downloads",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.organize.unlock_downloads",
+          "file": "unlock_downloads.py",
+          "class_name": "UnblockDownloadsTool",
+          "entrypoint": "UnblockDownloadsTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "organize",
+          "category": "organize",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/organize/unlock_downloads/unlock_downloads.py",
+          "readme": "tools/organize/unlock_downloads/README.md"
+        }
+      },
+      "path": "tools/organize/unlock_downloads",
+      "manifest_path": "tools/organize/unlock_downloads/manifest.yaml"
+    },
+    {
+      "plugin_id": "organize.unzip.sync",
+      "tool_id": "organize.unzip.sync",
+      "name": "Unzip Sync",
+      "category": "organize",
+      "description": "Unzip Sync tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "core",
+        "zipfile"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "unzip_sync.py",
+        "class_name": "UnzipSyncTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "organize.unzip.sync",
+        "name": "Unzip Sync",
+        "category": "organize",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Unzip Sync tool.",
+        "tags": [
+          "toolbox",
+          "organize",
+          "qione"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "unzip_sync.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.organize.unzip_sync",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.organize.unzip_sync",
+          "file": "unzip_sync.py",
+          "class_name": "UnzipSyncTool",
+          "entrypoint": "UnzipSyncTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "organize",
+          "category": "organize",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/organize/unzip_sync/unzip_sync.py",
+          "readme": "tools/organize/unzip_sync/README.md"
+        }
+      },
+      "path": "tools/organize/unzip_sync",
+      "manifest_path": "tools/organize/unzip_sync/manifest.yaml"
+    },
+    {
+      "plugin_id": "organize.vault.router",
+      "tool_id": "organize.vault.router",
+      "name": "Vault Router",
+      "category": "organize",
+      "description": "Vault Router tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "Send2Trash",
+        "core",
+        "rapidfuzz"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "vault_router.py",
+        "class_name": "VaultRouterTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "organize.vault.router",
+        "name": "Vault Router",
+        "category": "organize",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Vault Router tool.",
+        "tags": [
+          "toolbox",
+          "organize",
+          "qione"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "vault_router.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.organize.vault_router",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.organize.vault_router",
+          "file": "vault_router.py",
+          "class_name": "VaultRouterTool",
+          "entrypoint": "VaultRouterTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "organize",
+          "category": "organize",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/organize/vault_router/vault_router.py",
+          "readme": "tools/organize/vault_router/README.md"
+        }
+      },
+      "path": "tools/organize/vault_router",
+      "manifest_path": "tools/organize/vault_router/manifest.yaml"
+    },
+    {
+      "plugin_id": "organize.xlsx.tabs.to.csv",
+      "tool_id": "organize.xlsx.tabs.to.csv",
+      "name": "XLSX Tabs to CSV",
+      "category": "organize",
+      "description": "XLSX Tabs to CSV tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "openpyxl"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "xlsx_tabs_to_csv.py",
+        "class_name": "XlsxTabsToCsvTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "organize.xlsx.tabs.to.csv",
+        "name": "XLSX Tabs to CSV",
+        "category": "organize",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "XLSX Tabs to CSV tool.",
+        "tags": [
+          "toolbox",
+          "organize",
+          "qione"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "xlsx_tabs_to_csv.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.organize.xlsx_tabs_to_csv",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.organize.xlsx_tabs_to_csv",
+          "file": "xlsx_tabs_to_csv.py",
+          "class_name": "XlsxTabsToCsvTool",
+          "entrypoint": "XlsxTabsToCsvTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "organize",
+          "category": "organize",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/organize/xlsx_tabs_to_csv/xlsx_tabs_to_csv.py",
+          "readme": "tools/organize/xlsx_tabs_to_csv/README.md"
+        }
+      },
+      "path": "tools/organize/xlsx_tabs_to_csv",
+      "manifest_path": "tools/organize/xlsx_tabs_to_csv/manifest.yaml"
+    },
+    {
+      "plugin_id": "system.creator_smoke_plugin",
+      "tool_id": "system.creator_smoke_plugin",
+      "name": "Creator Smoke Plugin",
+      "category": "system",
+      "description": "Created by validation to confirm the New Tool flow.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [],
+      "entry": {
+        "type": "plugin_v2",
+        "target": "creator_smoke_plugin.py",
+        "class_name": "QiPlugin",
+        "working_dir": ".",
+        "open_console": false
+      },
+      "actions": [],
+      "raw": {
+        "plugin_id": "system.creator_smoke_plugin",
+        "tool_id": "system.creator_smoke_plugin",
+        "name": "Creator Smoke Plugin",
+        "category": "system",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Created by validation to confirm the New Tool flow.",
+        "entry": {
+          "type": "plugin_v2",
+          "target": "creator_smoke_plugin.py",
+          "class_name": "QiPlugin"
+        },
+        "requirements": {}
+      },
+      "path": "tools/system/creator_smoke_plugin",
+      "manifest_path": "tools/system/creator_smoke_plugin/manifest.yaml"
+    },
+    {
+      "plugin_id": "system.sys.directory.markmind.mapper",
+      "tool_id": "system.sys.directory.markmind.mapper",
+      "name": "Directory Markmind Mapper",
+      "category": "system",
+      "description": "Directory Markmind Mapper tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "core"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "directory_markmind_mapper.py",
+        "class_name": "DirectoryMarkmindMapperTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "system.sys.directory.markmind.mapper",
+        "name": "Directory Markmind Mapper",
+        "category": "system",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Directory Markmind Mapper tool.",
+        "tags": [
+          "toolbox",
+          "system",
+          "qione",
+          "directory-map",
+          "markmind",
+          "markmap",
+          "documentation"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "directory_markmind_mapper.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.system.sys_directory_markmind_mapper",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.system.sys_directory_markmind_mapper",
+          "file": "directory_markmind_mapper.py",
+          "class_name": "DirectoryMarkmindMapperTool",
+          "entrypoint": "DirectoryMarkmindMapperTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "system",
+          "category": "system",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false,
+          "dependencies": [
+            "python_stdlib"
+          ]
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": false,
+          "moves_files": false,
+          "modifies_files": false,
+          "writes_generated_files": true,
+          "review_before_live": false
+        },
+        "paths": {
+          "source": "tools/system/sys_directory_markmind_mapper/directory_markmind_mapper.py",
+          "readme": "tools/system/sys_directory_markmind_mapper/README.md"
+        },
+        "outputs": [
+          "markdown",
+          "markmind_compatible_outline"
+        ]
+      },
+      "path": "tools/system/sys_directory_markmind_mapper",
+      "manifest_path": "tools/system/sys_directory_markmind_mapper/manifest.yaml"
+    },
+    {
+      "plugin_id": "system.housekeeping.console",
+      "tool_id": "system.housekeeping.console",
+      "name": "Housekeeping Console",
+      "category": "system",
+      "description": "Opens the QiLabs Housekeeping Console and gives quick access to plans, reports, summaries, logs, and manifests.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [],
+      "entry": {
+        "type": "plugin_v2",
+        "target": "housekeeping_console.py",
+        "class_name": "QiPlugin",
+        "working_dir": ".",
+        "open_console": false
+      },
+      "actions": [],
+      "raw": {
+        "plugin_id": "system.housekeeping.console",
+        "tool_id": "system.housekeeping.console",
+        "name": "Housekeeping Console",
+        "category": "system",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Opens the QiLabs Housekeeping Console and gives quick access to plans, reports, summaries, logs, and manifests.",
+        "tags": [
+          "toolbox",
+          "system",
+          "housekeeping",
+          "cleanup"
+        ],
+        "entry": {
+          "type": "plugin_v2",
+          "target": "housekeeping_console.py",
+          "class_name": "QiPlugin",
+          "working_dir": ".",
+          "open_console": false
+        },
+        "launch": {
+          "type": "python",
+          "target": "housekeeping_console.py",
+          "working_dir": ".",
+          "open_console": false
+        },
+        "module": {
+          "package": "tools.system.housekeeping_console",
+          "file": "housekeeping_console.py",
+          "class_name": "HousekeepingConsoleTool",
+          "entrypoint": "HousekeepingConsoleTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "system",
+          "category": "system",
+          "launch_surface": [
+            "QiLabs Toolbox"
+          ],
+          "requires_target_directory": false
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": false,
+          "supports_live_run": true,
+          "deletes_files": false,
+          "moves_files": false,
+          "modifies_files": false,
+          "review_before_live": false
+        },
+        "paths": {
+          "source": "tools/system/housekeeping_console/housekeeping_console.py",
+          "readme": "tools/system/housekeeping_console/README.md"
+        }
+      },
+      "path": "tools/system/housekeeping_console",
+      "manifest_path": "tools/system/housekeeping_console/manifest.yaml"
+    },
+    {
+      "plugin_id": "system.plugin_host_demo",
+      "tool_id": "system.plugin_host_demo",
+      "name": "Plugin Host Demo",
+      "category": "system",
+      "description": "Demonstrates a native interactive QiPlugin v2 view.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [],
+      "entry": {
+        "type": "plugin_v2",
+        "target": "plugin_host_demo.py",
+        "class_name": "QiPlugin",
+        "working_dir": ".",
+        "open_console": false
+      },
+      "actions": [],
+      "raw": {
+        "plugin_id": "system.plugin_host_demo",
+        "tool_id": "system.plugin_host_demo",
+        "name": "Plugin Host Demo",
+        "category": "system",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Demonstrates a native interactive QiPlugin v2 view.",
+        "entry": {
+          "type": "plugin_v2",
+          "target": "plugin_host_demo.py",
+          "class_name": "QiPlugin"
+        },
+        "requirements": {}
+      },
+      "path": "tools/system/plugin_host_demo",
+      "manifest_path": "tools/system/plugin_host_demo/manifest.yaml"
+    },
+    {
+      "plugin_id": "system.qilabs.structure.checker",
+      "tool_id": "system.qilabs.structure.checker",
+      "name": "QiLabs Structure Checker",
+      "category": "system",
+      "description": "QiLabs Structure Checker tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "core",
+        "dataclasses"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "qilabs_structure_checker.py",
+        "class_name": "QiLabsStructureCheckerTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "system.qilabs.structure.checker",
+        "name": "QiLabs Structure Checker",
+        "category": "system",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "QiLabs Structure Checker tool.",
+        "tags": [
+          "toolbox",
+          "system",
+          "audit",
+          "structure",
+          "qilabs"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "qilabs_structure_checker.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.system.qilabs_structure_checker",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.system.qilabs_structure_checker",
+          "file": "qilabs_structure_checker.py",
+          "class_name": "QiLabsStructureCheckerTool",
+          "entrypoint": "QiLabsStructureCheckerTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "system",
+          "category": "system",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false,
+          "dependencies": [
+            "python_stdlib"
+          ]
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": false,
+          "moves_files": false,
+          "modifies_files": false,
+          "writes_generated_files": true,
+          "review_before_live": false
+        },
+        "paths": {
+          "source": "tools/system/qilabs_structure_checker/qilabs_structure_checker.py",
+          "readme": "tools/system/qilabs_structure_checker/README.md"
+        },
+        "outputs": [
+          "markdown",
+          "json",
+          "csv"
+        ]
+      },
+      "path": "tools/system/qilabs_structure_checker",
+      "manifest_path": "tools/system/qilabs_structure_checker/manifest.yaml"
+    },
+    {
+      "plugin_id": "system.remote.ssh",
+      "tool_id": "system.remote.ssh",
+      "name": "Remote Ssh",
+      "category": "system",
+      "description": "Remote Ssh tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [],
+      "entry": {
+        "type": "script",
+        "target": "remote_ssh.py",
+        "class_name": "",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "system.remote.ssh",
+        "name": "Remote Ssh",
+        "category": "system",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Remote Ssh tool.",
+        "tags": [
+          "toolbox",
+          "system",
+          "qione"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "remote_ssh.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.system.remote_ssh",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.system.remote_ssh",
+          "file": "remote_ssh.py",
+          "class_name": "UNKNOWN",
+          "entrypoint": "UNKNOWN"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "system",
+          "category": "system",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/system/remote_ssh/remote_ssh.py",
+          "readme": "tools/system/remote_ssh/README.md"
+        }
+      },
+      "path": "tools/system/remote_ssh",
+      "manifest_path": "tools/system/remote_ssh/manifest.yaml"
+    },
+    {
+      "plugin_id": "system.toolbox_manager",
+      "tool_id": "system.toolbox_manager",
+      "name": "Toolbox Manager",
+      "category": "system",
+      "description": "Dynamic QiLabs toolbox manager with validation, auto-fix, and tool creation.",
+      "version": "0.2.0",
+      "enabled": true,
+      "requirements": [],
+      "entry": {
+        "type": "script",
+        "target": "toolbox_manager.py",
+        "class_name": "",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "system.toolbox_manager",
+        "name": "Toolbox Manager",
+        "category": "system",
+        "version": "0.2.0",
+        "enabled": true,
+        "description": "Dynamic QiLabs toolbox manager with validation, auto-fix, and tool creation.",
+        "tags": [
+          "system",
+          "toolbox",
+          "manager"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "toolbox_manager.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {}
+      },
+      "path": "tools/system/toolbox_manager",
+      "manifest_path": "tools/system/toolbox_manager/manifest.yaml"
+    },
+    {
+      "plugin_id": "system.sys.docs.compiler",
+      "tool_id": "system.sys.docs.compiler",
+      "name": "Tree-Aware Docs Compiler",
+      "category": "system",
+      "description": "Tree-Aware Docs Compiler tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "contextlib",
+        "core",
+        "dataclasses",
+        "fnmatch",
+        "io"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "sys_docs_compiler.py",
+        "class_name": "SysDocsCompilerTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "system.sys.docs.compiler",
+        "name": "Tree-Aware Docs Compiler",
+        "category": "system",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Tree-Aware Docs Compiler tool.",
+        "tags": [
+          "toolbox",
+          "system",
+          "docs",
+          "compiler",
+          "markdown"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "sys_docs_compiler.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.system.sys_docs_compiler",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.system.sys_docs_compiler",
+          "file": "sys_docs_compiler.py",
+          "class_name": "SysDocsCompilerTool",
+          "entrypoint": "SysDocsCompilerTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "system",
+          "category": "system",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false,
+          "dependencies": [
+            "python_stdlib"
+          ]
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": false,
+          "moves_files": false,
+          "modifies_files": true,
+          "writes_generated_files": true,
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/system/sys_docs_compiler/sys_docs_compiler.py",
+          "readme": "tools/system/sys_docs_compiler/README.md"
+        },
+        "outputs": [
+          "generated docs folder",
+          "build report json"
+        ]
+      },
+      "path": "tools/system/sys_docs_compiler",
+      "manifest_path": "tools/system/sys_docs_compiler/manifest.yaml"
+    },
+    {
+      "plugin_id": "system.bat.launcher",
+      "tool_id": "system.bat.launcher",
+      "name": "bat_launcher",
+      "category": "system",
+      "description": "Scans C:\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\QiLabs for .bat files and opens a searchable click-to-run menu for QiLabs mini-tools.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [],
+      "entry": {
+        "type": "script",
+        "target": "bat_launcher.py",
+        "class_name": "",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "system.bat.launcher",
+        "name": "bat_launcher",
+        "category": "system",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Scans C:\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\QiLabs for .bat files and opens a searchable click-to-run menu for QiLabs mini-tools.",
+        "tags": [
+          "system",
+          "bat_launcher"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "bat_launcher.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "schema_version": "1.0",
+        "display_name": "QiLabs BAT Launcher",
+        "type": "python_gui",
+        "entrypoint": "bat_launcher.py",
+        "launcher": "launch_bat_launcher.bat",
+        "scan_scope": "C:\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\QiLabs only",
+        "outputs": [
+          "bat_registry.json",
+          "logs/bat_launcher_runs.jsonl"
+        ],
+        "safety": {
+          "confirm_before_run": true,
+          "excludes_system_paths": true,
+          "warns_on_high_risk_patterns": true
+        }
+      },
+      "path": "tools/system/bat_launcher",
+      "manifest_path": "tools/system/bat_launcher/manifest.yaml"
+    }
+  ],
+  "tools": [
+    {
+      "plugin_id": "access.qiaccess.bookmarks",
+      "tool_id": "access.qiaccess.bookmarks",
+      "name": "QiAccess Bookmarks",
+      "category": "access",
+      "description": "Local QiAccess-style bookmarks and links cockpit with CSV import/export and editable link groups.",
+      "version": "0.2.0",
+      "enabled": true,
+      "requirements": [
+        "dataclasses"
+      ],
+      "entry": {
+        "type": "plugin_v2",
+        "target": "qiaccess_bookmarks.py",
+        "class_name": "QiPlugin",
+        "working_dir": ".",
+        "open_console": false
+      },
+      "actions": [],
+      "raw": {
+        "plugin_id": "access.qiaccess.bookmarks",
+        "tool_id": "access.qiaccess.bookmarks",
+        "name": "QiAccess Bookmarks",
+        "category": "access",
+        "version": "0.2.0",
+        "enabled": true,
+        "description": "Local QiAccess-style bookmarks and links cockpit with CSV import/export and editable link groups.",
+        "entry": {
+          "type": "plugin_v2",
+          "target": "qiaccess_bookmarks.py",
+          "class_name": "QiPlugin"
+        },
+        "requirements": "[]"
+      },
+      "path": "tools/access/qiaccess_bookmarks",
+      "manifest_path": "tools/access/qiaccess_bookmarks/manifest.yaml"
+    },
+    {
+      "plugin_id": "beta.audio",
+      "tool_id": "beta.audio",
+      "name": "Audio",
+      "category": "beta",
+      "description": "Audio plugin.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [],
+      "entry": {
+        "type": "script",
+        "target": "render.py",
+        "class_name": "",
+        "working_dir": ".",
+        "open_console": false
+      },
+      "actions": [],
+      "raw": {
+        "plugin_id": "beta.audio",
+        "tool_id": "beta.audio",
+        "name": "Audio",
+        "category": "beta",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Audio plugin.",
+        "entry": {
+          "type": "script",
+          "target": "render.py",
+          "class_name": ""
+        },
+        "requirements": {}
+      },
+      "path": "tools/beta/audio",
+      "manifest_path": "tools/beta/audio/manifest.yaml"
+    },
+    {
+      "plugin_id": "beta.notion_pipeline",
+      "tool_id": "beta.notion_pipeline",
+      "name": "Notion Pipeline",
+      "category": "beta",
+      "description": "Notion Pipeline plugin.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "dlt",
+        "notion"
+      ],
+      "entry": {
+        "type": "script",
+        "target": "notion_pipeline.py",
+        "class_name": "",
+        "working_dir": ".",
+        "open_console": false
+      },
+      "actions": [],
+      "raw": {
+        "plugin_id": "beta.notion_pipeline",
+        "tool_id": "beta.notion_pipeline",
+        "name": "Notion Pipeline",
+        "category": "beta",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Notion Pipeline plugin.",
+        "entry": {
+          "type": "script",
+          "target": "notion_pipeline.py",
+          "class_name": ""
+        },
+        "requirements": [
+          "dlt",
+          "notion"
+        ]
+      },
+      "path": "tools/beta/notion_pipeline",
+      "manifest_path": "tools/beta/notion_pipeline/manifest.yaml"
+    },
+    {
+      "plugin_id": "finance.cashapp.to.sample.bankstatement",
+      "tool_id": "finance.cashapp.to.sample.bankstatement",
+      "name": "Cashapp To Sample Bankstatement",
+      "category": "finance",
+      "description": "Cashapp To Sample Bankstatement tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "decimal"
+      ],
+      "entry": {
+        "type": "script",
+        "target": "cashapp_to_sample_bankstatement.py",
+        "class_name": "",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "finance.cashapp.to.sample.bankstatement",
+        "name": "Cashapp To Sample Bankstatement",
+        "category": "finance",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Cashapp To Sample Bankstatement tool.",
+        "tags": [
+          "toolbox",
+          "finance",
+          "qione"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "cashapp_to_sample_bankstatement.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.cashapp_to_sample_bankstatement",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.cashapp_to_sample_bankstatement",
+          "file": "cashapp_to_sample_bankstatement.py",
+          "class_name": "UNKNOWN",
+          "entrypoint": "UNKNOWN"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "category": "finance",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/cashapp_to_sample_bankstatement/cashapp_to_sample_bankstatement.py",
+          "readme": "tools/cashapp_to_sample_bankstatement/README.md"
+        }
+      },
+      "path": "tools/finance/cashapp_to_sample_bankstatement",
+      "manifest_path": "tools/finance/cashapp_to_sample_bankstatement/manifest.yaml"
+    },
+    {
+      "plugin_id": "finance.firefly.bills.importer",
+      "tool_id": "finance.firefly.bills.importer",
+      "name": "Firefly Bills Importer",
+      "category": "finance",
+      "description": "Firefly Bills Importer tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "core",
+        "requests"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "firefly_bills_importer.py",
+        "class_name": "FireflyBillsImporterTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "finance.firefly.bills.importer",
+        "name": "Firefly Bills Importer",
+        "category": "finance",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Firefly Bills Importer tool.",
+        "tags": [
+          "toolbox",
+          "finance",
+          "firefly",
+          "bills",
+          "api"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "firefly_bills_importer.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.finance.firefly_bills_importer",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.finance.firefly_bills_importer",
+          "file": "firefly_bills_importer.py",
+          "class_name": "FireflyBillsImporterTool",
+          "entrypoint": "FireflyBillsImporterTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "finance",
+          "category": "finance",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": false
+        },
+        "runtime": {
+          "requires_network": true,
+          "requires_secrets": true,
+          "dependencies": [
+            "requests"
+          ]
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": false,
+          "moves_files": false,
+          "modifies_files": false,
+          "writes_generated_files": false,
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/finance/firefly_bills_importer/firefly_bills_importer.py",
+          "readme": "tools/finance/firefly_bills_importer/README.md"
+        }
+      },
+      "path": "tools/finance/firefly_bills_importer",
+      "manifest_path": "tools/finance/firefly_bills_importer/manifest.yaml"
+    },
+    {
+      "plugin_id": "finance.tax.compiler",
+      "tool_id": "finance.tax.compiler",
+      "name": "Tax Compiler",
+      "category": "finance",
+      "description": "Tax Compiler tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "core",
+        "pillow",
+        "pillow_heif"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "tax_compiler.py",
+        "class_name": "TaxPdfCompilerTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "finance.tax.compiler",
+        "name": "Tax Compiler",
+        "category": "finance",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Tax Compiler tool.",
+        "tags": [
+          "toolbox",
+          "finance",
+          "qione"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "tax_compiler.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.finance.tax_compiler",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.finance.tax_compiler",
+          "file": "tax_compiler.py",
+          "class_name": "TaxPdfCompilerTool",
+          "entrypoint": "TaxPdfCompilerTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "finance",
+          "category": "finance",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/finance/tax_compiler/tax_compiler.py",
+          "readme": "tools/finance/tax_compiler/README.md"
+        }
+      },
+      "path": "tools/finance/tax_compiler",
+      "manifest_path": "tools/finance/tax_compiler/manifest.yaml"
+    },
+    {
+      "plugin_id": "finance.zai.ledger.importer",
+      "tool_id": "finance.zai.ledger.importer",
+      "name": "Zai Ledger Importer",
+      "category": "finance",
+      "description": "Zai Ledger Importer tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "core",
+        "requests"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "zai_ledger_importer.py",
+        "class_name": "ZaiLedgerImporterTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "finance.zai.ledger.importer",
+        "name": "Zai Ledger Importer",
+        "category": "finance",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Zai Ledger Importer tool.",
+        "tags": [
+          "toolbox",
+          "finance",
+          "firefly",
+          "ledger",
+          "transactions"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "zai_ledger_importer.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.finance.zai_ledger_importer",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.finance.zai_ledger_importer",
+          "file": "zai_ledger_importer.py",
+          "class_name": "ZaiLedgerImporterTool",
+          "entrypoint": "ZaiLedgerImporterTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "finance",
+          "category": "finance",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": false
+        },
+        "runtime": {
+          "requires_network": true,
+          "requires_secrets": true,
+          "dependencies": [
+            "requests"
+          ]
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": false,
+          "moves_files": false,
+          "modifies_files": false,
+          "writes_generated_files": false,
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/finance/zai_ledger_importer/zai_ledger_importer.py",
+          "readme": "tools/finance/zai_ledger_importer/README.md"
+        }
+      },
+      "path": "tools/finance/zai_ledger_importer",
+      "manifest_path": "tools/finance/zai_ledger_importer/manifest.yaml"
+    },
+    {
+      "plugin_id": "media.video.converter",
+      "tool_id": "media.video.converter",
+      "name": "Video Converter",
+      "category": "media",
+      "description": "Video Converter tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "concurrent",
+        "core"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "video_converter.py",
+        "class_name": "VideoConverterTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "media.video.converter",
+        "name": "Video Converter",
+        "category": "media",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Video Converter tool.",
+        "tags": [
+          "toolbox",
+          "media",
+          "qione"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "video_converter.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.media.video_converter",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.media.video_converter",
+          "file": "video_converter.py",
+          "class_name": "VideoConverterTool",
+          "entrypoint": "VideoConverterTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "media",
+          "category": "media",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/media/video_converter/video_converter.py",
+          "readme": "tools/media/video_converter/README.md"
+        }
+      },
+      "path": "tools/media/video_converter",
+      "manifest_path": "tools/media/video_converter/manifest.yaml"
+    },
+    {
+      "plugin_id": "organize.archivist",
+      "tool_id": "organize.archivist",
+      "name": "Archivist",
+      "category": "organize",
+      "description": "Archivist tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "core"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "archivist.py",
+        "class_name": "ArchiveRouterTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "organize.archivist",
+        "name": "Archivist",
+        "category": "organize",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Archivist tool.",
+        "tags": [
+          "toolbox",
+          "organize",
+          "qione"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "archivist.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.organize.archivist",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.organize.archivist",
+          "file": "archivist.py",
+          "class_name": "ArchiveRouterTool",
+          "entrypoint": "ArchiveRouterTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "organize",
+          "category": "organize",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/organize/archivist/archivist.py",
+          "readme": "tools/organize/archivist/README.md"
+        }
+      },
+      "path": "tools/organize/archivist",
+      "manifest_path": "tools/organize/archivist/manifest.yaml"
+    },
+    {
+      "plugin_id": "organize.bloat.destroyer",
+      "tool_id": "organize.bloat.destroyer",
+      "name": "Bloat Destroyer",
+      "category": "organize",
+      "description": "Bloat Destroyer tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "collections",
+        "concurrent",
+        "core"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "bloat_destroyer.py",
+        "class_name": "DestroyerTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "organize.bloat.destroyer",
+        "name": "Bloat Destroyer",
+        "category": "organize",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Bloat Destroyer tool.",
+        "tags": [
+          "toolbox",
+          "organize",
+          "qione"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "bloat_destroyer.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.organize.bloat_destroyer",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.organize.bloat_destroyer",
+          "file": "bloat_destroyer.py",
+          "class_name": "DestroyerTool",
+          "entrypoint": "DestroyerTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "organize",
+          "category": "organize",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/organize/bloat_destroyer/bloat_destroyer.py",
+          "readme": "tools/organize/bloat_destroyer/README.md"
+        }
+      },
+      "path": "tools/organize/bloat_destroyer",
+      "manifest_path": "tools/organize/bloat_destroyer/manifest.yaml"
+    },
+    {
+      "plugin_id": "organize.downloads.inspector",
+      "tool_id": "organize.downloads.inspector",
+      "name": "Downloads Inspector",
+      "category": "organize",
+      "description": "Downloads Inspector tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "core"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "downloads_inspector.py",
+        "class_name": "DownloadsInspectorTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "organize.downloads.inspector",
+        "name": "Downloads Inspector",
+        "category": "organize",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Downloads Inspector tool.",
+        "tags": [
+          "toolbox",
+          "organize",
+          "qione"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "downloads_inspector.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.organize.downloads_inspector",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.organize.downloads_inspector",
+          "file": "downloads_inspector.py",
+          "class_name": "DownloadsInspectorTool",
+          "entrypoint": "DownloadsInspectorTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "organize",
+          "category": "organize",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/organize/downloads_inspector/downloads_inspector.py",
+          "readme": "tools/organize/downloads_inspector/README.md"
+        }
+      },
+      "path": "tools/organize/downloads_inspector",
+      "manifest_path": "tools/organize/downloads_inspector/manifest.yaml"
+    },
+    {
+      "plugin_id": "organize.file.cleaner",
+      "tool_id": "organize.file.cleaner",
+      "name": "File Cleaner",
+      "category": "organize",
+      "description": "File Cleaner tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "core"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "file_cleaner.py",
+        "class_name": "FilenameCleanerTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "organize.file.cleaner",
+        "name": "File Cleaner",
+        "category": "organize",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "File Cleaner tool.",
+        "tags": [
+          "toolbox",
+          "organize",
+          "qione"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "file_cleaner.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.organize.file_cleaner",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.organize.file_cleaner",
+          "file": "file_cleaner.py",
+          "class_name": "FilenameCleanerTool",
+          "entrypoint": "FilenameCleanerTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "organize",
+          "category": "organize",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/organize/file_cleaner/file_cleaner.py",
+          "readme": "tools/organize/file_cleaner/README.md"
+        }
+      },
+      "path": "tools/organize/file_cleaner",
+      "manifest_path": "tools/organize/file_cleaner/manifest.yaml"
+    },
+    {
+      "plugin_id": "organize.folder.flattener",
+      "tool_id": "organize.folder.flattener",
+      "name": "Folder Flattener",
+      "category": "organize",
+      "description": "Folder Flattener tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "core"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "folder_flattener.py",
+        "class_name": "FolderFlattenerTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "organize.folder.flattener",
+        "name": "Folder Flattener",
+        "category": "organize",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Folder Flattener tool.",
+        "tags": [
+          "toolbox",
+          "organize",
+          "qione"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "folder_flattener.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.organize.folder_flattener",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.organize.folder_flattener",
+          "file": "folder_flattener.py",
+          "class_name": "FolderFlattenerTool",
+          "entrypoint": "FolderFlattenerTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "organize",
+          "category": "organize",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/organize/folder_flattener/folder_flattener.py",
+          "readme": "tools/organize/folder_flattener/README.md"
+        }
+      },
+      "path": "tools/organize/folder_flattener",
+      "manifest_path": "tools/organize/folder_flattener/manifest.yaml"
+    },
+    {
+      "plugin_id": "organize.unlock.downloads",
+      "tool_id": "organize.unlock.downloads",
+      "name": "Unlock Downloads",
+      "category": "organize",
+      "description": "Unlock Downloads tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "core"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "unlock_downloads.py",
+        "class_name": "UnblockDownloadsTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "organize.unlock.downloads",
+        "name": "Unlock Downloads",
+        "category": "organize",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Unlock Downloads tool.",
+        "tags": [
+          "toolbox",
+          "organize",
+          "qione"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "unlock_downloads.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.organize.unlock_downloads",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.organize.unlock_downloads",
+          "file": "unlock_downloads.py",
+          "class_name": "UnblockDownloadsTool",
+          "entrypoint": "UnblockDownloadsTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "organize",
+          "category": "organize",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/organize/unlock_downloads/unlock_downloads.py",
+          "readme": "tools/organize/unlock_downloads/README.md"
+        }
+      },
+      "path": "tools/organize/unlock_downloads",
+      "manifest_path": "tools/organize/unlock_downloads/manifest.yaml"
+    },
+    {
+      "plugin_id": "organize.unzip.sync",
+      "tool_id": "organize.unzip.sync",
+      "name": "Unzip Sync",
+      "category": "organize",
+      "description": "Unzip Sync tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "core",
+        "zipfile"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "unzip_sync.py",
+        "class_name": "UnzipSyncTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "organize.unzip.sync",
+        "name": "Unzip Sync",
+        "category": "organize",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Unzip Sync tool.",
+        "tags": [
+          "toolbox",
+          "organize",
+          "qione"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "unzip_sync.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.organize.unzip_sync",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.organize.unzip_sync",
+          "file": "unzip_sync.py",
+          "class_name": "UnzipSyncTool",
+          "entrypoint": "UnzipSyncTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "organize",
+          "category": "organize",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/organize/unzip_sync/unzip_sync.py",
+          "readme": "tools/organize/unzip_sync/README.md"
+        }
+      },
+      "path": "tools/organize/unzip_sync",
+      "manifest_path": "tools/organize/unzip_sync/manifest.yaml"
+    },
+    {
+      "plugin_id": "organize.vault.router",
+      "tool_id": "organize.vault.router",
+      "name": "Vault Router",
+      "category": "organize",
+      "description": "Vault Router tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "Send2Trash",
+        "core",
+        "rapidfuzz"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "vault_router.py",
+        "class_name": "VaultRouterTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "organize.vault.router",
+        "name": "Vault Router",
+        "category": "organize",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Vault Router tool.",
+        "tags": [
+          "toolbox",
+          "organize",
+          "qione"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "vault_router.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.organize.vault_router",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.organize.vault_router",
+          "file": "vault_router.py",
+          "class_name": "VaultRouterTool",
+          "entrypoint": "VaultRouterTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "organize",
+          "category": "organize",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/organize/vault_router/vault_router.py",
+          "readme": "tools/organize/vault_router/README.md"
+        }
+      },
+      "path": "tools/organize/vault_router",
+      "manifest_path": "tools/organize/vault_router/manifest.yaml"
+    },
+    {
+      "plugin_id": "organize.xlsx.tabs.to.csv",
+      "tool_id": "organize.xlsx.tabs.to.csv",
+      "name": "XLSX Tabs to CSV",
+      "category": "organize",
+      "description": "XLSX Tabs to CSV tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "openpyxl"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "xlsx_tabs_to_csv.py",
+        "class_name": "XlsxTabsToCsvTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "organize.xlsx.tabs.to.csv",
+        "name": "XLSX Tabs to CSV",
+        "category": "organize",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "XLSX Tabs to CSV tool.",
+        "tags": [
+          "toolbox",
+          "organize",
+          "qione"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "xlsx_tabs_to_csv.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.organize.xlsx_tabs_to_csv",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.organize.xlsx_tabs_to_csv",
+          "file": "xlsx_tabs_to_csv.py",
+          "class_name": "XlsxTabsToCsvTool",
+          "entrypoint": "XlsxTabsToCsvTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "organize",
+          "category": "organize",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/organize/xlsx_tabs_to_csv/xlsx_tabs_to_csv.py",
+          "readme": "tools/organize/xlsx_tabs_to_csv/README.md"
+        }
+      },
+      "path": "tools/organize/xlsx_tabs_to_csv",
+      "manifest_path": "tools/organize/xlsx_tabs_to_csv/manifest.yaml"
+    },
+    {
+      "plugin_id": "system.creator_smoke_plugin",
+      "tool_id": "system.creator_smoke_plugin",
+      "name": "Creator Smoke Plugin",
+      "category": "system",
+      "description": "Created by validation to confirm the New Tool flow.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [],
+      "entry": {
+        "type": "plugin_v2",
+        "target": "creator_smoke_plugin.py",
+        "class_name": "QiPlugin",
+        "working_dir": ".",
+        "open_console": false
+      },
+      "actions": [],
+      "raw": {
+        "plugin_id": "system.creator_smoke_plugin",
+        "tool_id": "system.creator_smoke_plugin",
+        "name": "Creator Smoke Plugin",
+        "category": "system",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Created by validation to confirm the New Tool flow.",
+        "entry": {
+          "type": "plugin_v2",
+          "target": "creator_smoke_plugin.py",
+          "class_name": "QiPlugin"
+        },
+        "requirements": {}
+      },
+      "path": "tools/system/creator_smoke_plugin",
+      "manifest_path": "tools/system/creator_smoke_plugin/manifest.yaml"
+    },
+    {
+      "plugin_id": "system.sys.directory.markmind.mapper",
+      "tool_id": "system.sys.directory.markmind.mapper",
+      "name": "Directory Markmind Mapper",
+      "category": "system",
+      "description": "Directory Markmind Mapper tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "core"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "directory_markmind_mapper.py",
+        "class_name": "DirectoryMarkmindMapperTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "system.sys.directory.markmind.mapper",
+        "name": "Directory Markmind Mapper",
+        "category": "system",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Directory Markmind Mapper tool.",
+        "tags": [
+          "toolbox",
+          "system",
+          "qione",
+          "directory-map",
+          "markmind",
+          "markmap",
+          "documentation"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "directory_markmind_mapper.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.system.sys_directory_markmind_mapper",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.system.sys_directory_markmind_mapper",
+          "file": "directory_markmind_mapper.py",
+          "class_name": "DirectoryMarkmindMapperTool",
+          "entrypoint": "DirectoryMarkmindMapperTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "system",
+          "category": "system",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false,
+          "dependencies": [
+            "python_stdlib"
+          ]
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": false,
+          "moves_files": false,
+          "modifies_files": false,
+          "writes_generated_files": true,
+          "review_before_live": false
+        },
+        "paths": {
+          "source": "tools/system/sys_directory_markmind_mapper/directory_markmind_mapper.py",
+          "readme": "tools/system/sys_directory_markmind_mapper/README.md"
+        },
+        "outputs": [
+          "markdown",
+          "markmind_compatible_outline"
+        ]
+      },
+      "path": "tools/system/sys_directory_markmind_mapper",
+      "manifest_path": "tools/system/sys_directory_markmind_mapper/manifest.yaml"
+    },
+    {
+      "plugin_id": "system.housekeeping.console",
+      "tool_id": "system.housekeeping.console",
+      "name": "Housekeeping Console",
+      "category": "system",
+      "description": "Opens the QiLabs Housekeeping Console and gives quick access to plans, reports, summaries, logs, and manifests.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [],
+      "entry": {
+        "type": "plugin_v2",
+        "target": "housekeeping_console.py",
+        "class_name": "QiPlugin",
+        "working_dir": ".",
+        "open_console": false
+      },
+      "actions": [],
+      "raw": {
+        "plugin_id": "system.housekeeping.console",
+        "tool_id": "system.housekeeping.console",
+        "name": "Housekeeping Console",
+        "category": "system",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Opens the QiLabs Housekeeping Console and gives quick access to plans, reports, summaries, logs, and manifests.",
+        "tags": [
+          "toolbox",
+          "system",
+          "housekeeping",
+          "cleanup"
+        ],
+        "entry": {
+          "type": "plugin_v2",
+          "target": "housekeeping_console.py",
+          "class_name": "QiPlugin",
+          "working_dir": ".",
+          "open_console": false
+        },
+        "launch": {
+          "type": "python",
+          "target": "housekeeping_console.py",
+          "working_dir": ".",
+          "open_console": false
+        },
+        "module": {
+          "package": "tools.system.housekeeping_console",
+          "file": "housekeeping_console.py",
+          "class_name": "HousekeepingConsoleTool",
+          "entrypoint": "HousekeepingConsoleTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "system",
+          "category": "system",
+          "launch_surface": [
+            "QiLabs Toolbox"
+          ],
+          "requires_target_directory": false
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": false,
+          "supports_live_run": true,
+          "deletes_files": false,
+          "moves_files": false,
+          "modifies_files": false,
+          "review_before_live": false
+        },
+        "paths": {
+          "source": "tools/system/housekeeping_console/housekeeping_console.py",
+          "readme": "tools/system/housekeeping_console/README.md"
+        }
+      },
+      "path": "tools/system/housekeeping_console",
+      "manifest_path": "tools/system/housekeeping_console/manifest.yaml"
+    },
+    {
+      "plugin_id": "system.plugin_host_demo",
+      "tool_id": "system.plugin_host_demo",
+      "name": "Plugin Host Demo",
+      "category": "system",
+      "description": "Demonstrates a native interactive QiPlugin v2 view.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [],
+      "entry": {
+        "type": "plugin_v2",
+        "target": "plugin_host_demo.py",
+        "class_name": "QiPlugin",
+        "working_dir": ".",
+        "open_console": false
+      },
+      "actions": [],
+      "raw": {
+        "plugin_id": "system.plugin_host_demo",
+        "tool_id": "system.plugin_host_demo",
+        "name": "Plugin Host Demo",
+        "category": "system",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Demonstrates a native interactive QiPlugin v2 view.",
+        "entry": {
+          "type": "plugin_v2",
+          "target": "plugin_host_demo.py",
+          "class_name": "QiPlugin"
+        },
+        "requirements": {}
+      },
+      "path": "tools/system/plugin_host_demo",
+      "manifest_path": "tools/system/plugin_host_demo/manifest.yaml"
+    },
+    {
+      "plugin_id": "system.qilabs.structure.checker",
+      "tool_id": "system.qilabs.structure.checker",
+      "name": "QiLabs Structure Checker",
+      "category": "system",
+      "description": "QiLabs Structure Checker tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "core",
+        "dataclasses"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "qilabs_structure_checker.py",
+        "class_name": "QiLabsStructureCheckerTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "system.qilabs.structure.checker",
+        "name": "QiLabs Structure Checker",
+        "category": "system",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "QiLabs Structure Checker tool.",
+        "tags": [
+          "toolbox",
+          "system",
+          "audit",
+          "structure",
+          "qilabs"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "qilabs_structure_checker.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.system.qilabs_structure_checker",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.system.qilabs_structure_checker",
+          "file": "qilabs_structure_checker.py",
+          "class_name": "QiLabsStructureCheckerTool",
+          "entrypoint": "QiLabsStructureCheckerTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "system",
+          "category": "system",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false,
+          "dependencies": [
+            "python_stdlib"
+          ]
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": false,
+          "moves_files": false,
+          "modifies_files": false,
+          "writes_generated_files": true,
+          "review_before_live": false
+        },
+        "paths": {
+          "source": "tools/system/qilabs_structure_checker/qilabs_structure_checker.py",
+          "readme": "tools/system/qilabs_structure_checker/README.md"
+        },
+        "outputs": [
+          "markdown",
+          "json",
+          "csv"
+        ]
+      },
+      "path": "tools/system/qilabs_structure_checker",
+      "manifest_path": "tools/system/qilabs_structure_checker/manifest.yaml"
+    },
+    {
+      "plugin_id": "system.remote.ssh",
+      "tool_id": "system.remote.ssh",
+      "name": "Remote Ssh",
+      "category": "system",
+      "description": "Remote Ssh tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [],
+      "entry": {
+        "type": "script",
+        "target": "remote_ssh.py",
+        "class_name": "",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "system.remote.ssh",
+        "name": "Remote Ssh",
+        "category": "system",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Remote Ssh tool.",
+        "tags": [
+          "toolbox",
+          "system",
+          "qione"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "remote_ssh.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.system.remote_ssh",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.system.remote_ssh",
+          "file": "remote_ssh.py",
+          "class_name": "UNKNOWN",
+          "entrypoint": "UNKNOWN"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "system",
+          "category": "system",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/system/remote_ssh/remote_ssh.py",
+          "readme": "tools/system/remote_ssh/README.md"
+        }
+      },
+      "path": "tools/system/remote_ssh",
+      "manifest_path": "tools/system/remote_ssh/manifest.yaml"
+    },
+    {
+      "plugin_id": "system.toolbox_manager",
+      "tool_id": "system.toolbox_manager",
+      "name": "Toolbox Manager",
+      "category": "system",
+      "description": "Dynamic QiLabs toolbox manager with validation, auto-fix, and tool creation.",
+      "version": "0.2.0",
+      "enabled": true,
+      "requirements": [],
+      "entry": {
+        "type": "script",
+        "target": "toolbox_manager.py",
+        "class_name": "",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "system.toolbox_manager",
+        "name": "Toolbox Manager",
+        "category": "system",
+        "version": "0.2.0",
+        "enabled": true,
+        "description": "Dynamic QiLabs toolbox manager with validation, auto-fix, and tool creation.",
+        "tags": [
+          "system",
+          "toolbox",
+          "manager"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "toolbox_manager.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {}
+      },
+      "path": "tools/system/toolbox_manager",
+      "manifest_path": "tools/system/toolbox_manager/manifest.yaml"
+    },
+    {
+      "plugin_id": "system.sys.docs.compiler",
+      "tool_id": "system.sys.docs.compiler",
+      "name": "Tree-Aware Docs Compiler",
+      "category": "system",
+      "description": "Tree-Aware Docs Compiler tool.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [
+        "contextlib",
+        "core",
+        "dataclasses",
+        "fnmatch",
+        "io"
+      ],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "sys_docs_compiler.py",
+        "class_name": "SysDocsCompilerTool",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "system.sys.docs.compiler",
+        "name": "Tree-Aware Docs Compiler",
+        "category": "system",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Tree-Aware Docs Compiler tool.",
+        "tags": [
+          "toolbox",
+          "system",
+          "docs",
+          "compiler",
+          "markdown"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "sys_docs_compiler.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "id": "toolbox.system.sys_docs_compiler",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.system.sys_docs_compiler",
+          "file": "sys_docs_compiler.py",
+          "class_name": "SysDocsCompilerTool",
+          "entrypoint": "SysDocsCompilerTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "system",
+          "category": "system",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false,
+          "dependencies": [
+            "python_stdlib"
+          ]
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": false,
+          "moves_files": false,
+          "modifies_files": true,
+          "writes_generated_files": true,
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/system/sys_docs_compiler/sys_docs_compiler.py",
+          "readme": "tools/system/sys_docs_compiler/README.md"
+        },
+        "outputs": [
+          "generated docs folder",
+          "build report json"
+        ]
+      },
+      "path": "tools/system/sys_docs_compiler",
+      "manifest_path": "tools/system/sys_docs_compiler/manifest.yaml"
+    },
+    {
+      "plugin_id": "system.bat.launcher",
+      "tool_id": "system.bat.launcher",
+      "name": "bat_launcher",
+      "category": "system",
+      "description": "Scans C:\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\QiLabs for .bat files and opens a searchable click-to-run menu for QiLabs mini-tools.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [],
+      "entry": {
+        "type": "script",
+        "target": "bat_launcher.py",
+        "class_name": "",
+        "working_dir": ".",
+        "open_console": true
+      },
+      "actions": [],
+      "raw": {
+        "tool_id": "system.bat.launcher",
+        "name": "bat_launcher",
+        "category": "system",
+        "version": "0.1.0",
+        "enabled": true,
+        "description": "Scans C:\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\QiLabs for .bat files and opens a searchable click-to-run menu for QiLabs mini-tools.",
+        "tags": [
+          "system",
+          "bat_launcher"
+        ],
+        "launch": {
+          "type": "python",
+          "target": "bat_launcher.py",
+          "working_dir": ".",
+          "open_console": true
+        },
+        "conflicts": {},
+        "schema_version": "1.0",
+        "display_name": "QiLabs BAT Launcher",
+        "type": "python_gui",
+        "entrypoint": "bat_launcher.py",
+        "launcher": "launch_bat_launcher.bat",
+        "scan_scope": "C:\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\QiLabs only",
+        "outputs": [
+          "bat_registry.json",
+          "logs/bat_launcher_runs.jsonl"
+        ],
+        "safety": {
+          "confirm_before_run": true,
+          "excludes_system_paths": true,
+          "warns_on_high_risk_patterns": true
+        }
+      },
+      "path": "tools/system/bat_launcher",
+      "manifest_path": "tools/system/bat_launcher/manifest.yaml"
+    }
+  ],
+  "findings": [
+    {
+      "severity": "WARNING",
+      "code": "missing_requirement",
+      "path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\beta\\notion_pipeline\\manifest.yaml",
+      "message": "Requirement may be missing: dlt",
+      "plugin_id": "beta.notion_pipeline",
+      "fixable": true
+    },
+    {
+      "severity": "WARNING",
+      "code": "missing_requirement",
+      "path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\beta\\notion_pipeline\\manifest.yaml",
+      "message": "Requirement may be missing: notion",
+      "plugin_id": "beta.notion_pipeline",
+      "fixable": true
+    },
+    {
+      "severity": "WARNING",
+      "code": "missing_requirement",
+      "path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\finance\\firefly_bills_importer\\manifest.yaml",
+      "message": "Requirement may be missing: requests",
+      "plugin_id": "finance.firefly.bills.importer",
+      "fixable": true
+    },
+    {
+      "severity": "WARNING",
+      "code": "missing_requirement",
+      "path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\finance\\tax_compiler\\manifest.yaml",
+      "message": "Requirement may be missing: pillow",
+      "plugin_id": "finance.tax.compiler",
+      "fixable": true
+    },
+    {
+      "severity": "WARNING",
+      "code": "missing_requirement",
+      "path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\finance\\tax_compiler\\manifest.yaml",
+      "message": "Requirement may be missing: pillow_heif",
+      "plugin_id": "finance.tax.compiler",
+      "fixable": true
+    },
+    {
+      "severity": "WARNING",
+      "code": "missing_requirement",
+      "path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\finance\\zai_ledger_importer\\manifest.yaml",
+      "message": "Requirement may be missing: requests",
+      "plugin_id": "finance.zai.ledger.importer",
+      "fixable": true
+    },
+    {
+      "severity": "WARNING",
+      "code": "missing_requirement",
+      "path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\organize\\vault_router\\manifest.yaml",
+      "message": "Requirement may be missing: Send2Trash",
+      "plugin_id": "organize.vault.router",
+      "fixable": true
+    },
+    {
+      "severity": "WARNING",
+      "code": "missing_requirement",
+      "path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\organize\\vault_router\\manifest.yaml",
+      "message": "Requirement may be missing: rapidfuzz",
+      "plugin_id": "organize.vault.router",
+      "fixable": true
+    },
+    {
+      "severity": "WARNING",
+      "code": "missing_requirement",
+      "path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\organize\\xlsx_tabs_to_csv\\manifest.yaml",
+      "message": "Requirement may be missing: openpyxl",
+      "plugin_id": "organize.xlsx.tabs.to.csv",
+      "fixable": true
+    }
+  ],
+  "errors": 0,
+  "warnings": 9
+}

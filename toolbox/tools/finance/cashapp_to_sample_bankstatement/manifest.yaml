@@ -1,27 +1,38 @@
-id: toolbox.cashapp_to_sample_bankstatement
+tool_id: finance.cashapp.to.sample.bankstatement
 name: Cashapp To Sample Bankstatement
+category: finance
+version: 0.1.0
+enabled: true
+description: Cashapp To Sample Bankstatement tool.
+tags:
+  - toolbox
+  - finance
+  - qione
+launch:
+  type: python
+  target: cashapp_to_sample_bankstatement.py
+  working_dir: .
+  open_console: true
+conflicts:
+id: toolbox.cashapp_to_sample_bankstatement
 type: toolbox_tool
 language: python
 status: active
 owner: QiLabs
-
 module:
   package: tools.cashapp_to_sample_bankstatement
   file: cashapp_to_sample_bankstatement.py
   class_name: UNKNOWN
   entrypoint: UNKNOWN
-
 toolbox:
   ui_enabled: true
   category: finance
   launch_surface:
     - QiOne Desktop Tools
   requires_target_directory: true
-
 runtime:
   requires_network: false
   requires_secrets: false
-
 safety:
   supports_dry_run: true
   supports_live_run: true
@@ -29,12 +40,6 @@ safety:
   moves_files: unknown
   modifies_files: unknown
   review_before_live: true
-
 paths:
   source: tools/cashapp_to_sample_bankstatement/cashapp_to_sample_bankstatement.py
   readme: tools/cashapp_to_sample_bankstatement/README.md
-
-tags:
-  - toolbox
-  - finance
-  - qione
