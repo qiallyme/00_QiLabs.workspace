@@ -1,10 +1,229 @@
 group,title,url,description,tags,priority,enabled
-Major Players,QiAccess,https://access.qially.com,Access/cockpit entry point for QiAlly/QiLabs workflows.,"qiaccess,cockpit,major",10,true
-Major Players,QiSaysIt,https://qsaysit.com,Public writing / posts / publishing surface.,"public,writing,site,major",20,true
-Major Players,QiAlly,https://qially.com,Primary QiAlly public/domain hub.,"qially,public,major",30,true
-Major Players,QiSpark / Cockpit placeholder,,Add the exact QiSpark or cockpit URL here once finalized.,"qispark,cockpit,placeholder",40,false
-Local Toolbox,Toolbox Folder,file:///C:/QiLabs/00_QiLabs.workspace/toolbox,Local toolbox root folder.,"local,toolbox,folder",10,true
-Local Toolbox,QiLabs Root,file:///C:/QiLabs,Local QiLabs root folder.,"local,qilabs,folder",20,true
-Docs / Static,QiSpark Static Site placeholder,,Add the final static QiSpark URL here.,"qispark,docs,placeholder",10,false
-Admin,Supabase Dashboard placeholder,,Paste project dashboard URL if you want it here.,"supabase,admin,placeholder",10,false
-Admin,Cloudflare Dashboard placeholder,,Paste Cloudflare dashboard URL if you want it here.,"cloudflare,admin,placeholder",20,false
+Home,QiStart,https://qiserver-1.cerberus-sirius.ts.net/,,,1,true
+Home,HOMIES · Splitwise,https://secure.splitwise.com/#/groups/94649336,,,2,true
+Start,Installation — SchemaSpy 6.0.0 documentation,https://schemaspy.readthedocs.io/en/latest/installation.html,,,3,true
+Start,(9+) Projects y Tasks | Notion,https://www.notion.so/qially/Projects-y-Tasks-2d2f84a0440282cdbda88153f418c692,,,4,true
+Start,(500) How to ADHD - YouTube,https://www.youtube.com/@HowtoADHD,,,5,true
+Start,Podcast Recommendations: Top 25 ADHD Webinars & Podcast Episodes,https://www.additudemag.com/slideshows/adhd-podcast-recommendations/,,,6,true
+Start,ADHD Blog | JotBud,https://jotbud.com/blog,,,7,true
+Start,CHADD - Improving the lives of people affected by ADHD,https://chadd.org/,,,8,true
+Start,"ADDitude - ADD & ADHD Symptom Tests, Signs, Treatment, Support",https://www.additudemag.com/,,,9,true
+Start,Home - ADHD Foundation : ADHD Foundation,https://www.adhdfoundation.org.uk/,,,10,true
+Start,Through My Eyes,https://www.understood.org/en/through-my-eyes#tme_header,,,11,true
+Start,ADHD reWired,https://www.adhdrewired.com/,,,12,true
+Start,Podcast — Hacking Your ADHD,https://www.hackingyouradhd.com/podcast,,,13,true
+Start,"Emotional Dysregulation with ADHD: DESR Signs, Treatments",https://www.additudemag.com/webinar/emotional-dysregulation-adhd-desr-barkley-podcast-369/,,,14,true
+Start,"Podcast 424: Time Blindness Help for Adults, Children with ADHD",https://www.additudemag.com/webinar/time-blindness-adhd-productivity-management/,,,15,true
+Start,Wasting Time? Hyperfocusing? ADHD and Time Perception Problems,https://www.additudemag.com/wasting-time-adhd-and-time-perception/,,,16,true
+Start,What Is Autism Spectrum Disorder? Signs & Symptoms,https://www.additudemag.com/category/adhd-add/related-conditions/autism-spectrum-disorder/,,,17,true
+Start,Episode #404: There’s No Rush: Getting Out of Fight-or-Flight with Jenna Free - I Have ADHD,https://ihaveadhd.com/episode-404-theres-no-rush-getting-out-of-fight-or-flight-with-jenna-free/,,,18,true
+Start,TurboScribe: Transcribe Audio and Video to Text,https://turboscribe.ai/,,,19,true
+Start,Releases · will-be-done/will-be-done,https://github.com/will-be-done/will-be-done/releases,,,20,true
+Creative,Sign in to Substack,https://substack.com/sign-in,,,21,true
+Creative,Just a moment...,https://www.patreon.com/login?ru=%2Fcw%2FPatreonforCreators,,,22,true
+Money,QuickBooks Online Login: Sign in to Access Your QuickBooks Account,https://accounts.intuit.com/app/sign-in?app_group=QBO&asset_alias=Intuit.accounting.core.qbowebapp&app_environment=prod,,,23,true
+Money,Cash App,https://cash.app/account/activity,,,24,true
+Money,Cash App,https://cash.app/app/CPHCQDD,,,25,true
+Money,Login Page,https://pay.aronarents.com/login,,,26,true
+Money,Connect to your bank - SimpleFIN Bridge,https://beta-bridge.simplefin.org/,,,27,true
+Money,Open Knowledge Graphs,https://openknowledgegraphs.com/?tab=software&category=finance-business,,,28,true
+Infra,Settings | Supabase,https://supabase.com/dashboard/project/leepylsfyoxuiltawnse/settings/api-keys,,,29,true
+Infra,Squarespace Domains,https://account.squarespace.com/domains,,,30,true
+Infra,Cloudflare Dashboard | Manage Your Account,https://dash.cloudflare.com/6c0d95a612e676663f8c1461a6c88bad/workers-and-pages,,,31,true
+Infra,Dashboard - QiArchive-ngx,https://paperless-ngx-production-feda.up.railway.app/dashboard,,,32,true
+Infra,Your Repositories,https://github.com/qiallyme?tab=repositories,,,33,true
+Infra,MCP Servers,https://mcp.so/servers?page=2,,,34,true
+Infra,"Installation | ezBookkeeping - a open source, lightweight, self-hosted personal finance app",https://ezbookkeeping.mayswind.net/installation/,,,35,true
+Infra,wiki | Folders | Assets (DAM) | Cloudinary,https://console.cloudinary.com/app/c-30c908fc28347b9fffec35d6b39d6b/assets/media_library/folders/cf05582dcf09134a6d7a49dbe43f998b74?view_mode=mosaic,,,36,true
+Infra,Vite + React + TS,https://journal.qially.com/,,,37,true
+Infra,General | Homebox,https://homebox.software/en/quick-start/configure/,,,38,true
+Infra,MyChart - Login Page,https://www.viewmychart.com/mychart/Authentication/Login,,,39,true
+Legal,Pro-Se Litigation Archives - ProAdvocate Group PMA,https://www.proadvocate.org/category/pro-se-litigation/,,,40,true
+Legal,"4-018222 - Circuit and Superior Courts of Marion County, Indiana",https://marioncounty-in.trxchange.net/index.php?route=account/order/info&order_id=61325,,,41,true
+Legal,Self Representation AI - Represent Yourself in Court | Litigation Operating System,https://selfrepresentationai.com/cases/2,,,42,true
+Legal,complaint.mycreditunion.gov,https://complaint.mycreditunion.gov/Complaint/createcasev2,,,43,true
+Legal,qiallyme/Case_FCFCU,https://github.com/qiallyme/Case_FCFCU,,,44,true
+Legal,ProSeAI - Firebase Studio,https://studio.firebase.google.com/studio-2548334848,,,45,true
+Legal,Sign Up | OpenEvidence,https://auth.openevidence.com/u/signup/identifier?state=hKFo2SBpMkVqQks0U2k4T0prNFRRaXRZZExHWWpac3ltcU9vdqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIDVhR1hINVBXeW5LQ2M5REt0dE9iOE1OZ0lxQUZKMGt6o2NpZNkgYkFTZEZ6Z01rQ2s4czlvN0p2TFVzY29zUEFwRFFidnk,,,46,true
+Legal,"Experian: Credit Report, FICO® Score & Financial Tools",https://www.experian.com/,,,47,true
+Legal,Per Diem Calculator 2026 | Calculate Per Diem Allowance - Zoho Expense,https://www.zoho.com/us/expense/per-diem-calculator/?src=expense-header,,,48,true
+Legal,Cody Home Center | Start Here,https://qios-v1-sites-cody-home-center.pages.dev/,,,49,true
+Legal,Qi Cockpit | Command Surface,https://cockpit-qially-me.pages.dev/,,,50,true
+Legal,fcfcu-ops,https://railway.com/project/b486dc2e-20fb-487c-ae2e-780a0282d9ac?environmentId=dc04c2bd-9c65-493f-9cb9-23a0a1a5f787,,,51,true
+Legal,Self Representation AI - Represent Yourself in Court | Litigation Operating System,https://selfrepresentationai.com/cases/2/notifications,,,52,true
+Legal,The Open-Source Toolkit for Building AI Agents v2,https://www.aitidbits.ai/p/open-source-agents-updated,,,53,true
+Legal,USCIS Case Tracker — Free Privacy-Focused Immigration Case Status API Tracker,http://casetracker.xyz/,,,54,true
+Legal,Matter Workflows - Settings | DocketWise,https://app.docketwise.com/matter_types,,,55,true
+Infra,Overview,https://directus.com/docs/getting-started/overview,,,56,true
+Gov,Welcome Cody!,https://ihcda.rhsconnect.com/portal?ApplicationGUID=113fab93-ac51-42ee-92aa-d2b92426aed3,,,57,true
+Gov,NCUA,https://ncua.gov/,,,58,true
+Gov,Login,https://portal.consumerfinance.gov/consumer/s/login/?ec=302&startURL=%2Fconsumer%2Fs%2F,,,59,true
+Gov,Self-Hosted | Homechart,https://homechart.app/docs/guides/get-homechart/self-hosted/,,,60,true
+IRS,Serve your clients | Internal Revenue Service,https://www.irs.gov/tax-professionals/serve-your-clients,,,61,true
+IRS,Outreach Connection for individuals | Internal Revenue Service,https://www.irs.gov/newsroom/outreach-connection-for-individuals,,,62,true
+IRS,Outreach Connection for businesses | Internal Revenue Service,https://www.irs.gov/newsroom/outreach-connection-for-businesses,,,63,true
+IRS,Outreach Connection for tax-exempt entities | Internal Revenue Service,https://www.irs.gov/newsroom/outreach-connection-for-tax-exempt-entities,,,64,true
+IRS,Tax pro news and resources | Internal Revenue Service,https://www.irs.gov/tax-professionals/tax-pro-news-and-resources,,,65,true
+IRS,SOFTWARE,https://ultimatetax.customerhub.net/software-info,,,66,true
+file_renamer,"AI File Renamer - Rename PDFs, Photos & Documents | Renamer.ai",https://renamer.ai/app,,,67,true
+Bots,Grok,https://grok.com/,,,68,true
+Bots,ChatGPT - QiOne,https://chatgpt.com/g/g-p-690d8b26955881919486fcd27dd20342-qione/project,,,69,true
+Bots,Google Gemini,https://gemini.google.com/app,,,70,true
+Bots,Tool Selection for Projects,https://chatgpt.com/c/6970bb2f-0ef0-8326-86f2-bc0bbc1b4bee,,,71,true
+RAG,Quickstart - Mem0,https://docs.mem0.ai/platform/quickstart,,,72,true
+Tools,Sovereign Computing | Start9,https://start9.com/,,,73,true
+Tools,Prompts | prompts.chat,https://prompts.chat/prompts?q=therapy%2Cmental%2Ccounseling%2Cwellness%2Csupport&ai=1,,,74,true
+Tools,WriteABookAI - The AI-Native Book Writing Platform,https://writeabookai.com/,,,75,true
+Tools,"v0 by Vercel - Build Agents, Apps, and Websites with AI",https://v0.app/,,,76,true
+Tools,Find your Template,https://vercel.com/templates,,,77,true
+Tools,Khoj AI,https://app.khoj.dev/home,,,78,true
+Tools,Nuerodivergence In the Age of AI | ReportGPT,https://reportgpt.app/reports/edit/30961d3f-8655-4b46-b3bc-5706202a9d8b,,,79,true
+Tools,Claude,https://claude.ai/settings/account,,,80,true
+Tools,Perplexity,https://www.perplexity.ai/platforms,,,81,true
+Tools,Builder | Activepieces,https://activepieces-production-1488.up.railway.app/projects/GT1BktLfY4EOaT5owTYT6/flows/zirMtZFMQDbQs9PkZL0SL?newFlow=true,,,82,true
+Tools,Open Knowledge Graphs,https://openknowledgegraphs.com/,,,83,true
+Tools,Active QR Codes | Dashboard,https://qr.io/dashboard/,,,84,true
+Tools,ChatGPT,https://chatgpt.com/c/69bdd4df-ad44-832d-a8d8-a12efbb0bdaf,,,85,true
+Tools,Create Interactive Presentations (Request a demo),https://www.tiled.co/lp/create-interactive-presentations-2?utm_feeditemid=&utm_device=c&utm_term=interactive%20presentations&utm_source=google&utm_medium=ppc&utm_campaign=OT+%7C+Search+%7C+Microapps&hsa_cam=20741851398&hsa_grp=154731514225&hsa_mt=b&hsa_ad=679684724532&hsa_acc=1741314237&hsa_net=adwords&hsa_kw=interactive%20presentations&hsa_tgt=kwd-347384077336&hsa_ver=3&gad_source=1&gad_campaignid=20741851398&gbraid=0AAAAADRF31D4XBPRodbJdzJoSBXSXnUGV&gclid=Cj0KCQjw4PPNBhD8ARIsAMo-icyXQtgqKyc5pBsQzRO9GQsjMnJaweKFWgYGaG0zwkO8Ufo4UodWcvUaAjpZEALw_wcB,,,86,true
+Tools,Fully Managed Graph Database Service | Neo4j AuraDB,https://neo4j.com/product/auradb/,,,87,true
+Tools,Postgres re-engineered for B2B apps,https://www.thenile.dev/,,,88,true
+Tools,No-code online spreadsheet and databases for work | Stackby,https://stackby.com/,,,89,true
+Tools,Ilograph Interactive System Architecture Diagrams,https://www.ilograph.com/,,,90,true
+Tools,Kumu,https://kumu.io/,,,91,true
+Tools,"qdrant/qdrant: Qdrant - High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of AI. Also available in the cloud https://cloud.qdrant.io/",https://github.com/qdrant/qdrant,,,92,true
+Tools,Eleventy is a simpler static site generator,https://www.11ty.dev/,,,93,true
+Tools,react-static/react-static · Discussions · GitHub,https://github.com/react-static/react-static/discussions,,,94,true
+Tools,"iamgio/quarkdown: 🪐 Markdown with superpowers: from ideas to papers, presentations, websites, books, and knowledge bases.",https://github.com/iamgio/quarkdown,,,95,true
+Tools,Liam ERD,https://liambx.com/,,,96,true
+Tools,Zavu - Platform,https://dashboard.zavu.dev/?_gl=1*11s4ugl*_gcl_au*MTQ5ODMyNjA4NS4xNzc1MzcwNDYw,,,97,true
+Tools,Sure,https://app.sure.am/sessions/new,,,98,true
+Readers,Barcode Reader. Free Online Web Application,https://online-barcode-reader.inliteresearch.com/,,,99,true
+Docs,XWiki - The Advanced Open Source Enterprise and Application Wiki (XWiki.org),https://www.xwiki.org/xwiki/bin/view/Main/WebHome,,,100,true
+Docs,WikiSuite | Software,https://wikisuite.org/Software,,,101,true
+Docs,Docker - Bigcapital Docs,https://docs.bigcapital.app/deployment/docker,,,102,true
+Docs,Quarkdown | Markdown with superpowers,https://quarkdown.com/,,,103,true
+Docs,Editor - Slides,https://designmodo.com/slides/app/website/bG2AkimW/pages/,,,104,true
+Docs,Mindmup,https://app3.mindmup.com/map/?id=89c5da70-bff6-494c-8770-cef90d443a76,,,105,true
+Docs,Ilograph's Serverless Architecture - Ilograph,https://app.ilograph.com/demo.ilograph.Ilograph/Request,,,106,true
+Docs,ReportGPT | Success,https://reportgpt.app/auth/sign-up/success,,,107,true
+Docs,sickn33/opendataloader-pdf: PDF Parser for AI-ready data. Automate PDF accessibility. Open-source.,https://github.com/sickn33/opendataloader-pdf,,,108,true
+Docs,Binder,https://mybinder.org/,,,109,true
+Docs,Tour,https://kumu.io/tour,,,110,true
+Docs,"HeyForm: Open source form builder, built for small business success",https://heyform.net/,,,111,true
+Docs,Library | Notion,https://www.notion.so/qially/library/recents,,,112,true
+Docs,Home | Notion,https://www.notion.so/qially/8e1c083e0ca4477f8641602e53b0f1cb,,,113,true
+Docs,flipbook · GitHub Topics,https://github.com/topics/flipbook?l=javascript,,,114,true
+Docs,Upload Book | FlipHTML5,https://fliphtml5.com/edit-book/upload?lang=en,,,115,true
+Docs,IC-Income-Statement-8552.xlsx - Google Sheets,https://docs.google.com/spreadsheets/d/1gyPQVwVytmRI-mMoMyHn0qtWIhTTJDX4/edit?gid=2095215255#gid=2095215255,,,116,true
+Docs,MMD9703_Mejias-Martinez_Damyelo_Business_Sheets - Google Sheets,https://docs.google.com/spreadsheets/d/1qi60i-BkdIkiwftJlKJDQacvLFSR-ClmgkYNQY0g064/edit?gid=584374955#gid=584374955,,,117,true
+Docs,_Sheets - Google Drive,https://drive.google.com/drive/folders/1tg8-wHMv7RsyJZ73zq7tfGewk7V6mgy9,,,118,true
+Docs,Qi_Client_Code_Registry - Google Sheets,https://docs.google.com/spreadsheets/d/1jbTOSW-EYHH5tZcX73FliI56xBjuK7dUKcOmJqbI8nM/edit?gid=0#gid=0,,,119,true
+Docs,Free Stock Images & Videos ~ AllTheFreeStock.com,https://allthefreestock.com/,,,120,true
+Docs,Mindmup,https://www.mindmup.com/,,,121,true
+Docs,DocuSeal | Open Source Document Signing,https://www.docuseal.com/,,,122,true
+Docs,markmap,https://markmap.js.org/,,,123,true
+Projects,The Lounge,https://thelounge.chat/,,,124,true
+Projects,TeamMapper,https://www.teammapper.org/,,,125,true
+Projects,Projects – Michael Staake,https://michaelstaake.com/projects/,,,126,true
+Projects,"Vikunja: The open-source, self-hostable to-do app",https://vikunja.io/,,,127,true
+Projects,New Diagram - Ilograph,https://app.ilograph.com/new/Dependency,,,128,true
+CMS,"ontola/atomic-server: An open source headless CMS / real-time database. Powerful table editor, full-text search, and SDKs for JS / React / Svelte.",https://github.com/ontola/atomic-server,,,129,true
+CMS,"fastenhealth/fasten-onprem: Fasten is an open-source, self-hosted, personal/family electronic medical record manager",https://github.com/fastenhealth/fasten-onprem/,,,130,true
+CMS,Notion to PostgreSQL: Load data with the dlt python library | dlt Docs,https://dlthub.com/docs/pipelines/notion/load-data-with-python-from-notion-to-postgres#0-prerequisites,,,131,true
+Time,Kimai - Open Source time-tracker,https://www.kimai.org/,,,132,true
+Time,solidtime - The Modern Open Source Timetracker,https://www.solidtime.io/,,,133,true
+Time,"TimeTagger - Tag your time, get the insight",https://timetagger.app/,,,134,true
+Social,Linkthread,https://linkthread.zoho.com/socialbio/setup,,,135,true
+Social,Log in to X / X,https://x.com/i/flow/login?redirect_after_login=%2Fi%2Foauth2%2Fauthorize%3Fresponse_type%3Dcode%26client_id%3DV3NubFR4MTR6S0RjenkwZjBfOWI6MTpjaQ%26state%3DeyJ0b2tlbiI6IlRUOFZ1eGhzZnF1RUd0Z2JRblcyRWciLCJtZXRhZGF0YSI6eyJwcm9tcHRPbkR1cGxpY2F0ZUVtYWlsIjoidHJ1ZSIsImludGVudGlvbiI6InNpZ24taW4ifX0%26code_challenge%3DeYs-E83gflSD3PpUw-fcXb_hFjI7XOtPmF8nPzAHJt0%26code_challenge_method%3DS256%26redirect_uri%3Dhttps%253A%252F%252Faccounts.x.ai%252Fexchange-token%252F%26scope%3Dtweet.read%2Busers.read%2Busers.email%2Boffline.access,,,136,true
+Online,qially.com Sitemap Details - XML Sitemaps Generator,https://www.xml-sitemaps.com/details-qially.com-eea2d9b99.html,,,137,true
+Online,Notification Infrastructure Pricing - Engagespot,https://engagespot.co/pricing,,,138,true
+Online,Karbon Sites | AI Website Generator,https://sites.softbridgelabs.in/,,,139,true
+Tools,"Open Source ERP: accounting, invoicing and more | LedgerSMB",https://ledgersmb.org/content/open-source-erp-accounting-invoicing-and-more,,,140,true
+Tax,TaxAct Professional Pay-Per-Return Editions,https://www.taxact.com/professional/products/federal-taxes/yr/%5B%5BCurrentProfessionalTaxYear_1%5D%5D,,,141,true
+Tools,pdf.net: Professional All‑In‑One Online PDF Editor.,https://pdf.net/?afid=gdnuss&utm_source=google&utm_medium=cpc&utm_campaign=21929692730&utm_term=pdf&gad_source=1&gad_campaignid=21929692730&gbraid=0AAAAA-VgBDukMq-Uqt23r94nZk6vySf2w&gclid=Cj0KCQjwk_bPBhDXARIsACiq8R16b_d8AAzAcSruOYSz7EFIBmdSCjibkt9gdRaa3_vb8M8VAzTNi9IaAl1bEALw_wcB,,,142,true
+Tools,Open Source Tools | Free Law Project | Making the legal ecosystem more equitable and competitive.,https://free.law/open-source-tools/,,,143,true
+Bookmarks bar,QiOS Master Blueprint v0.4 - QiOS Master Blueprint,https://qiallyme.github.io/QiOS_Master_Blueprint_v0.4/,,,144,true
+Bookmarks bar,Life Timeline | Interactive Journey,https://qitimeline.pages.dev/,,,145,true
+Bookmarks bar,Claim Search Page,https://www.indianaunclaimed.gov/app/claim-search,,,146,true
+Bookmarks bar,Self-Hosted Knowledge Graph with Neo4J and Appsmith | Appsmith Community Portal,https://community.appsmith.com/tutorial/self-hosted-knowledge-graph-neo4j-and-appsmith,,,147,true
+Bookmarks bar,awesome-selfhosted,https://awesome-selfhosted.net/index.html,,,148,true
+Bookmarks bar,Family Wall - Your Family Private Space,https://www.familywall.com/home.php,,,149,true
+Bookmarks bar,Overview - qiadmin@qiserver,https://100.121.111.106:9090/system,,,150,true
+Bookmarks bar,Family Wall - Your Family Private Space,https://www.familywall.com/document.php?metaId=folder/23129543_3256739,,,151,true
+Bookmarks bar,Vaults | Bitwarden Web vault,https://vault.bitwarden.com/#/vault?organizationId=unassigned&folderId=unassigned,,,152,true
+Bookmarks bar,The Homelab Wiki,https://thehomelab.wiki/,,,153,true
+Bookmarks bar,Wiki.js,https://js.wiki/,,,154,true
+Bookmarks bar,Getting Started | flowctl,https://flowctl.net/docs/,,,155,true
+Bookmarks bar,www.cargurus.com,https://www.cargurus.com/Cars/finance?px8324=p2&cp=21222466034&gad_source=1&gad_campaignid=21222466034&gbraid=0AAAAAD9Jm5Z6Zm0dYNXxvl5IonKIzgrg7&gclid=CjwKCAjwwdbPBhBgEiwAxBRA4c9UEbTnOHDLCBF6IXT6ievD2zAtOHeNkg_eJlBg2bqsKTxjbsvXPxoCSWgQAvD_BwE,,,156,true
+Bookmarks bar,Complete Car Loans – Get The Car & Financing You Deserve,https://stevefaulkner.completecarloans.com/?adset=bhph&source=google&utm_term=buy%20here%20pay%20here&utm_campaign&utm_source=adwords&utm_medium=ppc&hsa_acc=2515868243&hsa_cam=18395723705&hsa_grp=159423653037&hsa_ad=692169091100&hsa_src=g&hsa_tgt=kwd-27962443&hsa_kw=buy%20here%20pay%20here&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=18395723705&gbraid=0AAAAAoX4xZGqDFwg2Ju0EefrUIHbY4r2p&gclid=CjwKCAjwwdbPBhBgEiwAxBRA4T-4H_80SXCj810Yz3pj7xWhqYy0T4fvtwKY2NxPL-IFFYQsfA1CdxoCmFQQAvD_BwE,,,157,true
+Bookmarks bar,Get Pre-Qualified Auto Loans | CarZing,https://www.carzing.com/get-financed?utm_source=google&utm_medium=cpc&utm_campaign=10954100112&utm_content=459638047379&utm_term=second%20chance%20car%20loans&gad_source=1&gad_campaignid=10954100112&gbraid=0AAAAADL6d39svya3yMLExIkI-tRlizYMS&gclid=CjwKCAjwwdbPBhBgEiwAxBRA4QNgrsxjhbAmViUfbL46gTG4Zz1uGU2e7lqdqZuid7jfFApT_hqBHxoC7pwQAvD_BwE,,,158,true
+Bookmarks bar,Finance Your Next Vehicle Purchase | Carvana,https://www.carvana.com/financing?utm_source=google&utm_medium=sem_nb&utm_campaign=22549307684&utm_content=182322794631&utm_target=kwd-10209651&utm_creative=752559403679&utm_device=c&utm_adposition=&utm_location=9016677&gad_source=1&gad_campaignid=22549307684&gbraid=0AAAAADdUw5o2WiqeLpAOpV34LJr8seG5Q&gclid=CjwKCAjwwdbPBhBgEiwAxBRA4Q8DPatO1lvcWV7B8KipZy8bDFDp55aog_kx60X6BnpIvTtmB0qW_hoCIZUQAvD_BwE,,,159,true
+Bookmarks bar,Supabase Auth Email Designer - Supa Tools,https://www.supa-tools.com/auth-emails/template/mfa_method_removed,,,160,true
+Bookmarks bar,Get Started Self-Hosting,https://noted.lol/get-started-self-hosting/,,,161,true
+Bookmarks bar,Safelite,https://www.safelite.com/fmg/vehicle,,,162,true
+Bookmarks bar,What is Open Notebook? | Open Notebook,https://www.open-notebook.ai/,,,163,true
+Bookmarks bar,OpenProject Community,https://community.openproject.org/,,,164,true
+Bookmarks bar,ChatGPT - QiOne_Mono_Repo,https://chatgpt.com/g/g-p-699d13d2e86c819184a5d7cd01119eec-qione-mono-repo/c/69fdb9df-055c-83ea-8801-efa91ac5c89e,,,165,true
+New folder,Survival Funds Exchange with Lisa (Mom) - NotebookLM,https://notebooklm.google.com/notebook/267f9e70-e8ba-4c50-950b-f06e8036b1ee,,,166,true
+New folder,qisupabase | QiLabs | Supabase,https://supabase.com/dashboard/project/emnskvvajdlqixwzjfsm,,,167,true
+New folder,AFFiNE — Open-Source Knowledge Base Software,https://affine.pro/,,,168,true
+New folder,8 Best Connected Notes Apps (2026): Linked Note-Taking,https://www.atlasworkspace.ai/blog/connected-notes-apps,,,169,true
+New folder,Personal Life and Productivity,https://littlebird.ai/use-cases/personal-and-productivity?_gl=1*2bcvi0*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjwrs7RBhDuARIsAIVfBD0eJsZezEBAe7Vh0vs_ry8BIY1EF8NrD-s-gTTE-eP70J3iNeE9Ml8aAqZ3EALw_wcB&gbraid=0AAAAA_oxgmbuqGgjJtmDpBJKRTGLzF9eI,,,170,true
+New folder,"usememos/memos: Open-source, self-hosted note-taking tool built for quick capture. Markdown-native, lightweight, and fully yours.",https://github.com/usememos/memos,,,171,true
+New folder,"Memos - Open-Source, Self-Hosted Note-Taking App",https://usememos.com/,,,172,true
+New folder,Joplin,https://joplinapp.org/,,,173,true
+New folder,Hosting Outline - Outline,https://docs.getoutline.com/s/hosting,,,174,true
+New folder,Standard Notes | End-To-End Encrypted Notes App,https://standardnotes.com/,,,175,true
+New folder,docmost/docmost: Docmost is an open-source collaborative wiki and documentation software. It is an open-source alternative to Confluence and Notion.,https://github.com/docmost/docmost,,,176,true
+New folder,"blinkospace/blinko: An open-source, self-hosted personal AI note tool prioritizing privacy, built using TypeScript .",https://github.com/blinkospace/blinko,,,177,true
+notes,Accounts | Finzytrack,https://docs.finzytrack.com/views/accounts/,,,178,true
+notes,Getting Started - Memos,https://usememos.com/docs/getting-started,,,179,true
+notes,Home - Docs by LangChain,https://docs.langchain.com/,,,180,true
+notes,langchain-ai/langgraph: Build resilient agents.,https://github.com/langchain-ai/langgraph,,,181,true
+notes,OwnPilot — Privacy-First Personal AI Assistant,https://ownpilot.dev/#/#features,,,182,true
+notes,"ownpilot/OwnPilot: Privacy-first personal AI assistant platform with autonomous agents, tool orchestration, and multi-provider support.",https://github.com/ownpilot/ownpilot,,,183,true
+notes,Material UI: React components that implement Material Design,https://mui.com/material-ui/,,,184,true
+notes,Qwen Code overview | Qwen Code Docs,https://qwenlm.github.io/qwen-code-docs/en/users/overview/,,,185,true
+notes,QwenLM/qwen-code: An open-source AI coding agent that lives in your terminal.,https://github.com/QwenLM/qwen-code,,,186,true
+notes,kenlasko/monize: My unabashedly vibe-coded Microsoft Money/Quicken replacement,https://github.com/kenlasko/monize,,,187,true
+notes,Free for Developers,https://free-for.dev/#/,,,188,true
+notes,Spliit · Share Expenses with Friends & Family,https://spliit.app/,,,189,true
+notes,Vanna 2.0 – Build Agents Your Users Can Actually Use,https://vanna.ai/,,,190,true
+notes,Python Quickstart (Local) | MCP Toolbox for Databases,https://mcp-toolbox.dev/documentation/getting-started/local_quickstart/,,,191,true
+notes,Apache SeaTunnel | Apache SeaTunnel,https://seatunnel.apache.org/,,,192,true
+notes,World Monitor - Real-Time Global Intelligence Dashboard,https://www.worldmonitor.app/dashboard?ref=welcome-hero,,,193,true
+notes,OpenHuman — TinyHumans,https://tinyhumans.ai/openhuman,,,194,true
+notes,RustDesk Server OSS – RustDesk Documentation,https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/,,,195,true
+notes,Quick Install | DB-GPT,http://docs.dbgpt.cn/docs/installation/quick-install,,,196,true
+notes,Documentation - Vanna AI,https://vanna.ai/docs,,,197,true
+notes,DB Browser for SQLite,https://sqlitebrowser.org/,,,198,true
+notes,Project Members | Infisical,https://app.infisical.com/organizations/3bf76306-b513-42db-80e5-df605aaf4ad9/projects,,,199,true
+notes,Self-hosted cloud collaboration platform for home users - Nextcloud,https://nextcloud.com/home-users/,,,200,true
+notes,Instances | Neo4j Aura,https://console.neo4j.io/projects/8101984e-cf45-4549-b9ef-4bebef4a40aa/instances,,,201,true
+notes,Dashboards | Neo4j Aura,https://console.neo4j.io/projects/8101984e-cf45-4549-b9ef-4bebef4a40aa/tools/dashboards,,,202,true
+notes,qially - Wiki,https://app.plane.so/qially/wiki/,,,203,true
+notes,CaseBySelf,https://selfrepresentationai.com/,,,204,true
+notes,My Loans - Account Details,https://nelnet.studentaid.gov/loan-details,,,205,true
+notes,Download OpenYak — Free open-source desktop AI agent,https://open-yak.com/download/,,,206,true
+notes,ZeroClaw — Private AI Assistant | ZeroClaw,https://www.zeroclawlabs.ai/,,,207,true
+notes,Install · OpenAgent,https://www.openagentai.org/docs/install,,,208,true
+notes,Shop | JAM Software,https://customers.jam-software.de/downloadTrialProcess.php?article_no=80&,,,209,true
+notes,DigitalOcean App Platform,https://cloud.digitalocean.com/apps?i=1f4065,,,210,true
+notes,ElevenAgents | ElevenLabs,https://elevenlabs.io/app/agents/agents/agent_1901kw7gpj0sfcctqt4z1nrkp34n?tab=widget&branchId=agtbrch_5801kw7gpj0tfdsadgpnyrz94jer,,,211,true
+New folder,QiOS DNA,https://dna.qially.com/#01-qidna,,,212,true
+New folder,NotebookLM,https://notebooklm.google.com/notebook/1c5ab874-929b-4ae5-9874-8934f6b5788d,,,213,true
+New folder,QiOS DNA,https://dna.qially.com/#50-qinexus-02-timeline-index,,,214,true
+New folder,Getting Started | Starlight,https://starlight.astro.build/getting-started/,,,215,true
+New folder,"thuliteio/doks: Everything you need to build a stellar documentation website. Fast, accessible, and easy to use.",https://github.com/thuliteio/doks,,,216,true
+New folder,Survival Funds Exchange with Lisa (Mom) - NotebookLM,https://notebooklm.google.com/notebook/267f9e70-e8ba-4c50-950b-f06e8036b1ee,,,217,true
+New folder,qisupabase | QiLabs | Supabase,https://supabase.com/dashboard/project/emnskvvajdlqixwzjfsm,,,218,true
+New folder,AFFiNE — Open-Source Knowledge Base Software,https://affine.pro/,,,219,true
+New folder,8 Best Connected Notes Apps (2026): Linked Note-Taking,https://www.atlasworkspace.ai/blog/connected-notes-apps,,,220,true
+New folder,Personal Life and Productivity,https://littlebird.ai/use-cases/personal-and-productivity?_gl=1*2bcvi0*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjwrs7RBhDuARIsAIVfBD0eJsZezEBAe7Vh0vs_ry8BIY1EF8NrD-s-gTTE-eP70J3iNeE9Ml8aAqZ3EALw_wcB&gbraid=0AAAAA_oxgmbuqGgjJtmDpBJKRTGLzF9eI,,,221,true
+New folder,"usememos/memos: Open-source, self-hosted note-taking tool built for quick capture. Markdown-native, lightweight, and fully yours.",https://github.com/usememos/memos,,,222,true
+New folder,"Memos - Open-Source, Self-Hosted Note-Taking App",https://usememos.com/,,,223,true
+New folder,Joplin,https://joplinapp.org/,,,224,true
+New folder,Hosting Outline - Outline,https://docs.getoutline.com/s/hosting,,,225,true
+New folder,Standard Notes | End-To-End Encrypted Notes App,https://standardnotes.com/,,,226,true
+New folder,docmost/docmost: Docmost is an open-source collaborative wiki and documentation software. It is an open-source alternative to Confluence and Notion.,https://github.com/docmost/docmost,,,227,true
+New folder,"blinkospace/blinko: An open-source, self-hosted personal AI note tool prioritizing privacy, built using TypeScript .",https://github.com/blinkospace/blinko,,,228,true

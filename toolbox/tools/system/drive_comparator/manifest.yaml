@@ -1,0 +1,51 @@
+      plugin_id: system.drive_comparator
+      tool_id: system.drive_comparator
+      name: Drive Comparator
+      category: system
+      version: 1.0.0
+      enabled: true
+      description: Compares local drive structure against a reference or cloud snapshot to detect drift, missing files, and unexpected additions.
+      tags:
+        - system
+- audit
+- sync
+- compare
+- drive
+      entry:
+        type: plugin_v2
+        target: drive_comparator.py
+        class_name: QiPlugin
+        working_dir: .
+        open_console: false
+      launch:
+        type: python
+        target: drive_comparator.py
+        working_dir: .
+        open_console: true
+      module:
+        package: tools.system.drive_comparator
+        file: drive_comparator.py
+        class_name: DriveComparatorTool
+        entrypoint: DriveComparatorTool
+      toolbox:
+        ui_enabled: true
+        bucket: system
+        category: system
+        launch_surface:
+          - QiLabs Toolbox
+        requires_target_directory: false
+      runtime:
+        requires_network: false
+        requires_secrets: false
+      safety:
+        supports_dry_run: true
+        supports_live_run: false
+        deletes_files: false
+        moves_files: false
+        modifies_files: false
+        review_before_live: false
+      paths:
+        source: tools/system/drive_comparator/drive_comparator.py
+        readme: tools/system/drive_comparator/README.md
+      status: migrated
+      migrated_from: _archive

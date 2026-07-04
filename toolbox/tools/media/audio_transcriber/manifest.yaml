@@ -1,0 +1,51 @@
+      plugin_id: media.audio_transcriber
+      tool_id: media.audio_transcriber
+      name: Audio Transcriber
+      category: media
+      version: 1.0.0
+      enabled: true
+      description: Transcribes audio files to text using speech recognition. Outputs timestamped transcripts in Markdown format.
+      tags:
+        - media
+- audio
+- transcribe
+- speech
+- text
+      entry:
+        type: plugin_v2
+        target: audio_transcriber.py
+        class_name: QiPlugin
+        working_dir: .
+        open_console: false
+      launch:
+        type: python
+        target: audio_transcriber.py
+        working_dir: .
+        open_console: true
+      module:
+        package: tools.media.audio_transcriber
+        file: audio_transcriber.py
+        class_name: AudioTranscriberTool
+        entrypoint: AudioTranscriberTool
+      toolbox:
+        ui_enabled: true
+        bucket: media
+        category: media
+        launch_surface:
+          - QiLabs Toolbox
+        requires_target_directory: false
+      runtime:
+        requires_network: false
+        requires_secrets: false
+      safety:
+        supports_dry_run: false
+        supports_live_run: true
+        deletes_files: false
+        moves_files: false
+        modifies_files: true
+        review_before_live: false
+      paths:
+        source: tools/media/audio_transcriber/audio_transcriber.py
+        readme: tools/media/audio_transcriber/README.md
+      status: migrated
+      migrated_from: _archive

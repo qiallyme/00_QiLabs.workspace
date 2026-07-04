@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "json_kb_generator",
+  "description": "Generates a knowledge base JSON index from a set of Markdown files, extracting frontmatter, headings, and body summaries.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

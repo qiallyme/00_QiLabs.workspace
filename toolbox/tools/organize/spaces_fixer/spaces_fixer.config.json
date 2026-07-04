@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "spaces_fixer",
+  "description": "Replaces spaces in filenames with hyphens or underscores per QiLabs naming standards. Supports recursive directory processing.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

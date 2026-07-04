@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "rule_tester",
+  "description": "Tests QiLabs codex rules against sample files to validate rule correctness before deployment.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

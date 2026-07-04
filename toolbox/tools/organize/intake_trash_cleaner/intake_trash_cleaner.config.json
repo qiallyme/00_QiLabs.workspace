@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "intake_trash_cleaner",
+  "description": "Removes intake trash: zero-byte files, system junk, duplicate downloads, and other detritus from the intake and inbox directories.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

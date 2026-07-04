@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "markdown_validator",
+  "description": "Validates Markdown files for broken links, missing frontmatter fields, malformed YAML headers, and formatting issues.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

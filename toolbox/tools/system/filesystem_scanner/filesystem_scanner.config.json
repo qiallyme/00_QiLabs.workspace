@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "filesystem_scanner",
+  "description": "Deep scans a filesystem root and generates structured reports of all files, sizes, types, and modification dates.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

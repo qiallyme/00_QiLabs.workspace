@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "dir_mapper",
+  "description": "Maps a directory tree into a structured JSON or Markdown representation for documentation and navigation purposes.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

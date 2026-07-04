@@ -1,0 +1,51 @@
+      plugin_id: system.app_creator
+      tool_id: system.app_creator
+      name: App Creator
+      category: system
+      version: 1.0.0
+      enabled: true
+      description: Scaffolds a new QiLabs application directory with standard folder layout, config files, and README stubs.
+      tags:
+        - system
+- builder
+- scaffold
+- app
+- directory
+      entry:
+        type: plugin_v2
+        target: app_creator.py
+        class_name: QiPlugin
+        working_dir: .
+        open_console: false
+      launch:
+        type: python
+        target: app_creator.py
+        working_dir: .
+        open_console: true
+      module:
+        package: tools.system.app_creator
+        file: app_creator.py
+        class_name: AppCreatorTool
+        entrypoint: AppCreatorTool
+      toolbox:
+        ui_enabled: true
+        bucket: system
+        category: system
+        launch_surface:
+          - QiLabs Toolbox
+        requires_target_directory: false
+      runtime:
+        requires_network: false
+        requires_secrets: false
+      safety:
+        supports_dry_run: true
+        supports_live_run: true
+        deletes_files: false
+        moves_files: false
+        modifies_files: true
+        review_before_live: true
+      paths:
+        source: tools/system/app_creator/app_creator.py
+        readme: tools/system/app_creator/README.md
+      status: migrated
+      migrated_from: _archive

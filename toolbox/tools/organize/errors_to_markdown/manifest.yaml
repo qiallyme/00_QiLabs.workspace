@@ -1,0 +1,51 @@
+      plugin_id: organize.errors_to_markdown
+      tool_id: organize.errors_to_markdown
+      name: Errors To Markdown
+      category: organize
+      version: 1.0.0
+      enabled: true
+      description: Converts error logs and tracebacks into structured Markdown reports with categorization, timestamps, and context.
+      tags:
+        - organize
+- convert
+- errors
+- markdown
+- logs
+      entry:
+        type: plugin_v2
+        target: errors_to_markdown.py
+        class_name: QiPlugin
+        working_dir: .
+        open_console: false
+      launch:
+        type: python
+        target: errors_to_markdown.py
+        working_dir: .
+        open_console: true
+      module:
+        package: tools.organize.errors_to_markdown
+        file: errors_to_markdown.py
+        class_name: ErrorsToMarkdownTool
+        entrypoint: ErrorsToMarkdownTool
+      toolbox:
+        ui_enabled: true
+        bucket: organize
+        category: organize
+        launch_surface:
+          - QiLabs Toolbox
+        requires_target_directory: false
+      runtime:
+        requires_network: false
+        requires_secrets: false
+      safety:
+        supports_dry_run: false
+        supports_live_run: true
+        deletes_files: false
+        moves_files: false
+        modifies_files: true
+        review_before_live: false
+      paths:
+        source: tools/organize/errors_to_markdown/errors_to_markdown.py
+        readme: tools/organize/errors_to_markdown/README.md
+      status: migrated
+      migrated_from: _archive

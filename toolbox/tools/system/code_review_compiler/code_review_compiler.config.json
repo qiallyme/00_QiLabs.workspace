@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "code_review_compiler",
+  "description": "Compiles a code review package from a directory, aggregating source files, summaries, and metadata into a single review document.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

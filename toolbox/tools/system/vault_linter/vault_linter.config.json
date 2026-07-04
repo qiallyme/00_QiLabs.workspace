@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "vault_linter",
+  "description": "Lints QiLabs vault files for tag compliance, frontmatter validity, and structural issues. Generates detailed validation reports.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

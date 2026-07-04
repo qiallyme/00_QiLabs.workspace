@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "csv_md_comparator",
+  "description": "Compares CSV source data against generated Markdown files to verify content parity and detect sync gaps.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

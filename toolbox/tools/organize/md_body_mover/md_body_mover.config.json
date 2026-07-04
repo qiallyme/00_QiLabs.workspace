@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "md_body_mover",
+  "description": "Moves the body content of Markdown files to a target location, splitting frontmatter from body for selective migration.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

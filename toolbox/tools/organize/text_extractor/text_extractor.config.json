@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "text_extractor",
+  "description": "Extracts and cleans text content from PDF, DOCX, and HTML files for vault ingestion and content migration.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

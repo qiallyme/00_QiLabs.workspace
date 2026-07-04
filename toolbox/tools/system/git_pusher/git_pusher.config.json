@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "git_pusher",
+  "description": "Automates Git add, commit, and push operations across one or more QiLabs repositories with configurable commit messages.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

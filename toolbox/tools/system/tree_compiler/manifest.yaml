@@ -1,0 +1,51 @@
+      plugin_id: system.tree_compiler
+      tool_id: system.tree_compiler
+      name: Tree Compiler
+      category: system
+      version: 1.0.0
+      enabled: true
+      description: Compiles a Markdown directory tree of a given root path. Useful for generating structure snapshots and documentation.
+      tags:
+        - system
+- builder
+- tree
+- directory
+- markdown
+      entry:
+        type: plugin_v2
+        target: tree_compiler.py
+        class_name: QiPlugin
+        working_dir: .
+        open_console: false
+      launch:
+        type: python
+        target: tree_compiler.py
+        working_dir: .
+        open_console: true
+      module:
+        package: tools.system.tree_compiler
+        file: tree_compiler.py
+        class_name: TreeCompilerTool
+        entrypoint: TreeCompilerTool
+      toolbox:
+        ui_enabled: true
+        bucket: system
+        category: system
+        launch_surface:
+          - QiLabs Toolbox
+        requires_target_directory: false
+      runtime:
+        requires_network: false
+        requires_secrets: false
+      safety:
+        supports_dry_run: false
+        supports_live_run: true
+        deletes_files: false
+        moves_files: false
+        modifies_files: true
+        review_before_live: false
+      paths:
+        source: tools/system/tree_compiler/tree_compiler.py
+        readme: tools/system/tree_compiler/README.md
+      status: migrated
+      migrated_from: _archive

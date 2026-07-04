@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "duplicate_finder",
+  "description": "Finds duplicate files by name and/or SHA256 content hash. Generates a deduplication report for review before any action is taken.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

@@ -1,0 +1,51 @@
+      plugin_id: organize.inbox_organizer
+      tool_id: organize.inbox_organizer
+      name: Inbox Organizer
+      category: organize
+      version: 1.0.0
+      enabled: true
+      description: Organizes the QiLabs inbox by routing files into appropriate vault folders based on type, date, and naming conventions.
+      tags:
+        - organize
+- clean
+- inbox
+- route
+- files
+      entry:
+        type: plugin_v2
+        target: inbox_organizer.py
+        class_name: QiPlugin
+        working_dir: .
+        open_console: false
+      launch:
+        type: python
+        target: inbox_organizer.py
+        working_dir: .
+        open_console: true
+      module:
+        package: tools.organize.inbox_organizer
+        file: inbox_organizer.py
+        class_name: InboxOrganizerTool
+        entrypoint: InboxOrganizerTool
+      toolbox:
+        ui_enabled: true
+        bucket: organize
+        category: organize
+        launch_surface:
+          - QiLabs Toolbox
+        requires_target_directory: false
+      runtime:
+        requires_network: false
+        requires_secrets: false
+      safety:
+        supports_dry_run: true
+        supports_live_run: true
+        deletes_files: false
+        moves_files: true
+        modifies_files: false
+        review_before_live: true
+      paths:
+        source: tools/organize/inbox_organizer/inbox_organizer.py
+        readme: tools/organize/inbox_organizer/README.md
+      status: migrated
+      migrated_from: _archive

@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "scheduler",
+  "description": "Loads and manages scheduled task queues for QiLabs automation. Supports cron-style scheduling and on-demand queue processing.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

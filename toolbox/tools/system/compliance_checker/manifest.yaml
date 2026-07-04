@@ -1,0 +1,50 @@
+      plugin_id: system.compliance_checker
+      tool_id: system.compliance_checker
+      name: Compliance Checker
+      category: system
+      version: 1.0.0
+      enabled: true
+      description: Checks QiLabs files and folders for compliance against defined rules and naming conventions.
+      tags:
+        - system
+- audit
+- compliance
+- validation
+      entry:
+        type: plugin_v2
+        target: compliance_checker.py
+        class_name: QiPlugin
+        working_dir: .
+        open_console: false
+      launch:
+        type: python
+        target: compliance_checker.py
+        working_dir: .
+        open_console: true
+      module:
+        package: tools.system.compliance_checker
+        file: compliance_checker.py
+        class_name: ComplianceCheckerTool
+        entrypoint: ComplianceCheckerTool
+      toolbox:
+        ui_enabled: true
+        bucket: system
+        category: system
+        launch_surface:
+          - QiLabs Toolbox
+        requires_target_directory: false
+      runtime:
+        requires_network: false
+        requires_secrets: false
+      safety:
+        supports_dry_run: true
+        supports_live_run: false
+        deletes_files: false
+        moves_files: false
+        modifies_files: false
+        review_before_live: false
+      paths:
+        source: tools/system/compliance_checker/compliance_checker.py
+        readme: tools/system/compliance_checker/README.md
+      status: migrated
+      migrated_from: _archive

@@ -1,0 +1,51 @@
+      plugin_id: system.canvas_builder
+      tool_id: system.canvas_builder
+      name: Canvas Builder
+      category: system
+      version: 1.0.0
+      enabled: true
+      description: Creates Obsidian canvas files and canvas-based directory maps for visual navigation of vault structure.
+      tags:
+        - system
+- builder
+- canvas
+- obsidian
+- directory
+      entry:
+        type: plugin_v2
+        target: canvas_builder.py
+        class_name: QiPlugin
+        working_dir: .
+        open_console: false
+      launch:
+        type: python
+        target: canvas_builder.py
+        working_dir: .
+        open_console: true
+      module:
+        package: tools.system.canvas_builder
+        file: canvas_builder.py
+        class_name: CanvasBuilderTool
+        entrypoint: CanvasBuilderTool
+      toolbox:
+        ui_enabled: true
+        bucket: system
+        category: system
+        launch_surface:
+          - QiLabs Toolbox
+        requires_target_directory: false
+      runtime:
+        requires_network: false
+        requires_secrets: false
+      safety:
+        supports_dry_run: false
+        supports_live_run: true
+        deletes_files: false
+        moves_files: false
+        modifies_files: true
+        review_before_live: true
+      paths:
+        source: tools/system/canvas_builder/canvas_builder.py
+        readme: tools/system/canvas_builder/README.md
+      status: migrated
+      migrated_from: _archive

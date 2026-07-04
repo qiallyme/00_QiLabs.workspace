@@ -1,1 +1,1 @@
-""QiLabs Housekeeping Console plugin.""
+"""QiLabs Housekeeping Console plugin."""

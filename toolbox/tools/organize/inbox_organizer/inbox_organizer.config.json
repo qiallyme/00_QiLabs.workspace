@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "inbox_organizer",
+  "description": "Organizes the QiLabs inbox by routing files into appropriate vault folders based on type, date, and naming conventions.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

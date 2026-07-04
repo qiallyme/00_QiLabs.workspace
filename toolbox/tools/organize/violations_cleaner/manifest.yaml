@@ -1,0 +1,51 @@
+      plugin_id: organize.violations_cleaner
+      tool_id: organize.violations_cleaner
+      name: Violations Cleaner
+      category: organize
+      version: 1.0.0
+      enabled: true
+      description: Cleans files that violate QiLabs naming and structure rules. Applies safe renames and path corrections based on codex standards.
+      tags:
+        - organize
+- clean
+- violations
+- rename
+- naming
+      entry:
+        type: plugin_v2
+        target: violations_cleaner.py
+        class_name: QiPlugin
+        working_dir: .
+        open_console: false
+      launch:
+        type: python
+        target: violations_cleaner.py
+        working_dir: .
+        open_console: true
+      module:
+        package: tools.organize.violations_cleaner
+        file: violations_cleaner.py
+        class_name: ViolationsCleanerTool
+        entrypoint: ViolationsCleanerTool
+      toolbox:
+        ui_enabled: true
+        bucket: organize
+        category: organize
+        launch_surface:
+          - QiLabs Toolbox
+        requires_target_directory: false
+      runtime:
+        requires_network: false
+        requires_secrets: false
+      safety:
+        supports_dry_run: true
+        supports_live_run: true
+        deletes_files: false
+        moves_files: true
+        modifies_files: true
+        review_before_live: true
+      paths:
+        source: tools/organize/violations_cleaner/violations_cleaner.py
+        readme: tools/organize/violations_cleaner/README.md
+      status: migrated
+      migrated_from: _archive

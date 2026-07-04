@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "media_tree_merger",
+  "description": "Merges video and media trees from multiple source directories into a unified QiLabs media library with deduplication and manifest generation.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

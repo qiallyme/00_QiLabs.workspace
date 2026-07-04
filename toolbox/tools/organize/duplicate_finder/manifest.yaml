@@ -1,0 +1,51 @@
+      plugin_id: organize.duplicate_finder
+      tool_id: organize.duplicate_finder
+      name: Duplicate Finder
+      category: organize
+      version: 1.0.0
+      enabled: true
+      description: Finds duplicate files by name and/or SHA256 content hash. Generates a deduplication report for review before any action is taken.
+      tags:
+        - organize
+- clean
+- duplicates
+- audit
+- files
+      entry:
+        type: plugin_v2
+        target: duplicate_finder.py
+        class_name: QiPlugin
+        working_dir: .
+        open_console: false
+      launch:
+        type: python
+        target: duplicate_finder.py
+        working_dir: .
+        open_console: true
+      module:
+        package: tools.organize.duplicate_finder
+        file: duplicate_finder.py
+        class_name: DuplicateFinderTool
+        entrypoint: DuplicateFinderTool
+      toolbox:
+        ui_enabled: true
+        bucket: organize
+        category: organize
+        launch_surface:
+          - QiLabs Toolbox
+        requires_target_directory: false
+      runtime:
+        requires_network: false
+        requires_secrets: false
+      safety:
+        supports_dry_run: true
+        supports_live_run: false
+        deletes_files: false
+        moves_files: false
+        modifies_files: false
+        review_before_live: true
+      paths:
+        source: tools/organize/duplicate_finder/duplicate_finder.py
+        readme: tools/organize/duplicate_finder/README.md
+      status: migrated
+      migrated_from: _archive

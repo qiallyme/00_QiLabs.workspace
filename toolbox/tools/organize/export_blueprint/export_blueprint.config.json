@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "export_blueprint",
+  "description": "Exports a QiLabs vault section as a structured blueprint package with manifest, assets, and documentation for sharing or archival.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

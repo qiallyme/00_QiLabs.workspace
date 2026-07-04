@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "mkv_enhancer",
+  "description": "Enhances MKV files by adding metadata, normalizing audio, and applying quality improvements using ffmpeg pipelines.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

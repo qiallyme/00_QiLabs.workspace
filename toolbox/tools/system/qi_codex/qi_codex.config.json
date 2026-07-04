@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "qi_codex",
+  "description": "Core QiLabs codex linter that enforces naming conventions, prefix rules, slug mappings, and structural standards across the vault.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

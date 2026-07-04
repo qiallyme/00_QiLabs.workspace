@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "violations_cleaner",
+  "description": "Cleans files that violate QiLabs naming and structure rules. Applies safe renames and path corrections based on codex standards.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

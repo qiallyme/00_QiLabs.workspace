@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "registry_builder",
+  "description": "Builds Windows registry files (.reg) from structured configuration templates for system deployment and setup automation.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

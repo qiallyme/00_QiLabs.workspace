@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "errors_to_markdown",
+  "description": "Converts error logs and tracebacks into structured Markdown reports with categorization, timestamps, and context.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

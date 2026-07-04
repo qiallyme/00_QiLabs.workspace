@@ -1,0 +1,51 @@
+      plugin_id: organize.csv_to_markdown
+      tool_id: organize.csv_to_markdown
+      name: Csv To Markdown
+      category: organize
+      version: 1.0.0
+      enabled: true
+      description: Converts CSV files to structured Markdown tables or note files, applying QiLabs frontmatter templates and column-to-field mappings.
+      tags:
+        - organize
+- convert
+- csv
+- markdown
+- transform
+      entry:
+        type: plugin_v2
+        target: csv_to_markdown.py
+        class_name: QiPlugin
+        working_dir: .
+        open_console: false
+      launch:
+        type: python
+        target: csv_to_markdown.py
+        working_dir: .
+        open_console: true
+      module:
+        package: tools.organize.csv_to_markdown
+        file: csv_to_markdown.py
+        class_name: CsvToMarkdownTool
+        entrypoint: CsvToMarkdownTool
+      toolbox:
+        ui_enabled: true
+        bucket: organize
+        category: organize
+        launch_surface:
+          - QiLabs Toolbox
+        requires_target_directory: false
+      runtime:
+        requires_network: false
+        requires_secrets: false
+      safety:
+        supports_dry_run: true
+        supports_live_run: true
+        deletes_files: false
+        moves_files: false
+        modifies_files: true
+        review_before_live: false
+      paths:
+        source: tools/organize/csv_to_markdown/csv_to_markdown.py
+        readme: tools/organize/csv_to_markdown/README.md
+      status: migrated
+      migrated_from: _archive

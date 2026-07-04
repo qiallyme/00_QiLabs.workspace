@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "app_creator",
+  "description": "Scaffolds a new QiLabs application directory with standard folder layout, config files, and README stubs.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

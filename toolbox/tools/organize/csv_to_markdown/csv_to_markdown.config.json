@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "csv_to_markdown",
+  "description": "Converts CSV files to structured Markdown tables or note files, applying QiLabs frontmatter templates and column-to-field mappings.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

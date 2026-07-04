@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "job_runner",
+  "description": "Runs queued QiLabs background jobs, managing execution order, logging, and error recovery for batch operations.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

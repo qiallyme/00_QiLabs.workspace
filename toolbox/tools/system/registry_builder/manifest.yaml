@@ -1,0 +1,51 @@
+      plugin_id: system.registry_builder
+      tool_id: system.registry_builder
+      name: Registry Builder
+      category: system
+      version: 1.0.0
+      enabled: true
+      description: Builds Windows registry files (.reg) from structured configuration templates for system deployment and setup automation.
+      tags:
+        - system
+- connector
+- registry
+- windows
+- deployment
+      entry:
+        type: plugin_v2
+        target: registry_builder.py
+        class_name: QiPlugin
+        working_dir: .
+        open_console: false
+      launch:
+        type: python
+        target: registry_builder.py
+        working_dir: .
+        open_console: true
+      module:
+        package: tools.system.registry_builder
+        file: registry_builder.py
+        class_name: RegistryBuilderTool
+        entrypoint: RegistryBuilderTool
+      toolbox:
+        ui_enabled: true
+        bucket: system
+        category: system
+        launch_surface:
+          - QiLabs Toolbox
+        requires_target_directory: false
+      runtime:
+        requires_network: false
+        requires_secrets: false
+      safety:
+        supports_dry_run: true
+        supports_live_run: true
+        deletes_files: false
+        moves_files: false
+        modifies_files: true
+        review_before_live: true
+      paths:
+        source: tools/system/registry_builder/registry_builder.py
+        readme: tools/system/registry_builder/README.md
+      status: migrated
+      migrated_from: _archive

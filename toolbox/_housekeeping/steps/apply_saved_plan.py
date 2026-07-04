@@ -92,7 +92,8 @@ def _apply_write(ctx, action: dict, action_index: int) -> bool:
     target.parent.mkdir(parents=True, exist_ok=True)
     if target.exists():
         ctx.backup_file(target)
-    target.write_text(new_text, encoding="utf-8")
+    with target.open("w", encoding="utf-8", newline="") as f:
+        f.write(new_text)
     after = file_sha256(target)
     if after != action.get("after_sha256"):
         ctx.error(f"Write hash mismatch after applying: {target}")

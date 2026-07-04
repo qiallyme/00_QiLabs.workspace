@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "stubs_creator",
+  "description": "Creates stub Markdown files for missing entries in a directory, using frontmatter templates for rapid content scaffolding.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

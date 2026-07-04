@@ -1,0 +1,51 @@
+      plugin_id: system.rule_tester
+      tool_id: system.rule_tester
+      name: Rule Tester
+      category: system
+      version: 1.0.0
+      enabled: true
+      description: Tests QiLabs codex rules against sample files to validate rule correctness before deployment.
+      tags:
+        - system
+- lint
+- rules
+- testing
+- validation
+      entry:
+        type: plugin_v2
+        target: rule_tester.py
+        class_name: QiPlugin
+        working_dir: .
+        open_console: false
+      launch:
+        type: python
+        target: rule_tester.py
+        working_dir: .
+        open_console: true
+      module:
+        package: tools.system.rule_tester
+        file: rule_tester.py
+        class_name: RuleTesterTool
+        entrypoint: RuleTesterTool
+      toolbox:
+        ui_enabled: true
+        bucket: system
+        category: system
+        launch_surface:
+          - QiLabs Toolbox
+        requires_target_directory: false
+      runtime:
+        requires_network: false
+        requires_secrets: false
+      safety:
+        supports_dry_run: true
+        supports_live_run: false
+        deletes_files: false
+        moves_files: false
+        modifies_files: false
+        review_before_live: false
+      paths:
+        source: tools/system/rule_tester/rule_tester.py
+        readme: tools/system/rule_tester/README.md
+      status: migrated
+      migrated_from: _archive

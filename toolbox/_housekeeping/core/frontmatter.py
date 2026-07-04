@@ -8,7 +8,19 @@ from typing import Any
 FRONTMATTER_RE = re.compile(r"\A---\s*\n(.*?)\n---\s*\n?", re.DOTALL)
 
 
+def normalize_text_for_frontmatter(text: str) -> str:
+    """Remove encoding markers that prevent frontmatter from being detected at the first byte."""
+    if text.startswith("\ufeff"):
+        text = text.lstrip("\ufeff")
+    return text
+
+
+def read_text_no_bom(path: Path) -> str:
+    return Path(path).read_text(encoding="utf-8-sig", errors="replace")
+
+
 def split_frontmatter(text: str):
+    text = normalize_text_for_frontmatter(text)
     match = FRONTMATTER_RE.match(text)
     if not match:
         return None, text
@@ -53,6 +65,7 @@ def title_from_filename(path: Path) -> str:
 
 
 def add_missing_frontmatter(text: str, path: Path, required_keys: list[str], defaults: dict, dynamic: dict) -> tuple[str, list[str]]:
+    text = normalize_text_for_frontmatter(text)
     fm, body = split_frontmatter(text)
     existing = parse_frontmatter_keys(fm)
     added: list[str] = []
@@ -79,15 +92,11 @@ def add_missing_frontmatter(text: str, path: Path, required_keys: list[str], def
     for key in dynamic.get(note_type, []):
         add_key(key, defaults.get(key, ""))
 
-    if "updated_at" in existing:
-        # Do not overwrite here. The caller can decide if it wants to refresh timestamps later.
-        pass
-
     new_text = "---\n" + "\n".join(fm_lines).rstrip() + "\n---\n\n" + body.lstrip()
     return new_text, added
 
 
 def get_frontmatter_keys_from_file(path: Path) -> list[str]:
-    text = path.read_text(encoding="utf-8", errors="replace")
+    text = read_text_no_bom(path)
     fm, _body = split_frontmatter(text)
     return list(parse_frontmatter_keys(fm).keys())

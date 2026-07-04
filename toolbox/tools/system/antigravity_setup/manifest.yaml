@@ -1,0 +1,51 @@
+      plugin_id: system.antigravity_setup
+      tool_id: system.antigravity_setup
+      name: Antigravity Setup
+      category: system
+      version: 1.0.0
+      enabled: true
+      description: Sets up the Antigravity AI agent integration, configuring paths, credentials, and environment for local QiLabs usage.
+      tags:
+        - system
+- connector
+- antigravity
+- setup
+- ai
+      entry:
+        type: plugin_v2
+        target: antigravity_setup.py
+        class_name: QiPlugin
+        working_dir: .
+        open_console: false
+      launch:
+        type: python
+        target: antigravity_setup.py
+        working_dir: .
+        open_console: true
+      module:
+        package: tools.system.antigravity_setup
+        file: antigravity_setup.py
+        class_name: AntigravitySetupTool
+        entrypoint: AntigravitySetupTool
+      toolbox:
+        ui_enabled: true
+        bucket: system
+        category: system
+        launch_surface:
+          - QiLabs Toolbox
+        requires_target_directory: false
+      runtime:
+        requires_network: false
+        requires_secrets: false
+      safety:
+        supports_dry_run: true
+        supports_live_run: true
+        deletes_files: false
+        moves_files: false
+        modifies_files: true
+        review_before_live: true
+      paths:
+        source: tools/system/antigravity_setup/antigravity_setup.py
+        readme: tools/system/antigravity_setup/README.md
+      status: migrated
+      migrated_from: _archive

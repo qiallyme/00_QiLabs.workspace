@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "downloads_renamer",
+  "description": "Renames downloaded files in the inbox using QiLabs naming conventions, applying date prefixes and slug formatting.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

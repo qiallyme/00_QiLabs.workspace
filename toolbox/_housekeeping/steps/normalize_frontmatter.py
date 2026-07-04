@@ -33,7 +33,8 @@ def run(ctx):
                 ctx.plan_write_text(p, new_text, STEP_NAME, description=f"Add missing frontmatter keys: {', '.join(added)}")
             else:
                 ctx.backup_file(p)
-                p.write_text(new_text, encoding="utf-8")
+                with p.open("w", encoding="utf-8", newline="") as f:
+                    f.write(new_text)
                 ctx.mark_changed(p)
 
     ctx.state["frontmatter_examples"] = examples[:50]

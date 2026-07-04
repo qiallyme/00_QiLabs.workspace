@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "text_extractor_v2",
+  "description": "Extracts plain text from various document formats (PDF, DOCX, HTML) for indexing, search, or migration purposes.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

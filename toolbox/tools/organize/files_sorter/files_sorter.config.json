@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "files_sorter",
+  "description": "Sorts and organizes files within a directory by type, date, or naming pattern. Supports dry-run preview before applying changes.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

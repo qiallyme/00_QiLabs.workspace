@@ -1,0 +1,52 @@
+      plugin_id: media.mkv_enhancer
+      tool_id: media.mkv_enhancer
+      name: Mkv Enhancer
+      category: media
+      version: 1.0.0
+      enabled: true
+      description: Enhances MKV files by adding metadata, normalizing audio, and applying quality improvements using ffmpeg pipelines.
+      tags:
+        - media
+- video
+- mkv
+- enhance
+- ffmpeg
+- quality
+      entry:
+        type: plugin_v2
+        target: mkv_enhancer.py
+        class_name: QiPlugin
+        working_dir: .
+        open_console: false
+      launch:
+        type: python
+        target: mkv_enhancer.py
+        working_dir: .
+        open_console: true
+      module:
+        package: tools.media.mkv_enhancer
+        file: mkv_enhancer.py
+        class_name: MkvEnhancerTool
+        entrypoint: MkvEnhancerTool
+      toolbox:
+        ui_enabled: true
+        bucket: media
+        category: media
+        launch_surface:
+          - QiLabs Toolbox
+        requires_target_directory: false
+      runtime:
+        requires_network: false
+        requires_secrets: false
+      safety:
+        supports_dry_run: true
+        supports_live_run: true
+        deletes_files: false
+        moves_files: false
+        modifies_files: true
+        review_before_live: true
+      paths:
+        source: tools/media/mkv_enhancer/mkv_enhancer.py
+        readme: tools/media/mkv_enhancer/README.md
+      status: migrated
+      migrated_from: _archive

@@ -30,7 +30,13 @@ def run(ctx):
         ctx.add_result(STEP_NAME, {"status": "missing"})
         return
 
-    data = json.loads(tags_path.read_text(encoding="utf-8"))
+    try:
+        data = json.loads(tags_path.read_text(encoding="utf-8-sig"))
+    except json.JSONDecodeError as exc:
+        ctx.error(f"Tags file is not valid JSON: {tags_path} -> {exc}")
+        ctx.add_result(STEP_NAME, {"status": "invalid_json", "path": str(tags_path), "error": str(exc)})
+        return
+
     allowed = []
     for category, values in data.get("allowed_tags", {}).items():
         for tag in values:
@@ -74,11 +80,8 @@ def run(ctx):
     if ctx.config.get("tags", {}).get("global_enforcement"):
         roots = [Path(p) for p in ctx.config.get("tags", {}).get("scan_scope_roots", ctx.config.get("default_scope_roots", []))]
         for p in iter_files(roots, ctx.config, suffixes={".md"}):
-            if is_protected(p, ctx.config):
-                # Protected means no mutation, but reading to audit tags is fine except sensitive/evidence paths.
-                pass
             scanned_md += 1
-            text = p.read_text(encoding="utf-8", errors="replace")
+            text = p.read_text(encoding="utf-8-sig", errors="replace")
             fm, _body = split_frontmatter(text)
             keys = parse_frontmatter_keys(fm)
             for tag in parse_inline_tags(keys.get("tags", "[]")):

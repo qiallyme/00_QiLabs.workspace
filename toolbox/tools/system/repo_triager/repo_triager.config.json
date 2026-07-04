@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "repo_triager",
+  "description": "Triages a Git repository by scanning for uncommitted changes, stale branches, large files, and untracked items. Produces a triage report.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

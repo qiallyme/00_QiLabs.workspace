@@ -1,0 +1,51 @@
+      plugin_id: organize.md_body_mover
+      tool_id: organize.md_body_mover
+      name: Md Body Mover
+      category: organize
+      version: 1.0.0
+      enabled: true
+      description: Moves the body content of Markdown files to a target location, splitting frontmatter from body for selective migration.
+      tags:
+        - organize
+- files
+- markdown
+- move
+- split
+      entry:
+        type: plugin_v2
+        target: md_body_mover.py
+        class_name: QiPlugin
+        working_dir: .
+        open_console: false
+      launch:
+        type: python
+        target: md_body_mover.py
+        working_dir: .
+        open_console: true
+      module:
+        package: tools.organize.md_body_mover
+        file: md_body_mover.py
+        class_name: MdBodyMoverTool
+        entrypoint: MdBodyMoverTool
+      toolbox:
+        ui_enabled: true
+        bucket: organize
+        category: organize
+        launch_surface:
+          - QiLabs Toolbox
+        requires_target_directory: false
+      runtime:
+        requires_network: false
+        requires_secrets: false
+      safety:
+        supports_dry_run: true
+        supports_live_run: true
+        deletes_files: false
+        moves_files: true
+        modifies_files: true
+        review_before_live: true
+      paths:
+        source: tools/organize/md_body_mover/md_body_mover.py
+        readme: tools/organize/md_body_mover/README.md
+      status: migrated
+      migrated_from: _archive

@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "compliance_checker",
+  "description": "Checks QiLabs files and folders for compliance against defined rules and naming conventions.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

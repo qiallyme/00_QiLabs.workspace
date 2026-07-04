@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "tree_compiler",
+  "description": "Compiles a Markdown directory tree of a given root path. Useful for generating structure snapshots and documentation.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

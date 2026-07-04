@@ -1,0 +1,52 @@
+      plugin_id: system.qi_codex
+      tool_id: system.qi_codex
+      name: Qi Codex
+      category: system
+      version: 1.0.0
+      enabled: true
+      description: Core QiLabs codex linter that enforces naming conventions, prefix rules, slug mappings, and structural standards across the vault.
+      tags:
+        - system
+- lint
+- codex
+- rules
+- naming
+- vault
+      entry:
+        type: plugin_v2
+        target: qi_codex.py
+        class_name: QiPlugin
+        working_dir: .
+        open_console: false
+      launch:
+        type: python
+        target: qi_codex.py
+        working_dir: .
+        open_console: true
+      module:
+        package: tools.system.qi_codex
+        file: qi_codex.py
+        class_name: QiCodexTool
+        entrypoint: QiCodexTool
+      toolbox:
+        ui_enabled: true
+        bucket: system
+        category: system
+        launch_surface:
+          - QiLabs Toolbox
+        requires_target_directory: false
+      runtime:
+        requires_network: false
+        requires_secrets: false
+      safety:
+        supports_dry_run: true
+        supports_live_run: false
+        deletes_files: false
+        moves_files: false
+        modifies_files: false
+        review_before_live: false
+      paths:
+        source: tools/system/qi_codex/qi_codex.py
+        readme: tools/system/qi_codex/README.md
+      status: migrated
+      migrated_from: _archive

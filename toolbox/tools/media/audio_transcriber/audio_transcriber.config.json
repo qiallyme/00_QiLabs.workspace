@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "audio_transcriber",
+  "description": "Transcribes audio files to text using speech recognition. Outputs timestamped transcripts in Markdown format.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

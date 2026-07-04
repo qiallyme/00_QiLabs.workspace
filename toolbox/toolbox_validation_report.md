@@ -1,8 +1,8 @@
 # QiLabs Toolbox Validation Report
 
-- Generated: 2026-07-02T00:45:03
-- Plugins: 26
-- Errors: 0
+- Generated: 2026-07-02T05:22:05
+- Plugins: 76
+- Errors: 2
 - Warnings: 9
 
 ## Plugins
@@ -14,24 +14,74 @@
 - `finance.firefly.bills.importer` - Firefly Bills Importer (finance)
 - `finance.tax.compiler` - Tax Compiler (finance)
 - `finance.zai.ledger.importer` - Zai Ledger Importer (finance)
+- `media.audio_transcriber` - Audio Transcriber (media)
+- `media.media_tree_merger` - Media Tree Merger (media)
+- `media.mkv_enhancer` - Mkv Enhancer (media)
+- `media.mkv_merger` - Mkv Merger (media)
 - `media.video.converter` - Video Converter (media)
 - `organize.archivist` - Archivist (organize)
 - `organize.bloat.destroyer` - Bloat Destroyer (organize)
+- `organize.code_extractor` - Code Extractor (organize)
+- `organize.csv_to_markdown` - Csv To Markdown (organize)
 - `organize.downloads.inspector` - Downloads Inspector (organize)
+- `organize.downloads_renamer` - Downloads Renamer (organize)
+- `organize.duplicate_finder` - Duplicate Finder (organize)
+- `organize.errors_to_markdown` - Errors To Markdown (organize)
+- `organize.export_blueprint` - Export Blueprint Tool (organize)
+- `organize.data_extractor` - Extractor (organize)
 - `organize.file.cleaner` - File Cleaner (organize)
+- `organize.files_sorter` - Files Sorter (organize)
 - `organize.folder.flattener` - Folder Flattener (organize)
+- `organize.inbox_organizer` - Inbox Organizer (organize)
+- `organize.intake_trash_cleaner` - Intake Trash Cleaner (organize)
+- `organize.json_kb_generator` - Json Kb Generator (organize)
+- `organize.md_body_mover` - Md Body Mover (organize)
+- `organize.pdf_splitter` - Pdf Splitter (organize)
+- `organize.qi_prefix_cleaner` - Qi Prefix Cleaner (organize)
+- `organize.spaces_fixer` - Spaces Fixer (organize)
+- `organize.storage_cleaner` - Storage Cleaner (organize)
+- `organize.stubs_detector` - Stubs Detector (organize)
+- `organize.text_extractor` - Text Extractor (organize)
+- `organize.text_extractor_v2` - Text Extractor V2 (organize)
 - `organize.unlock.downloads` - Unlock Downloads (organize)
 - `organize.unzip.sync` - Unzip Sync (organize)
 - `organize.vault.router` - Vault Router (organize)
+- `organize.violations_cleaner` - Violations Cleaner (organize)
 - `organize.xlsx.tabs.to.csv` - XLSX Tabs to CSV (organize)
+- `system.agent_runner` - Agent Runner (system)
+- `system.antigravity_setup` - Antigravity Setup (system)
+- `system.app_creator` - App Creator (system)
+- `system.canvas_builder` - Canvas Builder (system)
+- `system.cloudflare_md_builder` - Cloudflare Md Builder (system)
+- `system.code_review_compiler` - Code Review Compiler (system)
+- `system.compliance_checker` - Compliance Checker (system)
 - `system.creator_smoke_plugin` - Creator Smoke Plugin (system)
+- `system.csv_md_comparator` - Csv Md Comparator (system)
+- `system.csv_searcher` - Csv Searcher (system)
+- `system.dir_mapper` - Dir Mapper (system)
 - `system.sys.directory.markmind.mapper` - Directory Markmind Mapper (system)
+- `system.drive_comparator` - Drive Comparator (system)
+- `system.filesystem_scanner` - Filesystem Scanner (system)
+- `system.git_pusher` - Git Pusher (system)
+- `system.health_checker` - Health Checker (system)
 - `system.housekeeping.console` - Housekeeping Console (system)
+- `system.job_runner` - Job Runner (system)
+- `system.markdown_validator` - Markdown Validator (system)
 - `system.plugin_host_demo` - Plugin Host Demo (system)
+- `system.qi_codex` - Qi Codex (system)
 - `system.qilabs.structure.checker` - QiLabs Structure Checker (system)
+- `system.realm_lister` - Realm Lister (system)
+- `system.registry_builder` - Registry Builder (system)
 - `system.remote.ssh` - Remote Ssh (system)
+- `system.repo_triager` - Repo Triager (system)
+- `system.rule_tester` - Rule Tester (system)
+- `system.scheduler` - Scheduler (system)
+- `system.slugs_mapper` - Slugs Mapper (system)
+- `system.stubs_creator` - Stubs Creator (system)
 - `system.toolbox_manager` - Toolbox Manager (system)
+- `system.tree_compiler` - Tree Compiler (system)
 - `system.sys.docs.compiler` - Tree-Aware Docs Compiler (system)
+- `system.vault_linter` - Vault Linter (system)
 - `system.bat.launcher` - bat_launcher (system)
 
 ## Findings
@@ -59,6 +109,14 @@
 - **WARNING** `missing_requirement` - Requirement may be missing: requests
   - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\finance\zai_ledger_importer\manifest.yaml`
   - Plugin: `finance.zai.ledger.importer`
+  - Fixable: yes
+- **ERROR** `missing_entry_file` - Entry target does not exist: extractor.py
+  - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\organize\data_extractor\manifest.yaml`
+  - Plugin: `organize.data_extractor`
+  - Fixable: yes
+- **ERROR** `missing_entry_file` - Entry target does not exist: export_blueprint_tool.py
+  - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\organize\export_blueprint\manifest.yaml`
+  - Plugin: `organize.export_blueprint`
   - Fixable: yes
 - **WARNING** `missing_requirement` - Requirement may be missing: Send2Trash
   - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\organize\vault_router\manifest.yaml`

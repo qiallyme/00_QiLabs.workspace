@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "stubs_detector",
+  "description": "Detects stub files \u2014 empty or near-empty placeholders \u2014 across the vault and flags them for review or removal.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

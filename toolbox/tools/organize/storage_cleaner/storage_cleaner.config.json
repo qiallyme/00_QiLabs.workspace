@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "storage_cleaner",
+  "description": "Identifies and removes storage bloat: temp files, build artifacts, empty folders, and large redundant files across QiLabs roots.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

@@ -1,0 +1,50 @@
+      plugin_id: system.csv_searcher
+      tool_id: system.csv_searcher
+      name: Csv Searcher
+      category: system
+      version: 1.0.0
+      enabled: true
+      description: Searches across CSV files for matching records, patterns, or field values. Outputs results as a formatted report.
+      tags:
+        - system
+- audit
+- csv
+- search
+      entry:
+        type: plugin_v2
+        target: csv_searcher.py
+        class_name: QiPlugin
+        working_dir: .
+        open_console: false
+      launch:
+        type: python
+        target: csv_searcher.py
+        working_dir: .
+        open_console: true
+      module:
+        package: tools.system.csv_searcher
+        file: csv_searcher.py
+        class_name: CsvSearcherTool
+        entrypoint: CsvSearcherTool
+      toolbox:
+        ui_enabled: true
+        bucket: system
+        category: system
+        launch_surface:
+          - QiLabs Toolbox
+        requires_target_directory: false
+      runtime:
+        requires_network: false
+        requires_secrets: false
+      safety:
+        supports_dry_run: true
+        supports_live_run: false
+        deletes_files: false
+        moves_files: false
+        modifies_files: false
+        review_before_live: false
+      paths:
+        source: tools/system/csv_searcher/csv_searcher.py
+        readme: tools/system/csv_searcher/README.md
+      status: migrated
+      migrated_from: _archive

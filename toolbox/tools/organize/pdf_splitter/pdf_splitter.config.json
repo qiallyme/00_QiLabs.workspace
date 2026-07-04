@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "pdf_splitter",
+  "description": "Splits multi-page PDF files into individual pages or defined page ranges. Supports batch processing of multiple PDFs.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

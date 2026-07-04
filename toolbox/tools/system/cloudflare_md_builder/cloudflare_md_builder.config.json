@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "cloudflare_md_builder",
+  "description": "Generates Cloudflare-compatible Markdown files from structured input, applying routing conventions and metadata headers.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

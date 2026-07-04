@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "qi_prefix_cleaner",
+  "description": "Removes or normalizes legacy QiLabs prefix patterns from filenames, applying current naming conventions.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}

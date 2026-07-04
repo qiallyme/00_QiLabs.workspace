@@ -1,0 +1,51 @@
+      plugin_id: media.media_tree_merger
+      tool_id: media.media_tree_merger
+      name: Media Tree Merger
+      category: media
+      version: 1.0.0
+      enabled: true
+      description: Merges video and media trees from multiple source directories into a unified QiLabs media library with deduplication and manifest generation.
+      tags:
+        - media
+- video
+- merge
+- library
+- organize
+      entry:
+        type: plugin_v2
+        target: media_tree_merger.py
+        class_name: QiPlugin
+        working_dir: .
+        open_console: false
+      launch:
+        type: python
+        target: media_tree_merger.py
+        working_dir: .
+        open_console: true
+      module:
+        package: tools.media.media_tree_merger
+        file: media_tree_merger.py
+        class_name: MediaTreeMergerTool
+        entrypoint: MediaTreeMergerTool
+      toolbox:
+        ui_enabled: true
+        bucket: media
+        category: media
+        launch_surface:
+          - QiLabs Toolbox
+        requires_target_directory: false
+      runtime:
+        requires_network: false
+        requires_secrets: false
+      safety:
+        supports_dry_run: true
+        supports_live_run: true
+        deletes_files: false
+        moves_files: true
+        modifies_files: false
+        review_before_live: true
+      paths:
+        source: tools/media/media_tree_merger/media_tree_merger.py
+        readme: tools/media/media_tree_merger/README.md
+      status: migrated
+      migrated_from: _archive

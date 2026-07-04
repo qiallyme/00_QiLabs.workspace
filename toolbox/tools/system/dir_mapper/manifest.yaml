@@ -1,0 +1,51 @@
+      plugin_id: system.dir_mapper
+      tool_id: system.dir_mapper
+      name: Dir Mapper
+      category: system
+      version: 1.0.0
+      enabled: true
+      description: Maps a directory tree into a structured JSON or Markdown representation for documentation and navigation purposes.
+      tags:
+        - system
+- builder
+- directory
+- map
+- json
+      entry:
+        type: plugin_v2
+        target: dir_mapper.py
+        class_name: QiPlugin
+        working_dir: .
+        open_console: false
+      launch:
+        type: python
+        target: dir_mapper.py
+        working_dir: .
+        open_console: true
+      module:
+        package: tools.system.dir_mapper
+        file: dir_mapper.py
+        class_name: DirMapperTool
+        entrypoint: DirMapperTool
+      toolbox:
+        ui_enabled: true
+        bucket: system
+        category: system
+        launch_surface:
+          - QiLabs Toolbox
+        requires_target_directory: false
+      runtime:
+        requires_network: false
+        requires_secrets: false
+      safety:
+        supports_dry_run: false
+        supports_live_run: true
+        deletes_files: false
+        moves_files: false
+        modifies_files: true
+        review_before_live: false
+      paths:
+        source: tools/system/dir_mapper/dir_mapper.py
+        readme: tools/system/dir_mapper/README.md
+      status: migrated
+      migrated_from: _archive

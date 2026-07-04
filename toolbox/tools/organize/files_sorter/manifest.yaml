@@ -1,0 +1,51 @@
+      plugin_id: organize.files_sorter
+      tool_id: organize.files_sorter
+      name: Files Sorter
+      category: organize
+      version: 1.0.0
+      enabled: true
+      description: Sorts and organizes files within a directory by type, date, or naming pattern. Supports dry-run preview before applying changes.
+      tags:
+        - organize
+- sort
+- files
+- normalize
+- directory
+      entry:
+        type: plugin_v2
+        target: files_sorter.py
+        class_name: QiPlugin
+        working_dir: .
+        open_console: false
+      launch:
+        type: python
+        target: files_sorter.py
+        working_dir: .
+        open_console: true
+      module:
+        package: tools.organize.files_sorter
+        file: files_sorter.py
+        class_name: FilesSorterTool
+        entrypoint: FilesSorterTool
+      toolbox:
+        ui_enabled: true
+        bucket: organize
+        category: organize
+        launch_surface:
+          - QiLabs Toolbox
+        requires_target_directory: false
+      runtime:
+        requires_network: false
+        requires_secrets: false
+      safety:
+        supports_dry_run: true
+        supports_live_run: true
+        deletes_files: false
+        moves_files: true
+        modifies_files: false
+        review_before_live: true
+      paths:
+        source: tools/organize/files_sorter/files_sorter.py
+        readme: tools/organize/files_sorter/README.md
+      status: migrated
+      migrated_from: _archive

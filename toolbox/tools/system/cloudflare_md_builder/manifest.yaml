@@ -1,0 +1,51 @@
+      plugin_id: system.cloudflare_md_builder
+      tool_id: system.cloudflare_md_builder
+      name: Cloudflare Md Builder
+      category: system
+      version: 1.0.0
+      enabled: true
+      description: Generates Cloudflare-compatible Markdown files from structured input, applying routing conventions and metadata headers.
+      tags:
+        - system
+- builder
+- cloudflare
+- markdown
+- web
+      entry:
+        type: plugin_v2
+        target: cloudflare_md_builder.py
+        class_name: QiPlugin
+        working_dir: .
+        open_console: false
+      launch:
+        type: python
+        target: cloudflare_md_builder.py
+        working_dir: .
+        open_console: true
+      module:
+        package: tools.system.cloudflare_md_builder
+        file: cloudflare_md_builder.py
+        class_name: CloudflareMdBuilderTool
+        entrypoint: CloudflareMdBuilderTool
+      toolbox:
+        ui_enabled: true
+        bucket: system
+        category: system
+        launch_surface:
+          - QiLabs Toolbox
+        requires_target_directory: false
+      runtime:
+        requires_network: false
+        requires_secrets: false
+      safety:
+        supports_dry_run: true
+        supports_live_run: true
+        deletes_files: false
+        moves_files: false
+        modifies_files: true
+        review_before_live: true
+      paths:
+        source: tools/system/cloudflare_md_builder/cloudflare_md_builder.py
+        readme: tools/system/cloudflare_md_builder/README.md
+      status: migrated
+      migrated_from: _archive

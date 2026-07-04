@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "tool": "agent_runner",
+  "description": "Runs QiLabs AI agent commands and services. Supports one-shot command execution, persistent service mode, and background worker launch.",
+  "dry_run": true,
+  "output_dir": "",
+  "log_level": "INFO"
+}
