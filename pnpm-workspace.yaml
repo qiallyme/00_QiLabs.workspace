@@ -1,7 +1,10 @@
 packages:
-  - ../apps/**
-  - ../sites/**
-  - ../packages/**
+  # QiApps — app suite (QiLife, QiLegal, QiCare, QiFi, QiTrials)
+  - ../60_QiApps/**
+  # QiSites — public web properties
+  - ../70_QiSites/**
+  # QiWorkers — Cloudflare Workers
+  - ../25_QiWorkers
 
 onlyBuiltDependencies:
   - esbuild

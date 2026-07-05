@@ -1,6 +1,6 @@
 {
-  "name": "qione-workspace",
-  "version": "1.0.0",
+  "name": "qilabs-workspace",
+  "version": "3.0.0",
   "private": true,
   "type": "module",
   "scripts": {

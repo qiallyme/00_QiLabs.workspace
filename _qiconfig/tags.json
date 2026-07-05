@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0",
+  "profile_name": "qilabs_global_tag_registry",
+  "tag_policy": {
+    "always_include": [],
+    "notes": [
+      "Global registry only. Project-specific tags are allowed as optional tags, not forced on every note.",
+      "Keep tags lowercase unless an explicit style exception is configured."
+    ]
+  },
+  "allowed_tags": {
+    "system": [
+      "#qilabs",
+      "#qios",
+      "#qispark",
+      "#qiserver",
+      "#qidrive",
+      "#qiapps",
+      "#qimemory",
+      "#qifleet",
+      "#qiflow",
+      "#qilink",
+      "#housekeeping",
+      "#template",
+      "#index",
+      "#archive",
+      "#todo",
+      "#review",
+      "#active",
+      "#draft",
+      "#deprecated"
+    ],
+    "content_type": [
+      "#record",
+      "#note",
+      "#decision",
+      "#meeting",
+      "#journal",
+      "#workflow",
+      "#runbook",
+      "#reference",
+      "#schema",
+      "#manifest",
+      "#evidence",
+      "#timeline",
+      "#export",
+      "#source"
+    ],
+    "realm": [
+      "#personal",
+      "#business",
+      "#legal",
+      "#medical",
+      "#financial",
+      "#creative",
+      "#technical",
+      "#ops",
+      "#client",
+      "#public",
+      "#private",
+      "#internal"
+    ],
+    "projects": [
+      "#qilife",
+      "#qifi",
+      "#qisaysit",
+      "#empowerqnow713",
+      "#lisa-care-record",
+      "#care-record",
+      "#codex",
+      "#supabase",
+      "#cloudflare",
+      "#obsidian"
+    ],
+    "evidence": [
+      "#exhibit/A-record",
+      "#exhibit/B-message",
+      "#exhibit/C-financial",
+      "#exhibit/D-medical",
+      "#exhibit/E-legal",
+      "#exhibit/F-technical",
+      "#exhibit/G-other"
+    ]
+  }
+}

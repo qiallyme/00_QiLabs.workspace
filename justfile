@@ -8,7 +8,7 @@ default:
     @just --list
 
 # ── SETUP ─────────────────────────────────────────────────────────────
-# Verify deps, install, create local data folders, migrate, seed, print URLs
+# Verify deps, install, create local data folders, print URLs
 setup:
     @echo "=== QiLabs Setup ==="
     @echo "Checking required tools..."
@@ -26,34 +26,33 @@ setup:
     -mkdir C:\QiData\logs
     -mkdir C:\QiData\extracted_text
     -mkdir C:\QiData\embeddings_cache
-    @echo "Setting up Python environment..."
-    python -m venv python/.venv
-    python/.venv/Scripts/pip install -r python/requirements.txt
-    @echo "Running Supabase migrations..."
-    -pnpm supabase db push
     @echo ""
     @echo "=== Setup complete ==="
-    @echo "Admin portal: http://localhost:5173"
-    @echo "Local API:    http://localhost:8000"
-    @echo ""
     @echo "Next: just dev"
 
 # ── DEV ───────────────────────────────────────────────────────────────
-# Run admin portal + local API in dev mode
+# Run all workspace dev servers in parallel
 dev:
     @echo "=== Starting QiLabs Dev ==="
-    pnpm --filter @qi/admin-portal dev
+    pnpm -r run dev
 
-# Run everything in parallel (portal + python API)
-dev-all:
-    @echo "=== Starting all services ==="
-    start /B pnpm --filter @qi/admin-portal dev
-    start /B python/.venv/Scripts/python python/qiarchive/api/main.py
-    @echo "Admin portal: http://localhost:5173"
-    @echo "Python API:   http://localhost:8000"
+# Run only QiApps
+dev-apps:
+    @echo "=== Starting QiApps ==="
+    pnpm --filter "../60_QiApps/**" run dev
+
+# Run only QiSites
+dev-sites:
+    @echo "=== Starting QiSites ==="
+    pnpm --filter "../70_QiSites/**" run dev
+
+# Run QiWorkers (Cloudflare Workers via wrangler)
+dev-workers:
+    @echo "=== Starting QiWorkers ==="
+    pnpm --filter "../25_QiWorkers" run dev
 
 # ── STATUS ────────────────────────────────────────────────────────────
-# Check DB, storage, worker health, data dirs
+# Check data dirs and environment
 status:
     @echo "=== QiLabs Status ==="
     @echo "Checking data directories..."
@@ -62,25 +61,10 @@ status:
     @if exist C:\QiData\reviewed (echo "[OK]  C:/QiData/reviewed") else (echo "[MISSING] C:/QiData/reviewed")
     @if exist C:\QiData\failed (echo "[OK]  C:/QiData/failed") else (echo "[MISSING] C:/QiData/failed")
     @echo ""
-    @echo "Checking Python API..."
-    -curl -s http://localhost:8000/health || echo "[OFFLINE] Python API not running — run: just dev-all"
-    @echo ""
-    @echo "Done. Check .env for SUPABASE and R2 credentials."
-
-# ── INGEST ────────────────────────────────────────────────────────────
-# Trigger a scan + ingest of C:/QiData/inbox/
-ingest:
-    @echo "=== Triggering Ingest ==="
-    python/.venv/Scripts/python python/qiarchive/scan/scan.py --inbox C:\QiData\inbox
-
-# ── REPAIR ────────────────────────────────────────────────────────────
-# Run repair/reindex job on failed records
-repair:
-    @echo "=== Running Repair ==="
-    python/.venv/Scripts/python python/qiarchive/repair/repair.py
+    @echo "Done. Check .env for SUPABASE, R2, and OPENAI credentials."
 
 # ── RESET ─────────────────────────────────────────────────────────────
-# Clear local state (data dirs) — does NOT affect DB
+# Clear local staging/log state — does NOT affect DB or cloud storage
 reset:
     @echo "=== Resetting local data (does NOT touch DB) ==="
     -del /Q C:\QiData\staging\*
@@ -89,12 +73,21 @@ reset:
     @echo "Run: just setup to re-create if needed."
 
 # ── BUILD ─────────────────────────────────────────────────────────────
+# Build all packages
 build:
-    pnpm --filter @qi/admin-portal build
+    pnpm -r run build
+
+# Build only QiApps
+build-apps:
+    pnpm --filter "../60_QiApps/**" run build
+
+# Build only QiSites
+build-sites:
+    pnpm --filter "../70_QiSites/**" run build
 
 # ── LINT / TYPECHECK ──────────────────────────────────────────────────
 lint:
-    pnpm --filter @qi/admin-portal lint
+    pnpm -r run lint
 
 typecheck:
-    pnpm --filter @qi/admin-portal typecheck
+    pnpm -r run typecheck

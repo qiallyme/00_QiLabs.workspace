@@ -1,15 +1,16 @@
 # QiLabs Toolbox Validation Report
 
-- Generated: 2026-07-02T05:26:20
-- Plugins: 76
+- Generated: 2026-07-05T02:11:06
+- Plugins: 77
 - Errors: 2
-- Warnings: 9
+- Warnings: 7
 
 ## Plugins
 
-- `access.qiaccess.bookmarks` - QiAccess Bookmarks (access)
 - `beta.audio` - Audio (beta)
-- `beta.notion_pipeline` - Notion Pipeline (beta)
+- `converters.extractors` - Extractor (converters)
+- `converters.pdf_splitter` - Pdf Splitter (converters)
+- `converters.text_extractor` - Text Extractor (converters)
 - `finance.cashapp.to.sample.bankstatement` - Cashapp To Sample Bankstatement (finance)
 - `finance.firefly.bills.importer` - Firefly Bills Importer (finance)
 - `finance.tax.compiler` - Tax Compiler (finance)
@@ -86,14 +87,6 @@
 
 ## Findings
 
-- **WARNING** `missing_requirement` - Requirement may be missing: dlt
-  - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\beta\notion_pipeline\manifest.yaml`
-  - Plugin: `beta.notion_pipeline`
-  - Fixable: yes
-- **WARNING** `missing_requirement` - Requirement may be missing: notion
-  - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\beta\notion_pipeline\manifest.yaml`
-  - Plugin: `beta.notion_pipeline`
-  - Fixable: yes
 - **WARNING** `missing_requirement` - Requirement may be missing: requests
   - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\finance\firefly_bills_importer\manifest.yaml`
   - Plugin: `finance.firefly.bills.importer`

@@ -1,16 +1,20 @@
-toolbox/_cleanup_archive/
-toolbox/_archive/
-toolbox/_review_bundles_for_chatgpt/
-toolbox/_housekeeping/plans/
-toolbox/_housekeeping/backups/
-toolbox/_housekeeping/logs/
-toolbox/_housekeeping/manifests/
-toolbox/_housekeeping/reports/
-toolbox/_housekeeping/summaries/
+# ── Toolbox build artifacts ────────────────────────────────────────────
+toolbox/dist/
+toolbox/build/
+toolbox/*.exe
+toolbox/toolbox_registry.json
+toolbox/toolbox_autofix_report.json
+
+# ── Toolbox housekeeping runtime outputs ──────────────────────────────
+toolbox/tools/system/housekeeping/backups/
+toolbox/tools/system/housekeeping/logs/
+toolbox/tools/system/housekeeping/manifests/
+toolbox/tools/system/housekeeping/plans/
+toolbox/tools/system/housekeeping/reports/
+toolbox/tools/system/housekeeping/summaries/
+
+# ── Python ─────────────────────────────────────────────────────────────
 .venv/
 venv/
 __pycache__/
-dist/
-build/
 *.pyc
-*.exe

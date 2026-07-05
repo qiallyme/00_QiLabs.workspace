@@ -1,46 +1,9 @@
 {
   "schema": "qilabs.toolbox.registry.v2",
-  "generated_at": "2026-07-02T05:26:20",
+  "generated_at": "2026-07-05T02:11:06",
   "toolbox_root": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox",
-  "plugin_count": 76,
+  "plugin_count": 77,
   "plugins": [
-    {
-      "plugin_id": "access.qiaccess.bookmarks",
-      "tool_id": "access.qiaccess.bookmarks",
-      "name": "QiAccess Bookmarks",
-      "category": "access",
-      "description": "Local QiAccess-style bookmarks and links cockpit with CSV import/export and editable link groups.",
-      "version": "0.2.0",
-      "enabled": true,
-      "requirements": [
-        "dataclasses"
-      ],
-      "entry": {
-        "type": "plugin_v2",
-        "target": "qiaccess_bookmarks.py",
-        "class_name": "QiPlugin",
-        "working_dir": ".",
-        "open_console": false
-      },
-      "actions": [],
-      "raw": {
-        "plugin_id": "access.qiaccess.bookmarks",
-        "tool_id": "access.qiaccess.bookmarks",
-        "name": "QiAccess Bookmarks",
-        "category": "access",
-        "version": "0.2.0",
-        "enabled": true,
-        "description": "Local QiAccess-style bookmarks and links cockpit with CSV import/export and editable link groups.",
-        "entry": {
-          "type": "plugin_v2",
-          "target": "qiaccess_bookmarks.py",
-          "class_name": "QiPlugin"
-        },
-        "requirements": "[]"
-      },
-      "path": "tools/access/qiaccess_bookmarks",
-      "manifest_path": "tools/access/qiaccess_bookmarks/manifest.yaml"
-    },
     {
       "plugin_id": "beta.audio",
       "tool_id": "beta.audio",
@@ -73,49 +36,199 @@
         },
         "requirements": {}
       },
-      "path": "tools/beta/audio",
-      "manifest_path": "tools/beta/audio/manifest.yaml"
+      "path": "tools/media/audio",
+      "manifest_path": "tools/media/audio/manifest.yaml"
     },
     {
-      "plugin_id": "beta.notion_pipeline",
-      "tool_id": "beta.notion_pipeline",
-      "name": "Notion Pipeline",
-      "category": "beta",
-      "description": "Notion Pipeline plugin.",
+      "plugin_id": "converters.extractors",
+      "tool_id": "converters.extractors",
+      "name": "Extractor",
+      "category": "converters",
+      "description": "Extractor plugin.",
       "version": "0.1.0",
       "enabled": true,
-      "requirements": [
-        "dlt",
-        "notion"
-      ],
+      "requirements": [],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "extractor.py",
+        "class_name": "TextExtractorTool",
+        "working_dir": ".",
+        "open_console": false
+      },
+      "actions": [],
+      "raw": {
+        "id": "toolbox.dev.extractor",
+        "name": "Extractor",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.dev.extractor",
+          "file": "extractor.py",
+          "class_name": "TextExtractorTool",
+          "entrypoint": "TextExtractorTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "dev",
+          "category": "dev",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/dev/extractor/extractor.py",
+          "readme": "tools/dev/extractor/README.md"
+        },
+        "tags": [
+          "toolbox",
+          "dev",
+          "qione"
+        ]
+      },
+      "path": "tools/converters/extractors",
+      "manifest_path": "tools/converters/extractors/manifest.yaml"
+    },
+    {
+      "plugin_id": "converters.pdf_splitter",
+      "tool_id": "converters.pdf_splitter",
+      "name": "Pdf Splitter",
+      "category": "converters",
+      "description": "Pdf Splitter plugin.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "pdf_splitter.py",
+        "class_name": "BulkPdfSplitterTool",
+        "working_dir": ".",
+        "open_console": false
+      },
+      "actions": [],
+      "raw": {
+        "id": "toolbox.docs.pdf_splitter",
+        "name": "Pdf Splitter",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.docs.pdf_splitter",
+          "file": "pdf_splitter.py",
+          "class_name": "BulkPdfSplitterTool",
+          "entrypoint": "BulkPdfSplitterTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "docs",
+          "category": "docs",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/docs/pdf_splitter/pdf_splitter.py",
+          "readme": "tools/docs/pdf_splitter/README.md"
+        },
+        "tags": [
+          "toolbox",
+          "docs",
+          "qione"
+        ]
+      },
+      "path": "tools/converters/docs/pdf_splitter",
+      "manifest_path": "tools/converters/docs/pdf_splitter/manifest.yaml"
+    },
+    {
+      "plugin_id": "converters.text_extractor",
+      "tool_id": "converters.text_extractor",
+      "name": "Text Extractor",
+      "category": "converters",
+      "description": "Text Extractor plugin.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [],
       "entry": {
         "type": "script",
-        "target": "notion_pipeline.py",
+        "target": "text_extractor.py",
         "class_name": "",
         "working_dir": ".",
         "open_console": false
       },
       "actions": [],
       "raw": {
-        "plugin_id": "beta.notion_pipeline",
-        "tool_id": "beta.notion_pipeline",
-        "name": "Notion Pipeline",
-        "category": "beta",
-        "version": "0.1.0",
-        "enabled": true,
-        "description": "Notion Pipeline plugin.",
-        "entry": {
-          "type": "script",
-          "target": "notion_pipeline.py",
-          "class_name": ""
+        "id": "toolbox.text_extractor",
+        "name": "Text Extractor",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.text_extractor",
+          "file": "text_extractor.py",
+          "class_name": "UNKNOWN",
+          "entrypoint": "UNKNOWN"
         },
-        "requirements": [
-          "dlt",
-          "notion"
+        "toolbox": {
+          "ui_enabled": true,
+          "category": "text",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/text_extractor/text_extractor.py",
+          "readme": "tools/text_extractor/README.md"
+        },
+        "tags": [
+          "toolbox",
+          "text",
+          "qione"
         ]
       },
-      "path": "tools/beta/notion_pipeline",
-      "manifest_path": "tools/beta/notion_pipeline/manifest.yaml"
+      "path": "tools/converters/docs/text_extractor",
+      "manifest_path": "tools/converters/docs/text_extractor/manifest.yaml"
     },
     {
       "plugin_id": "finance.cashapp.to.sample.bankstatement",
@@ -5666,43 +5779,6 @@
   ],
   "tools": [
     {
-      "plugin_id": "access.qiaccess.bookmarks",
-      "tool_id": "access.qiaccess.bookmarks",
-      "name": "QiAccess Bookmarks",
-      "category": "access",
-      "description": "Local QiAccess-style bookmarks and links cockpit with CSV import/export and editable link groups.",
-      "version": "0.2.0",
-      "enabled": true,
-      "requirements": [
-        "dataclasses"
-      ],
-      "entry": {
-        "type": "plugin_v2",
-        "target": "qiaccess_bookmarks.py",
-        "class_name": "QiPlugin",
-        "working_dir": ".",
-        "open_console": false
-      },
-      "actions": [],
-      "raw": {
-        "plugin_id": "access.qiaccess.bookmarks",
-        "tool_id": "access.qiaccess.bookmarks",
-        "name": "QiAccess Bookmarks",
-        "category": "access",
-        "version": "0.2.0",
-        "enabled": true,
-        "description": "Local QiAccess-style bookmarks and links cockpit with CSV import/export and editable link groups.",
-        "entry": {
-          "type": "plugin_v2",
-          "target": "qiaccess_bookmarks.py",
-          "class_name": "QiPlugin"
-        },
-        "requirements": "[]"
-      },
-      "path": "tools/access/qiaccess_bookmarks",
-      "manifest_path": "tools/access/qiaccess_bookmarks/manifest.yaml"
-    },
-    {
       "plugin_id": "beta.audio",
       "tool_id": "beta.audio",
       "name": "Audio",
@@ -5734,49 +5810,199 @@
         },
         "requirements": {}
       },
-      "path": "tools/beta/audio",
-      "manifest_path": "tools/beta/audio/manifest.yaml"
+      "path": "tools/media/audio",
+      "manifest_path": "tools/media/audio/manifest.yaml"
     },
     {
-      "plugin_id": "beta.notion_pipeline",
-      "tool_id": "beta.notion_pipeline",
-      "name": "Notion Pipeline",
-      "category": "beta",
-      "description": "Notion Pipeline plugin.",
+      "plugin_id": "converters.extractors",
+      "tool_id": "converters.extractors",
+      "name": "Extractor",
+      "category": "converters",
+      "description": "Extractor plugin.",
       "version": "0.1.0",
       "enabled": true,
-      "requirements": [
-        "dlt",
-        "notion"
-      ],
+      "requirements": [],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "extractor.py",
+        "class_name": "TextExtractorTool",
+        "working_dir": ".",
+        "open_console": false
+      },
+      "actions": [],
+      "raw": {
+        "id": "toolbox.dev.extractor",
+        "name": "Extractor",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.dev.extractor",
+          "file": "extractor.py",
+          "class_name": "TextExtractorTool",
+          "entrypoint": "TextExtractorTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "dev",
+          "category": "dev",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/dev/extractor/extractor.py",
+          "readme": "tools/dev/extractor/README.md"
+        },
+        "tags": [
+          "toolbox",
+          "dev",
+          "qione"
+        ]
+      },
+      "path": "tools/converters/extractors",
+      "manifest_path": "tools/converters/extractors/manifest.yaml"
+    },
+    {
+      "plugin_id": "converters.pdf_splitter",
+      "tool_id": "converters.pdf_splitter",
+      "name": "Pdf Splitter",
+      "category": "converters",
+      "description": "Pdf Splitter plugin.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "pdf_splitter.py",
+        "class_name": "BulkPdfSplitterTool",
+        "working_dir": ".",
+        "open_console": false
+      },
+      "actions": [],
+      "raw": {
+        "id": "toolbox.docs.pdf_splitter",
+        "name": "Pdf Splitter",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.docs.pdf_splitter",
+          "file": "pdf_splitter.py",
+          "class_name": "BulkPdfSplitterTool",
+          "entrypoint": "BulkPdfSplitterTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "docs",
+          "category": "docs",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/docs/pdf_splitter/pdf_splitter.py",
+          "readme": "tools/docs/pdf_splitter/README.md"
+        },
+        "tags": [
+          "toolbox",
+          "docs",
+          "qione"
+        ]
+      },
+      "path": "tools/converters/docs/pdf_splitter",
+      "manifest_path": "tools/converters/docs/pdf_splitter/manifest.yaml"
+    },
+    {
+      "plugin_id": "converters.text_extractor",
+      "tool_id": "converters.text_extractor",
+      "name": "Text Extractor",
+      "category": "converters",
+      "description": "Text Extractor plugin.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [],
       "entry": {
         "type": "script",
-        "target": "notion_pipeline.py",
+        "target": "text_extractor.py",
         "class_name": "",
         "working_dir": ".",
         "open_console": false
       },
       "actions": [],
       "raw": {
-        "plugin_id": "beta.notion_pipeline",
-        "tool_id": "beta.notion_pipeline",
-        "name": "Notion Pipeline",
-        "category": "beta",
-        "version": "0.1.0",
-        "enabled": true,
-        "description": "Notion Pipeline plugin.",
-        "entry": {
-          "type": "script",
-          "target": "notion_pipeline.py",
-          "class_name": ""
+        "id": "toolbox.text_extractor",
+        "name": "Text Extractor",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.text_extractor",
+          "file": "text_extractor.py",
+          "class_name": "UNKNOWN",
+          "entrypoint": "UNKNOWN"
         },
-        "requirements": [
-          "dlt",
-          "notion"
+        "toolbox": {
+          "ui_enabled": true,
+          "category": "text",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/text_extractor/text_extractor.py",
+          "readme": "tools/text_extractor/README.md"
+        },
+        "tags": [
+          "toolbox",
+          "text",
+          "qione"
         ]
       },
-      "path": "tools/beta/notion_pipeline",
-      "manifest_path": "tools/beta/notion_pipeline/manifest.yaml"
+      "path": "tools/converters/docs/text_extractor",
+      "manifest_path": "tools/converters/docs/text_extractor/manifest.yaml"
     },
     {
       "plugin_id": "finance.cashapp.to.sample.bankstatement",
@@ -11329,22 +11555,6 @@
     {
       "severity": "WARNING",
       "code": "missing_requirement",
-      "path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\beta\\notion_pipeline\\manifest.yaml",
-      "message": "Requirement may be missing: dlt",
-      "plugin_id": "beta.notion_pipeline",
-      "fixable": true
-    },
-    {
-      "severity": "WARNING",
-      "code": "missing_requirement",
-      "path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\beta\\notion_pipeline\\manifest.yaml",
-      "message": "Requirement may be missing: notion",
-      "plugin_id": "beta.notion_pipeline",
-      "fixable": true
-    },
-    {
-      "severity": "WARNING",
-      "code": "missing_requirement",
       "path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\finance\\firefly_bills_importer\\manifest.yaml",
       "message": "Requirement may be missing: requests",
       "plugin_id": "finance.firefly.bills.importer",
@@ -11416,5 +11626,5 @@
     }
   ],
   "errors": 2,
-  "warnings": 9
+  "warnings": 7
 }
