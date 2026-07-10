@@ -1,0 +1,10 @@
+{
+  "package": "EmpowerQNow713_Codex_Control_DropIn",
+  "created": "2026-07-08T04:03:24",
+  "unzip_at": "C:\\QiLabs",
+  "target": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\empowerqnow713_migrator\\_codex_control",
+  "notes": [
+    "This package uses a _codex_control subfolder to avoid overwriting an existing migrator README or manifest.",
+    "GitHub Issues should remain the work queue; these markdown files are the local control/manual layer."
+  ]
+}

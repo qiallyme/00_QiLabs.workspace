@@ -1,0 +1,47 @@
+START HERE — EmpowerQNow713 Interactive Migrator
+
+EXTRACT LOCATION
+
+Extract this ZIP to this parent folder:
+
+C:\QiLabs\00_QiLabs.workspace\toolbox\tools\
+
+The ZIP contains a folder named:
+
+empowerqnow713_migrator
+
+So the final result should be:
+
+C:\QiLabs\00_QiLabs.workspace\toolbox\tools\empowerqnow713_migrator\RUN_INTERACTIVE_MIGRATOR.bat
+C:\QiLabs\00_QiLabs.workspace\toolbox\tools\empowerqnow713_migrator\interactive_qivault_empower_migrator.pyw
+C:\QiLabs\00_QiLabs.workspace\toolbox\tools\empowerqnow713_migrator\master_template.md
+
+DO NOT EXTRACT IT TO:
+
+C:\QiLabs\40_QiVault\30_empowerqnow713\
+
+That is the writing/content folder. This migrator is a tool and belongs in the toolbox.
+
+HOW TO RUN
+
+Double-click:
+
+C:\QiLabs\00_QiLabs.workspace\toolbox\tools\empowerqnow713_migrator\RUN_INTERACTIVE_MIGRATOR.bat
+
+INSIDE THE APP
+
+Target folder should be:
+
+C:\QiLabs\40_QiVault\30_empowerqnow713
+
+Button order:
+
+1) DRY RUN / Preview Only
+2) SAFE COPY Migration
+3) Ignore MOVE Originals for now
+
+LOGS
+
+After Safe Copy, logs appear here:
+
+C:\QiLabs\40_QiVault\30_empowerqnow713\00_system\migration_logs\
