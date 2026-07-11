@@ -1,0 +1,8 @@
+[projects.'c:\qilabs\00_qilabs.workspace']
+trust_level = "trusted"
+
+[tui.model_availability_nux]
+"gpt-5.5" = 1
+
+[windows]
+sandbox = "elevated"

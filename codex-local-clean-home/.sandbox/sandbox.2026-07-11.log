@@ -1,0 +1,13 @@
+[2026-07-11T04:34:11.832788100+00:00] ensuring sandbox users offline=CodexSandboxOffline online=CodexSandboxOnline
+[2026-07-11T04:34:14.111855700+00:00] firewall rule configured name=codex_sandbox_offline_block_loopback_udp protocol=17 RemoteAddresses=127.0.0.0/8,::/127 RemotePorts=* LocalUserAuthorizedList=O:LSD:(A;;CC;;;S-1-5-21-2309107589-3902294588-2898780048-1004)
+[2026-07-11T04:34:14.924182900+00:00] firewall rule configured name=codex_sandbox_offline_block_loopback_tcp protocol=6 RemoteAddresses=127.0.0.0/8,::/127 RemotePorts=* LocalUserAuthorizedList=O:LSD:(A;;CC;;;S-1-5-21-2309107589-3902294588-2898780048-1004)
+[2026-07-11T04:34:16.361808200+00:00] firewall rule configured name=codex_sandbox_offline_block_loopback_tcp protocol=6 RemoteAddresses=127.0.0.0/8,::/127 RemotePorts=1-65535 LocalUserAuthorizedList=O:LSD:(A;;CC;;;S-1-5-21-2309107589-3902294588-2898780048-1004)
+[2026-07-11T04:34:17.225873500+00:00] firewall rule configured name=codex_sandbox_offline_block_outbound protocol=256 RemoteAddresses=0.0.0.0-126.255.255.255,128.0.0.0-255.255.255.255,::,::2-ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff RemotePorts=* LocalUserAuthorizedList=O:LSD:(A;;CC;;;S-1-5-21-2309107589-3902294588-2898780048-1004)
+[2026-07-11T04:34:17.318045300+00:00] WFP setup succeeded for CodexSandboxOffline with 12 installed filters
+[2026-07-11T04:34:17.929796300+00:00] granting write ACE to C:\QiLabs\00_QiLabs.workspace\codex-local-test for sandbox group and capability SID
+[2026-07-11T04:34:17.956486300+00:00] granting write ACE to C:\Users\crice\AppData\Local\Temp for sandbox group and capability SID
+[2026-07-11T04:34:18.013691+00:00] read-acl-only mode: applying read ACLs
+[2026-07-11T04:34:18.020162100+00:00] granting read ACE to C:\Users\crice\.cowork for sandbox users
+[2026-07-11T04:34:18.044386900+00:00] granting read ACE to C:\Users\crice\.local for sandbox users
+[2026-07-11T04:34:18.096628200+00:00] read ACL run completed
+[2026-07-10 23:34:22.713 codex-windows-sandbox-setup.exe] setup binary completed

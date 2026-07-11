@@ -9,7 +9,7 @@ a = Analysis(
     ['main_ui.py'],
     pathex=[],
     binaries=[],
-    datas=[('toolbox_core', 'toolbox_core'), ('core', 'core')],
+    datas=[],
     hiddenimports=hiddenimports,
     hookspath=[],
     hooksconfig={},
