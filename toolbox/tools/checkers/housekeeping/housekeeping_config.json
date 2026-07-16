@@ -36,9 +36,15 @@
                         "_backup",
                         "_backups",
                         "_review_bundles_for_chatgpt",
-                        "payloads"
+                        "payloads",
+                        "_system",
+                        "_qiconfig",
+                        "copilot"
                     ],
     "ignore_globs":  [
+                         "**/_system/**",
+                         "**/_qiconfig/**",
+                         "**/copilot/**",
                          "**/.git/**",
                          "**/.obsidian/**",
                          "**/.smart-env/**",
