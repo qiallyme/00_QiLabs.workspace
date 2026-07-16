@@ -6,8 +6,8 @@
   "workspace_root": "C:\\QiLabs\\00_QiLabs.workspace",
   "vault_root": "C:\\QiLabs\\40_QiVault",
   "tree_file": "C:\\QiLabs\\40_QiVault\\qilabs_full_tree.md",
-  "master_template_file": "C:\\QiLabs\\_qiconfig\\master_template.md",
-  "tags_file": "C:\\QiLabs\\_qiconfig\\tags.json",
+  "master_template_file": "C:\\QiLabs\\00_QiLabs.workspace\\_qiconfig\\master_template.md",
+  "tags_file": "C:\\QiLabs\\40_QiVault\\_qiconfig\\tags.json",
   "git_roots": [
     "C:\\QiLabs\\00_QiLabs.workspace",
     "C:\\QiLabs\\10_QiSpark",

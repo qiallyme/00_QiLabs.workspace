@@ -16,7 +16,7 @@ except Exception:
 
 PLUGIN_DIR = Path(__file__).resolve().parent
 TOOLBOX_ROOT = PLUGIN_DIR.parents[2]
-HOUSEKEEPING_DIR = TOOLBOX_ROOT / "_housekeeping"
+HOUSEKEEPING_DIR = TOOLBOX_ROOT / "tools/checkers/housekeeping"
 HOUSEKEEPING_UI = HOUSEKEEPING_DIR / "housekeeping_ui.py"
 LAUNCH_BAT = HOUSEKEEPING_DIR / "launch_housekeeping.bat"
 
