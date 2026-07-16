@@ -1,18 +1,19 @@
 # QiLabs Toolbox Validation Report
 
-- Generated: 2026-07-11T13:44:55
-- Plugins: 77
+- Generated: 2026-07-16T06:22:27
+- Plugins: 71
 - Errors: 2
-- Warnings: 7
+- Warnings: 6
 
 ## Plugins
 
 - `beta.audio` - Audio (beta)
+- `converters.export_blueprint` - Export Blueprint Tool (converters)
+- `converters.data_extractor` - Extractor (converters)
 - `converters.extractors` - Extractor (converters)
 - `converters.pdf_splitter` - Pdf Splitter (converters)
 - `converters.text_extractor` - Text Extractor (converters)
 - `finance.cashapp.to.sample.bankstatement` - Cashapp To Sample Bankstatement (finance)
-- `finance.firefly.bills.importer` - Firefly Bills Importer (finance)
 - `finance.tax.compiler` - Tax Compiler (finance)
 - `finance.zai.ledger.importer` - Zai Ledger Importer (finance)
 - `media.audio_transcriber` - Audio Transcriber (media)
@@ -27,9 +28,8 @@
 - `organize.downloads.inspector` - Downloads Inspector (organize)
 - `organize.downloads_renamer` - Downloads Renamer (organize)
 - `organize.duplicate_finder` - Duplicate Finder (organize)
+- `organize.empowerqnow713_migrator` - EmpowerQNow713 Migrator (organize)
 - `organize.errors_to_markdown` - Errors To Markdown (organize)
-- `organize.export_blueprint` - Export Blueprint Tool (organize)
-- `organize.data_extractor` - Extractor (organize)
 - `organize.file.cleaner` - File Cleaner (organize)
 - `organize.files_sorter` - Files Sorter (organize)
 - `organize.folder.flattener` - Folder Flattener (organize)
@@ -68,18 +68,12 @@
 - `system.housekeeping.console` - Housekeeping Console (system)
 - `system.job_runner` - Job Runner (system)
 - `system.markdown_validator` - Markdown Validator (system)
-- `system.plugin_host_demo` - Plugin Host Demo (system)
-- `system.qi_codex` - Qi Codex (system)
 - `system.qilabs.structure.checker` - QiLabs Structure Checker (system)
 - `system.realm_lister` - Realm Lister (system)
 - `system.registry_builder` - Registry Builder (system)
-- `system.remote.ssh` - Remote Ssh (system)
-- `system.repo_triager` - Repo Triager (system)
 - `system.rule_tester` - Rule Tester (system)
-- `system.scheduler` - Scheduler (system)
 - `system.slugs_mapper` - Slugs Mapper (system)
 - `system.stubs_creator` - Stubs Creator (system)
-- `system.toolbox_manager` - Toolbox Manager (system)
 - `system.tree_compiler` - Tree Compiler (system)
 - `system.sys.docs.compiler` - Tree-Aware Docs Compiler (system)
 - `system.vault_linter` - Vault Linter (system)
@@ -87,13 +81,13 @@
 
 ## Findings
 
-- **WARNING** `missing_requirement` - Requirement may be missing: requests
-  - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\finance\firefly_bills_importer\manifest.yaml`
-  - Plugin: `finance.firefly.bills.importer`
+- **ERROR** `missing_entry_file` - Entry target does not exist: extractor.py
+  - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\converters\data_extractor\manifest.yaml`
+  - Plugin: `converters.data_extractor`
   - Fixable: yes
-- **WARNING** `missing_requirement` - Requirement may be missing: pillow
-  - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\finance\tax_compiler\manifest.yaml`
-  - Plugin: `finance.tax.compiler`
+- **ERROR** `missing_entry_file` - Entry target does not exist: export_blueprint_tool.py
+  - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\converters\export_blueprint\manifest.yaml`
+  - Plugin: `converters.export_blueprint`
   - Fixable: yes
 - **WARNING** `missing_requirement` - Requirement may be missing: pillow_heif
   - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\finance\tax_compiler\manifest.yaml`
@@ -103,13 +97,13 @@
   - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\finance\zai_ledger_importer\manifest.yaml`
   - Plugin: `finance.zai.ledger.importer`
   - Fixable: yes
-- **ERROR** `missing_entry_file` - Entry target does not exist: extractor.py
-  - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\organize\data_extractor\manifest.yaml`
-  - Plugin: `organize.data_extractor`
+- **WARNING** `missing_readme` - Missing README.md.
+  - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\organize\empowerqnow713_migrator`
+  - Plugin: `organize.empowerqnow713_migrator`
   - Fixable: yes
-- **ERROR** `missing_entry_file` - Entry target does not exist: export_blueprint_tool.py
-  - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\organize\export_blueprint\manifest.yaml`
-  - Plugin: `organize.export_blueprint`
+- **WARNING** `missing_init` - Missing __init__.py.
+  - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\organize\empowerqnow713_migrator`
+  - Plugin: `organize.empowerqnow713_migrator`
   - Fixable: yes
 - **WARNING** `missing_requirement` - Requirement may be missing: Send2Trash
   - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\organize\vault_router\manifest.yaml`
@@ -118,8 +112,4 @@
 - **WARNING** `missing_requirement` - Requirement may be missing: rapidfuzz
   - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\organize\vault_router\manifest.yaml`
   - Plugin: `organize.vault.router`
-  - Fixable: yes
-- **WARNING** `missing_requirement` - Requirement may be missing: openpyxl
-  - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\organize\xlsx_tabs_to_csv\manifest.yaml`
-  - Plugin: `organize.xlsx.tabs.to.csv`
   - Fixable: yes

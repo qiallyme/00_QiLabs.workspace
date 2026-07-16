@@ -1,8 +1,8 @@
 {
   "schema": "qilabs.toolbox.registry.v2",
-  "generated_at": "2026-07-11T13:44:55",
+  "generated_at": "2026-07-16T06:22:27",
   "toolbox_root": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox",
-  "plugin_count": 77,
+  "plugin_count": 71,
   "plugins": [
     {
       "plugin_id": "beta.audio",
@@ -38,6 +38,133 @@
       },
       "path": "tools/media/audio",
       "manifest_path": "tools/media/audio/manifest.yaml"
+    },
+    {
+      "plugin_id": "converters.export_blueprint",
+      "tool_id": "converters.export_blueprint",
+      "name": "Export Blueprint Tool",
+      "category": "converters",
+      "description": "Export Blueprint Tool plugin.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "export_blueprint_tool.py",
+        "class_name": "ExportBlueprintTool",
+        "working_dir": ".",
+        "open_console": false
+      },
+      "actions": [],
+      "raw": {
+        "id": "toolbox.export_blueprint_tool",
+        "name": "Export Blueprint Tool",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.export_blueprint_tool",
+          "file": "export_blueprint_tool.py",
+          "class_name": "ExportBlueprintTool",
+          "entrypoint": "ExportBlueprintTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "category": "blueprint",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/export_blueprint_tool/export_blueprint_tool.py",
+          "readme": "tools/export_blueprint_tool/README.md"
+        },
+        "tags": [
+          "toolbox",
+          "blueprint",
+          "qione"
+        ]
+      },
+      "path": "tools/converters/export_blueprint",
+      "manifest_path": "tools/converters/export_blueprint/manifest.yaml"
+    },
+    {
+      "plugin_id": "converters.data_extractor",
+      "tool_id": "converters.data_extractor",
+      "name": "Extractor",
+      "category": "converters",
+      "description": "Extractor plugin.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "extractor.py",
+        "class_name": "TextExtractorTool",
+        "working_dir": ".",
+        "open_console": false
+      },
+      "actions": [],
+      "raw": {
+        "id": "toolbox.dev.extractor",
+        "name": "Extractor",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.dev.extractor",
+          "file": "extractor.py",
+          "class_name": "TextExtractorTool",
+          "entrypoint": "TextExtractorTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "dev",
+          "category": "dev",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/dev/extractor/extractor.py",
+          "readme": "tools/dev/extractor/README.md"
+        },
+        "tags": [
+          "toolbox",
+          "dev",
+          "qione"
+        ]
+      },
+      "path": "tools/converters/data_extractor",
+      "manifest_path": "tools/converters/data_extractor/manifest.yaml"
     },
     {
       "plugin_id": "converters.extractors",
@@ -308,91 +435,6 @@
       "manifest_path": "tools/finance/cashapp_to_sample_bankstatement/manifest.yaml"
     },
     {
-      "plugin_id": "finance.firefly.bills.importer",
-      "tool_id": "finance.firefly.bills.importer",
-      "name": "Firefly Bills Importer",
-      "category": "finance",
-      "description": "Firefly Bills Importer tool.",
-      "version": "0.1.0",
-      "enabled": true,
-      "requirements": [
-        "core",
-        "requests"
-      ],
-      "entry": {
-        "type": "legacy_basetool",
-        "target": "firefly_bills_importer.py",
-        "class_name": "FireflyBillsImporterTool",
-        "working_dir": ".",
-        "open_console": true
-      },
-      "actions": [],
-      "raw": {
-        "tool_id": "finance.firefly.bills.importer",
-        "name": "Firefly Bills Importer",
-        "category": "finance",
-        "version": "0.1.0",
-        "enabled": true,
-        "description": "Firefly Bills Importer tool.",
-        "tags": [
-          "toolbox",
-          "finance",
-          "firefly",
-          "bills",
-          "api"
-        ],
-        "launch": {
-          "type": "python",
-          "target": "firefly_bills_importer.py",
-          "working_dir": ".",
-          "open_console": true
-        },
-        "conflicts": {},
-        "id": "toolbox.finance.firefly_bills_importer",
-        "type": "toolbox_tool",
-        "language": "python",
-        "status": "active",
-        "owner": "QiLabs",
-        "module": {
-          "package": "tools.finance.firefly_bills_importer",
-          "file": "firefly_bills_importer.py",
-          "class_name": "FireflyBillsImporterTool",
-          "entrypoint": "FireflyBillsImporterTool"
-        },
-        "toolbox": {
-          "ui_enabled": true,
-          "bucket": "finance",
-          "category": "finance",
-          "launch_surface": [
-            "QiOne Desktop Tools"
-          ],
-          "requires_target_directory": false
-        },
-        "runtime": {
-          "requires_network": true,
-          "requires_secrets": true,
-          "dependencies": [
-            "requests"
-          ]
-        },
-        "safety": {
-          "supports_dry_run": true,
-          "supports_live_run": true,
-          "deletes_files": false,
-          "moves_files": false,
-          "modifies_files": false,
-          "writes_generated_files": false,
-          "review_before_live": true
-        },
-        "paths": {
-          "source": "tools/finance/firefly_bills_importer/firefly_bills_importer.py",
-          "readme": "tools/finance/firefly_bills_importer/README.md"
-        }
-      },
-      "path": "tools/finance/firefly_bills_importer",
-      "manifest_path": "tools/finance/firefly_bills_importer/manifest.yaml"
-    },
-    {
       "plugin_id": "finance.tax.compiler",
       "tool_id": "finance.tax.compiler",
       "name": "Tax Compiler",
@@ -632,8 +674,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/media/audio_transcriber",
-      "manifest_path": "tools/media/audio_transcriber/manifest.yaml"
+      "path": "tools/media/audio/audio_transcriber",
+      "manifest_path": "tools/media/audio/audio_transcriber/manifest.yaml"
     },
     {
       "plugin_id": "media.media_tree_merger",
@@ -788,8 +830,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/media/mkv_enhancer",
-      "manifest_path": "tools/media/mkv_enhancer/manifest.yaml"
+      "path": "tools/media/video/mkv_enhancer",
+      "manifest_path": "tools/media/video/mkv_enhancer/manifest.yaml"
     },
     {
       "plugin_id": "media.mkv_merger",
@@ -866,8 +908,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/media/mkv_merger",
-      "manifest_path": "tools/media/mkv_merger/manifest.yaml"
+      "path": "tools/media/video/mkv_merger",
+      "manifest_path": "tools/media/video/mkv_merger/manifest.yaml"
     },
     {
       "plugin_id": "media.video.converter",
@@ -945,8 +987,8 @@
           "readme": "tools/media/video_converter/README.md"
         }
       },
-      "path": "tools/media/video_converter",
-      "manifest_path": "tools/media/video_converter/manifest.yaml"
+      "path": "tools/media/video/video_converter",
+      "manifest_path": "tools/media/video/video_converter/manifest.yaml"
     },
     {
       "plugin_id": "organize.archivist",
@@ -1181,8 +1223,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/organize/code_extractor",
-      "manifest_path": "tools/organize/code_extractor/manifest.yaml"
+      "path": "tools/converters/code_extractor",
+      "manifest_path": "tools/converters/code_extractor/manifest.yaml"
     },
     {
       "plugin_id": "organize.csv_to_markdown",
@@ -1259,8 +1301,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/organize/csv_to_markdown",
-      "manifest_path": "tools/organize/csv_to_markdown/manifest.yaml"
+      "path": "tools/converters/csv_to_markdown",
+      "manifest_path": "tools/converters/csv_to_markdown/manifest.yaml"
     },
     {
       "plugin_id": "organize.downloads.inspector",
@@ -1497,6 +1539,40 @@
       "manifest_path": "tools/organize/duplicate_finder/manifest.yaml"
     },
     {
+      "plugin_id": "organize.empowerqnow713_migrator",
+      "tool_id": "organize.empowerqnow713_migrator",
+      "name": "EmpowerQNow713 Migrator",
+      "category": "organize",
+      "description": "Safe interactive reorganizer for C:\\QiLabs\\40_QiVault\\30_empowerqnow713.",
+      "version": "1.0.0",
+      "enabled": true,
+      "requirements": [],
+      "entry": {
+        "type": "script",
+        "target": "interactive_qivault_empower_migrator.pyw",
+        "class_name": "",
+        "working_dir": ".",
+        "open_console": false
+      },
+      "actions": [],
+      "raw": {
+        "plugin_id": "organize.empowerqnow713_migrator",
+        "tool_id": "organize.empowerqnow713_migrator",
+        "name": "EmpowerQNow713 Migrator",
+        "category": "organize",
+        "version": "1.0.0",
+        "enabled": true,
+        "description": "Safe interactive reorganizer for C:\\QiLabs\\40_QiVault\\30_empowerqnow713.",
+        "entry": {
+          "type": "script",
+          "target": "interactive_qivault_empower_migrator.pyw"
+        },
+        "requirements": {}
+      },
+      "path": "tools/organize/empowerqnow713_migrator",
+      "manifest_path": "tools/organize/empowerqnow713_migrator/manifest.yaml"
+    },
+    {
       "plugin_id": "organize.errors_to_markdown",
       "tool_id": "organize.errors_to_markdown",
       "name": "Errors To Markdown",
@@ -1573,133 +1649,6 @@
       },
       "path": "tools/organize/errors_to_markdown",
       "manifest_path": "tools/organize/errors_to_markdown/manifest.yaml"
-    },
-    {
-      "plugin_id": "organize.export_blueprint",
-      "tool_id": "organize.export_blueprint",
-      "name": "Export Blueprint Tool",
-      "category": "organize",
-      "description": "Export Blueprint Tool plugin.",
-      "version": "0.1.0",
-      "enabled": true,
-      "requirements": [],
-      "entry": {
-        "type": "legacy_basetool",
-        "target": "export_blueprint_tool.py",
-        "class_name": "ExportBlueprintTool",
-        "working_dir": ".",
-        "open_console": false
-      },
-      "actions": [],
-      "raw": {
-        "id": "toolbox.export_blueprint_tool",
-        "name": "Export Blueprint Tool",
-        "type": "toolbox_tool",
-        "language": "python",
-        "status": "active",
-        "owner": "QiLabs",
-        "module": {
-          "package": "tools.export_blueprint_tool",
-          "file": "export_blueprint_tool.py",
-          "class_name": "ExportBlueprintTool",
-          "entrypoint": "ExportBlueprintTool"
-        },
-        "toolbox": {
-          "ui_enabled": true,
-          "category": "blueprint",
-          "launch_surface": [
-            "QiOne Desktop Tools"
-          ],
-          "requires_target_directory": true
-        },
-        "runtime": {
-          "requires_network": false,
-          "requires_secrets": false
-        },
-        "safety": {
-          "supports_dry_run": true,
-          "supports_live_run": true,
-          "deletes_files": "unknown",
-          "moves_files": "unknown",
-          "modifies_files": "unknown",
-          "review_before_live": true
-        },
-        "paths": {
-          "source": "tools/export_blueprint_tool/export_blueprint_tool.py",
-          "readme": "tools/export_blueprint_tool/README.md"
-        },
-        "tags": [
-          "toolbox",
-          "blueprint",
-          "qione"
-        ]
-      },
-      "path": "tools/organize/export_blueprint",
-      "manifest_path": "tools/organize/export_blueprint/manifest.yaml"
-    },
-    {
-      "plugin_id": "organize.data_extractor",
-      "tool_id": "organize.data_extractor",
-      "name": "Extractor",
-      "category": "organize",
-      "description": "Extractor plugin.",
-      "version": "0.1.0",
-      "enabled": true,
-      "requirements": [],
-      "entry": {
-        "type": "legacy_basetool",
-        "target": "extractor.py",
-        "class_name": "TextExtractorTool",
-        "working_dir": ".",
-        "open_console": false
-      },
-      "actions": [],
-      "raw": {
-        "id": "toolbox.dev.extractor",
-        "name": "Extractor",
-        "type": "toolbox_tool",
-        "language": "python",
-        "status": "active",
-        "owner": "QiLabs",
-        "module": {
-          "package": "tools.dev.extractor",
-          "file": "extractor.py",
-          "class_name": "TextExtractorTool",
-          "entrypoint": "TextExtractorTool"
-        },
-        "toolbox": {
-          "ui_enabled": true,
-          "bucket": "dev",
-          "category": "dev",
-          "launch_surface": [
-            "QiOne Desktop Tools"
-          ],
-          "requires_target_directory": true
-        },
-        "runtime": {
-          "requires_network": false,
-          "requires_secrets": false
-        },
-        "safety": {
-          "supports_dry_run": true,
-          "supports_live_run": true,
-          "deletes_files": "unknown",
-          "moves_files": "unknown",
-          "modifies_files": "unknown",
-          "review_before_live": true
-        },
-        "paths": {
-          "source": "tools/dev/extractor/extractor.py",
-          "readme": "tools/dev/extractor/README.md"
-        },
-        "tags": [
-          "toolbox",
-          "dev",
-          "qione"
-        ]
-      },
-      "path": "tools/organize/data_extractor",
-      "manifest_path": "tools/organize/data_extractor/manifest.yaml"
     },
     {
       "plugin_id": "organize.file.cleaner",
@@ -1932,8 +1881,8 @@
           "readme": "tools/organize/folder_flattener/README.md"
         }
       },
-      "path": "tools/organize/folder_flattener",
-      "manifest_path": "tools/organize/folder_flattener/manifest.yaml"
+      "path": "tools/converters/folder_flattener",
+      "manifest_path": "tools/converters/folder_flattener/manifest.yaml"
     },
     {
       "plugin_id": "organize.inbox_organizer",
@@ -2166,8 +2115,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/organize/json_kb_generator",
-      "manifest_path": "tools/organize/json_kb_generator/manifest.yaml"
+      "path": "tools/converters/json_kb_generator",
+      "manifest_path": "tools/converters/json_kb_generator/manifest.yaml"
     },
     {
       "plugin_id": "organize.md_body_mover",
@@ -3232,8 +3181,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/agent_runner",
-      "manifest_path": "tools/system/agent_runner/manifest.yaml"
+      "path": "tools/runners/agent_runner",
+      "manifest_path": "tools/runners/agent_runner/manifest.yaml"
     },
     {
       "plugin_id": "system.antigravity_setup",
@@ -3310,8 +3259,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/antigravity_setup",
-      "manifest_path": "tools/system/antigravity_setup/manifest.yaml"
+      "path": "tools/setup/antigravity_setup",
+      "manifest_path": "tools/setup/antigravity_setup/manifest.yaml"
     },
     {
       "plugin_id": "system.app_creator",
@@ -3388,8 +3337,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/app_creator",
-      "manifest_path": "tools/system/app_creator/manifest.yaml"
+      "path": "tools/creators/app_creator",
+      "manifest_path": "tools/creators/app_creator/manifest.yaml"
     },
     {
       "plugin_id": "system.canvas_builder",
@@ -3466,8 +3415,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/canvas_builder",
-      "manifest_path": "tools/system/canvas_builder/manifest.yaml"
+      "path": "tools/builders/canvas_builder",
+      "manifest_path": "tools/builders/canvas_builder/manifest.yaml"
     },
     {
       "plugin_id": "system.cloudflare_md_builder",
@@ -3544,8 +3493,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/cloudflare_md_builder",
-      "manifest_path": "tools/system/cloudflare_md_builder/manifest.yaml"
+      "path": "tools/builders/cloudflare_md_builder",
+      "manifest_path": "tools/builders/cloudflare_md_builder/manifest.yaml"
     },
     {
       "plugin_id": "system.code_review_compiler",
@@ -3622,8 +3571,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/code_review_compiler",
-      "manifest_path": "tools/system/code_review_compiler/manifest.yaml"
+      "path": "tools/compilers/code_review_compiler",
+      "manifest_path": "tools/compilers/code_review_compiler/manifest.yaml"
     },
     {
       "plugin_id": "system.compliance_checker",
@@ -3700,8 +3649,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/compliance_checker",
-      "manifest_path": "tools/system/compliance_checker/manifest.yaml"
+      "path": "tools/checkers/compliance_checker",
+      "manifest_path": "tools/checkers/compliance_checker/manifest.yaml"
     },
     {
       "plugin_id": "system.creator_smoke_plugin",
@@ -3735,8 +3684,8 @@
         },
         "requirements": {}
       },
-      "path": "tools/system/creator_smoke_plugin",
-      "manifest_path": "tools/system/creator_smoke_plugin/manifest.yaml"
+      "path": "tools/creators/creator_smoke_plugin",
+      "manifest_path": "tools/creators/creator_smoke_plugin/manifest.yaml"
     },
     {
       "plugin_id": "system.csv_md_comparator",
@@ -3813,8 +3762,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/csv_md_comparator",
-      "manifest_path": "tools/system/csv_md_comparator/manifest.yaml"
+      "path": "tools/scanners/csv_md_comparator",
+      "manifest_path": "tools/scanners/csv_md_comparator/manifest.yaml"
     },
     {
       "plugin_id": "system.csv_searcher",
@@ -3891,8 +3840,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/csv_searcher",
-      "manifest_path": "tools/system/csv_searcher/manifest.yaml"
+      "path": "tools/scanners/csv_searcher",
+      "manifest_path": "tools/scanners/csv_searcher/manifest.yaml"
     },
     {
       "plugin_id": "system.dir_mapper",
@@ -3969,8 +3918,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/dir_mapper",
-      "manifest_path": "tools/system/dir_mapper/manifest.yaml"
+      "path": "tools/mappers/dir_mapper",
+      "manifest_path": "tools/mappers/dir_mapper/manifest.yaml"
     },
     {
       "plugin_id": "system.sys.directory.markmind.mapper",
@@ -4059,8 +4008,8 @@
           "markmind_compatible_outline"
         ]
       },
-      "path": "tools/system/sys_directory_markmind_mapper",
-      "manifest_path": "tools/system/sys_directory_markmind_mapper/manifest.yaml"
+      "path": "tools/mappers/sys_directory_markmind_mapper",
+      "manifest_path": "tools/mappers/sys_directory_markmind_mapper/manifest.yaml"
     },
     {
       "plugin_id": "system.drive_comparator",
@@ -4137,8 +4086,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/drive_comparator",
-      "manifest_path": "tools/system/drive_comparator/manifest.yaml"
+      "path": "tools/scanners/drive_comparator",
+      "manifest_path": "tools/scanners/drive_comparator/manifest.yaml"
     },
     {
       "plugin_id": "system.filesystem_scanner",
@@ -4215,8 +4164,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/filesystem_scanner",
-      "manifest_path": "tools/system/filesystem_scanner/manifest.yaml"
+      "path": "tools/scanners/filesystem_scanner",
+      "manifest_path": "tools/scanners/filesystem_scanner/manifest.yaml"
     },
     {
       "plugin_id": "system.git_pusher",
@@ -4293,8 +4242,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/git_pusher",
-      "manifest_path": "tools/system/git_pusher/manifest.yaml"
+      "path": "tools/git/git_pusher",
+      "manifest_path": "tools/git/git_pusher/manifest.yaml"
     },
     {
       "plugin_id": "system.health_checker",
@@ -4371,8 +4320,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/health_checker",
-      "manifest_path": "tools/system/health_checker/manifest.yaml"
+      "path": "tools/checkers/health_checker",
+      "manifest_path": "tools/checkers/health_checker/manifest.yaml"
     },
     {
       "plugin_id": "system.housekeeping.console",
@@ -4450,8 +4399,8 @@
           "readme": "tools/system/housekeeping_console/README.md"
         }
       },
-      "path": "tools/system/housekeeping_console",
-      "manifest_path": "tools/system/housekeeping_console/manifest.yaml"
+      "path": "tools/checkers/housekeeping_console",
+      "manifest_path": "tools/checkers/housekeeping_console/manifest.yaml"
     },
     {
       "plugin_id": "system.job_runner",
@@ -4528,8 +4477,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/job_runner",
-      "manifest_path": "tools/system/job_runner/manifest.yaml"
+      "path": "tools/runners/job_runner",
+      "manifest_path": "tools/runners/job_runner/manifest.yaml"
     },
     {
       "plugin_id": "system.markdown_validator",
@@ -4606,121 +4555,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/markdown_validator",
-      "manifest_path": "tools/system/markdown_validator/manifest.yaml"
-    },
-    {
-      "plugin_id": "system.plugin_host_demo",
-      "tool_id": "system.plugin_host_demo",
-      "name": "Plugin Host Demo",
-      "category": "system",
-      "description": "Demonstrates a native interactive QiPlugin v2 view.",
-      "version": "0.1.0",
-      "enabled": true,
-      "requirements": [],
-      "entry": {
-        "type": "plugin_v2",
-        "target": "plugin_host_demo.py",
-        "class_name": "QiPlugin",
-        "working_dir": ".",
-        "open_console": false
-      },
-      "actions": [],
-      "raw": {
-        "plugin_id": "system.plugin_host_demo",
-        "tool_id": "system.plugin_host_demo",
-        "name": "Plugin Host Demo",
-        "category": "system",
-        "version": "0.1.0",
-        "enabled": true,
-        "description": "Demonstrates a native interactive QiPlugin v2 view.",
-        "entry": {
-          "type": "plugin_v2",
-          "target": "plugin_host_demo.py",
-          "class_name": "QiPlugin"
-        },
-        "requirements": {}
-      },
-      "path": "tools/system/plugin_host_demo",
-      "manifest_path": "tools/system/plugin_host_demo/manifest.yaml"
-    },
-    {
-      "plugin_id": "system.qi_codex",
-      "tool_id": "system.qi_codex",
-      "name": "Qi Codex",
-      "category": "system",
-      "description": "Core QiLabs codex linter that enforces naming conventions, prefix rules, slug mappings, and structural standards across the vault.",
-      "version": "1.0.0",
-      "enabled": true,
-      "requirements": [],
-      "entry": {
-        "type": "plugin_v2",
-        "target": "qi_codex.py",
-        "class_name": "QiPlugin",
-        "working_dir": ".",
-        "open_console": false
-      },
-      "actions": [],
-      "raw": {
-        "plugin_id": "system.qi_codex",
-        "tool_id": "system.qi_codex",
-        "name": "Qi Codex",
-        "category": "system",
-        "version": "1.0.0",
-        "enabled": true,
-        "description": "Core QiLabs codex linter that enforces naming conventions, prefix rules, slug mappings, and structural standards across the vault.",
-        "tags": [
-          "system"
-        ],
-        "entry": {
-          "type": "plugin_v2",
-          "target": "qi_codex.py",
-          "class_name": "QiPlugin",
-          "working_dir": ".",
-          "open_console": false
-        },
-        "launch": {
-          "type": "python",
-          "target": "qi_codex.py",
-          "working_dir": ".",
-          "open_console": true
-        },
-        "module": {
-          "package": "tools.system.qi_codex",
-          "file": "qi_codex.py",
-          "class_name": "QiCodexTool",
-          "entrypoint": "QiCodexTool"
-        },
-        "toolbox": {
-          "ui_enabled": true,
-          "bucket": "system",
-          "category": "system",
-          "launch_surface": [
-            "QiLabs Toolbox"
-          ],
-          "requires_target_directory": false
-        },
-        "runtime": {
-          "requires_network": false,
-          "requires_secrets": false
-        },
-        "safety": {
-          "supports_dry_run": true,
-          "supports_live_run": false,
-          "deletes_files": false,
-          "moves_files": false,
-          "modifies_files": false,
-          "review_before_live": false
-        },
-        "paths": {
-          "source": "tools/system/qi_codex/qi_codex.py",
-          "readme": "tools/system/qi_codex/README.md"
-        },
-        "status": "migrated",
-        "migrated_from": "_archive"
-      },
-      "path": "tools/system/qi_codex",
-      "manifest_path": "tools/system/qi_codex/manifest.yaml"
+      "path": "tools/checkers/markdown_validator",
+      "manifest_path": "tools/checkers/markdown_validator/manifest.yaml"
     },
     {
       "plugin_id": "system.qilabs.structure.checker",
@@ -4809,8 +4645,8 @@
           "csv"
         ]
       },
-      "path": "tools/system/qilabs_structure_checker",
-      "manifest_path": "tools/system/qilabs_structure_checker/manifest.yaml"
+      "path": "tools/checkers/qilabs_structure_checker",
+      "manifest_path": "tools/checkers/qilabs_structure_checker/manifest.yaml"
     },
     {
       "plugin_id": "system.realm_lister",
@@ -4887,8 +4723,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/realm_lister",
-      "manifest_path": "tools/system/realm_lister/manifest.yaml"
+      "path": "tools/scanners/realm_lister",
+      "manifest_path": "tools/scanners/realm_lister/manifest.yaml"
     },
     {
       "plugin_id": "system.registry_builder",
@@ -4965,162 +4801,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/registry_builder",
-      "manifest_path": "tools/system/registry_builder/manifest.yaml"
-    },
-    {
-      "plugin_id": "system.remote.ssh",
-      "tool_id": "system.remote.ssh",
-      "name": "Remote Ssh",
-      "category": "system",
-      "description": "Remote Ssh tool.",
-      "version": "0.1.0",
-      "enabled": true,
-      "requirements": [],
-      "entry": {
-        "type": "script",
-        "target": "remote_ssh.py",
-        "class_name": "",
-        "working_dir": ".",
-        "open_console": true
-      },
-      "actions": [],
-      "raw": {
-        "tool_id": "system.remote.ssh",
-        "name": "Remote Ssh",
-        "category": "system",
-        "version": "0.1.0",
-        "enabled": true,
-        "description": "Remote Ssh tool.",
-        "tags": [
-          "toolbox",
-          "system",
-          "qione"
-        ],
-        "launch": {
-          "type": "python",
-          "target": "remote_ssh.py",
-          "working_dir": ".",
-          "open_console": true
-        },
-        "conflicts": {},
-        "id": "toolbox.system.remote_ssh",
-        "type": "toolbox_tool",
-        "language": "python",
-        "status": "active",
-        "owner": "QiLabs",
-        "module": {
-          "package": "tools.system.remote_ssh",
-          "file": "remote_ssh.py",
-          "class_name": "UNKNOWN",
-          "entrypoint": "UNKNOWN"
-        },
-        "toolbox": {
-          "ui_enabled": true,
-          "bucket": "system",
-          "category": "system",
-          "launch_surface": [
-            "QiOne Desktop Tools"
-          ],
-          "requires_target_directory": true
-        },
-        "runtime": {
-          "requires_network": false,
-          "requires_secrets": false
-        },
-        "safety": {
-          "supports_dry_run": true,
-          "supports_live_run": true,
-          "deletes_files": "unknown",
-          "moves_files": "unknown",
-          "modifies_files": "unknown",
-          "review_before_live": true
-        },
-        "paths": {
-          "source": "tools/system/remote_ssh/remote_ssh.py",
-          "readme": "tools/system/remote_ssh/README.md"
-        }
-      },
-      "path": "tools/system/remote_ssh",
-      "manifest_path": "tools/system/remote_ssh/manifest.yaml"
-    },
-    {
-      "plugin_id": "system.repo_triager",
-      "tool_id": "system.repo_triager",
-      "name": "Repo Triager",
-      "category": "system",
-      "description": "Triages a Git repository by scanning for uncommitted changes, stale branches, large files, and untracked items. Produces a triage report.",
-      "version": "1.0.0",
-      "enabled": true,
-      "requirements": [],
-      "entry": {
-        "type": "plugin_v2",
-        "target": "repo_triager.py",
-        "class_name": "QiPlugin",
-        "working_dir": ".",
-        "open_console": false
-      },
-      "actions": [],
-      "raw": {
-        "plugin_id": "system.repo_triager",
-        "tool_id": "system.repo_triager",
-        "name": "Repo Triager",
-        "category": "system",
-        "version": "1.0.0",
-        "enabled": true,
-        "description": "Triages a Git repository by scanning for uncommitted changes, stale branches, large files, and untracked items. Produces a triage report.",
-        "tags": [
-          "system"
-        ],
-        "entry": {
-          "type": "plugin_v2",
-          "target": "repo_triager.py",
-          "class_name": "QiPlugin",
-          "working_dir": ".",
-          "open_console": false
-        },
-        "launch": {
-          "type": "python",
-          "target": "repo_triager.py",
-          "working_dir": ".",
-          "open_console": true
-        },
-        "module": {
-          "package": "tools.system.repo_triager",
-          "file": "repo_triager.py",
-          "class_name": "RepoTriagerTool",
-          "entrypoint": "RepoTriagerTool"
-        },
-        "toolbox": {
-          "ui_enabled": true,
-          "bucket": "system",
-          "category": "system",
-          "launch_surface": [
-            "QiLabs Toolbox"
-          ],
-          "requires_target_directory": false
-        },
-        "runtime": {
-          "requires_network": false,
-          "requires_secrets": false
-        },
-        "safety": {
-          "supports_dry_run": true,
-          "supports_live_run": false,
-          "deletes_files": false,
-          "moves_files": false,
-          "modifies_files": false,
-          "review_before_live": false
-        },
-        "paths": {
-          "source": "tools/system/repo_triager/repo_triager.py",
-          "readme": "tools/system/repo_triager/README.md"
-        },
-        "status": "migrated",
-        "migrated_from": "_archive"
-      },
-      "path": "tools/system/repo_triager",
-      "manifest_path": "tools/system/repo_triager/manifest.yaml"
+      "path": "tools/builders/registry_builder",
+      "manifest_path": "tools/builders/registry_builder/manifest.yaml"
     },
     {
       "plugin_id": "system.rule_tester",
@@ -5197,86 +4879,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/rule_tester",
-      "manifest_path": "tools/system/rule_tester/manifest.yaml"
-    },
-    {
-      "plugin_id": "system.scheduler",
-      "tool_id": "system.scheduler",
-      "name": "Scheduler",
-      "category": "system",
-      "description": "Loads and manages scheduled task queues for QiLabs automation. Supports cron-style scheduling and on-demand queue processing.",
-      "version": "1.0.0",
-      "enabled": true,
-      "requirements": [],
-      "entry": {
-        "type": "plugin_v2",
-        "target": "scheduler.py",
-        "class_name": "QiPlugin",
-        "working_dir": ".",
-        "open_console": false
-      },
-      "actions": [],
-      "raw": {
-        "plugin_id": "system.scheduler",
-        "tool_id": "system.scheduler",
-        "name": "Scheduler",
-        "category": "system",
-        "version": "1.0.0",
-        "enabled": true,
-        "description": "Loads and manages scheduled task queues for QiLabs automation. Supports cron-style scheduling and on-demand queue processing.",
-        "tags": [
-          "system"
-        ],
-        "entry": {
-          "type": "plugin_v2",
-          "target": "scheduler.py",
-          "class_name": "QiPlugin",
-          "working_dir": ".",
-          "open_console": false
-        },
-        "launch": {
-          "type": "python",
-          "target": "scheduler.py",
-          "working_dir": ".",
-          "open_console": true
-        },
-        "module": {
-          "package": "tools.system.scheduler",
-          "file": "scheduler.py",
-          "class_name": "SchedulerTool",
-          "entrypoint": "SchedulerTool"
-        },
-        "toolbox": {
-          "ui_enabled": true,
-          "bucket": "system",
-          "category": "system",
-          "launch_surface": [
-            "QiLabs Toolbox"
-          ],
-          "requires_target_directory": false
-        },
-        "runtime": {
-          "requires_network": false,
-          "requires_secrets": false
-        },
-        "safety": {
-          "supports_dry_run": true,
-          "supports_live_run": true,
-          "deletes_files": false,
-          "moves_files": false,
-          "modifies_files": true,
-          "review_before_live": true
-        },
-        "paths": {
-          "source": "tools/system/scheduler/scheduler.py",
-          "readme": "tools/system/scheduler/README.md"
-        },
-        "status": "migrated",
-        "migrated_from": "_archive"
-      },
-      "path": "tools/system/scheduler",
-      "manifest_path": "tools/system/scheduler/manifest.yaml"
+      "path": "tools/rules/rule_tester",
+      "manifest_path": "tools/rules/rule_tester/manifest.yaml"
     },
     {
       "plugin_id": "system.slugs_mapper",
@@ -5353,8 +4957,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/slugs_mapper",
-      "manifest_path": "tools/system/slugs_mapper/manifest.yaml"
+      "path": "tools/mappers/slugs_mapper",
+      "manifest_path": "tools/mappers/slugs_mapper/manifest.yaml"
     },
     {
       "plugin_id": "system.stubs_creator",
@@ -5431,48 +5035,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/stubs_creator",
-      "manifest_path": "tools/system/stubs_creator/manifest.yaml"
-    },
-    {
-      "plugin_id": "system.toolbox_manager",
-      "tool_id": "system.toolbox_manager",
-      "name": "Toolbox Manager",
-      "category": "system",
-      "description": "Dynamic QiLabs toolbox manager with validation, auto-fix, and tool creation.",
-      "version": "0.2.0",
-      "enabled": true,
-      "requirements": [],
-      "entry": {
-        "type": "script",
-        "target": "toolbox_manager.py",
-        "class_name": "",
-        "working_dir": ".",
-        "open_console": true
-      },
-      "actions": [],
-      "raw": {
-        "tool_id": "system.toolbox_manager",
-        "name": "Toolbox Manager",
-        "category": "system",
-        "version": "0.2.0",
-        "enabled": true,
-        "description": "Dynamic QiLabs toolbox manager with validation, auto-fix, and tool creation.",
-        "tags": [
-          "system",
-          "toolbox",
-          "manager"
-        ],
-        "launch": {
-          "type": "python",
-          "target": "toolbox_manager.py",
-          "working_dir": ".",
-          "open_console": true
-        },
-        "conflicts": {}
-      },
-      "path": "tools/system/toolbox_manager",
-      "manifest_path": "tools/system/toolbox_manager/manifest.yaml"
+      "path": "tools/creators/stubs_creator",
+      "manifest_path": "tools/creators/stubs_creator/manifest.yaml"
     },
     {
       "plugin_id": "system.tree_compiler",
@@ -5549,8 +5113,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/tree_compiler",
-      "manifest_path": "tools/system/tree_compiler/manifest.yaml"
+      "path": "tools/compilers/tree_compiler",
+      "manifest_path": "tools/compilers/tree_compiler/manifest.yaml"
     },
     {
       "plugin_id": "system.sys.docs.compiler",
@@ -5641,8 +5205,8 @@
           "build report json"
         ]
       },
-      "path": "tools/system/sys_docs_compiler",
-      "manifest_path": "tools/system/sys_docs_compiler/manifest.yaml"
+      "path": "tools/compilers/sys_docs_compiler",
+      "manifest_path": "tools/compilers/sys_docs_compiler/manifest.yaml"
     },
     {
       "plugin_id": "system.vault_linter",
@@ -5719,8 +5283,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/vault_linter",
-      "manifest_path": "tools/system/vault_linter/manifest.yaml"
+      "path": "tools/checkers/vault_linter",
+      "manifest_path": "tools/checkers/vault_linter/manifest.yaml"
     },
     {
       "plugin_id": "system.bat.launcher",
@@ -5773,8 +5337,8 @@
           "warns_on_high_risk_patterns": true
         }
       },
-      "path": "tools/system/bat_launcher",
-      "manifest_path": "tools/system/bat_launcher/manifest.yaml"
+      "path": "tools/runners/bat_launcher",
+      "manifest_path": "tools/runners/bat_launcher/manifest.yaml"
     }
   ],
   "tools": [
@@ -5814,6 +5378,133 @@
       "manifest_path": "tools/media/audio/manifest.yaml"
     },
     {
+      "plugin_id": "converters.export_blueprint",
+      "tool_id": "converters.export_blueprint",
+      "name": "Export Blueprint Tool",
+      "category": "converters",
+      "description": "Export Blueprint Tool plugin.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "export_blueprint_tool.py",
+        "class_name": "ExportBlueprintTool",
+        "working_dir": ".",
+        "open_console": false
+      },
+      "actions": [],
+      "raw": {
+        "id": "toolbox.export_blueprint_tool",
+        "name": "Export Blueprint Tool",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.export_blueprint_tool",
+          "file": "export_blueprint_tool.py",
+          "class_name": "ExportBlueprintTool",
+          "entrypoint": "ExportBlueprintTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "category": "blueprint",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/export_blueprint_tool/export_blueprint_tool.py",
+          "readme": "tools/export_blueprint_tool/README.md"
+        },
+        "tags": [
+          "toolbox",
+          "blueprint",
+          "qione"
+        ]
+      },
+      "path": "tools/converters/export_blueprint",
+      "manifest_path": "tools/converters/export_blueprint/manifest.yaml"
+    },
+    {
+      "plugin_id": "converters.data_extractor",
+      "tool_id": "converters.data_extractor",
+      "name": "Extractor",
+      "category": "converters",
+      "description": "Extractor plugin.",
+      "version": "0.1.0",
+      "enabled": true,
+      "requirements": [],
+      "entry": {
+        "type": "legacy_basetool",
+        "target": "extractor.py",
+        "class_name": "TextExtractorTool",
+        "working_dir": ".",
+        "open_console": false
+      },
+      "actions": [],
+      "raw": {
+        "id": "toolbox.dev.extractor",
+        "name": "Extractor",
+        "type": "toolbox_tool",
+        "language": "python",
+        "status": "active",
+        "owner": "QiLabs",
+        "module": {
+          "package": "tools.dev.extractor",
+          "file": "extractor.py",
+          "class_name": "TextExtractorTool",
+          "entrypoint": "TextExtractorTool"
+        },
+        "toolbox": {
+          "ui_enabled": true,
+          "bucket": "dev",
+          "category": "dev",
+          "launch_surface": [
+            "QiOne Desktop Tools"
+          ],
+          "requires_target_directory": true
+        },
+        "runtime": {
+          "requires_network": false,
+          "requires_secrets": false
+        },
+        "safety": {
+          "supports_dry_run": true,
+          "supports_live_run": true,
+          "deletes_files": "unknown",
+          "moves_files": "unknown",
+          "modifies_files": "unknown",
+          "review_before_live": true
+        },
+        "paths": {
+          "source": "tools/dev/extractor/extractor.py",
+          "readme": "tools/dev/extractor/README.md"
+        },
+        "tags": [
+          "toolbox",
+          "dev",
+          "qione"
+        ]
+      },
+      "path": "tools/converters/data_extractor",
+      "manifest_path": "tools/converters/data_extractor/manifest.yaml"
+    },
+    {
       "plugin_id": "converters.extractors",
       "tool_id": "converters.extractors",
       "name": "Extractor",
@@ -6082,91 +5773,6 @@
       "manifest_path": "tools/finance/cashapp_to_sample_bankstatement/manifest.yaml"
     },
     {
-      "plugin_id": "finance.firefly.bills.importer",
-      "tool_id": "finance.firefly.bills.importer",
-      "name": "Firefly Bills Importer",
-      "category": "finance",
-      "description": "Firefly Bills Importer tool.",
-      "version": "0.1.0",
-      "enabled": true,
-      "requirements": [
-        "core",
-        "requests"
-      ],
-      "entry": {
-        "type": "legacy_basetool",
-        "target": "firefly_bills_importer.py",
-        "class_name": "FireflyBillsImporterTool",
-        "working_dir": ".",
-        "open_console": true
-      },
-      "actions": [],
-      "raw": {
-        "tool_id": "finance.firefly.bills.importer",
-        "name": "Firefly Bills Importer",
-        "category": "finance",
-        "version": "0.1.0",
-        "enabled": true,
-        "description": "Firefly Bills Importer tool.",
-        "tags": [
-          "toolbox",
-          "finance",
-          "firefly",
-          "bills",
-          "api"
-        ],
-        "launch": {
-          "type": "python",
-          "target": "firefly_bills_importer.py",
-          "working_dir": ".",
-          "open_console": true
-        },
-        "conflicts": {},
-        "id": "toolbox.finance.firefly_bills_importer",
-        "type": "toolbox_tool",
-        "language": "python",
-        "status": "active",
-        "owner": "QiLabs",
-        "module": {
-          "package": "tools.finance.firefly_bills_importer",
-          "file": "firefly_bills_importer.py",
-          "class_name": "FireflyBillsImporterTool",
-          "entrypoint": "FireflyBillsImporterTool"
-        },
-        "toolbox": {
-          "ui_enabled": true,
-          "bucket": "finance",
-          "category": "finance",
-          "launch_surface": [
-            "QiOne Desktop Tools"
-          ],
-          "requires_target_directory": false
-        },
-        "runtime": {
-          "requires_network": true,
-          "requires_secrets": true,
-          "dependencies": [
-            "requests"
-          ]
-        },
-        "safety": {
-          "supports_dry_run": true,
-          "supports_live_run": true,
-          "deletes_files": false,
-          "moves_files": false,
-          "modifies_files": false,
-          "writes_generated_files": false,
-          "review_before_live": true
-        },
-        "paths": {
-          "source": "tools/finance/firefly_bills_importer/firefly_bills_importer.py",
-          "readme": "tools/finance/firefly_bills_importer/README.md"
-        }
-      },
-      "path": "tools/finance/firefly_bills_importer",
-      "manifest_path": "tools/finance/firefly_bills_importer/manifest.yaml"
-    },
-    {
       "plugin_id": "finance.tax.compiler",
       "tool_id": "finance.tax.compiler",
       "name": "Tax Compiler",
@@ -6406,8 +6012,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/media/audio_transcriber",
-      "manifest_path": "tools/media/audio_transcriber/manifest.yaml"
+      "path": "tools/media/audio/audio_transcriber",
+      "manifest_path": "tools/media/audio/audio_transcriber/manifest.yaml"
     },
     {
       "plugin_id": "media.media_tree_merger",
@@ -6562,8 +6168,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/media/mkv_enhancer",
-      "manifest_path": "tools/media/mkv_enhancer/manifest.yaml"
+      "path": "tools/media/video/mkv_enhancer",
+      "manifest_path": "tools/media/video/mkv_enhancer/manifest.yaml"
     },
     {
       "plugin_id": "media.mkv_merger",
@@ -6640,8 +6246,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/media/mkv_merger",
-      "manifest_path": "tools/media/mkv_merger/manifest.yaml"
+      "path": "tools/media/video/mkv_merger",
+      "manifest_path": "tools/media/video/mkv_merger/manifest.yaml"
     },
     {
       "plugin_id": "media.video.converter",
@@ -6719,8 +6325,8 @@
           "readme": "tools/media/video_converter/README.md"
         }
       },
-      "path": "tools/media/video_converter",
-      "manifest_path": "tools/media/video_converter/manifest.yaml"
+      "path": "tools/media/video/video_converter",
+      "manifest_path": "tools/media/video/video_converter/manifest.yaml"
     },
     {
       "plugin_id": "organize.archivist",
@@ -6955,8 +6561,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/organize/code_extractor",
-      "manifest_path": "tools/organize/code_extractor/manifest.yaml"
+      "path": "tools/converters/code_extractor",
+      "manifest_path": "tools/converters/code_extractor/manifest.yaml"
     },
     {
       "plugin_id": "organize.csv_to_markdown",
@@ -7033,8 +6639,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/organize/csv_to_markdown",
-      "manifest_path": "tools/organize/csv_to_markdown/manifest.yaml"
+      "path": "tools/converters/csv_to_markdown",
+      "manifest_path": "tools/converters/csv_to_markdown/manifest.yaml"
     },
     {
       "plugin_id": "organize.downloads.inspector",
@@ -7271,6 +6877,40 @@
       "manifest_path": "tools/organize/duplicate_finder/manifest.yaml"
     },
     {
+      "plugin_id": "organize.empowerqnow713_migrator",
+      "tool_id": "organize.empowerqnow713_migrator",
+      "name": "EmpowerQNow713 Migrator",
+      "category": "organize",
+      "description": "Safe interactive reorganizer for C:\\QiLabs\\40_QiVault\\30_empowerqnow713.",
+      "version": "1.0.0",
+      "enabled": true,
+      "requirements": [],
+      "entry": {
+        "type": "script",
+        "target": "interactive_qivault_empower_migrator.pyw",
+        "class_name": "",
+        "working_dir": ".",
+        "open_console": false
+      },
+      "actions": [],
+      "raw": {
+        "plugin_id": "organize.empowerqnow713_migrator",
+        "tool_id": "organize.empowerqnow713_migrator",
+        "name": "EmpowerQNow713 Migrator",
+        "category": "organize",
+        "version": "1.0.0",
+        "enabled": true,
+        "description": "Safe interactive reorganizer for C:\\QiLabs\\40_QiVault\\30_empowerqnow713.",
+        "entry": {
+          "type": "script",
+          "target": "interactive_qivault_empower_migrator.pyw"
+        },
+        "requirements": {}
+      },
+      "path": "tools/organize/empowerqnow713_migrator",
+      "manifest_path": "tools/organize/empowerqnow713_migrator/manifest.yaml"
+    },
+    {
       "plugin_id": "organize.errors_to_markdown",
       "tool_id": "organize.errors_to_markdown",
       "name": "Errors To Markdown",
@@ -7347,133 +6987,6 @@
       },
       "path": "tools/organize/errors_to_markdown",
       "manifest_path": "tools/organize/errors_to_markdown/manifest.yaml"
-    },
-    {
-      "plugin_id": "organize.export_blueprint",
-      "tool_id": "organize.export_blueprint",
-      "name": "Export Blueprint Tool",
-      "category": "organize",
-      "description": "Export Blueprint Tool plugin.",
-      "version": "0.1.0",
-      "enabled": true,
-      "requirements": [],
-      "entry": {
-        "type": "legacy_basetool",
-        "target": "export_blueprint_tool.py",
-        "class_name": "ExportBlueprintTool",
-        "working_dir": ".",
-        "open_console": false
-      },
-      "actions": [],
-      "raw": {
-        "id": "toolbox.export_blueprint_tool",
-        "name": "Export Blueprint Tool",
-        "type": "toolbox_tool",
-        "language": "python",
-        "status": "active",
-        "owner": "QiLabs",
-        "module": {
-          "package": "tools.export_blueprint_tool",
-          "file": "export_blueprint_tool.py",
-          "class_name": "ExportBlueprintTool",
-          "entrypoint": "ExportBlueprintTool"
-        },
-        "toolbox": {
-          "ui_enabled": true,
-          "category": "blueprint",
-          "launch_surface": [
-            "QiOne Desktop Tools"
-          ],
-          "requires_target_directory": true
-        },
-        "runtime": {
-          "requires_network": false,
-          "requires_secrets": false
-        },
-        "safety": {
-          "supports_dry_run": true,
-          "supports_live_run": true,
-          "deletes_files": "unknown",
-          "moves_files": "unknown",
-          "modifies_files": "unknown",
-          "review_before_live": true
-        },
-        "paths": {
-          "source": "tools/export_blueprint_tool/export_blueprint_tool.py",
-          "readme": "tools/export_blueprint_tool/README.md"
-        },
-        "tags": [
-          "toolbox",
-          "blueprint",
-          "qione"
-        ]
-      },
-      "path": "tools/organize/export_blueprint",
-      "manifest_path": "tools/organize/export_blueprint/manifest.yaml"
-    },
-    {
-      "plugin_id": "organize.data_extractor",
-      "tool_id": "organize.data_extractor",
-      "name": "Extractor",
-      "category": "organize",
-      "description": "Extractor plugin.",
-      "version": "0.1.0",
-      "enabled": true,
-      "requirements": [],
-      "entry": {
-        "type": "legacy_basetool",
-        "target": "extractor.py",
-        "class_name": "TextExtractorTool",
-        "working_dir": ".",
-        "open_console": false
-      },
-      "actions": [],
-      "raw": {
-        "id": "toolbox.dev.extractor",
-        "name": "Extractor",
-        "type": "toolbox_tool",
-        "language": "python",
-        "status": "active",
-        "owner": "QiLabs",
-        "module": {
-          "package": "tools.dev.extractor",
-          "file": "extractor.py",
-          "class_name": "TextExtractorTool",
-          "entrypoint": "TextExtractorTool"
-        },
-        "toolbox": {
-          "ui_enabled": true,
-          "bucket": "dev",
-          "category": "dev",
-          "launch_surface": [
-            "QiOne Desktop Tools"
-          ],
-          "requires_target_directory": true
-        },
-        "runtime": {
-          "requires_network": false,
-          "requires_secrets": false
-        },
-        "safety": {
-          "supports_dry_run": true,
-          "supports_live_run": true,
-          "deletes_files": "unknown",
-          "moves_files": "unknown",
-          "modifies_files": "unknown",
-          "review_before_live": true
-        },
-        "paths": {
-          "source": "tools/dev/extractor/extractor.py",
-          "readme": "tools/dev/extractor/README.md"
-        },
-        "tags": [
-          "toolbox",
-          "dev",
-          "qione"
-        ]
-      },
-      "path": "tools/organize/data_extractor",
-      "manifest_path": "tools/organize/data_extractor/manifest.yaml"
     },
     {
       "plugin_id": "organize.file.cleaner",
@@ -7706,8 +7219,8 @@
           "readme": "tools/organize/folder_flattener/README.md"
         }
       },
-      "path": "tools/organize/folder_flattener",
-      "manifest_path": "tools/organize/folder_flattener/manifest.yaml"
+      "path": "tools/converters/folder_flattener",
+      "manifest_path": "tools/converters/folder_flattener/manifest.yaml"
     },
     {
       "plugin_id": "organize.inbox_organizer",
@@ -7940,8 +7453,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/organize/json_kb_generator",
-      "manifest_path": "tools/organize/json_kb_generator/manifest.yaml"
+      "path": "tools/converters/json_kb_generator",
+      "manifest_path": "tools/converters/json_kb_generator/manifest.yaml"
     },
     {
       "plugin_id": "organize.md_body_mover",
@@ -9006,8 +8519,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/agent_runner",
-      "manifest_path": "tools/system/agent_runner/manifest.yaml"
+      "path": "tools/runners/agent_runner",
+      "manifest_path": "tools/runners/agent_runner/manifest.yaml"
     },
     {
       "plugin_id": "system.antigravity_setup",
@@ -9084,8 +8597,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/antigravity_setup",
-      "manifest_path": "tools/system/antigravity_setup/manifest.yaml"
+      "path": "tools/setup/antigravity_setup",
+      "manifest_path": "tools/setup/antigravity_setup/manifest.yaml"
     },
     {
       "plugin_id": "system.app_creator",
@@ -9162,8 +8675,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/app_creator",
-      "manifest_path": "tools/system/app_creator/manifest.yaml"
+      "path": "tools/creators/app_creator",
+      "manifest_path": "tools/creators/app_creator/manifest.yaml"
     },
     {
       "plugin_id": "system.canvas_builder",
@@ -9240,8 +8753,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/canvas_builder",
-      "manifest_path": "tools/system/canvas_builder/manifest.yaml"
+      "path": "tools/builders/canvas_builder",
+      "manifest_path": "tools/builders/canvas_builder/manifest.yaml"
     },
     {
       "plugin_id": "system.cloudflare_md_builder",
@@ -9318,8 +8831,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/cloudflare_md_builder",
-      "manifest_path": "tools/system/cloudflare_md_builder/manifest.yaml"
+      "path": "tools/builders/cloudflare_md_builder",
+      "manifest_path": "tools/builders/cloudflare_md_builder/manifest.yaml"
     },
     {
       "plugin_id": "system.code_review_compiler",
@@ -9396,8 +8909,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/code_review_compiler",
-      "manifest_path": "tools/system/code_review_compiler/manifest.yaml"
+      "path": "tools/compilers/code_review_compiler",
+      "manifest_path": "tools/compilers/code_review_compiler/manifest.yaml"
     },
     {
       "plugin_id": "system.compliance_checker",
@@ -9474,8 +8987,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/compliance_checker",
-      "manifest_path": "tools/system/compliance_checker/manifest.yaml"
+      "path": "tools/checkers/compliance_checker",
+      "manifest_path": "tools/checkers/compliance_checker/manifest.yaml"
     },
     {
       "plugin_id": "system.creator_smoke_plugin",
@@ -9509,8 +9022,8 @@
         },
         "requirements": {}
       },
-      "path": "tools/system/creator_smoke_plugin",
-      "manifest_path": "tools/system/creator_smoke_plugin/manifest.yaml"
+      "path": "tools/creators/creator_smoke_plugin",
+      "manifest_path": "tools/creators/creator_smoke_plugin/manifest.yaml"
     },
     {
       "plugin_id": "system.csv_md_comparator",
@@ -9587,8 +9100,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/csv_md_comparator",
-      "manifest_path": "tools/system/csv_md_comparator/manifest.yaml"
+      "path": "tools/scanners/csv_md_comparator",
+      "manifest_path": "tools/scanners/csv_md_comparator/manifest.yaml"
     },
     {
       "plugin_id": "system.csv_searcher",
@@ -9665,8 +9178,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/csv_searcher",
-      "manifest_path": "tools/system/csv_searcher/manifest.yaml"
+      "path": "tools/scanners/csv_searcher",
+      "manifest_path": "tools/scanners/csv_searcher/manifest.yaml"
     },
     {
       "plugin_id": "system.dir_mapper",
@@ -9743,8 +9256,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/dir_mapper",
-      "manifest_path": "tools/system/dir_mapper/manifest.yaml"
+      "path": "tools/mappers/dir_mapper",
+      "manifest_path": "tools/mappers/dir_mapper/manifest.yaml"
     },
     {
       "plugin_id": "system.sys.directory.markmind.mapper",
@@ -9833,8 +9346,8 @@
           "markmind_compatible_outline"
         ]
       },
-      "path": "tools/system/sys_directory_markmind_mapper",
-      "manifest_path": "tools/system/sys_directory_markmind_mapper/manifest.yaml"
+      "path": "tools/mappers/sys_directory_markmind_mapper",
+      "manifest_path": "tools/mappers/sys_directory_markmind_mapper/manifest.yaml"
     },
     {
       "plugin_id": "system.drive_comparator",
@@ -9911,8 +9424,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/drive_comparator",
-      "manifest_path": "tools/system/drive_comparator/manifest.yaml"
+      "path": "tools/scanners/drive_comparator",
+      "manifest_path": "tools/scanners/drive_comparator/manifest.yaml"
     },
     {
       "plugin_id": "system.filesystem_scanner",
@@ -9989,8 +9502,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/filesystem_scanner",
-      "manifest_path": "tools/system/filesystem_scanner/manifest.yaml"
+      "path": "tools/scanners/filesystem_scanner",
+      "manifest_path": "tools/scanners/filesystem_scanner/manifest.yaml"
     },
     {
       "plugin_id": "system.git_pusher",
@@ -10067,8 +9580,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/git_pusher",
-      "manifest_path": "tools/system/git_pusher/manifest.yaml"
+      "path": "tools/git/git_pusher",
+      "manifest_path": "tools/git/git_pusher/manifest.yaml"
     },
     {
       "plugin_id": "system.health_checker",
@@ -10145,8 +9658,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/health_checker",
-      "manifest_path": "tools/system/health_checker/manifest.yaml"
+      "path": "tools/checkers/health_checker",
+      "manifest_path": "tools/checkers/health_checker/manifest.yaml"
     },
     {
       "plugin_id": "system.housekeeping.console",
@@ -10224,8 +9737,8 @@
           "readme": "tools/system/housekeeping_console/README.md"
         }
       },
-      "path": "tools/system/housekeeping_console",
-      "manifest_path": "tools/system/housekeeping_console/manifest.yaml"
+      "path": "tools/checkers/housekeeping_console",
+      "manifest_path": "tools/checkers/housekeeping_console/manifest.yaml"
     },
     {
       "plugin_id": "system.job_runner",
@@ -10302,8 +9815,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/job_runner",
-      "manifest_path": "tools/system/job_runner/manifest.yaml"
+      "path": "tools/runners/job_runner",
+      "manifest_path": "tools/runners/job_runner/manifest.yaml"
     },
     {
       "plugin_id": "system.markdown_validator",
@@ -10380,121 +9893,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/markdown_validator",
-      "manifest_path": "tools/system/markdown_validator/manifest.yaml"
-    },
-    {
-      "plugin_id": "system.plugin_host_demo",
-      "tool_id": "system.plugin_host_demo",
-      "name": "Plugin Host Demo",
-      "category": "system",
-      "description": "Demonstrates a native interactive QiPlugin v2 view.",
-      "version": "0.1.0",
-      "enabled": true,
-      "requirements": [],
-      "entry": {
-        "type": "plugin_v2",
-        "target": "plugin_host_demo.py",
-        "class_name": "QiPlugin",
-        "working_dir": ".",
-        "open_console": false
-      },
-      "actions": [],
-      "raw": {
-        "plugin_id": "system.plugin_host_demo",
-        "tool_id": "system.plugin_host_demo",
-        "name": "Plugin Host Demo",
-        "category": "system",
-        "version": "0.1.0",
-        "enabled": true,
-        "description": "Demonstrates a native interactive QiPlugin v2 view.",
-        "entry": {
-          "type": "plugin_v2",
-          "target": "plugin_host_demo.py",
-          "class_name": "QiPlugin"
-        },
-        "requirements": {}
-      },
-      "path": "tools/system/plugin_host_demo",
-      "manifest_path": "tools/system/plugin_host_demo/manifest.yaml"
-    },
-    {
-      "plugin_id": "system.qi_codex",
-      "tool_id": "system.qi_codex",
-      "name": "Qi Codex",
-      "category": "system",
-      "description": "Core QiLabs codex linter that enforces naming conventions, prefix rules, slug mappings, and structural standards across the vault.",
-      "version": "1.0.0",
-      "enabled": true,
-      "requirements": [],
-      "entry": {
-        "type": "plugin_v2",
-        "target": "qi_codex.py",
-        "class_name": "QiPlugin",
-        "working_dir": ".",
-        "open_console": false
-      },
-      "actions": [],
-      "raw": {
-        "plugin_id": "system.qi_codex",
-        "tool_id": "system.qi_codex",
-        "name": "Qi Codex",
-        "category": "system",
-        "version": "1.0.0",
-        "enabled": true,
-        "description": "Core QiLabs codex linter that enforces naming conventions, prefix rules, slug mappings, and structural standards across the vault.",
-        "tags": [
-          "system"
-        ],
-        "entry": {
-          "type": "plugin_v2",
-          "target": "qi_codex.py",
-          "class_name": "QiPlugin",
-          "working_dir": ".",
-          "open_console": false
-        },
-        "launch": {
-          "type": "python",
-          "target": "qi_codex.py",
-          "working_dir": ".",
-          "open_console": true
-        },
-        "module": {
-          "package": "tools.system.qi_codex",
-          "file": "qi_codex.py",
-          "class_name": "QiCodexTool",
-          "entrypoint": "QiCodexTool"
-        },
-        "toolbox": {
-          "ui_enabled": true,
-          "bucket": "system",
-          "category": "system",
-          "launch_surface": [
-            "QiLabs Toolbox"
-          ],
-          "requires_target_directory": false
-        },
-        "runtime": {
-          "requires_network": false,
-          "requires_secrets": false
-        },
-        "safety": {
-          "supports_dry_run": true,
-          "supports_live_run": false,
-          "deletes_files": false,
-          "moves_files": false,
-          "modifies_files": false,
-          "review_before_live": false
-        },
-        "paths": {
-          "source": "tools/system/qi_codex/qi_codex.py",
-          "readme": "tools/system/qi_codex/README.md"
-        },
-        "status": "migrated",
-        "migrated_from": "_archive"
-      },
-      "path": "tools/system/qi_codex",
-      "manifest_path": "tools/system/qi_codex/manifest.yaml"
+      "path": "tools/checkers/markdown_validator",
+      "manifest_path": "tools/checkers/markdown_validator/manifest.yaml"
     },
     {
       "plugin_id": "system.qilabs.structure.checker",
@@ -10583,8 +9983,8 @@
           "csv"
         ]
       },
-      "path": "tools/system/qilabs_structure_checker",
-      "manifest_path": "tools/system/qilabs_structure_checker/manifest.yaml"
+      "path": "tools/checkers/qilabs_structure_checker",
+      "manifest_path": "tools/checkers/qilabs_structure_checker/manifest.yaml"
     },
     {
       "plugin_id": "system.realm_lister",
@@ -10661,8 +10061,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/realm_lister",
-      "manifest_path": "tools/system/realm_lister/manifest.yaml"
+      "path": "tools/scanners/realm_lister",
+      "manifest_path": "tools/scanners/realm_lister/manifest.yaml"
     },
     {
       "plugin_id": "system.registry_builder",
@@ -10739,162 +10139,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/registry_builder",
-      "manifest_path": "tools/system/registry_builder/manifest.yaml"
-    },
-    {
-      "plugin_id": "system.remote.ssh",
-      "tool_id": "system.remote.ssh",
-      "name": "Remote Ssh",
-      "category": "system",
-      "description": "Remote Ssh tool.",
-      "version": "0.1.0",
-      "enabled": true,
-      "requirements": [],
-      "entry": {
-        "type": "script",
-        "target": "remote_ssh.py",
-        "class_name": "",
-        "working_dir": ".",
-        "open_console": true
-      },
-      "actions": [],
-      "raw": {
-        "tool_id": "system.remote.ssh",
-        "name": "Remote Ssh",
-        "category": "system",
-        "version": "0.1.0",
-        "enabled": true,
-        "description": "Remote Ssh tool.",
-        "tags": [
-          "toolbox",
-          "system",
-          "qione"
-        ],
-        "launch": {
-          "type": "python",
-          "target": "remote_ssh.py",
-          "working_dir": ".",
-          "open_console": true
-        },
-        "conflicts": {},
-        "id": "toolbox.system.remote_ssh",
-        "type": "toolbox_tool",
-        "language": "python",
-        "status": "active",
-        "owner": "QiLabs",
-        "module": {
-          "package": "tools.system.remote_ssh",
-          "file": "remote_ssh.py",
-          "class_name": "UNKNOWN",
-          "entrypoint": "UNKNOWN"
-        },
-        "toolbox": {
-          "ui_enabled": true,
-          "bucket": "system",
-          "category": "system",
-          "launch_surface": [
-            "QiOne Desktop Tools"
-          ],
-          "requires_target_directory": true
-        },
-        "runtime": {
-          "requires_network": false,
-          "requires_secrets": false
-        },
-        "safety": {
-          "supports_dry_run": true,
-          "supports_live_run": true,
-          "deletes_files": "unknown",
-          "moves_files": "unknown",
-          "modifies_files": "unknown",
-          "review_before_live": true
-        },
-        "paths": {
-          "source": "tools/system/remote_ssh/remote_ssh.py",
-          "readme": "tools/system/remote_ssh/README.md"
-        }
-      },
-      "path": "tools/system/remote_ssh",
-      "manifest_path": "tools/system/remote_ssh/manifest.yaml"
-    },
-    {
-      "plugin_id": "system.repo_triager",
-      "tool_id": "system.repo_triager",
-      "name": "Repo Triager",
-      "category": "system",
-      "description": "Triages a Git repository by scanning for uncommitted changes, stale branches, large files, and untracked items. Produces a triage report.",
-      "version": "1.0.0",
-      "enabled": true,
-      "requirements": [],
-      "entry": {
-        "type": "plugin_v2",
-        "target": "repo_triager.py",
-        "class_name": "QiPlugin",
-        "working_dir": ".",
-        "open_console": false
-      },
-      "actions": [],
-      "raw": {
-        "plugin_id": "system.repo_triager",
-        "tool_id": "system.repo_triager",
-        "name": "Repo Triager",
-        "category": "system",
-        "version": "1.0.0",
-        "enabled": true,
-        "description": "Triages a Git repository by scanning for uncommitted changes, stale branches, large files, and untracked items. Produces a triage report.",
-        "tags": [
-          "system"
-        ],
-        "entry": {
-          "type": "plugin_v2",
-          "target": "repo_triager.py",
-          "class_name": "QiPlugin",
-          "working_dir": ".",
-          "open_console": false
-        },
-        "launch": {
-          "type": "python",
-          "target": "repo_triager.py",
-          "working_dir": ".",
-          "open_console": true
-        },
-        "module": {
-          "package": "tools.system.repo_triager",
-          "file": "repo_triager.py",
-          "class_name": "RepoTriagerTool",
-          "entrypoint": "RepoTriagerTool"
-        },
-        "toolbox": {
-          "ui_enabled": true,
-          "bucket": "system",
-          "category": "system",
-          "launch_surface": [
-            "QiLabs Toolbox"
-          ],
-          "requires_target_directory": false
-        },
-        "runtime": {
-          "requires_network": false,
-          "requires_secrets": false
-        },
-        "safety": {
-          "supports_dry_run": true,
-          "supports_live_run": false,
-          "deletes_files": false,
-          "moves_files": false,
-          "modifies_files": false,
-          "review_before_live": false
-        },
-        "paths": {
-          "source": "tools/system/repo_triager/repo_triager.py",
-          "readme": "tools/system/repo_triager/README.md"
-        },
-        "status": "migrated",
-        "migrated_from": "_archive"
-      },
-      "path": "tools/system/repo_triager",
-      "manifest_path": "tools/system/repo_triager/manifest.yaml"
+      "path": "tools/builders/registry_builder",
+      "manifest_path": "tools/builders/registry_builder/manifest.yaml"
     },
     {
       "plugin_id": "system.rule_tester",
@@ -10971,86 +10217,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/rule_tester",
-      "manifest_path": "tools/system/rule_tester/manifest.yaml"
-    },
-    {
-      "plugin_id": "system.scheduler",
-      "tool_id": "system.scheduler",
-      "name": "Scheduler",
-      "category": "system",
-      "description": "Loads and manages scheduled task queues for QiLabs automation. Supports cron-style scheduling and on-demand queue processing.",
-      "version": "1.0.0",
-      "enabled": true,
-      "requirements": [],
-      "entry": {
-        "type": "plugin_v2",
-        "target": "scheduler.py",
-        "class_name": "QiPlugin",
-        "working_dir": ".",
-        "open_console": false
-      },
-      "actions": [],
-      "raw": {
-        "plugin_id": "system.scheduler",
-        "tool_id": "system.scheduler",
-        "name": "Scheduler",
-        "category": "system",
-        "version": "1.0.0",
-        "enabled": true,
-        "description": "Loads and manages scheduled task queues for QiLabs automation. Supports cron-style scheduling and on-demand queue processing.",
-        "tags": [
-          "system"
-        ],
-        "entry": {
-          "type": "plugin_v2",
-          "target": "scheduler.py",
-          "class_name": "QiPlugin",
-          "working_dir": ".",
-          "open_console": false
-        },
-        "launch": {
-          "type": "python",
-          "target": "scheduler.py",
-          "working_dir": ".",
-          "open_console": true
-        },
-        "module": {
-          "package": "tools.system.scheduler",
-          "file": "scheduler.py",
-          "class_name": "SchedulerTool",
-          "entrypoint": "SchedulerTool"
-        },
-        "toolbox": {
-          "ui_enabled": true,
-          "bucket": "system",
-          "category": "system",
-          "launch_surface": [
-            "QiLabs Toolbox"
-          ],
-          "requires_target_directory": false
-        },
-        "runtime": {
-          "requires_network": false,
-          "requires_secrets": false
-        },
-        "safety": {
-          "supports_dry_run": true,
-          "supports_live_run": true,
-          "deletes_files": false,
-          "moves_files": false,
-          "modifies_files": true,
-          "review_before_live": true
-        },
-        "paths": {
-          "source": "tools/system/scheduler/scheduler.py",
-          "readme": "tools/system/scheduler/README.md"
-        },
-        "status": "migrated",
-        "migrated_from": "_archive"
-      },
-      "path": "tools/system/scheduler",
-      "manifest_path": "tools/system/scheduler/manifest.yaml"
+      "path": "tools/rules/rule_tester",
+      "manifest_path": "tools/rules/rule_tester/manifest.yaml"
     },
     {
       "plugin_id": "system.slugs_mapper",
@@ -11127,8 +10295,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/slugs_mapper",
-      "manifest_path": "tools/system/slugs_mapper/manifest.yaml"
+      "path": "tools/mappers/slugs_mapper",
+      "manifest_path": "tools/mappers/slugs_mapper/manifest.yaml"
     },
     {
       "plugin_id": "system.stubs_creator",
@@ -11205,48 +10373,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/stubs_creator",
-      "manifest_path": "tools/system/stubs_creator/manifest.yaml"
-    },
-    {
-      "plugin_id": "system.toolbox_manager",
-      "tool_id": "system.toolbox_manager",
-      "name": "Toolbox Manager",
-      "category": "system",
-      "description": "Dynamic QiLabs toolbox manager with validation, auto-fix, and tool creation.",
-      "version": "0.2.0",
-      "enabled": true,
-      "requirements": [],
-      "entry": {
-        "type": "script",
-        "target": "toolbox_manager.py",
-        "class_name": "",
-        "working_dir": ".",
-        "open_console": true
-      },
-      "actions": [],
-      "raw": {
-        "tool_id": "system.toolbox_manager",
-        "name": "Toolbox Manager",
-        "category": "system",
-        "version": "0.2.0",
-        "enabled": true,
-        "description": "Dynamic QiLabs toolbox manager with validation, auto-fix, and tool creation.",
-        "tags": [
-          "system",
-          "toolbox",
-          "manager"
-        ],
-        "launch": {
-          "type": "python",
-          "target": "toolbox_manager.py",
-          "working_dir": ".",
-          "open_console": true
-        },
-        "conflicts": {}
-      },
-      "path": "tools/system/toolbox_manager",
-      "manifest_path": "tools/system/toolbox_manager/manifest.yaml"
+      "path": "tools/creators/stubs_creator",
+      "manifest_path": "tools/creators/stubs_creator/manifest.yaml"
     },
     {
       "plugin_id": "system.tree_compiler",
@@ -11323,8 +10451,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/tree_compiler",
-      "manifest_path": "tools/system/tree_compiler/manifest.yaml"
+      "path": "tools/compilers/tree_compiler",
+      "manifest_path": "tools/compilers/tree_compiler/manifest.yaml"
     },
     {
       "plugin_id": "system.sys.docs.compiler",
@@ -11415,8 +10543,8 @@
           "build report json"
         ]
       },
-      "path": "tools/system/sys_docs_compiler",
-      "manifest_path": "tools/system/sys_docs_compiler/manifest.yaml"
+      "path": "tools/compilers/sys_docs_compiler",
+      "manifest_path": "tools/compilers/sys_docs_compiler/manifest.yaml"
     },
     {
       "plugin_id": "system.vault_linter",
@@ -11493,8 +10621,8 @@
         "status": "migrated",
         "migrated_from": "_archive"
       },
-      "path": "tools/system/vault_linter",
-      "manifest_path": "tools/system/vault_linter/manifest.yaml"
+      "path": "tools/checkers/vault_linter",
+      "manifest_path": "tools/checkers/vault_linter/manifest.yaml"
     },
     {
       "plugin_id": "system.bat.launcher",
@@ -11547,25 +10675,25 @@
           "warns_on_high_risk_patterns": true
         }
       },
-      "path": "tools/system/bat_launcher",
-      "manifest_path": "tools/system/bat_launcher/manifest.yaml"
+      "path": "tools/runners/bat_launcher",
+      "manifest_path": "tools/runners/bat_launcher/manifest.yaml"
     }
   ],
   "findings": [
     {
-      "severity": "WARNING",
-      "code": "missing_requirement",
-      "path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\finance\\firefly_bills_importer\\manifest.yaml",
-      "message": "Requirement may be missing: requests",
-      "plugin_id": "finance.firefly.bills.importer",
+      "severity": "ERROR",
+      "code": "missing_entry_file",
+      "path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\converters\\data_extractor\\manifest.yaml",
+      "message": "Entry target does not exist: extractor.py",
+      "plugin_id": "converters.data_extractor",
       "fixable": true
     },
     {
-      "severity": "WARNING",
-      "code": "missing_requirement",
-      "path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\finance\\tax_compiler\\manifest.yaml",
-      "message": "Requirement may be missing: pillow",
-      "plugin_id": "finance.tax.compiler",
+      "severity": "ERROR",
+      "code": "missing_entry_file",
+      "path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\converters\\export_blueprint\\manifest.yaml",
+      "message": "Entry target does not exist: export_blueprint_tool.py",
+      "plugin_id": "converters.export_blueprint",
       "fixable": true
     },
     {
@@ -11585,19 +10713,19 @@
       "fixable": true
     },
     {
-      "severity": "ERROR",
-      "code": "missing_entry_file",
-      "path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\organize\\data_extractor\\manifest.yaml",
-      "message": "Entry target does not exist: extractor.py",
-      "plugin_id": "organize.data_extractor",
+      "severity": "WARNING",
+      "code": "missing_readme",
+      "path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\organize\\empowerqnow713_migrator",
+      "message": "Missing README.md.",
+      "plugin_id": "organize.empowerqnow713_migrator",
       "fixable": true
     },
     {
-      "severity": "ERROR",
-      "code": "missing_entry_file",
-      "path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\organize\\export_blueprint\\manifest.yaml",
-      "message": "Entry target does not exist: export_blueprint_tool.py",
-      "plugin_id": "organize.export_blueprint",
+      "severity": "WARNING",
+      "code": "missing_init",
+      "path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\organize\\empowerqnow713_migrator",
+      "message": "Missing __init__.py.",
+      "plugin_id": "organize.empowerqnow713_migrator",
       "fixable": true
     },
     {
@@ -11615,16 +10743,8 @@
       "message": "Requirement may be missing: rapidfuzz",
       "plugin_id": "organize.vault.router",
       "fixable": true
-    },
-    {
-      "severity": "WARNING",
-      "code": "missing_requirement",
-      "path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\organize\\xlsx_tabs_to_csv\\manifest.yaml",
-      "message": "Requirement may be missing: openpyxl",
-      "plugin_id": "organize.xlsx.tabs.to.csv",
-      "fixable": true
     }
   ],
   "errors": 2,
-  "warnings": 7
+  "warnings": 6
 }

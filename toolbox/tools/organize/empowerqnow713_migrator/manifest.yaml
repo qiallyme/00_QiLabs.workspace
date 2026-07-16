@@ -1,0 +1,11 @@
+plugin_id: organize.empowerqnow713_migrator
+tool_id: organize.empowerqnow713_migrator
+name: EmpowerQNow713 Migrator
+category: organize
+version: 1.0.0
+enabled: true
+description: Safe interactive reorganizer for C:\QiLabs\40_QiVault\30_empowerqnow713.
+entry:
+  type: script
+  target: interactive_qivault_empower_migrator.pyw
+requirements:

@@ -12,8 +12,7 @@
                       "C:\\QiLabs\\00_QiLabs.workspace"
                   ],
     "default_scope_roots":  [
-                                "C:\\QiLabs\\40_QiVault",
-                                "C:\\QiLabs\\10_QiSpark"
+                                "C:\\QiLabs\\40_QiVault"
                             ],
     "ignore_dirs":  [
                         ".git",
