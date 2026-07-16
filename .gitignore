@@ -30,3 +30,7 @@ toolbox/tools/checkers/housekeeping_console/summaries/
 venv/
 __pycache__/
 *.pyc
+
+# ── Codex Agent Caches ────────────────────────────────────────────────
+codex-local-clean-home/.tmp/
+
