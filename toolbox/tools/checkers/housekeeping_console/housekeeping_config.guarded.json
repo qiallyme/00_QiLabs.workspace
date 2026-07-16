@@ -187,7 +187,7 @@
       "C:\\QiLabs\\20_QiServer",
       "C:\\QiLabs\\40_QiVault"
     ],
-    "manifest_file": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\_housekeeping\\git_manifest.json",
+    "manifest_file": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\checkers\\housekeeping\\git_manifest.json",
     "manifest_mirror_files": [],
     "auto_commit": false,
     "auto_push": false
