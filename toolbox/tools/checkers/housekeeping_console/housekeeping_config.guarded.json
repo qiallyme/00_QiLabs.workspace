@@ -182,10 +182,7 @@
   },
   "git": {
     "discover_roots": [
-      "C:\\QiLabs\\00_QiLabs.workspace",
-      "C:\\QiLabs\\10_QiSpark",
-      "C:\\QiLabs\\20_QiServer",
-      "C:\\QiLabs\\40_QiVault"
+      "C:\\QiLabs"
     ],
     "manifest_file": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\checkers\\housekeeping\\git_manifest.json",
     "manifest_mirror_files": [],
