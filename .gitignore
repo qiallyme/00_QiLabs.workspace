@@ -12,6 +12,18 @@ toolbox/tools/system/housekeeping/manifests/
 toolbox/tools/system/housekeeping/plans/
 toolbox/tools/system/housekeeping/reports/
 toolbox/tools/system/housekeeping/summaries/
+toolbox/tools/checkers/housekeeping/backups/
+toolbox/tools/checkers/housekeeping/logs/
+toolbox/tools/checkers/housekeeping/manifests/
+toolbox/tools/checkers/housekeeping/plans/
+toolbox/tools/checkers/housekeeping/reports/
+toolbox/tools/checkers/housekeeping/summaries/
+toolbox/tools/checkers/housekeeping_console/backups/
+toolbox/tools/checkers/housekeeping_console/logs/
+toolbox/tools/checkers/housekeeping_console/manifests/
+toolbox/tools/checkers/housekeeping_console/plans/
+toolbox/tools/checkers/housekeeping_console/reports/
+toolbox/tools/checkers/housekeeping_console/summaries/
 
 # ── Python ─────────────────────────────────────────────────────────────
 .venv/
