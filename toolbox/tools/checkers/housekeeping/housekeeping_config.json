@@ -185,7 +185,7 @@
                                             "README_STATUS.md"
                                         ],
                            "date_separator":  "_",
-                           "word_separator":  "-",
+                           "word_separator":  "_",
                            "lowercase":  true
                        },
     "tags":  {
