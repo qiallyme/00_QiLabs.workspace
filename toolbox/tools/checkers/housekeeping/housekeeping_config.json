@@ -196,8 +196,8 @@
              },
     "indexing":  {
                      "index_filename":  "_index.md",
-                     "managed_block_start":  "\u003c!-- QILABS-HOUSEKEEPING-INDEX:START --\u003e",
-                     "managed_block_end":  "\u003c!-- QILABS-HOUSEKEEPING-INDEX:END --\u003e",
+                     "managed_block_start":  "\u003c!-- QILABS:HOUSEKEEPING_INDEX_START --\u003e",
+                     "managed_block_end":  "\u003c!-- QILABS:HOUSEKEEPING_INDEX_END --\u003e",
                      "max_items_per_folder":  200
                  },
     "git":  {
