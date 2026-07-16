@@ -15,9 +15,14 @@ def run(ctx):
     keys = parse_frontmatter_keys(fm)
     required = ctx.config.get("frontmatter", {}).get("required_base_keys", [])
     missing = [k for k in required if k not in keys]
+    dynamic = ctx.config.get("frontmatter", {}).get("dynamic_keys_by_type", {})
+    event_keys = dynamic.get("event", [])
+    missing_event = [k for k in event_keys if k not in keys]
 
     if missing:
         ctx.warn(f"Master template missing configured keys: {missing}")
+    if missing_event:
+        ctx.warn(f"Master template missing configured event keys: {missing_event}")
     if "created_at" in keys and "last_updated" not in keys:
         ctx.info("Template uses created_at/updated_at. Other docs using last_updated should be mapped, not overwritten.")
 
@@ -25,5 +30,6 @@ def run(ctx):
     ctx.add_result(STEP_NAME, {
         "template_keys": len(keys),
         "missing_required_keys": len(missing),
+        "missing_event_keys": len(missing_event),
         "path": str(template_path)
     })

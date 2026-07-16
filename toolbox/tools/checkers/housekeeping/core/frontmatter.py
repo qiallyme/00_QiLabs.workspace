@@ -69,6 +69,25 @@ def title_from_filename(path: Path) -> str:
     return " ".join(w.capitalize() for w in stem.split()) or path.stem
 
 
+def infer_note_type(path: Path, existing: dict[str, str]) -> str:
+    """Infer only high-confidence structural note types.
+
+    Timeline migration stays opt-in: historical notes become events when they
+    already carry an event date plus an event-oriented field. This avoids
+    classifying ordinary journals or imported chat logs as canonical events.
+    """
+    current = existing.get("type", "").strip().strip('"').strip("'")
+    if current:
+        return current
+    if path.name.lower() in {"_index.md", "index.md"}:
+        return "index"
+    has_date = bool(existing.get("date", "").strip().strip('"').strip("'"))
+    event_markers = ("event_type", "category", "involved", "severity", "critical")
+    if has_date and any(key in existing for key in event_markers):
+        return "event"
+    return "note"
+
+
 def slugify(value: str) -> str:
     value = value.lower()
     value = re.sub(r"['\"`]", "", value)
@@ -200,6 +219,8 @@ def add_missing_frontmatter(text: str, path: Path, required_keys: list[str], def
         # Determine value dynamically
         if key == "title":
             value = title_from_filename(path)
+        elif key == "type":
+            value = infer_note_type(path, existing)
         elif key == "slug":
             title_val = existing.get("title", "").strip("'\" ") or title_from_filename(path)
             value = slugify(title_val)

@@ -92,6 +92,7 @@
     "frontmatter":  {
                         "required_base_keys":  [
                                                    "layout",
+                                                   "type",
                                                    "title",
                                                    "slug",
                                                    "summary",
@@ -114,6 +115,7 @@
                                                ],
                         "default_values":  {
                                                "layout":  "page",
+                                               "type":  "note",
                                                "slug":  "",
                                                "summary":  "",
                                                "status":  "active",
@@ -137,7 +139,17 @@
                                                "uid":  "",
                                                "canonical_ref":  "",
                                                "source_type":  "manual",
-                                               "template_key":  "master-template"
+                                               "template_key":  "master-template",
+                                               "date":  "",
+                                               "event_type":  "",
+                                               "people":  [
+
+                                                          ],
+                                               "location":  "",
+                                               "significance":  "normal",
+                                               "canonical":  false,
+                                               "timeline_include":  false,
+                                               "timeline_status":  "unreviewed"
                                            },
                         "dynamic_keys_by_type":  {
                                                      "person":  [
@@ -167,6 +179,16 @@
                                                      "template":  [
                                                                       "template_key",
                                                                       "template_version"
+                                                                  ],
+                                                     "event":  [
+                                                                    "date",
+                                                                    "event_type",
+                                                                    "people",
+                                                                    "location",
+                                                                    "significance",
+                                                                    "canonical",
+                                                                    "timeline_include",
+                                                                    "timeline_status"
                                                                   ]
                                                  },
                         "do_not_overwrite_existing_values":  true
