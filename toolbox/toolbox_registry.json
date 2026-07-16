@@ -1,6 +1,6 @@
 {
   "schema": "qilabs.toolbox.registry.v2",
-  "generated_at": "2026-07-16T07:30:35",
+  "generated_at": "2026-07-16T07:31:39",
   "toolbox_root": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox",
   "plugin_count": 71,
   "plugins": [
@@ -10700,14 +10700,6 @@
       "severity": "WARNING",
       "code": "missing_requirement",
       "path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\finance\\tax_compiler\\manifest.yaml",
-      "message": "Requirement may be missing: pillow",
-      "plugin_id": "finance.tax.compiler",
-      "fixable": true
-    },
-    {
-      "severity": "WARNING",
-      "code": "missing_requirement",
-      "path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\finance\\tax_compiler\\manifest.yaml",
       "message": "Requirement may be missing: pillow_heif",
       "plugin_id": "finance.tax.compiler",
       "fixable": true
@@ -10751,16 +10743,8 @@
       "message": "Requirement may be missing: rapidfuzz",
       "plugin_id": "organize.vault.router",
       "fixable": true
-    },
-    {
-      "severity": "WARNING",
-      "code": "missing_requirement",
-      "path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\organize\\xlsx_tabs_to_csv\\manifest.yaml",
-      "message": "Requirement may be missing: openpyxl",
-      "plugin_id": "organize.xlsx.tabs.to.csv",
-      "fixable": true
     }
   ],
   "errors": 2,
-  "warnings": 8
+  "warnings": 6
 }

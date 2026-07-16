@@ -1,9 +1,9 @@
 # QiLabs Toolbox Validation Report
 
-- Generated: 2026-07-16T07:30:35
+- Generated: 2026-07-16T07:31:39
 - Plugins: 71
 - Errors: 2
-- Warnings: 8
+- Warnings: 6
 
 ## Plugins
 
@@ -89,10 +89,6 @@
   - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\converters\export_blueprint\manifest.yaml`
   - Plugin: `converters.export_blueprint`
   - Fixable: yes
-- **WARNING** `missing_requirement` - Requirement may be missing: pillow
-  - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\finance\tax_compiler\manifest.yaml`
-  - Plugin: `finance.tax.compiler`
-  - Fixable: yes
 - **WARNING** `missing_requirement` - Requirement may be missing: pillow_heif
   - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\finance\tax_compiler\manifest.yaml`
   - Plugin: `finance.tax.compiler`
@@ -116,8 +112,4 @@
 - **WARNING** `missing_requirement` - Requirement may be missing: rapidfuzz
   - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\organize\vault_router\manifest.yaml`
   - Plugin: `organize.vault.router`
-  - Fixable: yes
-- **WARNING** `missing_requirement` - Requirement may be missing: openpyxl
-  - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\organize\xlsx_tabs_to_csv\manifest.yaml`
-  - Plugin: `organize.xlsx.tabs.to.csv`
   - Fixable: yes
