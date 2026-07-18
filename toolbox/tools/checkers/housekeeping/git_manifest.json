@@ -1,19 +1,670 @@
 {
   "schema_version": "1.0",
   "generated_by": "qilabs-housekeeping",
-  "repo_count": 2,
+  "repo_count": 37,
   "repos": [
+    {
+      "path": "C:\\QiLabs\\30_QiDrive\\.Encrypted\\My Drive\\01_storage\\07_legal\\15_cases\\30.05_CASE_AES\\case_AES_Disputev3\\PDF-To-Excel-Converter",
+      "relative_path": "30_QiDrive/.Encrypted/My Drive/01_storage/07_legal/15_cases/30.05_CASE_AES/case_AES_Disputev3/PDF-To-Excel-Converter",
+      "name": "PDF-To-Excel-Converter",
+      "branch": "master",
+      "head": "569fdbf6d7e3981efbbdad89b0d04529178006bb",
+      "upstream": "origin/master",
+      "ahead": 0,
+      "behind": 0,
+      "dirty": true,
+      "status_lines": 2,
+      "origin_url": "https://github.com/qiallyme/QiLabs.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/QiLabs.git",
+          "push": "https://github.com/qiallyme/QiLabs.git"
+        }
+      },
+      "superproject": "",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\30_QiDrive\\.Encrypted\\My Drive\\01_storage\\07_legal\\15_cases\\30.05_CASE_AES\\case_AES_Disputev3\\AES_Dispute_2025_26",
+      "relative_path": "30_QiDrive/.Encrypted/My Drive/01_storage/07_legal/15_cases/30.05_CASE_AES/case_AES_Disputev3/AES_Dispute_2025_26",
+      "name": "AES_Dispute_2025_26",
+      "branch": "master",
+      "head": "569fdbf6d7e3981efbbdad89b0d04529178006bb",
+      "upstream": "origin/master",
+      "ahead": 0,
+      "behind": 0,
+      "dirty": true,
+      "status_lines": 2,
+      "origin_url": "https://github.com/qiallyme/QiLabs.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/QiLabs.git",
+          "push": "https://github.com/qiallyme/QiLabs.git"
+        }
+      },
+      "superproject": "",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\30_QiDrive\\My Drive\\01_storage\\07_legal\\15_cases\\30.05_CASE_AES\\case_AES_Disputev3\\PDF-To-Excel-Converter",
+      "relative_path": "30_QiDrive/My Drive/01_storage/07_legal/15_cases/30.05_CASE_AES/case_AES_Disputev3/PDF-To-Excel-Converter",
+      "name": "PDF-To-Excel-Converter",
+      "branch": "main",
+      "head": "0f60a9906b4b3dcfa67acea4c2e3c8b858d44289",
+      "upstream": "origin/main",
+      "ahead": 0,
+      "behind": 0,
+      "dirty": false,
+      "status_lines": 0,
+      "origin_url": "https://github.com/TsvetanG2/PDF-To-Excel-Converter.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/TsvetanG2/PDF-To-Excel-Converter.git",
+          "push": "https://github.com/TsvetanG2/PDF-To-Excel-Converter.git"
+        }
+      },
+      "superproject": "C:/QiLabs/30_QiDrive/My Drive/01_storage/07_legal/15_cases/30.05_CASE_AES/case_AES_Disputev3",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\30_QiDrive\\My Drive\\01_storage\\07_legal\\15_cases\\30.05_CASE_AES\\case_AES_Disputev3\\AES_Dispute_2025_26",
+      "relative_path": "30_QiDrive/My Drive/01_storage/07_legal/15_cases/30.05_CASE_AES/case_AES_Disputev3/AES_Dispute_2025_26",
+      "name": "AES_Dispute_2025_26",
+      "branch": "main",
+      "head": "",
+      "upstream": "origin/main",
+      "ahead": 0,
+      "behind": 0,
+      "dirty": false,
+      "status_lines": 0,
+      "origin_url": "https://github.com/qiallyme/AES_Dispute_2025_26.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/AES_Dispute_2025_26.git",
+          "push": "https://github.com/qiallyme/AES_Dispute_2025_26.git"
+        }
+      },
+      "superproject": "",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\30_QiDrive\\.Encrypted\\My Drive\\01_storage\\07_legal\\15_cases\\30.05_CASE_AES\\case_AES_Disputev3",
+      "relative_path": "30_QiDrive/.Encrypted/My Drive/01_storage/07_legal/15_cases/30.05_CASE_AES/case_AES_Disputev3",
+      "name": "case_AES_Disputev3",
+      "branch": "master",
+      "head": "569fdbf6d7e3981efbbdad89b0d04529178006bb",
+      "upstream": "origin/master",
+      "ahead": 0,
+      "behind": 0,
+      "dirty": true,
+      "status_lines": 2,
+      "origin_url": "https://github.com/qiallyme/QiLabs.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/QiLabs.git",
+          "push": "https://github.com/qiallyme/QiLabs.git"
+        }
+      },
+      "superproject": "",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\30_QiDrive\\.Encrypted\\My Drive\\01_storage\\04_people\\Vault_Innova-Hire\\sites\\3.2_innovahire-kb-site.g",
+      "relative_path": "30_QiDrive/.Encrypted/My Drive/01_storage/04_people/Vault_Innova-Hire/sites/3.2_innovahire-kb-site.g",
+      "name": "3.2_innovahire-kb-site.g",
+      "branch": "master",
+      "head": "569fdbf6d7e3981efbbdad89b0d04529178006bb",
+      "upstream": "origin/master",
+      "ahead": 0,
+      "behind": 0,
+      "dirty": true,
+      "status_lines": 2,
+      "origin_url": "https://github.com/qiallyme/QiLabs.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/QiLabs.git",
+          "push": "https://github.com/qiallyme/QiLabs.git"
+        }
+      },
+      "superproject": "",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\30_QiDrive\\.Encrypted\\My Drive\\01_storage\\04_people\\Vault_Innova-Hire\\sites\\3.1_innovahire-marketing-site.g",
+      "relative_path": "30_QiDrive/.Encrypted/My Drive/01_storage/04_people/Vault_Innova-Hire/sites/3.1_innovahire-marketing-site.g",
+      "name": "3.1_innovahire-marketing-site.g",
+      "branch": "master",
+      "head": "569fdbf6d7e3981efbbdad89b0d04529178006bb",
+      "upstream": "origin/master",
+      "ahead": 0,
+      "behind": 0,
+      "dirty": true,
+      "status_lines": 2,
+      "origin_url": "https://github.com/qiallyme/QiLabs.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/QiLabs.git",
+          "push": "https://github.com/qiallyme/QiLabs.git"
+        }
+      },
+      "superproject": "",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\30_QiDrive\\.Encrypted\\My Drive\\01_storage\\04_people\\Vault_Innova-Hire\\apps\\innovahire-kb-site-realtor-lookup.g",
+      "relative_path": "30_QiDrive/.Encrypted/My Drive/01_storage/04_people/Vault_Innova-Hire/apps/innovahire-kb-site-realtor-lookup.g",
+      "name": "innovahire-kb-site-realtor-lookup.g",
+      "branch": "master",
+      "head": "569fdbf6d7e3981efbbdad89b0d04529178006bb",
+      "upstream": "origin/master",
+      "ahead": 0,
+      "behind": 0,
+      "dirty": true,
+      "status_lines": 2,
+      "origin_url": "https://github.com/qiallyme/QiLabs.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/QiLabs.git",
+          "push": "https://github.com/qiallyme/QiLabs.git"
+        }
+      },
+      "superproject": "",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\30_QiDrive\\.Encrypted\\My Drive\\01_storage\\04_people\\Vault_Innova-Hire\\4_apps\\innovahire-kb-site-realtor-lookup.g",
+      "relative_path": "30_QiDrive/.Encrypted/My Drive/01_storage/04_people/Vault_Innova-Hire/4_apps/innovahire-kb-site-realtor-lookup.g",
+      "name": "innovahire-kb-site-realtor-lookup.g",
+      "branch": "master",
+      "head": "569fdbf6d7e3981efbbdad89b0d04529178006bb",
+      "upstream": "origin/master",
+      "ahead": 0,
+      "behind": 0,
+      "dirty": true,
+      "status_lines": 2,
+      "origin_url": "https://github.com/qiallyme/QiLabs.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/QiLabs.git",
+          "push": "https://github.com/qiallyme/QiLabs.git"
+        }
+      },
+      "superproject": "",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\30_QiDrive\\My Drive\\01_storage\\07_legal\\15_cases\\30.05_CASE_AES\\case_AES_Disputev3",
+      "relative_path": "30_QiDrive/My Drive/01_storage/07_legal/15_cases/30.05_CASE_AES/case_AES_Disputev3",
+      "name": "case_AES_Disputev3",
+      "branch": "main",
+      "head": "",
+      "upstream": "origin/main",
+      "ahead": 0,
+      "behind": 0,
+      "dirty": true,
+      "status_lines": 189,
+      "origin_url": "https://github.com/qiallyme/utility_aes_dispute.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/utility_aes_dispute.git",
+          "push": "https://github.com/qiallyme/utility_aes_dispute.git"
+        }
+      },
+      "superproject": "",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\30_QiDrive\\My Drive\\01_storage\\04_people\\Vault_Innova-Hire\\sites\\3.2_innovahire-kb-site.g",
+      "relative_path": "30_QiDrive/My Drive/01_storage/04_people/Vault_Innova-Hire/sites/3.2_innovahire-kb-site.g",
+      "name": "3.2_innovahire-kb-site.g",
+      "branch": "main",
+      "head": "b330f461fd636aca6be8f3c5ed338984efafc55a",
+      "upstream": "origin/main",
+      "ahead": 2,
+      "behind": 0,
+      "dirty": false,
+      "status_lines": 0,
+      "origin_url": "https://github.com/qiallyme/innovahire-kb-site.g.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/innovahire-kb-site.g.git",
+          "push": "https://github.com/qiallyme/innovahire-kb-site.g.git"
+        }
+      },
+      "superproject": "",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\30_QiDrive\\My Drive\\01_storage\\04_people\\Vault_Innova-Hire\\sites\\3.1_innovahire-marketing-site.g",
+      "relative_path": "30_QiDrive/My Drive/01_storage/04_people/Vault_Innova-Hire/sites/3.1_innovahire-marketing-site.g",
+      "name": "3.1_innovahire-marketing-site.g",
+      "branch": "main",
+      "head": "57cd76bc03382cfddcd8d64e8c86b7e473b6f038",
+      "upstream": "origin/main",
+      "ahead": 1,
+      "behind": 0,
+      "dirty": false,
+      "status_lines": 0,
+      "origin_url": "https://github.com/qiallyme/innovahire-marketing-site.g.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/innovahire-marketing-site.g.git",
+          "push": "https://github.com/qiallyme/innovahire-marketing-site.g.git"
+        }
+      },
+      "superproject": "",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\30_QiDrive\\My Drive\\01_storage\\04_people\\Vault_Innova-Hire\\apps\\innovahire-kb-site-realtor-lookup.g",
+      "relative_path": "30_QiDrive/My Drive/01_storage/04_people/Vault_Innova-Hire/apps/innovahire-kb-site-realtor-lookup.g",
+      "name": "innovahire-kb-site-realtor-lookup.g",
+      "branch": "main",
+      "head": "0f65b75a25ed287e7e58311d5a75bd2c3173d776",
+      "upstream": "origin/main",
+      "ahead": 1,
+      "behind": 0,
+      "dirty": false,
+      "status_lines": 0,
+      "origin_url": "https://github.com/qiallyme/innovahire-kb-site-realtor-lookup.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/innovahire-kb-site-realtor-lookup.git",
+          "push": "https://github.com/qiallyme/innovahire-kb-site-realtor-lookup.git"
+        }
+      },
+      "superproject": "",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\30_QiDrive\\My Drive\\01_storage\\04_people\\Vault_Innova-Hire\\4_apps\\innovahire-kb-site-realtor-lookup.g",
+      "relative_path": "30_QiDrive/My Drive/01_storage/04_people/Vault_Innova-Hire/4_apps/innovahire-kb-site-realtor-lookup.g",
+      "name": "innovahire-kb-site-realtor-lookup.g",
+      "branch": "main",
+      "head": "e1a9b9c723fb5cc84025ea5f6432403e33174b4d",
+      "upstream": "origin/main",
+      "ahead": 1,
+      "behind": 0,
+      "dirty": false,
+      "status_lines": 0,
+      "origin_url": "https://github.com/qiallyme/innovahire-kb-site-realtor-lookup.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/innovahire-kb-site-realtor-lookup.git",
+          "push": "https://github.com/qiallyme/innovahire-kb-site-realtor-lookup.git"
+        }
+      },
+      "superproject": "",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\30_QiDrive\\.Encrypted\\My Drive\\01_storage\\07_legal\\15_cases\\30.12_CASE_GRANDVIEW",
+      "relative_path": "30_QiDrive/.Encrypted/My Drive/01_storage/07_legal/15_cases/30.12_CASE_GRANDVIEW",
+      "name": "30.12_CASE_GRANDVIEW",
+      "branch": "master",
+      "head": "569fdbf6d7e3981efbbdad89b0d04529178006bb",
+      "upstream": "origin/master",
+      "ahead": 0,
+      "behind": 0,
+      "dirty": true,
+      "status_lines": 2,
+      "origin_url": "https://github.com/qiallyme/QiLabs.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/QiLabs.git",
+          "push": "https://github.com/qiallyme/QiLabs.git"
+        }
+      },
+      "superproject": "",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\30_QiDrive\\.Encrypted\\My Drive\\01_storage\\07_legal\\15_cases\\30.06_CASE_FCFCU",
+      "relative_path": "30_QiDrive/.Encrypted/My Drive/01_storage/07_legal/15_cases/30.06_CASE_FCFCU",
+      "name": "30.06_CASE_FCFCU",
+      "branch": "master",
+      "head": "569fdbf6d7e3981efbbdad89b0d04529178006bb",
+      "upstream": "origin/master",
+      "ahead": 0,
+      "behind": 0,
+      "dirty": true,
+      "status_lines": 2,
+      "origin_url": "https://github.com/qiallyme/QiLabs.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/QiLabs.git",
+          "push": "https://github.com/qiallyme/QiLabs.git"
+        }
+      },
+      "superproject": "",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\30_QiDrive\\My Drive\\01_storage\\07_legal\\15_cases\\30.12_CASE_GRANDVIEW",
+      "relative_path": "30_QiDrive/My Drive/01_storage/07_legal/15_cases/30.12_CASE_GRANDVIEW",
+      "name": "30.12_CASE_GRANDVIEW",
+      "branch": "main",
+      "head": "c7d904778beaf8747944c3c6fecf77d3ab3f6aaa",
+      "upstream": "origin/main",
+      "ahead": 1,
+      "behind": 0,
+      "dirty": false,
+      "status_lines": 0,
+      "origin_url": "https://github.com/qiallyme/app_CASE_MIGUEL.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/app_CASE_MIGUEL.git",
+          "push": "https://github.com/qiallyme/app_CASE_MIGUEL.git"
+        }
+      },
+      "superproject": "",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\30_QiDrive\\My Drive\\01_storage\\07_legal\\15_cases\\30.06_CASE_FCFCU",
+      "relative_path": "30_QiDrive/My Drive/01_storage/07_legal/15_cases/30.06_CASE_FCFCU",
+      "name": "30.06_CASE_FCFCU",
+      "branch": "main",
+      "head": "ce0159190ae71d5cd92d2311cf5559051a87c883",
+      "upstream": "origin/main",
+      "ahead": 1,
+      "behind": 0,
+      "dirty": true,
+      "status_lines": 2093,
+      "origin_url": "https://github.com/qiallyme/Case_FCFCU.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/Case_FCFCU.git",
+          "push": "https://github.com/qiallyme/Case_FCFCU.git"
+        }
+      },
+      "superproject": "",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\30_QiDrive\\.Encrypted\\My Drive\\01_storage\\04_people\\BBR4821_Vault_Built-by-Rays",
+      "relative_path": "30_QiDrive/.Encrypted/My Drive/01_storage/04_people/BBR4821_Vault_Built-by-Rays",
+      "name": "BBR4821_Vault_Built-by-Rays",
+      "branch": "master",
+      "head": "569fdbf6d7e3981efbbdad89b0d04529178006bb",
+      "upstream": "origin/master",
+      "ahead": 0,
+      "behind": 0,
+      "dirty": true,
+      "status_lines": 2,
+      "origin_url": "https://github.com/qiallyme/QiLabs.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/QiLabs.git",
+          "push": "https://github.com/qiallyme/QiLabs.git"
+        }
+      },
+      "superproject": "",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\30_QiDrive\\My Drive\\01_storage\\04_people\\BBR4821_Vault_Built-by-Rays",
+      "relative_path": "30_QiDrive/My Drive/01_storage/04_people/BBR4821_Vault_Built-by-Rays",
+      "name": "BBR4821_Vault_Built-by-Rays",
+      "branch": "main",
+      "head": "d58d149cad7bb71326f78e9f844eae2703721055",
+      "upstream": "origin/main",
+      "ahead": 0,
+      "behind": 0,
+      "dirty": true,
+      "status_lines": 379,
+      "origin_url": "https://github.com/qiallyme/client_monorepo_builtbyrays.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/client_monorepo_builtbyrays.git",
+          "push": "https://github.com/qiallyme/client_monorepo_builtbyrays.git"
+        }
+      },
+      "superproject": "",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\60_QiApps\\69_QiTrials\\remote-mcp-server-authless",
+      "relative_path": "60_QiApps/69_QiTrials/remote-mcp-server-authless",
+      "name": "remote-mcp-server-authless",
+      "branch": "main",
+      "head": "1ef5cfd04481ff790dae704ec3a53984175a81e2",
+      "upstream": "origin/main",
+      "ahead": 0,
+      "behind": 0,
+      "dirty": false,
+      "status_lines": 0,
+      "origin_url": "https://github.com/qiallyme/remote-mcp-server-authless.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/remote-mcp-server-authless.git",
+          "push": "https://github.com/qiallyme/remote-mcp-server-authless.git"
+        }
+      },
+      "superproject": "C:/QiLabs",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\60_QiApps\\69_QiTrials\\69.1_statement-generator",
+      "relative_path": "60_QiApps/69_QiTrials/69.1_statement-generator",
+      "name": "69.1_statement-generator",
+      "branch": "main",
+      "head": "3f1afd417449bf319c78b14eb99312f528f757b7",
+      "upstream": "origin/main",
+      "ahead": 0,
+      "behind": 0,
+      "dirty": false,
+      "status_lines": 0,
+      "origin_url": "https://github.com/qiallyme/63_statement-generator.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/63_statement-generator.git",
+          "push": "https://github.com/qiallyme/63_statement-generator.git"
+        }
+      },
+      "superproject": "C:/QiLabs",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\70_QiSites\\20_QSaysIt.com",
+      "relative_path": "70_QiSites/20_QSaysIt.com",
+      "name": "20_QSaysIt.com",
+      "branch": "main",
+      "head": "0c8d50ead62470b9009b52e6057671addac7cea1",
+      "upstream": "origin/main",
+      "ahead": 0,
+      "behind": 0,
+      "dirty": false,
+      "status_lines": 0,
+      "origin_url": "https://github.com/qiallyme/Site.QiSaysIt.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/Site.QiSaysIt.git",
+          "push": "https://github.com/qiallyme/Site.QiSaysIt.git"
+        }
+      },
+      "superproject": "C:/QiLabs",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\70_QiSites\\11_pay.qially.com",
+      "relative_path": "70_QiSites/11_pay.qially.com",
+      "name": "11_pay.qially.com",
+      "branch": "main",
+      "head": "bd2ba2c17285254ab6d2bcf5da22e061ef15c44f",
+      "upstream": "origin/main",
+      "ahead": 0,
+      "behind": 0,
+      "dirty": false,
+      "status_lines": 0,
+      "origin_url": "https://github.com/qiallyme/11_pay.qially.com.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/11_pay.qially.com.git",
+          "push": "https://github.com/qiallyme/11_pay.qially.com.git"
+        }
+      },
+      "superproject": "C:/QiLabs",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\70_QiSites\\10_QiAlly.com",
+      "relative_path": "70_QiSites/10_QiAlly.com",
+      "name": "10_QiAlly.com",
+      "branch": "main",
+      "head": "8d1137600df5665e6410d5ef803223e2227e6e48",
+      "upstream": "origin/main",
+      "ahead": 0,
+      "behind": 0,
+      "dirty": false,
+      "status_lines": 0,
+      "origin_url": "https://github.com/qiallyme/70_QiSites_10_QiAlly.com.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/70_QiSites_10_QiAlly.com.git",
+          "push": "https://github.com/qiallyme/70_QiSites_10_QiAlly.com.git"
+        }
+      },
+      "superproject": "C:/QiLabs",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\60_QiApps\\65_QiTarot",
+      "relative_path": "60_QiApps/65_QiTarot",
+      "name": "65_QiTarot",
+      "branch": "main",
+      "head": "6fb6a0ae4caca48d44d23eaaf456f23ae04d6b9a",
+      "upstream": "origin/main",
+      "ahead": 0,
+      "behind": 0,
+      "dirty": false,
+      "status_lines": 0,
+      "origin_url": "https://github.com/qiallyme/65_QiTarot.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/65_QiTarot.git",
+          "push": "https://github.com/qiallyme/65_QiTarot.git"
+        }
+      },
+      "superproject": "C:/QiLabs",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\60_QiApps\\64_QiFi",
+      "relative_path": "60_QiApps/64_QiFi",
+      "name": "64_QiFi",
+      "branch": "main",
+      "head": "25517e4576c8e2ef403fc48cbacfa49af960558d",
+      "upstream": "origin/main",
+      "ahead": 0,
+      "behind": 0,
+      "dirty": true,
+      "status_lines": 2,
+      "origin_url": "https://github.com/qiallyme/60_QiApps_64_QiFi.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/60_QiApps_64_QiFi.git",
+          "push": "https://github.com/qiallyme/60_QiApps_64_QiFi.git"
+        }
+      },
+      "superproject": "C:/QiLabs",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\60_QiApps\\63_QiCare",
+      "relative_path": "60_QiApps/63_QiCare",
+      "name": "63_QiCare",
+      "branch": "main",
+      "head": "7b402dd02afe64ce9619ced8c8487581081ad396",
+      "upstream": "origin/main",
+      "ahead": 0,
+      "behind": 0,
+      "dirty": false,
+      "status_lines": 0,
+      "origin_url": "https://github.com/qiallyme/54_QiCare.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/54_QiCare.git",
+          "push": "https://github.com/qiallyme/54_QiCare.git"
+        }
+      },
+      "superproject": "C:/QiLabs",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\60_QiApps\\62_QiLegal",
+      "relative_path": "60_QiApps/62_QiLegal",
+      "name": "62_QiLegal",
+      "branch": "main",
+      "head": "a4d221ee5e5f415140134b5a9fd53bf4772650c6",
+      "upstream": "origin/main",
+      "ahead": 0,
+      "behind": 0,
+      "dirty": false,
+      "status_lines": 0,
+      "origin_url": "https://github.com/qiallyme/57_QiLegal.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/57_QiLegal.git",
+          "push": "https://github.com/qiallyme/57_QiLegal.git"
+        }
+      },
+      "superproject": "C:/QiLabs",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\60_QiApps\\61_QiLife",
+      "relative_path": "60_QiApps/61_QiLife",
+      "name": "61_QiLife",
+      "branch": "main",
+      "head": "70a515e0d19f00b36916beb58de76bc9007ac63c",
+      "upstream": "origin/main",
+      "ahead": 0,
+      "behind": 0,
+      "dirty": false,
+      "status_lines": 0,
+      "origin_url": "https://github.com/qiallyme/60_QiApps_61_QiLife.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/60_QiApps_61_QiLife.git",
+          "push": "https://github.com/qiallyme/60_QiApps_61_QiLife.git"
+        }
+      },
+      "superproject": "C:/QiLabs",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\25_QiWorkers\\251_QiApi",
+      "relative_path": "25_QiWorkers/251_QiApi",
+      "name": "251_QiApi",
+      "branch": "main",
+      "head": "d9bd6c16550027cebc78dcca69133223ca72e786",
+      "upstream": "origin/main",
+      "ahead": 0,
+      "behind": 0,
+      "dirty": true,
+      "status_lines": 4,
+      "origin_url": "https://github.com/qiallyme/25_QiWorkers-251_QiApi.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/25_QiWorkers-251_QiApi.git",
+          "push": "https://github.com/qiallyme/25_QiWorkers-251_QiApi.git"
+        }
+      },
+      "superproject": "C:/QiLabs/25_QiWorkers",
+      "registered_submodules": []
+    },
     {
       "path": "C:\\QiLabs\\40_QiVault",
       "relative_path": "40_QiVault",
       "name": "40_QiVault",
       "branch": "main",
-      "head": "93df38e09ee11aff06e40042a76a93b59d5229ff",
+      "head": "048c80e5464fbdbaaee50cb4bb3164c077b95fca",
       "upstream": "origin/main",
       "ahead": 0,
       "behind": 0,
       "dirty": true,
-      "status_lines": 1311,
+      "status_lines": 2118,
       "origin_url": "https://github.com/qiallyme/40_QiVault.git",
       "remotes": {
         "origin": {
@@ -25,16 +676,58 @@
       "registered_submodules": []
     },
     {
-      "path": "C:\\QiLabs\\10_QiSpark",
-      "relative_path": "10_QiSpark",
-      "name": "10_QiSpark",
+      "path": "C:\\QiLabs\\25_QiWorkers",
+      "relative_path": "25_QiWorkers",
+      "name": "25_QiWorkers",
       "branch": "main",
-      "head": "35471694234cdf273f7d999fc450079cfac1cc29",
+      "head": "b6a76e491b7802ea9ba6dd99e7c1b6280ab57e40",
       "upstream": "origin/main",
       "ahead": 0,
       "behind": 0,
       "dirty": true,
       "status_lines": 1,
+      "origin_url": "https://github.com/qiallyme/remote-mcp-server-authless.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/remote-mcp-server-authless.git",
+          "push": "https://github.com/qiallyme/remote-mcp-server-authless.git"
+        }
+      },
+      "superproject": "",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\20_QiServer",
+      "relative_path": "20_QiServer",
+      "name": "20_QiServer",
+      "branch": "main",
+      "head": "3bfe6d4020014072c409940286d3a868d85f86c3",
+      "upstream": "origin/main",
+      "ahead": 0,
+      "behind": 0,
+      "dirty": true,
+      "status_lines": 1,
+      "origin_url": "https://github.com/qiallyme/20_QiServer.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/20_QiServer.git",
+          "push": "https://github.com/qiallyme/20_QiServer.git"
+        }
+      },
+      "superproject": "",
+      "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\10_QiSpark",
+      "relative_path": "10_QiSpark",
+      "name": "10_QiSpark",
+      "branch": "main",
+      "head": "179c75063658f91322f243326f5540c542b9399c",
+      "upstream": "origin/main",
+      "ahead": 0,
+      "behind": 0,
+      "dirty": false,
+      "status_lines": 0,
       "origin_url": "https://github.com/qiallyme/10_QiSpark.git",
       "remotes": {
         "origin": {
@@ -44,8 +737,59 @@
       },
       "superproject": "",
       "registered_submodules": []
+    },
+    {
+      "path": "C:\\QiLabs\\00_QiLabs.workspace",
+      "relative_path": "00_QiLabs.workspace",
+      "name": "00_QiLabs.workspace",
+      "branch": "main",
+      "head": "e5e2fe258979f48d4f79e92f514ebe6e39d47f7f",
+      "upstream": "origin/main",
+      "ahead": 0,
+      "behind": 0,
+      "dirty": true,
+      "status_lines": 2,
+      "origin_url": "https://github.com/qiallyme/00_QiLabs.workspace.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/00_QiLabs.workspace.git",
+          "push": "https://github.com/qiallyme/00_QiLabs.workspace.git"
+        }
+      },
+      "superproject": "",
+      "registered_submodules": [
+        "_qios_master_blueprint",
+        "apps/experiments/USBLegalAidv2",
+        "apps/qione-portal/src/features/qinote",
+        "apps/qione-portal/src/features/qistory/cre_QiStory_Pole_To_Power",
+        "apps/qione-portal/src/features/qistory/cre_QiStory_Silence-Isnt-Distance",
+        "python_core/document-ingestion",
+        "sites/qially-web/client-portals/dmejiasmartinez",
+        "sites/qsaysit-web"
+      ]
+    },
+    {
+      "path": "C:\\QiLabs",
+      "relative_path": ".",
+      "name": "QiLabs",
+      "branch": "master",
+      "head": "569fdbf6d7e3981efbbdad89b0d04529178006bb",
+      "upstream": "origin/master",
+      "ahead": 0,
+      "behind": 0,
+      "dirty": true,
+      "status_lines": 2,
+      "origin_url": "https://github.com/qiallyme/QiLabs.git",
+      "remotes": {
+        "origin": {
+          "fetch": "https://github.com/qiallyme/QiLabs.git",
+          "push": "https://github.com/qiallyme/QiLabs.git"
+        }
+      },
+      "superproject": "",
+      "registered_submodules": []
     }
   ],
-  "generated_at": "2026-07-16T07:14:29",
+  "generated_at": "2026-07-18T11:19:54",
   "manifest_note": "Generated from live .git folders and git remote config; do not hand-maintain URLs."
 }
