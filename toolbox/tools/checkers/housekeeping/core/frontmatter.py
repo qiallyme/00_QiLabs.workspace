@@ -36,12 +36,19 @@ def parse_frontmatter_keys(fm: str | None) -> dict[str, str]:
     if not fm:
         return {}
     out: dict[str, str] = {}
+    current_key = None
     for line in fm.splitlines():
         if not line.strip() or line.lstrip().startswith("#"):
             continue
         if ":" in line and not line.startswith((" ", "\t", "-")):
             key, value = line.split(":", 1)
-            out[key.strip()] = value.strip()
+            current_key = key.strip()
+            out[current_key] = value.strip()
+        elif current_key is not None and line.startswith((" ", "\t", "-")):
+            if out[current_key]:
+                out[current_key] += "\n" + line
+            else:
+                out[current_key] = line
     return out
 
 
