@@ -108,3 +108,38 @@ required to define those fields.
 
 The JSON audit writer also explicitly enumerates result collections for
 Windows PowerShell 5.1 compatibility.
+
+
+## v5 error-handling contract
+
+The pipeline now distinguishes three outcomes:
+
+- Exit `0`: every enabled phase completed without recorded failures.
+- Exit `2`: the full pipeline completed, but one or more projects, repositories,
+  hooks, or phases were skipped or failed.
+- Exit `1`: a fatal structural failure prevented safe continuation.
+
+Recoverable examples include:
+
+- invalid `package.json`
+- missing package manager
+- failed dependency install
+- failed project build
+- unreadable subdirectory
+- detached Git repository
+- missing Git remote
+- rejected protected file
+- failed fetch, rebase, commit, or push for one repository
+
+Recoverable errors are logged, the affected item is skipped, and processing
+continues.
+
+Fatal examples include:
+
+- invalid QiLabs root
+- unreadable or invalid pipeline configuration
+- active pipeline lock
+- inability to initialize the pipeline safely
+
+Node and Git discovery now isolate errors by directory instead of terminating
+the entire discovery pass.

@@ -1,0 +1,295 @@
+﻿{
+    "generated_at":  "2026-07-21T02:48:38.5204837-04:00",
+    "root":  "C:\\QiLabs",
+    "dry_run":  true,
+    "log_path":  "C:\\QiLabs\\00_QiLabs.workspace\\90_audits\\do_it_all\\do-it-all-20260721-024811.log",
+    "completed_results":  39,
+    "failures":  4,
+    "warnings":  0,
+    "removed_items":  0,
+    "results":  [
+                    {
+                        "area":  "cleanup",
+                        "target":  "C:\\QiLabs",
+                        "status":  "completed",
+                        "message":  "Removed 0 safe cache or log items."
+                    },
+                    {
+                        "area":  "node",
+                        "target":  "C:\\QiLabs\\25_QiWorkers",
+                        "status":  "completed",
+                        "message":  "Dependencies synchronized; no build script found."
+                    },
+                    {
+                        "area":  "node",
+                        "target":  "C:\\QiLabs\\00_QiLabs.workspace",
+                        "status":  "completed",
+                        "message":  "Dependencies synchronized and build completed."
+                    },
+                    {
+                        "area":  "node",
+                        "target":  "C:\\QiLabs\\70_QiSites\\20_QSaysIt.com",
+                        "status":  "failed",
+                        "message":  "Package manager is not installed or not on PATH: pnpm"
+                    },
+                    {
+                        "area":  "node",
+                        "target":  "C:\\QiLabs\\60_QiApps\\63_QiCare",
+                        "status":  "completed",
+                        "message":  "Dependencies synchronized; no build script found."
+                    },
+                    {
+                        "area":  "node",
+                        "target":  "C:\\QiLabs\\25_QiWorkers\\251_QiApi",
+                        "status":  "completed",
+                        "message":  "Dependencies synchronized; no build script found."
+                    },
+                    {
+                        "area":  "node",
+                        "target":  "C:\\QiLabs\\60_QiApps\\61_QiLife",
+                        "status":  "completed",
+                        "message":  "Dependencies synchronized and build completed."
+                    },
+                    {
+                        "area":  "node",
+                        "target":  "C:\\QiLabs\\60_QiApps\\65_QiTarot",
+                        "status":  "completed",
+                        "message":  "Dependencies synchronized; no build script found."
+                    },
+                    {
+                        "area":  "node",
+                        "target":  "C:\\QiLabs\\70_QiSites\\10_QiAlly.com",
+                        "status":  "completed",
+                        "message":  "Dependencies synchronized and build completed."
+                    },
+                    {
+                        "area":  "node",
+                        "target":  "C:\\QiLabs\\20_QiServer\\packages\\qinode",
+                        "status":  "completed",
+                        "message":  "Dependencies synchronized; no build script found."
+                    },
+                    {
+                        "area":  "node",
+                        "target":  "C:\\QiLabs\\60_QiApps\\69_QiTrials\\remote-mcp-server-authless",
+                        "status":  "completed",
+                        "message":  "Dependencies synchronized; no build script found."
+                    },
+                    {
+                        "area":  "node",
+                        "target":  "C:\\QiLabs\\20_QiServer\\packages\\ai",
+                        "status":  "completed",
+                        "message":  "Dependencies synchronized; no build script found."
+                    },
+                    {
+                        "area":  "node",
+                        "target":  "C:\\QiLabs\\40_QiVault\\10_daily\\timeline",
+                        "status":  "completed",
+                        "message":  "Dependencies synchronized and build completed."
+                    },
+                    {
+                        "area":  "node",
+                        "target":  "C:\\QiLabs\\20_QiServer\\packages\\config",
+                        "status":  "completed",
+                        "message":  "Dependencies synchronized; no build script found."
+                    },
+                    {
+                        "area":  "node",
+                        "target":  "C:\\QiLabs\\60_QiApps\\69_QiTrials\\69.1_statement-generator",
+                        "status":  "completed",
+                        "message":  "Dependencies synchronized and build completed."
+                    },
+                    {
+                        "area":  "node",
+                        "target":  "C:\\QiLabs\\20_QiServer\\packages\\gina",
+                        "status":  "completed",
+                        "message":  "Dependencies synchronized; no build script found."
+                    },
+                    {
+                        "area":  "node",
+                        "target":  "C:\\QiLabs\\20_QiServer\\packages\\database",
+                        "status":  "completed",
+                        "message":  "Dependencies synchronized; no build script found."
+                    },
+                    {
+                        "area":  "node",
+                        "target":  "C:\\QiLabs\\60_QiApps\\63_QiCare\\apps\\worker",
+                        "status":  "completed",
+                        "message":  "Dependencies synchronized; no build script found."
+                    },
+                    {
+                        "area":  "node",
+                        "target":  "C:\\QiLabs\\60_QiApps\\63_QiCare\\apps\\momcare-desktop-admin",
+                        "status":  "completed",
+                        "message":  "Dependencies synchronized and build completed."
+                    },
+                    {
+                        "area":  "node",
+                        "target":  "C:\\QiLabs\\60_QiApps\\63_QiCare\\apps\\frontend",
+                        "status":  "completed",
+                        "message":  "Dependencies synchronized and build completed."
+                    },
+                    {
+                        "area":  "node",
+                        "target":  "C:\\QiLabs\\60_QiApps\\63_QiCare\\apps\\CareLite",
+                        "status":  "completed",
+                        "message":  "Dependencies synchronized and build completed."
+                    },
+                    {
+                        "area":  "node",
+                        "target":  "C:\\QiLabs\\60_QiApps\\64_QiFi\\app\\qifinance-web",
+                        "status":  "completed",
+                        "message":  "Dependencies synchronized and build completed."
+                    },
+                    {
+                        "area":  "node",
+                        "target":  "C:\\QiLabs\\20_QiServer\\packages\\gina\\workers\\orchestrator",
+                        "status":  "completed",
+                        "message":  "Dependencies synchronized; no build script found."
+                    },
+                    {
+                        "area":  "node",
+                        "target":  "C:\\QiLabs\\20_QiServer\\packages\\gina\\src\\launcher",
+                        "status":  "completed",
+                        "message":  "Dependencies synchronized and build completed."
+                    },
+                    {
+                        "area":  "node",
+                        "target":  "C:\\QiLabs\\60_QiApps\\69_QiTrials\\shotcut-master\\src\\qml\\export-edl",
+                        "status":  "completed",
+                        "message":  "Dependencies synchronized; no build script found."
+                    },
+                    {
+                        "area":  "node",
+                        "target":  "C:\\QiLabs\\60_QiApps\\69_QiTrials\\shotcut-master\\src\\qml\\export-chapters",
+                        "status":  "completed",
+                        "message":  "Dependencies synchronized; no build script found."
+                    },
+                    {
+                        "area":  "git",
+                        "target":  "C:\\QiLabs\\60_QiApps\\69_QiTrials\\remote-mcp-server-authless",
+                        "status":  "completed",
+                        "message":  "Repository synchronized on branch main."
+                    },
+                    {
+                        "area":  "git",
+                        "target":  "C:\\QiLabs\\60_QiApps\\69_QiTrials\\69.1_statement-generator",
+                        "status":  "completed",
+                        "message":  "Repository synchronized on branch main."
+                    },
+                    {
+                        "area":  "git",
+                        "target":  "C:\\QiLabs\\60_QiApps\\64_QiFi",
+                        "status":  "failed",
+                        "message":  "warning: in the working copy of \u0027app/qifinance-web/src/components/ImportView.tsx\u0027, LF will be replaced by CRLF the next time Git touches it"
+                    },
+                    {
+                        "area":  "git",
+                        "target":  "C:\\QiLabs\\60_QiApps\\63_QiCare",
+                        "status":  "completed",
+                        "message":  "Repository synchronized on branch main."
+                    },
+                    {
+                        "area":  "git",
+                        "target":  "C:\\QiLabs\\70_QiSites\\20_QSaysIt.com",
+                        "status":  "completed",
+                        "message":  "Repository synchronized on branch main."
+                    },
+                    {
+                        "area":  "git",
+                        "target":  "C:\\QiLabs\\70_QiSites\\10_QiAlly.com",
+                        "status":  "completed",
+                        "message":  "Repository synchronized on branch main."
+                    },
+                    {
+                        "area":  "git",
+                        "target":  "C:\\QiLabs\\70_QiSites\\11_pay.qially.com",
+                        "status":  "completed",
+                        "message":  "Repository synchronized on branch main."
+                    },
+                    {
+                        "area":  "git",
+                        "target":  "C:\\QiLabs\\60_QiApps\\65_QiTarot",
+                        "status":  "completed",
+                        "message":  "Repository synchronized on branch main."
+                    },
+                    {
+                        "area":  "git",
+                        "target":  "C:\\QiLabs\\25_QiWorkers\\251_QiApi",
+                        "status":  "completed",
+                        "message":  "Repository synchronized on branch main."
+                    },
+                    {
+                        "area":  "git",
+                        "target":  "C:\\QiLabs\\60_QiApps\\62_QiLegal",
+                        "status":  "completed",
+                        "message":  "Repository synchronized on branch main."
+                    },
+                    {
+                        "area":  "git",
+                        "target":  "C:\\QiLabs\\60_QiApps\\61_QiLife",
+                        "status":  "completed",
+                        "message":  "Repository synchronized on branch main."
+                    },
+                    {
+                        "area":  "git",
+                        "target":  "C:\\QiLabs\\10_QiSpark",
+                        "status":  "completed",
+                        "message":  "Repository synchronized on branch main."
+                    },
+                    {
+                        "area":  "git",
+                        "target":  "C:\\QiLabs\\00_QiLabs.workspace",
+                        "status":  "failed",
+                        "message":  "warning: in the working copy of \u0027automation/do_it_all/Invoke-QiLabsDoItAll.ps1\u0027, LF will be replaced by CRLF the next time Git touches it"
+                    },
+                    {
+                        "area":  "git",
+                        "target":  "C:\\QiLabs\\40_QiVault",
+                        "status":  "failed",
+                        "message":  "warning: in the working copy of \u002700_home/00_QiCode/.obsidian/workspace.json\u0027, LF will be replaced by CRLF the next time Git touches it"
+                    },
+                    {
+                        "area":  "git",
+                        "target":  "C:\\QiLabs\\25_QiWorkers",
+                        "status":  "completed",
+                        "message":  "Repository synchronized on branch main."
+                    },
+                    {
+                        "area":  "git",
+                        "target":  "C:\\QiLabs\\20_QiServer",
+                        "status":  "completed",
+                        "message":  "Repository synchronized on branch main."
+                    },
+                    {
+                        "area":  "git",
+                        "target":  "C:\\QiLabs",
+                        "status":  "completed",
+                        "message":  "Repository synchronized on branch master."
+                    }
+                ],
+    "failure_details":  [
+                            {
+                                "area":  "node",
+                                "target":  "C:\\QiLabs\\70_QiSites\\20_QSaysIt.com",
+                                "message":  "Package manager is not installed or not on PATH: pnpm"
+                            },
+                            {
+                                "area":  "git",
+                                "target":  "C:\\QiLabs\\60_QiApps\\64_QiFi",
+                                "message":  "warning: in the working copy of \u0027app/qifinance-web/src/components/ImportView.tsx\u0027, LF will be replaced by CRLF the next time Git touches it"
+                            },
+                            {
+                                "area":  "git",
+                                "target":  "C:\\QiLabs\\00_QiLabs.workspace",
+                                "message":  "warning: in the working copy of \u0027automation/do_it_all/Invoke-QiLabsDoItAll.ps1\u0027, LF will be replaced by CRLF the next time Git touches it"
+                            },
+                            {
+                                "area":  "git",
+                                "target":  "C:\\QiLabs\\40_QiVault",
+                                "message":  "warning: in the working copy of \u002700_home/00_QiCode/.obsidian/workspace.json\u0027, LF will be replaced by CRLF the next time Git touches it"
+                            }
+                        ],
+    "warning_details":  [
+
+                        ]
+}

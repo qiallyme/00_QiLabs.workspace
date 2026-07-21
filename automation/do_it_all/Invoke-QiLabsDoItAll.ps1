@@ -134,6 +134,30 @@ function Add-Warning {
     Write-Log "$Area warning for ${Target}: $Message" "WARN"
 }
 
+function Invoke-GuardedPhase {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$Name,
+        [Parameter(Mandatory = $true)]
+        [scriptblock]$Action
+    )
+
+    try {
+        & $Action | Out-Null
+        return $true
+    }
+    catch {
+        Add-Failure -Area "phase" -Target $Name -Message $_.Exception.Message
+
+        if (-not [bool]$config.continue_on_error) {
+            throw
+        }
+
+        Write-Log "Continuing after recoverable phase failure: $Name" "WARN"
+        return $false
+    }
+}
+
 function Test-CommandAvailable {
     param([string]$Name)
     return $null -ne (Get-Command $Name -ErrorAction SilentlyContinue)
@@ -264,16 +288,39 @@ function Get-SafeDirectoryWalk {
         $current = $stack.Pop()
         $found.Add($current)
 
-        $children = Get-ChildItem -LiteralPath $current -Directory -Force -ErrorAction SilentlyContinue
+        try {
+            $children = Get-ChildItem `
+                -LiteralPath $current `
+                -Directory `
+                -Force `
+                -ErrorAction Stop
+        }
+        catch {
+            Add-Warning `
+                -Area "discovery" `
+                -Target $current `
+                -Message "Directory could not be scanned and was skipped: $($_.Exception.Message)"
+            continue
+        }
+
         foreach ($child in $children) {
             if ($SkipDirectoryNames -contains $child.Name) {
                 continue
             }
-            $stack.Push($child.FullName)
+
+            try {
+                $stack.Push($child.FullName)
+            }
+            catch {
+                Add-Warning `
+                    -Area "discovery" `
+                    -Target $child.FullName `
+                    -Message "Directory path could not be queued and was skipped: $($_.Exception.Message)"
+            }
         }
     }
 
-    return $found
+    return @($found.ToArray())
 }
 
 function Remove-SafeBloat {
@@ -419,107 +466,159 @@ function Invoke-HousekeepingHooks {
 
 function Get-NodeProjectRoots {
     $skip = @(Get-GlobalSkipDirectoryNames)
-    $directories = Get-SafeDirectoryWalk -StartPath $Root -SkipDirectoryNames $skip
+    $directories = @(Get-SafeDirectoryWalk -StartPath $Root -SkipDirectoryNames $skip)
     $candidates = New-Object System.Collections.Generic.List[object]
 
     foreach ($directory in $directories) {
-        $packagePath = Join-Path $directory "package.json"
-        if (-not (Test-Path -LiteralPath $packagePath -PathType Leaf)) {
-            continue
-        }
-
         try {
-            $package = Get-Content -LiteralPath $packagePath -Raw -Encoding UTF8 | ConvertFrom-Json
+            $packagePath = Join-Path $directory "package.json"
+            if (-not (Test-Path -LiteralPath $packagePath -PathType Leaf)) {
+                continue
+            }
+
+            try {
+                $package = Get-Content `
+                    -LiteralPath $packagePath `
+                    -Raw `
+                    -Encoding UTF8 `
+                    -ErrorAction Stop |
+                    ConvertFrom-Json -ErrorAction Stop
+            }
+            catch {
+                Add-Warning `
+                    -Area "node-discovery" `
+                    -Target $packagePath `
+                    -Message "Invalid package.json; project skipped: $($_.Exception.Message)"
+
+                Add-Result `
+                    -Area "node" `
+                    -Target $directory `
+                    -Status "skipped" `
+                    -Message "Invalid package.json."
+                continue
+            }
+
+            $manager = ""
+            $lockFile = ""
+
+            if (Test-Path -LiteralPath (Join-Path $directory "pnpm-lock.yaml")) {
+                $manager = "pnpm"
+                $lockFile = "pnpm-lock.yaml"
+            }
+            elseif (Test-Path -LiteralPath (Join-Path $directory "package-lock.json")) {
+                $manager = "npm"
+                $lockFile = "package-lock.json"
+            }
+            elseif (
+                (Test-Path -LiteralPath (Join-Path $directory "yarn.lock")) -or
+                (Test-Path -LiteralPath (Join-Path $directory ".yarnrc.yml"))
+            ) {
+                $manager = "yarn"
+                $lockFile = "yarn.lock"
+            }
+            elseif (
+                (Test-Path -LiteralPath (Join-Path $directory "bun.lock")) -or
+                (Test-Path -LiteralPath (Join-Path $directory "bun.lockb"))
+            ) {
+                $manager = "bun"
+                $lockFile = "bun.lock"
+            }
+            else {
+                $packageManagerValue = Get-OptionalProperty `
+                    -InputObject $package `
+                    -Name "packageManager"
+
+                if (
+                    $null -ne $packageManagerValue -and
+                    -not [string]::IsNullOrWhiteSpace([string]$packageManagerValue)
+                ) {
+                    $manager = ([string]$packageManagerValue).Split("@")[0]
+                }
+            }
+
+            $workspacesValue = Get-OptionalProperty `
+                -InputObject $package `
+                -Name "workspaces"
+
+            $hasWorkspaces = $null -ne $workspacesValue
+            $hasAncestorPackage = $false
+            $parent = Split-Path -Parent $directory
+
+            while (
+                -not [string]::IsNullOrWhiteSpace($parent) -and
+                (Test-PathUnder -Child $parent -Parent $Root)
+            ) {
+                if (Test-Path -LiteralPath (Join-Path $parent "package.json") -PathType Leaf) {
+                    $hasAncestorPackage = $true
+                    break
+                }
+
+                $nextParent = Split-Path -Parent $parent
+                if ($nextParent -eq $parent) {
+                    break
+                }
+
+                $parent = $nextParent
+            }
+
+            if ($manager -or $hasWorkspaces -or (-not $hasAncestorPackage)) {
+                $candidates.Add([pscustomobject]@{
+                    path = $directory
+                    package = $package
+                    manager = $manager
+                    lock_file = $lockFile
+                    has_workspaces = $hasWorkspaces
+                    depth = Get-DirectoryDepth $directory
+                })
+            }
         }
         catch {
-            Add-Warning -Area "node" -Target $packagePath -Message "Invalid package.json: $($_.Exception.Message)"
+            Add-Warning `
+                -Area "node-discovery" `
+                -Target $directory `
+                -Message "Project discovery failed and was skipped: $($_.Exception.Message)"
+
+            Add-Result `
+                -Area "node" `
+                -Target $directory `
+                -Status "skipped" `
+                -Message "Project discovery error."
             continue
-        }
-
-        $manager = ""
-        $lockFile = ""
-
-        if (Test-Path -LiteralPath (Join-Path $directory "pnpm-lock.yaml")) {
-            $manager = "pnpm"
-            $lockFile = "pnpm-lock.yaml"
-        }
-        elseif (Test-Path -LiteralPath (Join-Path $directory "package-lock.json")) {
-            $manager = "npm"
-            $lockFile = "package-lock.json"
-        }
-        elseif (
-            (Test-Path -LiteralPath (Join-Path $directory "yarn.lock")) -or
-            (Test-Path -LiteralPath (Join-Path $directory ".yarnrc.yml"))
-        ) {
-            $manager = "yarn"
-            $lockFile = "yarn.lock"
-        }
-        elseif (
-            (Test-Path -LiteralPath (Join-Path $directory "bun.lock")) -or
-            (Test-Path -LiteralPath (Join-Path $directory "bun.lockb"))
-        ) {
-            $manager = "bun"
-            $lockFile = "bun.lock"
-        }
-        else {
-            $packageManagerValue = Get-OptionalProperty -InputObject $package -Name "packageManager"
-            if ($null -ne $packageManagerValue -and -not [string]::IsNullOrWhiteSpace([string]$packageManagerValue)) {
-                $manager = ([string]$packageManagerValue).Split("@")[0]
-            }
-        }
-
-        $workspacesValue = Get-OptionalProperty -InputObject $package -Name "workspaces"
-        $hasWorkspaces = $null -ne $workspacesValue
-        $hasAncestorPackage = $false
-        $parent = Split-Path -Parent $directory
-
-        while ((-not [string]::IsNullOrWhiteSpace($parent)) -and (Test-PathUnder -Child $parent -Parent $Root)) {
-            if (Test-Path -LiteralPath (Join-Path $parent "package.json") -PathType Leaf) {
-                $hasAncestorPackage = $true
-                break
-            }
-
-            $nextParent = Split-Path -Parent $parent
-            if ($nextParent -eq $parent) {
-                break
-            }
-            $parent = $nextParent
-        }
-
-        if ($manager -or $hasWorkspaces -or (-not $hasAncestorPackage)) {
-            $candidates.Add([pscustomobject]@{
-                path = $directory
-                package = $package
-                manager = $manager
-                lock_file = $lockFile
-                has_workspaces = $hasWorkspaces
-                depth = Get-DirectoryDepth $directory
-            })
         }
     }
 
-    $workspaceRoots = @($candidates | Where-Object { $_.has_workspaces } | Sort-Object depth)
+    $workspaceRoots = @(
+        $candidates.ToArray() |
+        Where-Object { $_.has_workspaces } |
+        Sort-Object depth
+    )
+
     $selected = New-Object System.Collections.Generic.List[object]
 
-    foreach ($candidate in ($candidates | Sort-Object depth)) {
-        $coveredByWorkspace = $false
+    foreach ($candidate in ($candidates.ToArray() | Sort-Object depth)) {
+        try {
+            $coveredByWorkspace = $false
 
-        foreach ($workspace in $workspaceRoots) {
-            if (
-                $candidate.path -ne $workspace.path -and
-                (Test-PathUnder -Child $candidate.path -Parent $workspace.path)
-            ) {
-                $nestedGitMarker = Join-Path $candidate.path ".git"
-                if (-not (Test-Path -LiteralPath $nestedGitMarker)) {
-                    $coveredByWorkspace = $true
-                    break
+            foreach ($workspace in $workspaceRoots) {
+                if (
+                    $candidate.path -ne $workspace.path -and
+                    (Test-PathUnder -Child $candidate.path -Parent $workspace.path)
+                ) {
+                    $nestedGitMarker = Join-Path $candidate.path ".git"
+
+                    if (-not (Test-Path -LiteralPath $nestedGitMarker)) {
+                        $coveredByWorkspace = $true
+                        break
+                    }
                 }
             }
-        }
 
-        if (-not $coveredByWorkspace) {
+            if ($coveredByWorkspace) {
+                continue
+            }
+
             $alreadySelected = $false
-            foreach ($existing in $selected) {
+            foreach ($existing in $selected.ToArray()) {
                 if ($existing.path -eq $candidate.path) {
                     $alreadySelected = $true
                     break
@@ -530,9 +629,15 @@ function Get-NodeProjectRoots {
                 $selected.Add($candidate)
             }
         }
+        catch {
+            Add-Warning `
+                -Area "node-discovery" `
+                -Target ([string]$candidate.path) `
+                -Message "Workspace resolution failed and was skipped: $($_.Exception.Message)"
+        }
     }
 
-    return @($selected)
+    return @($selected.ToArray())
 }
 
 function Get-PackageScriptNames {
@@ -694,23 +799,43 @@ function Get-GitRepositories {
 
     while ($stack.Count -gt 0) {
         $current = $stack.Pop()
-        $gitMarker = Join-Path $current ".git"
 
-        if (Test-Path -LiteralPath $gitMarker) {
-            $repos.Add($current)
-        }
+        try {
+            $gitMarker = Join-Path $current ".git"
 
-        $children = Get-ChildItem -LiteralPath $current -Directory -Force -ErrorAction SilentlyContinue
-        foreach ($child in $children) {
-            if ($skip -contains $child.Name) {
-                continue
+            if (Test-Path -LiteralPath $gitMarker) {
+                $repos.Add($current)
             }
-            $stack.Push($child.FullName)
+
+            $children = Get-ChildItem `
+                -LiteralPath $current `
+                -Directory `
+                -Force `
+                -ErrorAction Stop
+
+            foreach ($child in $children) {
+                if ($skip -contains $child.Name) {
+                    continue
+                }
+
+                $stack.Push($child.FullName)
+            }
+        }
+        catch {
+            Add-Warning `
+                -Area "git-discovery" `
+                -Target $current `
+                -Message "Directory could not be scanned for repositories and was skipped: $($_.Exception.Message)"
+            continue
         }
     }
 
-    $unique = @($repos | Sort-Object -Unique)
-    return @($unique | Sort-Object { Get-DirectoryDepth $_ } -Descending)
+    $unique = @($repos.ToArray() | Sort-Object -Unique)
+
+    return @(
+        $unique |
+        Sort-Object { Get-DirectoryDepth $_ } -Descending
+    )
 }
 
 function Test-RepositorySkipped {
@@ -746,16 +871,27 @@ function Get-GitChangedPaths {
             continue
         }
 
-        $pathText = ([string]$line).Substring([Math]::Min(3, ([string]$line).Length)).Trim()
-        if ($pathText -like '* -> *') {
-            $pathText = ($pathText -split ' -> ')[-1]
-        }
+        try {
+            $lineText = [string]$line
+            $startIndex = [Math]::Min(3, $lineText.Length)
+            $pathText = $lineText.Substring($startIndex).Trim()
 
-        $pathText = $pathText.Trim('"')
-        $paths.Add($pathText)
+            if ($pathText -like '* -> *') {
+                $pathText = ($pathText -split ' -> ')[-1]
+            }
+
+            $pathText = $pathText.Trim('"')
+            $paths.Add($pathText)
+        }
+        catch {
+            Add-Warning `
+                -Area "git-discovery" `
+                -Target $Repository `
+                -Message "One Git status row could not be parsed and was skipped."
+        }
     }
 
-    return @($paths)
+    return @($paths.ToArray())
 }
 
 function Find-ProtectedChanges {
@@ -988,24 +1124,31 @@ try {
     Write-Log "Globally excluded directory names: $(@($config.scope.excluded_directory_names) -join ', ')" "INFO"
 
     if (-not $SkipHousekeeping) {
-        if ($config.cleanup.enabled) {
-            Remove-SafeBloat
-        }
-        Invoke-HousekeepingHooks
+        [void](Invoke-GuardedPhase -Name "housekeeping" -Action {
+            if ([bool]$config.cleanup.enabled) {
+                Remove-SafeBloat
+            }
+
+            Invoke-HousekeepingHooks
+        })
     }
     else {
         Write-Log "Housekeeping skipped by command-line switch." "WARN"
     }
 
     if (-not $SkipNode) {
-        Invoke-NodeProjects
+        [void](Invoke-GuardedPhase -Name "node" -Action {
+            Invoke-NodeProjects
+        })
     }
     else {
         Write-Log "Node dependency sync and builds skipped by command-line switch." "WARN"
     }
 
     if (-not $SkipGit) {
-        Invoke-GitRepositories
+        [void](Invoke-GuardedPhase -Name "git" -Action {
+            Invoke-GitRepositories
+        })
     }
     else {
         Write-Log "Git synchronization skipped by command-line switch." "WARN"
@@ -1014,16 +1157,23 @@ try {
     Write-RunSummary
 
     if ($script:Failures.Count -gt 0) {
-        Write-Log "QiLabs Do-It-All finished with failures." "ERROR"
-        exit 1
+        Write-Log "QiLabs Do-It-All completed with recoverable issues." "WARN"
+        exit 2
     }
 
     Write-Log "QiLabs Do-It-All finished successfully." "OK"
     exit 0
 }
 catch {
-    Add-Failure -Area "pipeline" -Target $Root -Message $_.Exception.Message
-    Write-RunSummary
+    Add-Failure -Area "pipeline-fatal" -Target $Root -Message $_.Exception.Message
+
+    try {
+        Write-RunSummary
+    }
+    catch {
+        Write-Host "Fatal error while writing the run summary: $($_.Exception.Message)" -ForegroundColor Red
+    }
+
     exit 1
 }
 finally {

@@ -1,0 +1,252 @@
+﻿[2026-07-21 02:48:11] [STEP] QiLabs Do-It-All started
+[2026-07-21 02:48:11] [INFO] Root: C:\QiLabs
+[2026-07-21 02:48:11] [INFO] Dry run: True
+[2026-07-21 02:48:11] [INFO] Globally excluded roots: 30_QiDrive, 90_QiArchive
+[2026-07-21 02:48:11] [INFO] Globally excluded directory names: .Encrypted, backup, backups, backups_before_frontmatter, legacy
+[2026-07-21 02:48:11] [STEP] Safe bloat cleanup
+[2026-07-21 02:48:11] [INFO] Excluded roots/directories: .Encrypted, .git, .next, .pnpm-store, .venv, .yarn, __pycache__, 30_QiDrive, 90_QiArchive, backup, backups, backups_before_frontmatter, build, coverage, dist, legacy, node_modules, venv
+[2026-07-21 02:48:17] [INFO] Running: npm cache verify
+[2026-07-21 02:48:17] [WARN] Dry run: skipped npm cache verify
+[2026-07-21 02:48:18] [OK] Safe cleanup completed. Removed items: 0
+[2026-07-21 02:48:18] [STEP] Housekeeping hooks
+[2026-07-21 02:48:18] [INFO] Housekeeping hook disabled: QiLabs Housekeeping Noninteractive
+[2026-07-21 02:48:18] [STEP] Node dependency sync and builds
+[2026-07-21 02:48:21] [INFO] Node project roots found: 25
+[2026-07-21 02:48:21] [INFO] Running: npm install
+[2026-07-21 02:48:21] [WARN] Dry run: skipped npm dependency sync
+[2026-07-21 02:48:21] [OK] Dependencies synchronized; no 'build' script: C:\QiLabs\25_QiWorkers
+[2026-07-21 02:48:21] [INFO] Running: npm install
+[2026-07-21 02:48:21] [WARN] Dry run: skipped npm dependency sync
+[2026-07-21 02:48:21] [INFO] Running: npm run build
+[2026-07-21 02:48:21] [WARN] Dry run: skipped npm run build
+[2026-07-21 02:48:21] [OK] Node project completed: C:\QiLabs\00_QiLabs.workspace
+[2026-07-21 02:48:21] [ERROR] node failed for C:\QiLabs\70_QiSites\20_QSaysIt.com: Package manager is not installed or not on PATH: pnpm
+[2026-07-21 02:48:21] [INFO] Running: npm ci
+[2026-07-21 02:48:21] [WARN] Dry run: skipped npm dependency sync
+[2026-07-21 02:48:21] [OK] Dependencies synchronized; no 'build' script: C:\QiLabs\60_QiApps\63_QiCare
+[2026-07-21 02:48:21] [INFO] Running: npm ci
+[2026-07-21 02:48:21] [WARN] Dry run: skipped npm dependency sync
+[2026-07-21 02:48:21] [OK] Dependencies synchronized; no 'build' script: C:\QiLabs\25_QiWorkers\251_QiApi
+[2026-07-21 02:48:21] [INFO] Running: npm ci
+[2026-07-21 02:48:21] [WARN] Dry run: skipped npm dependency sync
+[2026-07-21 02:48:21] [INFO] Running: npm run build
+[2026-07-21 02:48:21] [WARN] Dry run: skipped npm run build
+[2026-07-21 02:48:21] [OK] Node project completed: C:\QiLabs\60_QiApps\61_QiLife
+[2026-07-21 02:48:21] [INFO] Running: npm ci
+[2026-07-21 02:48:21] [WARN] Dry run: skipped npm dependency sync
+[2026-07-21 02:48:21] [OK] Dependencies synchronized; no 'build' script: C:\QiLabs\60_QiApps\65_QiTarot
+[2026-07-21 02:48:21] [INFO] Running: npm ci
+[2026-07-21 02:48:21] [WARN] Dry run: skipped npm dependency sync
+[2026-07-21 02:48:21] [INFO] Running: npm run build
+[2026-07-21 02:48:21] [WARN] Dry run: skipped npm run build
+[2026-07-21 02:48:21] [OK] Node project completed: C:\QiLabs\70_QiSites\10_QiAlly.com
+[2026-07-21 02:48:21] [INFO] Running: npm install
+[2026-07-21 02:48:21] [WARN] Dry run: skipped npm dependency sync
+[2026-07-21 02:48:21] [OK] Dependencies synchronized; no 'build' script: C:\QiLabs\20_QiServer\packages\qinode
+[2026-07-21 02:48:21] [INFO] Running: npm install
+[2026-07-21 02:48:21] [WARN] Dry run: skipped npm dependency sync
+[2026-07-21 02:48:21] [OK] Dependencies synchronized; no 'build' script: C:\QiLabs\60_QiApps\69_QiTrials\remote-mcp-server-authless
+[2026-07-21 02:48:22] [INFO] Running: npm install
+[2026-07-21 02:48:22] [WARN] Dry run: skipped npm dependency sync
+[2026-07-21 02:48:22] [OK] Dependencies synchronized; no 'build' script: C:\QiLabs\20_QiServer\packages\ai
+[2026-07-21 02:48:22] [INFO] Running: npm install
+[2026-07-21 02:48:22] [WARN] Dry run: skipped npm dependency sync
+[2026-07-21 02:48:22] [INFO] Running: npm run build
+[2026-07-21 02:48:22] [WARN] Dry run: skipped npm run build
+[2026-07-21 02:48:22] [OK] Node project completed: C:\QiLabs\40_QiVault\10_daily\timeline
+[2026-07-21 02:48:22] [INFO] Running: npm install
+[2026-07-21 02:48:22] [WARN] Dry run: skipped npm dependency sync
+[2026-07-21 02:48:22] [OK] Dependencies synchronized; no 'build' script: C:\QiLabs\20_QiServer\packages\config
+[2026-07-21 02:48:22] [INFO] Running: npm ci
+[2026-07-21 02:48:22] [WARN] Dry run: skipped npm dependency sync
+[2026-07-21 02:48:22] [INFO] Running: npm run build
+[2026-07-21 02:48:22] [WARN] Dry run: skipped npm run build
+[2026-07-21 02:48:22] [OK] Node project completed: C:\QiLabs\60_QiApps\69_QiTrials\69.1_statement-generator
+[2026-07-21 02:48:22] [INFO] Running: npm ci
+[2026-07-21 02:48:22] [WARN] Dry run: skipped npm dependency sync
+[2026-07-21 02:48:22] [OK] Dependencies synchronized; no 'build' script: C:\QiLabs\20_QiServer\packages\gina
+[2026-07-21 02:48:22] [INFO] Running: npm install
+[2026-07-21 02:48:22] [WARN] Dry run: skipped npm dependency sync
+[2026-07-21 02:48:22] [OK] Dependencies synchronized; no 'build' script: C:\QiLabs\20_QiServer\packages\database
+[2026-07-21 02:48:22] [INFO] Running: npm ci
+[2026-07-21 02:48:22] [WARN] Dry run: skipped npm dependency sync
+[2026-07-21 02:48:22] [OK] Dependencies synchronized; no 'build' script: C:\QiLabs\60_QiApps\63_QiCare\apps\worker
+[2026-07-21 02:48:22] [INFO] Running: npm ci
+[2026-07-21 02:48:22] [WARN] Dry run: skipped npm dependency sync
+[2026-07-21 02:48:22] [INFO] Running: npm run build
+[2026-07-21 02:48:22] [WARN] Dry run: skipped npm run build
+[2026-07-21 02:48:22] [OK] Node project completed: C:\QiLabs\60_QiApps\63_QiCare\apps\momcare-desktop-admin
+[2026-07-21 02:48:22] [INFO] Running: npm ci
+[2026-07-21 02:48:22] [WARN] Dry run: skipped npm dependency sync
+[2026-07-21 02:48:22] [INFO] Running: npm run build
+[2026-07-21 02:48:22] [WARN] Dry run: skipped npm run build
+[2026-07-21 02:48:22] [OK] Node project completed: C:\QiLabs\60_QiApps\63_QiCare\apps\frontend
+[2026-07-21 02:48:22] [INFO] Running: npm ci
+[2026-07-21 02:48:22] [WARN] Dry run: skipped npm dependency sync
+[2026-07-21 02:48:22] [INFO] Running: npm run build
+[2026-07-21 02:48:22] [WARN] Dry run: skipped npm run build
+[2026-07-21 02:48:22] [OK] Node project completed: C:\QiLabs\60_QiApps\63_QiCare\apps\CareLite
+[2026-07-21 02:48:22] [INFO] Running: npm ci
+[2026-07-21 02:48:22] [WARN] Dry run: skipped npm dependency sync
+[2026-07-21 02:48:22] [INFO] Running: npm run build
+[2026-07-21 02:48:22] [WARN] Dry run: skipped npm run build
+[2026-07-21 02:48:22] [OK] Node project completed: C:\QiLabs\60_QiApps\64_QiFi\app\qifinance-web
+[2026-07-21 02:48:22] [INFO] Running: npm ci
+[2026-07-21 02:48:22] [WARN] Dry run: skipped npm dependency sync
+[2026-07-21 02:48:22] [OK] Dependencies synchronized; no 'build' script: C:\QiLabs\20_QiServer\packages\gina\workers\orchestrator
+[2026-07-21 02:48:22] [INFO] Running: npm ci
+[2026-07-21 02:48:22] [WARN] Dry run: skipped npm dependency sync
+[2026-07-21 02:48:22] [INFO] Running: npm run build
+[2026-07-21 02:48:22] [WARN] Dry run: skipped npm run build
+[2026-07-21 02:48:22] [OK] Node project completed: C:\QiLabs\20_QiServer\packages\gina\src\launcher
+[2026-07-21 02:48:22] [INFO] Running: npm ci
+[2026-07-21 02:48:22] [WARN] Dry run: skipped npm dependency sync
+[2026-07-21 02:48:22] [OK] Dependencies synchronized; no 'build' script: C:\QiLabs\60_QiApps\69_QiTrials\shotcut-master\src\qml\export-edl
+[2026-07-21 02:48:22] [INFO] Running: npm ci
+[2026-07-21 02:48:22] [WARN] Dry run: skipped npm dependency sync
+[2026-07-21 02:48:22] [OK] Dependencies synchronized; no 'build' script: C:\QiLabs\60_QiApps\69_QiTrials\shotcut-master\src\qml\export-chapters
+[2026-07-21 02:48:22] [STEP] Git repositories: nested first
+[2026-07-21 02:48:24] [INFO] Git repositories found: 17
+[2026-07-21 02:48:24] [STEP] Repository: C:\QiLabs\60_QiApps\69_QiTrials\remote-mcp-server-authless
+[2026-07-21 02:48:25] [INFO] Running: git -C C:\QiLabs\60_QiApps\69_QiTrials\remote-mcp-server-authless fetch origin --prune
+[2026-07-21 02:48:25] [WARN] Dry run: skipped git fetch
+[2026-07-21 02:48:25] [INFO] Running: git -C C:\QiLabs\60_QiApps\69_QiTrials\remote-mcp-server-authless pull --rebase
+[2026-07-21 02:48:25] [WARN] Dry run: skipped git pull --rebase
+[2026-07-21 02:48:25] [WARN] Push disabled for repository: C:\QiLabs\60_QiApps\69_QiTrials\remote-mcp-server-authless
+[2026-07-21 02:48:25] [INFO] Running: git -C C:\QiLabs\60_QiApps\69_QiTrials\remote-mcp-server-authless maintenance run --auto
+[2026-07-21 02:48:25] [WARN] Dry run: skipped git maintenance
+[2026-07-21 02:48:25] [OK] Repository completed: C:\QiLabs\60_QiApps\69_QiTrials\remote-mcp-server-authless
+[2026-07-21 02:48:25] [STEP] Repository: C:\QiLabs\60_QiApps\69_QiTrials\69.1_statement-generator
+[2026-07-21 02:48:26] [INFO] Running: git -C C:\QiLabs\60_QiApps\69_QiTrials\69.1_statement-generator fetch origin --prune
+[2026-07-21 02:48:26] [WARN] Dry run: skipped git fetch
+[2026-07-21 02:48:26] [INFO] Running: git -C C:\QiLabs\60_QiApps\69_QiTrials\69.1_statement-generator pull --rebase
+[2026-07-21 02:48:26] [WARN] Dry run: skipped git pull --rebase
+[2026-07-21 02:48:26] [WARN] Push disabled for repository: C:\QiLabs\60_QiApps\69_QiTrials\69.1_statement-generator
+[2026-07-21 02:48:26] [INFO] Running: git -C C:\QiLabs\60_QiApps\69_QiTrials\69.1_statement-generator maintenance run --auto
+[2026-07-21 02:48:26] [WARN] Dry run: skipped git maintenance
+[2026-07-21 02:48:26] [OK] Repository completed: C:\QiLabs\60_QiApps\69_QiTrials\69.1_statement-generator
+[2026-07-21 02:48:26] [STEP] Repository: C:\QiLabs\60_QiApps\64_QiFi
+[2026-07-21 02:48:26] [ERROR] git failed for C:\QiLabs\60_QiApps\64_QiFi: warning: in the working copy of 'app/qifinance-web/src/components/ImportView.tsx', LF will be replaced by CRLF the next time Git touches it
+[2026-07-21 02:48:26] [STEP] Repository: C:\QiLabs\60_QiApps\63_QiCare
+[2026-07-21 02:48:27] [INFO] Running: git -C C:\QiLabs\60_QiApps\63_QiCare fetch origin --prune
+[2026-07-21 02:48:27] [WARN] Dry run: skipped git fetch
+[2026-07-21 02:48:27] [INFO] Running: git -C C:\QiLabs\60_QiApps\63_QiCare pull --rebase
+[2026-07-21 02:48:27] [WARN] Dry run: skipped git pull --rebase
+[2026-07-21 02:48:27] [WARN] Push disabled for repository: C:\QiLabs\60_QiApps\63_QiCare
+[2026-07-21 02:48:27] [INFO] Running: git -C C:\QiLabs\60_QiApps\63_QiCare maintenance run --auto
+[2026-07-21 02:48:27] [WARN] Dry run: skipped git maintenance
+[2026-07-21 02:48:27] [OK] Repository completed: C:\QiLabs\60_QiApps\63_QiCare
+[2026-07-21 02:48:27] [STEP] Repository: C:\QiLabs\70_QiSites\20_QSaysIt.com
+[2026-07-21 02:48:28] [INFO] Running: git -C C:\QiLabs\70_QiSites\20_QSaysIt.com fetch origin --prune
+[2026-07-21 02:48:28] [WARN] Dry run: skipped git fetch
+[2026-07-21 02:48:28] [INFO] Running: git -C C:\QiLabs\70_QiSites\20_QSaysIt.com pull --rebase
+[2026-07-21 02:48:28] [WARN] Dry run: skipped git pull --rebase
+[2026-07-21 02:48:28] [WARN] Push disabled for repository: C:\QiLabs\70_QiSites\20_QSaysIt.com
+[2026-07-21 02:48:28] [INFO] Running: git -C C:\QiLabs\70_QiSites\20_QSaysIt.com maintenance run --auto
+[2026-07-21 02:48:28] [WARN] Dry run: skipped git maintenance
+[2026-07-21 02:48:28] [OK] Repository completed: C:\QiLabs\70_QiSites\20_QSaysIt.com
+[2026-07-21 02:48:28] [STEP] Repository: C:\QiLabs\70_QiSites\10_QiAlly.com
+[2026-07-21 02:48:28] [INFO] Running: git -C C:\QiLabs\70_QiSites\10_QiAlly.com fetch origin --prune
+[2026-07-21 02:48:28] [WARN] Dry run: skipped git fetch
+[2026-07-21 02:48:28] [INFO] Running: git -C C:\QiLabs\70_QiSites\10_QiAlly.com pull --rebase
+[2026-07-21 02:48:28] [WARN] Dry run: skipped git pull --rebase
+[2026-07-21 02:48:28] [WARN] Push disabled for repository: C:\QiLabs\70_QiSites\10_QiAlly.com
+[2026-07-21 02:48:28] [INFO] Running: git -C C:\QiLabs\70_QiSites\10_QiAlly.com maintenance run --auto
+[2026-07-21 02:48:28] [WARN] Dry run: skipped git maintenance
+[2026-07-21 02:48:28] [OK] Repository completed: C:\QiLabs\70_QiSites\10_QiAlly.com
+[2026-07-21 02:48:28] [STEP] Repository: C:\QiLabs\70_QiSites\11_pay.qially.com
+[2026-07-21 02:48:29] [INFO] Running: git -C C:\QiLabs\70_QiSites\11_pay.qially.com fetch origin --prune
+[2026-07-21 02:48:29] [WARN] Dry run: skipped git fetch
+[2026-07-21 02:48:29] [INFO] Running: git -C C:\QiLabs\70_QiSites\11_pay.qially.com pull --rebase
+[2026-07-21 02:48:29] [WARN] Dry run: skipped git pull --rebase
+[2026-07-21 02:48:29] [WARN] Push disabled for repository: C:\QiLabs\70_QiSites\11_pay.qially.com
+[2026-07-21 02:48:29] [INFO] Running: git -C C:\QiLabs\70_QiSites\11_pay.qially.com maintenance run --auto
+[2026-07-21 02:48:29] [WARN] Dry run: skipped git maintenance
+[2026-07-21 02:48:29] [OK] Repository completed: C:\QiLabs\70_QiSites\11_pay.qially.com
+[2026-07-21 02:48:29] [STEP] Repository: C:\QiLabs\60_QiApps\65_QiTarot
+[2026-07-21 02:48:30] [INFO] Running: git -C C:\QiLabs\60_QiApps\65_QiTarot fetch origin --prune
+[2026-07-21 02:48:30] [WARN] Dry run: skipped git fetch
+[2026-07-21 02:48:30] [INFO] Running: git -C C:\QiLabs\60_QiApps\65_QiTarot pull --rebase
+[2026-07-21 02:48:30] [WARN] Dry run: skipped git pull --rebase
+[2026-07-21 02:48:30] [WARN] Push disabled for repository: C:\QiLabs\60_QiApps\65_QiTarot
+[2026-07-21 02:48:30] [INFO] Running: git -C C:\QiLabs\60_QiApps\65_QiTarot maintenance run --auto
+[2026-07-21 02:48:30] [WARN] Dry run: skipped git maintenance
+[2026-07-21 02:48:30] [OK] Repository completed: C:\QiLabs\60_QiApps\65_QiTarot
+[2026-07-21 02:48:30] [STEP] Repository: C:\QiLabs\25_QiWorkers\251_QiApi
+[2026-07-21 02:48:30] [INFO] Running: git -C C:\QiLabs\25_QiWorkers\251_QiApi fetch origin --prune
+[2026-07-21 02:48:30] [WARN] Dry run: skipped git fetch
+[2026-07-21 02:48:30] [INFO] Running: git -C C:\QiLabs\25_QiWorkers\251_QiApi pull --rebase
+[2026-07-21 02:48:30] [WARN] Dry run: skipped git pull --rebase
+[2026-07-21 02:48:30] [WARN] Push disabled for repository: C:\QiLabs\25_QiWorkers\251_QiApi
+[2026-07-21 02:48:30] [INFO] Running: git -C C:\QiLabs\25_QiWorkers\251_QiApi maintenance run --auto
+[2026-07-21 02:48:30] [WARN] Dry run: skipped git maintenance
+[2026-07-21 02:48:30] [OK] Repository completed: C:\QiLabs\25_QiWorkers\251_QiApi
+[2026-07-21 02:48:30] [STEP] Repository: C:\QiLabs\60_QiApps\62_QiLegal
+[2026-07-21 02:48:31] [INFO] Running: git -C C:\QiLabs\60_QiApps\62_QiLegal fetch origin --prune
+[2026-07-21 02:48:31] [WARN] Dry run: skipped git fetch
+[2026-07-21 02:48:31] [INFO] Running: git -C C:\QiLabs\60_QiApps\62_QiLegal pull --rebase
+[2026-07-21 02:48:31] [WARN] Dry run: skipped git pull --rebase
+[2026-07-21 02:48:31] [WARN] Push disabled for repository: C:\QiLabs\60_QiApps\62_QiLegal
+[2026-07-21 02:48:31] [INFO] Running: git -C C:\QiLabs\60_QiApps\62_QiLegal maintenance run --auto
+[2026-07-21 02:48:31] [WARN] Dry run: skipped git maintenance
+[2026-07-21 02:48:31] [OK] Repository completed: C:\QiLabs\60_QiApps\62_QiLegal
+[2026-07-21 02:48:31] [STEP] Repository: C:\QiLabs\60_QiApps\61_QiLife
+[2026-07-21 02:48:32] [INFO] Running: git -C C:\QiLabs\60_QiApps\61_QiLife fetch origin --prune
+[2026-07-21 02:48:32] [WARN] Dry run: skipped git fetch
+[2026-07-21 02:48:32] [INFO] Running: git -C C:\QiLabs\60_QiApps\61_QiLife pull --rebase
+[2026-07-21 02:48:32] [WARN] Dry run: skipped git pull --rebase
+[2026-07-21 02:48:32] [WARN] Push disabled for repository: C:\QiLabs\60_QiApps\61_QiLife
+[2026-07-21 02:48:32] [INFO] Running: git -C C:\QiLabs\60_QiApps\61_QiLife maintenance run --auto
+[2026-07-21 02:48:32] [WARN] Dry run: skipped git maintenance
+[2026-07-21 02:48:32] [OK] Repository completed: C:\QiLabs\60_QiApps\61_QiLife
+[2026-07-21 02:48:32] [STEP] Repository: C:\QiLabs\10_QiSpark
+[2026-07-21 02:48:32] [INFO] Running: git -C C:\QiLabs\10_QiSpark fetch origin --prune
+[2026-07-21 02:48:32] [WARN] Dry run: skipped git fetch
+[2026-07-21 02:48:32] [INFO] Running: git -C C:\QiLabs\10_QiSpark pull --rebase
+[2026-07-21 02:48:32] [WARN] Dry run: skipped git pull --rebase
+[2026-07-21 02:48:32] [WARN] Push disabled for repository: C:\QiLabs\10_QiSpark
+[2026-07-21 02:48:32] [INFO] Running: git -C C:\QiLabs\10_QiSpark maintenance run --auto
+[2026-07-21 02:48:32] [WARN] Dry run: skipped git maintenance
+[2026-07-21 02:48:32] [OK] Repository completed: C:\QiLabs\10_QiSpark
+[2026-07-21 02:48:32] [STEP] Repository: C:\QiLabs\00_QiLabs.workspace
+[2026-07-21 02:48:33] [ERROR] git failed for C:\QiLabs\00_QiLabs.workspace: warning: in the working copy of 'automation/do_it_all/Invoke-QiLabsDoItAll.ps1', LF will be replaced by CRLF the next time Git touches it
+[2026-07-21 02:48:33] [STEP] Repository: C:\QiLabs\40_QiVault
+[2026-07-21 02:48:33] [ERROR] git failed for C:\QiLabs\40_QiVault: warning: in the working copy of '00_home/00_QiCode/.obsidian/workspace.json', LF will be replaced by CRLF the next time Git touches it
+[2026-07-21 02:48:33] [STEP] Repository: C:\QiLabs\25_QiWorkers
+[2026-07-21 02:48:34] [INFO] Running: git -C C:\QiLabs\25_QiWorkers fetch origin --prune
+[2026-07-21 02:48:34] [WARN] Dry run: skipped git fetch
+[2026-07-21 02:48:34] [INFO] Running: git -C C:\QiLabs\25_QiWorkers pull --rebase
+[2026-07-21 02:48:34] [WARN] Dry run: skipped git pull --rebase
+[2026-07-21 02:48:34] [WARN] Push disabled for repository: C:\QiLabs\25_QiWorkers
+[2026-07-21 02:48:34] [INFO] Running: git -C C:\QiLabs\25_QiWorkers maintenance run --auto
+[2026-07-21 02:48:34] [WARN] Dry run: skipped git maintenance
+[2026-07-21 02:48:34] [OK] Repository completed: C:\QiLabs\25_QiWorkers
+[2026-07-21 02:48:34] [STEP] Repository: C:\QiLabs\20_QiServer
+[2026-07-21 02:48:35] [INFO] Running: git -C C:\QiLabs\20_QiServer fetch origin --prune
+[2026-07-21 02:48:35] [WARN] Dry run: skipped git fetch
+[2026-07-21 02:48:35] [INFO] Running: git -C C:\QiLabs\20_QiServer pull --rebase
+[2026-07-21 02:48:35] [WARN] Dry run: skipped git pull --rebase
+[2026-07-21 02:48:35] [WARN] Push disabled for repository: C:\QiLabs\20_QiServer
+[2026-07-21 02:48:35] [INFO] Running: git -C C:\QiLabs\20_QiServer maintenance run --auto
+[2026-07-21 02:48:35] [WARN] Dry run: skipped git maintenance
+[2026-07-21 02:48:35] [OK] Repository completed: C:\QiLabs\20_QiServer
+[2026-07-21 02:48:35] [STEP] Repository: C:\QiLabs
+[2026-07-21 02:48:38] [INFO] Running: git -C C:\QiLabs add -A
+[2026-07-21 02:48:38] [WARN] Dry run: skipped git add
+[2026-07-21 02:48:38] [INFO] Running: git -C C:\QiLabs diff --cached --check
+[2026-07-21 02:48:38] [WARN] Dry run: skipped git staged diff check
+[2026-07-21 02:48:38] [INFO] Running: git -C C:\QiLabs fetch origin --prune
+[2026-07-21 02:48:38] [WARN] Dry run: skipped git fetch
+[2026-07-21 02:48:38] [INFO] Running: git -C C:\QiLabs pull --rebase
+[2026-07-21 02:48:38] [WARN] Dry run: skipped git pull --rebase
+[2026-07-21 02:48:38] [WARN] Push disabled for repository: C:\QiLabs
+[2026-07-21 02:48:38] [INFO] Running: git -C C:\QiLabs maintenance run --auto
+[2026-07-21 02:48:38] [WARN] Dry run: skipped git maintenance
+[2026-07-21 02:48:38] [OK] Repository completed: C:\QiLabs
+[2026-07-21 02:48:38] [STEP] Run summary
+[2026-07-21 02:48:38] [INFO] Completed results: 39
+[2026-07-21 02:48:38] [INFO] Warnings: 0
+[2026-07-21 02:48:38] [ERROR] Failures: 4
+[2026-07-21 02:48:38] [INFO] Log: C:\QiLabs\00_QiLabs.workspace\90_audits\do_it_all\do-it-all-20260721-024811.log
+[2026-07-21 02:48:38] [INFO] JSON summary: C:\QiLabs\00_QiLabs.workspace\90_audits\do_it_all\do-it-all-20260721-024811.json
+[2026-07-21 02:48:38] [WARN] QiLabs Do-It-All completed with recoverable issues.
