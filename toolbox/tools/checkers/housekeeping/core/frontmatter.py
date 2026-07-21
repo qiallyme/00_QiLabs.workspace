@@ -1,28 +1,26 @@
 from __future__ import annotations
 
 import re
+import io
+import uuid
+import datetime
+import subprocess
 from pathlib import Path
 from typing import Any
-import uuid
-import subprocess
-import datetime
-
+from ruamel.yaml import YAML
+from ruamel.yaml.error import MarkedYAMLError
 
 FRONTMATTER_RE = re.compile(r"\A---\s*\n(.*?)\n---\s*\n?", re.DOTALL)
-GIT_DIRTY_CACHE: dict[Path, set[str]] = {}  # git_root -> set of relative dirty paths
-GIT_HISTORY_CACHE: dict[Path, dict[str, tuple[str, str]]] = {} # git_root -> { rel_path -> (created_at, updated_at) }
-
+GIT_DIRTY_CACHE: dict[Path, set[str]] = {}
+GIT_HISTORY_CACHE: dict[Path, dict[str, tuple[str, str]]] = {}
 
 def normalize_text_for_frontmatter(text: str) -> str:
-    """Remove encoding markers that prevent frontmatter from being detected at the first byte."""
     if text.startswith("\ufeff"):
         text = text.lstrip("\ufeff")
     return text
 
-
 def read_text_no_bom(path: Path) -> str:
     return Path(path).read_text(encoding="utf-8-sig", errors="replace")
-
 
 def split_frontmatter(text: str):
     text = normalize_text_for_frontmatter(text)
@@ -31,43 +29,16 @@ def split_frontmatter(text: str):
         return None, text
     return match.group(1), text[match.end():]
 
-
-def parse_frontmatter_keys(fm: str | None) -> dict[str, str]:
-    if not fm:
+def parse_frontmatter_keys(fm: str | None) -> dict[str, Any]:
+    if not fm or not fm.strip():
         return {}
-    out: dict[str, str] = {}
-    current_key = None
-    for line in fm.splitlines():
-        if not line.strip() or line.lstrip().startswith("#"):
-            continue
-        if ":" in line and not line.startswith((" ", "\t", "-")):
-            key, value = line.split(":", 1)
-            current_key = key.strip()
-            out[current_key] = value.strip()
-        elif current_key is not None and line.startswith((" ", "\t", "-")):
-            if out[current_key]:
-                out[current_key] += "\n" + line
-            else:
-                out[current_key] = line
-    return out
-
-
-def value_to_yaml(value: Any) -> str:
-    if isinstance(value, list):
-        if not value:
-            return "[]"
-        return "[" + ", ".join(str(x) for x in value) + "]"
-    if value is None:
-        return '""'
-    if isinstance(value, bool):
-        return "true" if value else "false"
-    s = str(value)
-    if s == "":
-        return '""'
-    if any(ch in s for ch in [":", "#", "{", "}", "[", "]"]) or s.strip() != s:
-        return '"' + s.replace('"', '\\"') + '"'
-    return s
-
+    yaml = YAML()
+    yaml.preserve_quotes = True
+    try:
+        data = yaml.load(fm)
+        return dict(data) if data else {}
+    except MarkedYAMLError:
+        return {}
 
 def title_from_filename(path: Path) -> str:
     stem = path.stem
@@ -75,39 +46,29 @@ def title_from_filename(path: Path) -> str:
     stem = stem.replace("_", " ").replace("-", " ")
     return " ".join(w.capitalize() for w in stem.split()) or path.stem
 
-
-def infer_note_type(path: Path, existing: dict[str, str]) -> str:
-    """Infer only high-confidence structural note types.
-
-    Timeline migration stays opt-in: historical notes become events when they
-    already carry an event date plus an event-oriented field. This avoids
-    classifying ordinary journals or imported chat logs as canonical events.
-    """
-    current = existing.get("type", "").strip().strip('"').strip("'")
-    if current:
+def infer_note_type(path: Path, existing: dict[str, Any]) -> str:
+    current = str(existing.get("type", "")).strip().strip('"').strip("'")
+    if current and current != "None":
         return current
     if path.name.lower() in {"_index.md", "index.md"}:
         return "index"
-    has_date = bool(existing.get("date", "").strip().strip('"').strip("'"))
+    has_date = bool(str(existing.get("date", "")).strip().strip('"').strip("'"))
     event_markers = ("event_type", "category", "involved", "severity", "critical")
     if has_date and any(key in existing for key in event_markers):
         return "event"
     return "note"
 
-
 def slugify(value: str) -> str:
-    value = value.lower()
+    value = str(value).lower()
     value = re.sub(r"['\"`]", "", value)
     value = re.sub(r"[^a-z0-9]+", "-", value)
     return value.strip("-") or "untitled"
-
 
 def get_git_root(cwd: Path) -> Path | None:
     for parent in [cwd, *cwd.parents]:
         if (parent / ".git").exists():
             return parent
     return None
-
 
 def is_file_dirty_in_git(path: Path) -> bool:
     try:
@@ -141,12 +102,9 @@ def is_file_dirty_in_git(path: Path) -> bool:
     except Exception:
         return False
 
-
 def build_git_history_cache(git_root: Path):
     if git_root in GIT_HISTORY_CACHE:
         return
-    
-    # Query git log name-only for all commits
     p = subprocess.run(
         ["git", "log", "--name-only", "--format=%aI"],
         cwd=str(git_root),
@@ -154,7 +112,6 @@ def build_git_history_cache(git_root: Path):
         capture_output=True,
         shell=False
     )
-    
     cache: dict[str, tuple[str, str]] = {}
     if p.returncode == 0:
         current_date = None
@@ -162,143 +119,153 @@ def build_git_history_cache(git_root: Path):
             line = line.strip()
             if not line:
                 continue
-            # ISO 8601 date match (starts with 4 digits and has T)
             if len(line) >= 19 and line[4] == "-" and line[7] == "-" and "T" in line:
                 current_date = line
             elif current_date:
                 file_rel = line.strip('"').replace("\\", "/").strip("/")
                 if not file_rel:
                     continue
-                # The first time we see a file in the log (going from top/newest to bottom/oldest),
-                # it's the updated_at time (newest commit date).
-                # The last time we see it is the created_at time (oldest commit date).
                 if file_rel not in cache:
                     cache[file_rel] = (current_date, current_date)
                 else:
                     updated_at = cache[file_rel][1]
                     cache[file_rel] = (current_date, updated_at)
-                    
     GIT_HISTORY_CACHE[git_root] = cache
-
 
 def get_cached_git_timestamps(path: Path) -> tuple[str | None, str | None]:
     try:
         git_root = get_git_root(path.parent)
         if not git_root:
             return None, None
-        
         build_git_history_cache(git_root)
-        
         rel_path = path.relative_to(git_root).as_posix()
         cache = GIT_HISTORY_CACHE.get(git_root, {})
         if rel_path in cache:
-            return cache[rel_path] # (created_at, updated_at)
+            return cache[rel_path]
         return None, None
     except Exception:
         return None, None
 
-
 def add_missing_frontmatter(text: str, path: Path, required_keys: list[str], defaults: dict, dynamic: dict) -> tuple[str, list[str]]:
     text = normalize_text_for_frontmatter(text)
     fm, body = split_frontmatter(text)
-    existing = parse_frontmatter_keys(fm)
     added: list[str] = []
 
-    if fm is None:
-        fm_lines: list[str] = []
-    else:
-        fm_lines = fm.splitlines()
+    yaml = YAML()
+    yaml.preserve_quotes = True
+    yaml.indent(mapping=2, sequence=4, offset=2)
 
-    def add_key(key: str, value: Any):
-        nonlocal fm_lines, added
+    try:
+        data = yaml.load(fm) if fm and fm.strip() else yaml.map()
+    except MarkedYAMLError:
+        # If parsing fails due to duplicates, we can attempt to load without duplicate checks
+        # But ruamel handles strict duplication by raising. We can instantiate a new parser
+        yaml_lax = YAML(typ='safe')
+        try:
+            data = yaml_lax.load(fm) or {}
+            # Convert to roundtrip CommentedMap
+            data = yaml.load(yaml.dump(data) or "") if data else yaml.map()
+        except Exception:
+            data = yaml.map()
+
+    if data is None:
+        data = yaml.map()
+
+    # Determine dynamic values first
+    title_val = str(data.get("title", "")) or title_from_filename(path)
+    type_val = infer_note_type(path, dict(data))
+
+    def _val_empty(v: Any) -> bool:
+        if v is None: return True
+        if isinstance(v, list) and not v: return True
+        if isinstance(v, str) and not v.strip(): return True
+        return False
+
+    def process_key(key: str, default_val: Any):
+        nonlocal data, added
+        val = data.get(key)
         
-        # Check if key is already set (non-empty)
-        if key in existing:
-            val_str = existing[key].strip("'\" ")
-            if val_str and val_str != "[]" and val_str != '""' and val_str != "''":
-                # Except for updated_at, which we want to update if dirty
-                if key != "updated_at":
-                    return
-                # If key is updated_at and file is not dirty in git, keep it!
-                if not is_file_dirty_in_git(path):
-                    return
-        
-        # Determine value dynamically
-        if key == "title":
-            value = title_from_filename(path)
-        elif key == "type":
-            value = infer_note_type(path, existing)
-        elif key == "slug":
-            title_val = existing.get("title", "").strip("'\" ") or title_from_filename(path)
-            value = slugify(title_val)
-        elif key == "uid":
-            value = uuid.uuid4().hex
+        # Don't overwrite existing non-empty values (except updated_at context)
+        if not _val_empty(val) and key != "updated_at":
+            return
+            
+        if key == "updated_at" and not _val_empty(val) and not is_file_dirty_in_git(path):
+            return
+
+        new_val = default_val
+        if key == "title": new_val = title_val
+        elif key == "type": new_val = type_val
+        elif key == "slug": new_val = slugify(title_val)
+        elif key == "uid": new_val = uuid.uuid4().hex
         elif key == "created_at":
             git_created, _ = get_cached_git_timestamps(path)
-            value = git_created
-            if not value:
+            new_val = git_created
+            if not new_val:
                 try:
-                    value = datetime.datetime.fromtimestamp(path.stat().st_ctime).astimezone().isoformat(timespec="seconds")
+                    new_val = datetime.datetime.fromtimestamp(path.stat().st_ctime).astimezone().isoformat(timespec="seconds")
                 except Exception:
-                    value = datetime.datetime.now().astimezone().isoformat(timespec="seconds")
+                    new_val = datetime.datetime.now().astimezone().isoformat(timespec="seconds")
         elif key == "updated_at":
             if is_file_dirty_in_git(path):
-                value = datetime.datetime.now().astimezone().isoformat(timespec="seconds")
+                new_val = datetime.datetime.now().astimezone().isoformat(timespec="seconds")
             else:
                 _, git_updated = get_cached_git_timestamps(path)
-                value = git_updated
-                if not value:
-                    value = datetime.datetime.now().astimezone().isoformat(timespec="seconds")
+                new_val = git_updated
+                if not new_val:
+                    new_val = datetime.datetime.now().astimezone().isoformat(timespec="seconds")
+        
+        # Enforce list types
+        if isinstance(default_val, list) and not isinstance(new_val, list):
+            new_val = [new_val] if new_val and not _val_empty(new_val) else []
 
-        # Find existing line index to replace or append
-        line_idx = -1
-        for idx, line in enumerate(fm_lines):
-            if line.strip().startswith(key + ":"):
-                line_idx = idx
-                break
-
-        yaml_val = f"{key}: {value_to_yaml(value)}"
-        if line_idx != -1:
-            # Only update if the value changed
-            old_val = fm_lines[line_idx].split(":", 1)[1].strip()
-            new_val = value_to_yaml(value)
-            if old_val != new_val:
-                fm_lines[line_idx] = yaml_val
-                added.append(key)
-        else:
-            fm_lines.append(yaml_val)
+        if val != new_val:
+            data[key] = new_val
             added.append(key)
 
-        existing[key] = value_to_yaml(value)
-
+    # 1. Process required keys in order to enforce master template order
+    ordered_data = yaml.map()
     for key in required_keys:
-        add_key(key, defaults.get(key, ""))
+        process_key(key, defaults.get(key, ""))
+        if key in data:
+            ordered_data[key] = data[key]
 
-    note_type = existing.get("type", "").strip().strip('"').strip("'")
-    for key in dynamic.get(note_type, []):
-        add_key(key, defaults.get(key, ""))
+    # 2. Process dynamic keys based on type
+    for key in dynamic.get(type_val, []):
+        process_key(key, defaults.get(key, ""))
+        if key in data:
+            ordered_data[key] = data[key]
 
-    # If any other fields were added/updated, force updated_at to update as well
-    if added and "updated_at" in required_keys:
-        if "updated_at" not in added:
-            now_str = datetime.datetime.now().astimezone().isoformat(timespec="seconds")
-            line_idx = -1
-            for idx, line in enumerate(fm_lines):
-                if line.strip().startswith("updated_at:"):
-                    line_idx = idx
-                    break
-            yaml_val = f"updated_at: {value_to_yaml(now_str)}"
-            if line_idx != -1:
-                fm_lines[line_idx] = yaml_val
-            else:
-                fm_lines.append(yaml_val)
-            added.append("updated_at")
+    # 3. Add any existing unknown keys back at the bottom
+    for key in data:
+        if key not in ordered_data:
+            ordered_data[key] = data[key]
 
-    new_text = "---\n" + "\n".join(fm_lines).rstrip() + "\n---\n\n" + body.lstrip()
+    # Update updated_at if anything else changed
+    if added and "updated_at" in required_keys and "updated_at" not in added:
+        now_str = datetime.datetime.now().astimezone().isoformat(timespec="seconds")
+        ordered_data["updated_at"] = now_str
+        added.append("updated_at")
+
+    # Dump the ordered YAML
+    out_io = io.StringIO()
+    yaml.dump(ordered_data, out_io)
+    fm_out = out_io.getvalue().strip()
+
+    # Never insert markdown into frontmatter (validate that no "---\n" occurs inside the dump somehow)
+    fm_out = fm_out.replace("---\n", "")
+
+    new_text = f"---\n{fm_out}\n---\n\n{body.lstrip()}"
+    
+    # Final Validation
+    try:
+        yaml.load(fm_out)
+    except MarkedYAMLError as e:
+        raise ValueError(f"Failed to validate generated YAML for {path.name}: {e}")
+
     return new_text, added
-
 
 def get_frontmatter_keys_from_file(path: Path) -> list[str]:
     text = read_text_no_bom(path)
     fm, _body = split_frontmatter(text)
     return list(parse_frontmatter_keys(fm).keys())
+

@@ -52,6 +52,11 @@ MANUAL_STEPS = [
     ("update_git_manifest",        "Update Git manifest"),
     ("generate_report",            "Generate report"),
     ("git_commit_push",            "Recursive Git commit / push"),
+    ("validate_qicode_frontmatter", "Validate QiCode frontmatter"),
+    ("normalize_qicode_frontmatter", "Normalize QiCode frontmatter"),
+    ("validate_qicode_codes",       "Validate QiCode codes"),
+    ("rebuild_qicode_indexes",      "Rebuild QiCode indexes"),
+    ("generate_qicode_audit_report","Generate QiCode audit report"),
 ]
 
 LABEL_BY_MODULE = dict(MANUAL_STEPS) | {
@@ -66,6 +71,7 @@ PHASE_LABEL_RENAMES  = "Advanced - rename preview only"
 PHASE_LABEL_INDEXES  = "Advanced - indexes only"
 PHASE_LABEL_TREE     = "Advanced - tree only"
 PHASE_LABEL_GIT      = "Advanced - git manifest only"
+PHASE_LABEL_QICODE   = "QiCode Maintenance - strict scope"
 
 PHASE_OPTIONS = [
     PHASE_LABEL_P1,
@@ -74,6 +80,7 @@ PHASE_OPTIONS = [
     PHASE_LABEL_INDEXES,
     PHASE_LABEL_TREE,
     PHASE_LABEL_GIT,
+    PHASE_LABEL_QICODE,
 ]
 
 ADVANCED_PHASES = {
@@ -81,6 +88,13 @@ ADVANCED_PHASES = {
     PHASE_LABEL_INDEXES: ["rebuild_indexes",             "generate_report"],
     PHASE_LABEL_TREE:    ["update_full_tree",            "generate_report"],
     PHASE_LABEL_GIT:     ["update_git_manifest",         "generate_report"],
+    PHASE_LABEL_QICODE:  [
+        "validate_qicode_frontmatter",
+        "normalize_qicode_frontmatter",
+        "validate_qicode_codes",
+        "rebuild_qicode_indexes",
+        "generate_qicode_audit_report"
+    ],
 }
 
 SAFE_MANUAL_DEFAULT = "Normalize frontmatter"

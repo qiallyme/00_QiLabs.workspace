@@ -1,0 +1,20 @@
+﻿[2026-07-21 02:41:37] [STEP] QiLabs Do-It-All started
+[2026-07-21 02:41:37] [INFO] Root: C:\QiLabs
+[2026-07-21 02:41:37] [INFO] Dry run: True
+[2026-07-21 02:41:37] [INFO] Globally excluded roots: 30_QiDrive, 90_QiArchive
+[2026-07-21 02:41:37] [INFO] Globally excluded directory names: .Encrypted, backup, backups, backups_before_frontmatter, legacy
+[2026-07-21 02:41:37] [STEP] Safe bloat cleanup
+[2026-07-21 02:41:37] [INFO] Excluded roots/directories: .Encrypted, .git, .next, .pnpm-store, .venv, .yarn, __pycache__, 30_QiDrive, 90_QiArchive, backup, backups, backups_before_frontmatter, build, coverage, dist, legacy, node_modules, venv
+[2026-07-21 02:41:47] [INFO] Running: npm cache verify
+[2026-07-21 02:41:47] [WARN] Dry run: skipped npm cache verify
+[2026-07-21 02:41:47] [OK] Safe cleanup completed. Removed items: 0
+[2026-07-21 02:41:47] [STEP] Housekeeping hooks
+[2026-07-21 02:41:47] [INFO] Housekeeping hook disabled: QiLabs Housekeeping Noninteractive
+[2026-07-21 02:41:48] [STEP] Node dependency sync and builds
+[2026-07-21 02:41:52] [ERROR] pipeline failed for C:\QiLabs: Argument types do not match
+[2026-07-21 02:41:52] [STEP] Run summary
+[2026-07-21 02:41:52] [INFO] Completed results: 1
+[2026-07-21 02:41:52] [INFO] Warnings: 0
+[2026-07-21 02:41:52] [ERROR] Failures: 1
+[2026-07-21 02:41:52] [INFO] Log: C:\QiLabs\00_QiLabs.workspace\90_audits\do_it_all\do-it-all-20260721-024137.log
+[2026-07-21 02:41:52] [INFO] JSON summary: C:\QiLabs\00_QiLabs.workspace\90_audits\do_it_all\do-it-all-20260721-024137.json

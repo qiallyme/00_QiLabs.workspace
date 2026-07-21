@@ -1,255 +1,304 @@
 {
-    "tool_name":  "QiLabs Housekeeping Console",
-    "version":  "0.4.1",
-    "install_path":  "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\_housekeeping",
-    "qilabs_root":  "C:\\QiLabs",
-    "workspace_root":  "C:\\QiLabs\\00_QiLabs.workspace",
-    "vault_root":  "C:\\QiLabs\\40_QiVault",
-    "tree_file":  "C:\\QiLabs\\40_QiVault\\qilabs_full_tree.md",
-    "master_template_file":  "C:\\QiLabs\\00_QiLabs.workspace\\_qiconfig\\master_template.md",
-    "tags_file":  "C:\\QiLabs\\40_QiVault\\_qiconfig\\tags.json",
-    "git_roots":  [
-                      "C:\\QiLabs\\00_QiLabs.workspace"
-                  ],
-    "default_scope_roots":  [
-                                "C:\\QiLabs\\40_QiVault"
-                            ],
-    "ignore_dirs":  [
-                        ".git",
-                        ".obsidian",
-                        ".smart-env",
-                        "node_modules",
-                        ".venv",
-                        "venv",
-                        "__pycache__",
-                        ".pytest_cache",
-                        ".mypy_cache",
-                        ".ruff_cache",
-                        "dist",
-                        "build",
-                        ".next",
-                        ".turbo",
-                        ".cache",
-                        ".docusaurus",
-                        "_archive",
-                        "_backup",
-                        "_backups",
-                        "_review_bundles_for_chatgpt",
-                        "payloads",
-                        "_system",
-                        "_qiconfig",
-                        "copilot"
-                    ],
-    "ignore_globs":  [
-                         "**/_system/**",
-                         "**/_qiconfig/**",
-                         "**/copilot/**",
-                         "**/.git/**",
-                         "**/.obsidian/**",
-                         "**/.smart-env/**",
-                         "**/node_modules/**",
-                         "**/.venv/**",
-                         "**/venv/**",
-                         "**/__pycache__/**",
-                         "**/.pytest_cache/**",
-                         "**/.mypy_cache/**",
-                         "**/.ruff_cache/**",
-                         "**/dist/**",
-                         "**/build/**",
-                         "**/_archive/**",
-                         "**/_backup/**",
-                         "**/_backups/**",
-                         "**/_housekeeping/backups/**",
-                         "**/_housekeeping/plans/**",
-                         "**/_housekeeping/manifests/**",
-                         "**/_housekeeping/reports/**",
-                         "**/_housekeeping/summaries/**",
-                         "**/_housekeeping/logs/**",
-                         "**/payloads/**",
-                         "**/30_QiDrive/**",
-                         "**/.Encrypted/**",
-                         "**/My Drive/**"
-                     ],
-    "protected_globs":  [
-                            "**/_qiconfig/**",
-                            "**/00_QiCode/**",
-                            "**/10_QiSpark/00_QiCode/**",
-                            "**/10_QiSpark/90_legacy_doctrine/**",
-                            "**/legal/**",
-                            "**/records/**",
-                            "**/evidence/**",
-                            "**/Evidence/**",
-                            "**/client/**",
-                            "**/clients/**",
-                            "**/case_*/**",
-                            "**/CASE_*/**"
-                        ],
-    "qicode_manifest_files":  [
-                                  "C:\\QiLabs\\40_QiVault\\_qiconfig\\qicode_legal_labels_manifest.csv",
-                                  "C:\\QiLabs\\40_QiVault\\_qiconfig\\qicode_personal_doctrine_manifest.csv",
-                                  "C:\\QiLabs\\40_QiVault\\_qiconfig\\qicode_root_manifest.csv"
-                              ],
-    "frontmatter":  {
-                        "required_base_keys":  [
-                                                   "layout",
-                                                   "type",
-                                                   "title",
-                                                   "slug",
-                                                   "summary",
-                                                   "status",
-                                                   "created_at",
-                                                   "updated_at",
-                                                   "author",
-                                                   "owner",
-                                                   "tags",
-                                                   "keywords",
-                                                   "aliases",
-                                                   "context",
-                                                   "sensitivity",
-                                                   "classification",
-                                                   "realm_label",
-                                                   "uid",
-                                                   "canonical_ref",
-                                                   "source_type",
-                                                   "template_key"
-                                               ],
-                        "default_values":  {
-                                               "layout":  "page",
-                                               "type":  "note",
-                                               "slug":  "",
-                                               "summary":  "",
-                                               "status":  "active",
-                                               "created_at":  "",
-                                               "updated_at":  "",
-                                               "author":  "",
-                                               "owner":  "",
-                                               "tags":  [
-
-                                                        ],
-                                               "keywords":  [
-
-                                                            ],
-                                               "aliases":  [
-
-                                                           ],
-                                               "context":  "",
-                                               "sensitivity":  "internal",
-                                               "classification":  "business_internal",
-                                               "realm_label":  "",
-                                               "uid":  "",
-                                               "canonical_ref":  "",
-                                               "source_type":  "manual",
-                                               "template_key":  "master-template",
-                                               "date":  "",
-                                               "event_type":  "",
-                                               "people":  [
-
-                                                          ],
-                                               "location":  "",
-                                               "significance":  "normal",
-                                               "canonical":  false,
-                                               "timeline_include":  false,
-                                               "timeline_status":  "unreviewed"
-                                           },
-                        "dynamic_keys_by_type":  {
-                                                     "person":  [
-                                                                    "role",
-                                                                    "relationship",
-                                                                    "location",
-                                                                    "contact_status"
-                                                                ],
-                                                     "record":  [
-                                                                    "record_date",
-                                                                    "entities",
-                                                                    "evidence",
-                                                                    "financial_impact",
-                                                                    "legal_relevance"
-                                                                ],
-                                                     "project":  [
-                                                                     "project",
-                                                                     "priority",
-                                                                     "next_action",
-                                                                     "due_date"
-                                                                 ],
-                                                     "index":  [
-                                                                   "index_scope",
-                                                                   "generated_by",
-                                                                   "generated_at"
-                                                               ],
-                                                     "template":  [
-                                                                      "template_key",
-                                                                      "template_version"
-                                                                  ],
-                                                     "event":  [
-                                                                    "date",
-                                                                    "event_type",
-                                                                    "people",
-                                                                    "location",
-                                                                    "significance",
-                                                                    "canonical",
-                                                                    "timeline_include",
-                                                                    "timeline_status"
-                                                                  ]
-                                                 },
-                        "do_not_overwrite_existing_values":  true
-                    },
-    "filename_rules":  {
-                           "apply_by_default":  false,
-                           "markdown_only":  true,
-                           "preserve":  [
-                                            "README.md",
-                                            "LICENSE.md",
-                                            "_index.md",
-                                            "index.md",
-                                            "CHANGELOG.md",
-                                            "MANIFEST.md",
-                                            "README_RUN_ORDER.md",
-                                            "README_STATUS.md"
-                                        ],
-                           "date_separator":  "_",
-                           "word_separator":  "_",
-                           "lowercase":  true
-                       },
-    "tags":  {
-                 "global_enforcement":  true,
-                 "profile_name":  "qilabs_global_tag_registry",
-                 "scan_scope_roots":  [
-                                          "C:\\QiLabs\\40_QiVault",
-                                          "C:\\QiLabs\\10_QiSpark"
-                                      ],
-                 "style_exceptions":  {
-                                          "allow_uppercase_exhibit_letters":  true
-                                      }
-             },
-    "indexing":  {
-                     "index_filename":  "_index.md",
-                     "managed_block_start":  "\u003c!-- QILABS:HOUSEKEEPING_INDEX_START --\u003e",
-                     "managed_block_end":  "\u003c!-- QILABS:HOUSEKEEPING_INDEX_END --\u003e",
-                     "max_items_per_folder":  200
-                 },
-    "git":  {
-                "discover_roots":  [
-                                       "C:\\QiLabs"
-                                   ],
-                "manifest_file":  "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\checkers\\housekeeping\\git_manifest.json",
-                "manifest_mirror_files":  [
-
-                                          ],
-                "auto_commit":  false,
-                "auto_push":  false,
-                "recursive":  false,
-                "require_clean_before_apply":  false,
-                "push_default":  false
+    "tool_name": "QiLabs Housekeeping Console",
+    "version": "0.4.1",
+    "install_path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\_housekeeping",
+    "qilabs_root": "C:\\QiLabs",
+    "workspace_root": "C:\\QiLabs\\00_QiLabs.workspace",
+    "vault_root": "C:\\QiLabs\\40_QiVault",
+    "tree_file": "C:\\QiLabs\\40_QiVault\\qilabs_full_tree.md",
+    "master_template_file": "C:\\QiLabs\\40_QiVault\\_qiconfig\\templates\\master_template.md",
+    "tags_file": "C:\\QiLabs\\40_QiVault\\_qiconfig\\tags.json",
+    "git_roots": [
+        "C:\\QiLabs\\00_QiLabs.workspace"
+    ],
+    "default_scope_roots": [
+        "C:\\QiLabs\\40_QiVault"
+    ],
+    "ignore_dirs": [
+        ".git",
+        ".obsidian",
+        ".smart-env",
+        "node_modules",
+        ".venv",
+        "venv",
+        "__pycache__",
+        ".pytest_cache",
+        ".mypy_cache",
+        ".ruff_cache",
+        "dist",
+        "build",
+        ".next",
+        ".turbo",
+        ".cache",
+        ".docusaurus",
+        "_archive",
+        "_backup",
+        "_backups",
+        "_review_bundles_for_chatgpt",
+        "payloads",
+        "_system",
+        "_qiconfig",
+        "copilot"
+    ],
+    "ignore_globs": [
+        "**/_system/**",
+        "**/_qiconfig/**",
+        "**/copilot/**",
+        "**/.git/**",
+        "**/.obsidian/**",
+        "**/.smart-env/**",
+        "**/node_modules/**",
+        "**/.venv/**",
+        "**/venv/**",
+        "**/__pycache__/**",
+        "**/.pytest_cache/**",
+        "**/.mypy_cache/**",
+        "**/.ruff_cache/**",
+        "**/dist/**",
+        "**/build/**",
+        "**/_archive/**",
+        "**/_backup/**",
+        "**/_backups/**",
+        "**/_housekeeping/backups/**",
+        "**/_housekeeping/plans/**",
+        "**/_housekeeping/manifests/**",
+        "**/_housekeeping/reports/**",
+        "**/_housekeeping/summaries/**",
+        "**/_housekeeping/logs/**",
+        "**/payloads/**",
+        "**/30_QiDrive/**",
+        "**/.Encrypted/**",
+        "**/My Drive/**"
+    ],
+    "protected_globs": [
+        "**/_qiconfig/**",
+        "**/00_QiCode/**",
+        "**/10_QiSpark/00_QiCode/**",
+        "**/10_QiSpark/90_legacy_doctrine/**",
+        "**/legal/**",
+        "**/records/**",
+        "**/evidence/**",
+        "**/Evidence/**",
+        "**/client/**",
+        "**/clients/**",
+        "**/case_*/**",
+        "**/CASE_*/**"
+    ],
+    "qicode_manifest_files": [
+        "C:\\QiLabs\\40_QiVault\\_qiconfig\\qicode_legal_labels_manifest.csv",
+        "C:\\QiLabs\\40_QiVault\\_qiconfig\\qicode_personal_doctrine_manifest.csv",
+        "C:\\QiLabs\\40_QiVault\\_qiconfig\\qicode_root_manifest.csv"
+    ],
+    "frontmatter": {
+        "required_base_keys": [
+            "layout",
+            "type",
+            "title",
+            "slug",
+            "summary",
+            "status",
+            "visibility",
+            "publish_target",
+            "publish_url",
+            "created_at",
+            "updated_at",
+            "author",
+            "owner",
+            "nav_title",
+            "nav_group",
+            "nav_order",
+            "nav_hidden",
+            "is_index",
+            "parent_ref",
+            "sensitivity",
+            "classification",
+            "realm_label",
+            "tags",
+            "keywords",
+            "aliases",
+            "context",
+            "uid",
+            "canonical_ref",
+            "source_type",
+            "template_key",
+            "date",
+            "event_type",
+            "people",
+            "location",
+            "significance",
+            "canonical",
+            "timeline_include",
+            "timeline_status"
+        ],
+        "default_values": {
+            "layout": "page",
+            "type": "note",
+            "slug": "",
+            "summary": "",
+            "status": "active",
+            "visibility": "internal",
+            "publish_target": "none",
+            "publish_url": "",
+            "author": "Cody J. Rice-Velasquez",
+            "owner": "Cody",
+            "nav_title": "",
+            "nav_group": "",
+            "nav_order": 999,
+            "nav_hidden": false,
+            "is_index": false,
+            "parent_ref": "",
+            "sensitivity": "internal",
+            "classification": [],
+            "realm_label": [],
+            "tags": [],
+            "keywords": [],
+            "aliases": [],
+            "context": "",
+            "uid": "",
+            "canonical_ref": "",
+            "source_type": "manual",
+            "template_key": "master-template",
+            "date": "",
+            "event_type": "",
+            "people": [],
+            "location": "",
+            "significance": "normal",
+            "canonical": false,
+            "timeline_include": false,
+            "timeline_status": "unreviewed"
+        },
+        "dynamic_keys_by_type": {
+            "person": [
+                "role",
+                "relationship",
+                "location",
+                "contact_status"
+            ],
+            "record": [
+                "record_date",
+                "entities",
+                "evidence",
+                "financial_impact",
+                "legal_relevance"
+            ],
+            "project": [
+                "project",
+                "priority",
+                "next_action",
+                "due_date"
+            ],
+            "index": [
+                "index_scope",
+                "generated_by",
+                "generated_at"
+            ],
+            "template": [
+                "template_key",
+                "template_version"
+            ],
+            "event": [
+                "date",
+                "event_type",
+                "people",
+                "location",
+                "significance",
+                "canonical",
+                "timeline_include",
+                "timeline_status"
+            ]
+        },
+        "do_not_overwrite_existing_values": true,
+        "qicode_profile": {
+            "defaults": {
+                "classification": [
+                    "doctrine",
+                    "qicode"
+                ],
+                "realm_label": [
+                    "qicode"
+                ],
+                "tags": [
+                    "qicode"
+                ],
+                "context": "QiCode doctrine",
+                "visibility": "internal",
+                "publish_target": "none",
+                "sensitivity": "internal",
+                "source_type": "manual"
             },
-    "safety":  {
-                   "full_run_requires_clean_preflight":  true,
-                   "block_apply_when_missing_config":  true,
-                   "block_apply_when_rename_conflicts":  true,
-                   "default_allow_renames":  false,
-                   "default_push":  false,
-                   "default_auto_commit":  false,
-                   "max_actions_without_manual_review":  250,
-                   "max_renames_without_manual_review":  0
-               },
-    "profile_note":  "Regular mode: full QiVault + QiSpark scope. Safe mode (QiSpark-only) is archived in _archive/housekeeping-phased-safe-mode-*."
+            "required_keys": [
+                "qicode_type",
+                "qicode_symbol",
+                "qicode_code",
+                "qicode_title_number",
+                "qicode_title_key",
+                "qicode_title_name",
+                "qicode_article_number",
+                "qicode_article_key",
+                "qicode_article_name",
+                "qicode_section_number",
+                "qicode_line_number",
+                "stable_id"
+            ]
+        }
+    },
+    "filename_rules": {
+        "apply_by_default": false,
+        "markdown_only": true,
+        "preserve": [
+            "README.md",
+            "LICENSE.md",
+            "_index.md",
+            "index.md",
+            "CHANGELOG.md",
+            "MANIFEST.md",
+            "README_RUN_ORDER.md",
+            "README_STATUS.md"
+        ],
+        "date_separator": "_",
+        "word_separator": "_",
+        "lowercase": true
+    },
+    "tags": {
+        "global_enforcement": true,
+        "profile_name": "qilabs_global_tag_registry",
+        "scan_scope_roots": [
+            "C:\\QiLabs\\40_QiVault",
+            "C:\\QiLabs\\10_QiSpark"
+        ],
+        "style_exceptions": {
+            "allow_uppercase_exhibit_letters": true
+        }
+    },
+    "indexing": {
+        "index_filename": "_index.md",
+        "managed_block_start": "<!-- QILABS:HOUSEKEEPING_INDEX_START -->",
+        "managed_block_end": "<!-- QILABS:HOUSEKEEPING_INDEX_END -->",
+        "max_items_per_folder": 200
+    },
+    "git": {
+        "discover_roots": [
+            "C:\\QiLabs"
+        ],
+        "manifest_file": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\checkers\\housekeeping\\git_manifest.json",
+        "manifest_mirror_files": [],
+        "auto_commit": false,
+        "auto_push": false,
+        "recursive": false,
+        "require_clean_before_apply": false,
+        "push_default": false
+    },
+    "safety": {
+        "full_run_requires_clean_preflight": true,
+        "block_apply_when_missing_config": true,
+        "block_apply_when_rename_conflicts": true,
+        "default_allow_renames": false,
+        "default_push": false,
+        "default_auto_commit": false,
+        "max_actions_without_manual_review": 250,
+        "max_renames_without_manual_review": 0
+    },
+    "profile_note": "Regular mode: full QiVault + QiSpark scope. Safe mode (QiSpark-only) is archived in _archive/housekeeping-phased-safe-mode-*.",
+    "template_root": "C:\\QiLabs\\40_QiVault\\_qiconfig\\templates",
+    "qicode_template_root": "C:\\QiLabs\\40_QiVault\\_qiconfig\\templates\\qicode"
 }

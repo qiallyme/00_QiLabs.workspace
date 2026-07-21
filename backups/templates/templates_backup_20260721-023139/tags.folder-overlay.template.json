@@ -1,0 +1,47 @@
+{
+  "schema_version": "2.0",
+  "name": "Folder Tag Overlay Template",
+  "description": "Optional folder-level tags.json. Applies only to this folder and descendants. It extends the global QiLabs tag registry without replacing it.",
+  "scope": "folder",
+  "registry_type": "overlay",
+  "applies_to": "./",
+  "inherits": "global",
+  "tag_policy": {
+    "allow_new_tags_within_overlay": true,
+    "minimum_tags_per_note": 3,
+    "max_bonus": 2,
+    "always_include": [],
+    "instructions": [
+      "Add only tags that are genuinely specific to this folder/project/case/client/domain.",
+      "Do not duplicate broad global tags unless they are folder defaults.",
+      "Keep overlay tags namespaced.",
+      "If an overlay tag becomes useful everywhere, promote it to the global registry later."
+    ]
+  },
+  "allowed_tags": {
+    "project": [
+      "project/example"
+    ],
+    "people": [],
+    "organizations": [],
+    "case": [],
+    "exhibits": [],
+    "custom": []
+  },
+  "folder_defaults": {
+    ".": [
+      "#project/example"
+    ]
+  },
+  "keyword_suggestions": {},
+  "llm_output_format": {
+    "required_json_output": {
+      "tags": [],
+      "confidence": "low | medium | high",
+      "rationale": "",
+      "needs_review": true,
+      "unknown_tags": [],
+      "source_registry": "mixed"
+    }
+  }
+}

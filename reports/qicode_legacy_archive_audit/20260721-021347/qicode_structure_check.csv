@@ -1,0 +1,133 @@
+type,path,expected,exists,status
+title_folder,title_01_truth,yes,True,OK
+title_index,title_01_truth/_index.md,yes,True,OK
+title_cover,title_01_truth/title_01_truth.md,yes,True,OK
+title_folder,title_02_self,yes,True,OK
+title_index,title_02_self/_index.md,yes,True,OK
+title_cover,title_02_self/title_02_self.md,yes,True,OK
+title_folder,title_03_identity,yes,True,OK
+title_index,title_03_identity/_index.md,yes,True,OK
+title_cover,title_03_identity/title_03_identity.md,yes,True,OK
+title_folder,title_04_mind,yes,True,OK
+title_index,title_04_mind/_index.md,yes,True,OK
+title_cover,title_04_mind/title_04_mind.md,yes,True,OK
+title_folder,title_05_work,yes,True,OK
+title_index,title_05_work/_index.md,yes,True,OK
+title_cover,title_05_work/title_05_work.md,yes,True,OK
+title_folder,title_06_people,yes,True,OK
+title_index,title_06_people/_index.md,yes,True,OK
+title_cover,title_06_people/title_06_people.md,yes,True,OK
+title_folder,title_07_ethics,yes,True,OK
+title_index,title_07_ethics/_index.md,yes,True,OK
+title_cover,title_07_ethics/title_07_ethics.md,yes,True,OK
+title_folder,title_08_cycles_legacy,yes,True,OK
+title_index,title_08_cycles_legacy/_index.md,yes,True,OK
+title_cover,title_08_cycles_legacy/title_08_cycles_legacy.md,yes,True,OK
+title_folder,title_09_qispark_bridge,yes,True,OK
+title_index,title_09_qispark_bridge/_index.md,yes,True,OK
+title_cover,title_09_qispark_bridge/title_09_qispark_bridge.md,yes,True,OK
+title_folder,title_10_qilabs,yes,True,OK
+title_index,title_10_qilabs/_index.md,yes,True,OK
+title_cover,title_10_qilabs/title_10_qilabs.md,yes,True,OK
+developer_article,title_10_qilabs/article_01_root_authority.md,yes,True,OK
+developer_article,title_10_qilabs/article_02_system_map.md,yes,True,OK
+developer_article,title_10_qilabs/article_03_source_of_truth.md,yes,True,OK
+developer_article,title_10_qilabs/article_04_root_folder_boundaries.md,yes,True,OK
+developer_article,title_10_qilabs/article_05_naming_and_numbering.md,yes,True,OK
+developer_article,title_10_qilabs/article_06_lifecycle_and_archive_rules.md,yes,True,OK
+title_folder,title_11_qilabs_workspace,yes,True,OK
+title_index,title_11_qilabs_workspace/_index.md,yes,True,OK
+title_cover,title_11_qilabs_workspace/title_11_qilabs_workspace.md,yes,True,OK
+developer_article,title_11_qilabs_workspace/article_01_workspace_purpose.md,yes,True,OK
+developer_article,title_11_qilabs_workspace/article_02_templates.md,yes,True,OK
+developer_article,title_11_qilabs_workspace/article_03_housekeeping.md,yes,True,OK
+developer_article,title_11_qilabs_workspace/article_04_config_and_manifests.md,yes,True,OK
+developer_article,title_11_qilabs_workspace/article_05_codex_and_agent_instructions.md,yes,True,OK
+developer_article,title_11_qilabs_workspace/article_06_logs_reports_and_plans.md,yes,True,OK
+title_folder,title_12_qispark,yes,True,OK
+title_index,title_12_qispark/_index.md,yes,True,OK
+title_cover,title_12_qispark/title_12_qispark.md,yes,True,OK
+developer_article,title_12_qispark/article_01_qispark_purpose.md,yes,True,OK
+developer_article,title_12_qispark/article_02_landing_page.md,yes,True,OK
+developer_article,title_12_qispark/article_03_documentation_structure.md,yes,True,OK
+developer_article,title_12_qispark/article_04_qidna_and_doctrine.md,yes,True,OK
+developer_article,title_12_qispark/article_05_publishing_rules.md,yes,True,OK
+developer_article,title_12_qispark/article_06_public_and_private_boundary.md,yes,True,OK
+developer_article,title_12_qispark/article_07_build_and_deployment.md,yes,True,OK
+title_folder,title_13_qiserver,yes,True,OK
+title_index,title_13_qiserver/_index.md,yes,True,OK
+title_cover,title_13_qiserver/title_13_qiserver.md,yes,True,OK
+developer_article,title_13_qiserver/article_01_runtime_authority.md,yes,True,OK
+developer_article,title_13_qiserver/article_02_server_services.md,yes,True,OK
+developer_article,title_13_qiserver/article_03_docker_and_containers.md,yes,True,OK
+developer_article,title_13_qiserver/article_04_databases.md,yes,True,OK
+developer_article,title_13_qiserver/article_05_local_ai.md,yes,True,OK
+developer_article,title_13_qiserver/article_06_security_and_access.md,yes,True,OK
+developer_article,title_13_qiserver/article_07_backups_and_recovery.md,yes,True,OK
+title_folder,title_14_qiworkers,yes,True,OK
+title_index,title_14_qiworkers/_index.md,yes,True,OK
+title_cover,title_14_qiworkers/title_14_qiworkers.md,yes,True,OK
+developer_article,title_14_qiworkers/article_01_worker_purpose.md,yes,True,OK
+developer_article,title_14_qiworkers/article_02_api_workers.md,yes,True,OK
+developer_article,title_14_qiworkers/article_03_ingestion_workers.md,yes,True,OK
+developer_article,title_14_qiworkers/article_04_sync_and_automation.md,yes,True,OK
+developer_article,title_14_qiworkers/article_05_queues_and_jobs.md,yes,True,OK
+developer_article,title_14_qiworkers/article_06_error_handling.md,yes,True,OK
+developer_article,title_14_qiworkers/article_07_deployment_rules.md,yes,True,OK
+title_folder,title_15_qidrive,yes,True,OK
+title_index,title_15_qidrive/_index.md,yes,True,OK
+title_cover,title_15_qidrive/title_15_qidrive.md,yes,True,OK
+developer_article,title_15_qidrive/article_01_qidrive_purpose.md,yes,True,OK
+developer_article,title_15_qidrive/article_02_drive_as_source_of_truth.md,yes,True,OK
+developer_article,title_15_qidrive/article_03_ingestion.md,yes,True,OK
+developer_article,title_15_qidrive/article_04_files_and_evidence.md,yes,True,OK
+developer_article,title_15_qidrive/article_05_folder_structure.md,yes,True,OK
+developer_article,title_15_qidrive/article_06_protected_records.md,yes,True,OK
+developer_article,title_15_qidrive/article_07_archive_and_retention.md,yes,True,OK
+title_folder,title_16_qivault,yes,True,OK
+title_index,title_16_qivault/_index.md,yes,True,OK
+title_cover,title_16_qivault/title_16_qivault.md,yes,True,OK
+developer_article,title_16_qivault/article_01_vault_purpose.md,yes,True,OK
+developer_article,title_16_qivault/article_02_markdown_rules.md,yes,True,OK
+developer_article,title_16_qivault/article_03_indexes.md,yes,True,OK
+developer_article,title_16_qivault/article_04_links_and_backlinks.md,yes,True,OK
+developer_article,title_16_qivault/article_05_frontmatter.md,yes,True,OK
+developer_article,title_16_qivault/article_06_knowledge_boundaries.md,yes,True,OK
+developer_article,title_16_qivault/article_07_sync_and_archive.md,yes,True,OK
+title_folder,title_17_qiapps,yes,True,OK
+title_index,title_17_qiapps/_index.md,yes,True,OK
+title_cover,title_17_qiapps/title_17_qiapps.md,yes,True,OK
+developer_article,title_17_qiapps/article_01_qiapps_purpose.md,yes,True,OK
+developer_article,title_17_qiapps/article_02_app_project_rules.md,yes,True,OK
+developer_article,title_17_qiapps/article_03_qilife.md,yes,True,OK
+developer_article,title_17_qiapps/article_04_qifinance.md,yes,False,MISSING
+developer_article,title_17_qiapps/article_05_momcare.md,yes,False,MISSING
+developer_article,title_17_qiapps/article_06_experiments.md,yes,True,OK
+developer_article,title_17_qiapps/article_07_app_lifecycle.md,yes,True,OK
+title_folder,title_18_qisites,yes,True,OK
+title_index,title_18_qisites/_index.md,yes,True,OK
+title_cover,title_18_qisites/title_18_qisites.md,yes,True,OK
+developer_article,title_18_qisites/article_01_qisites_purpose.md,yes,True,OK
+developer_article,title_18_qisites/article_02_static_site_rules.md,yes,False,MISSING
+developer_article,title_18_qisites/article_03_public_output.md,yes,False,MISSING
+developer_article,title_18_qisites/article_04_domains_and_routes.md,yes,False,MISSING
+developer_article,title_18_qisites/article_05_deployment.md,yes,False,MISSING
+developer_article,title_18_qisites/article_06_archive_and_versioning.md,yes,False,MISSING
+article_count,title_01_truth,>= 1 after law-book split,True,3 article files
+article_count,title_02_self,>= 1 after law-book split,True,3 article files
+article_count,title_03_identity,>= 1 after law-book split,True,3 article files
+article_count,title_04_mind,>= 1 after law-book split,True,3 article files
+article_count,title_05_work,>= 1 after law-book split,True,3 article files
+article_count,title_06_people,>= 1 after law-book split,True,3 article files
+article_count,title_07_ethics,>= 1 after law-book split,True,3 article files
+article_count,title_08_cycles_legacy,>= 1 after law-book split,True,3 article files
+article_count,title_09_qispark_bridge,>= 1 after law-book split,True,3 article files
+article_count,title_10_qilabs,>= 1 after law-book split,True,6 article files
+article_count,title_11_qilabs_workspace,>= 1 after law-book split,True,7 article files
+article_count,title_12_qispark,>= 1 after law-book split,True,7 article files
+article_count,title_13_qiserver,>= 1 after law-book split,True,8 article files
+article_count,title_14_qiworkers,>= 1 after law-book split,True,7 article files
+article_count,title_15_qidrive,>= 1 after law-book split,True,7 article files
+article_count,title_16_qivault,>= 1 after law-book split,True,7 article files
+article_count,title_17_qiapps,>= 1 after law-book split,True,7 article files
+article_count,title_18_qisites,>= 1 after law-book split,True,7 article files

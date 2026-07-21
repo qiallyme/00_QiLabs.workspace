@@ -1,0 +1,34 @@
+﻿{
+    "generated_at":  "2026-07-21T02:41:52.8026568-04:00",
+    "root":  "C:\\QiLabs",
+    "dry_run":  true,
+    "log_path":  "C:\\QiLabs\\00_QiLabs.workspace\\90_audits\\do_it_all\\do-it-all-20260721-024137.log",
+    "completed_results":  1,
+    "failures":  1,
+    "warnings":  0,
+    "removed_items":  0,
+    "results":  [
+                    {
+                        "area":  "cleanup",
+                        "target":  "C:\\QiLabs",
+                        "status":  "completed",
+                        "message":  "Removed 0 safe cache or log items."
+                    },
+                    {
+                        "area":  "pipeline",
+                        "target":  "C:\\QiLabs",
+                        "status":  "failed",
+                        "message":  "Argument types do not match"
+                    }
+                ],
+    "failure_details":  [
+                            {
+                                "area":  "pipeline",
+                                "target":  "C:\\QiLabs",
+                                "message":  "Argument types do not match"
+                            }
+                        ],
+    "warning_details":  [
+
+                        ]
+}

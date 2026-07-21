@@ -1,0 +1,14 @@
+﻿[2026-07-21 02:38:04] [STEP] QiLabs Do-It-All started
+[2026-07-21 02:38:04] [INFO] Root: C:\QiLabs
+[2026-07-21 02:38:04] [INFO] Dry run: True
+[2026-07-21 02:38:04] [INFO] Globally excluded roots: 30_QiDrive, 90_QiArchive
+[2026-07-21 02:38:04] [INFO] Globally excluded directory names: .Encrypted, backup, backups, backups_before_frontmatter, legacy
+[2026-07-21 02:38:04] [STEP] Safe bloat cleanup
+[2026-07-21 02:38:04] [INFO] Excluded roots/directories: .Encrypted, .git, .next, .pnpm-store, .venv, .yarn, __pycache__, 30_QiDrive, 90_QiArchive, backup, backups, backups_before_frontmatter, build, coverage, dist, legacy, node_modules, venv
+[2026-07-21 02:38:11] [INFO] Running: npm cache verify
+[2026-07-21 02:38:11] [WARN] Dry run: skipped npm cache verify
+[2026-07-21 02:38:11] [OK] Safe cleanup completed. Removed items: 0
+[2026-07-21 02:38:11] [STEP] Housekeeping hooks
+[2026-07-21 02:38:11] [INFO] Housekeeping hook disabled: QiLabs Housekeeping Noninteractive
+[2026-07-21 02:38:11] [STEP] Node dependency sync and builds
+[2026-07-21 02:38:12] [ERROR] pipeline failed for C:\QiLabs: The property 'workspaces' cannot be found on this object. Verify that the property exists.

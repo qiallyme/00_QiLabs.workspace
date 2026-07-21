@@ -1,0 +1,2 @@
+legacy_rel_path,size_bytes,word_count,raw_sha256,normalized_sha256,exact_raw_match,exact_normalized_match,best_exact_match_paths,shingle_count,shingle_coverage,heading_count,heading_coverage,uncovered_block_count,verdict,notes
+.,3143,245,0656a1a18f66b92f1d3f406d232b1ebf5e85e9fdf9ced6334c5a413bba70e6fd,431b086d5e6c57cd71974b58beda3a1d78fcab4a71370b07b3e472aef63f13e2,True,True,sources/qilabs_legacy_50_qilabs.md,239,1.0,10,1.0,0,EXACT_RAW_MATCH,Legacy file exists byte-for-byte in QiCode.

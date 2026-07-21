@@ -1,0 +1,47 @@
+﻿[2026-07-21 02:22:57] [STEP] QiLabs Do-It-All started
+[2026-07-21 02:22:57] [INFO] Root: C:\QiLabs
+[2026-07-21 02:22:57] [INFO] Dry run: True
+[2026-07-21 02:22:57] [STEP] Safe bloat cleanup
+[2026-07-21 02:22:58] [INFO] Remove directory: C:\QiLabs\90_QiArchive\legacy\50_QiLabs_20260721-021713\10_Qispark\10_QiOS\50_metadata\__pycache__
+[2026-07-21 02:22:59] [INFO] Remove directory: C:\QiLabs\60_QiApps\63_QiCare\imports\scripts\__pycache__
+[2026-07-21 02:23:00] [INFO] Remove directory: C:\QiLabs\60_QiApps\61_QiLife\docs\legacy.qilife\backend\app\__pycache__
+[2026-07-21 02:23:00] [INFO] Remove directory: C:\QiLabs\60_QiApps\61_QiLife\docs\legacy.qilife\backend\app\services\__pycache__
+[2026-07-21 02:23:00] [INFO] Remove directory: C:\QiLabs\60_QiApps\61_QiLife\docs\legacy.qilife\backend\app\db\__pycache__
+[2026-07-21 02:23:00] [INFO] Remove directory: C:\QiLabs\60_QiApps\61_QiLife\docs\legacy.qilife\backend\app\core\__pycache__
+[2026-07-21 02:23:00] [INFO] Remove directory: C:\QiLabs\60_QiApps\61_QiLife\docs\legacy.qilife\backend\app\api\__pycache__
+[2026-07-21 02:23:00] [INFO] Remove directory: C:\QiLabs\60_QiApps\61_QiLife\docs\legacy.qilife\backend\app\api\routes\__pycache__
+[2026-07-21 02:23:00] [INFO] Remove directory: C:\QiLabs\60_QiApps\61_QiLife\docs\legacy.qilife\backend\alembic\__pycache__
+[2026-07-21 02:23:00] [INFO] Remove directory: C:\QiLabs\40_QiVault\40_projects\care_record_lisa\_qiconfig\cleanup_2026-06-29_frontmatter\backups_before_frontmatter\10_qispark\10_QiSpark\50_metadata\__pycache__
+[2026-07-21 02:23:53] [INFO] Remove directory: C:\QiLabs\30_QiDrive\.Encrypted\My Drive\01_storage\07_legal\15_cases\30.06_CASE_FCFCU\hooks\__pycache__
+[2026-07-21 02:25:52] [INFO] Remove directory: C:\QiLabs\30_QiDrive\.Encrypted\My Drive\_Private\04_scripts\lean_cleanup\__pycache__
+[2026-07-21 02:26:41] [INFO] Remove directory: C:\QiLabs\30_QiDrive\My Drive\01_storage\07_legal\15_cases\30.06_CASE_FCFCU\hooks\__pycache__
+[2026-07-21 02:27:22] [INFO] Remove directory: C:\QiLabs\30_QiDrive\My Drive\_Private\04_scripts\lean_cleanup\__pycache__
+[2026-07-21 02:27:33] [INFO] Remove directory: C:\QiLabs\10_QiSpark\__pycache__
+[2026-07-21 02:27:33] [INFO] Remove directory: C:\QiLabs\00_QiLabs.workspace\toolbox\tools\runners\__pycache__
+[2026-07-21 02:27:33] [INFO] Remove directory: C:\QiLabs\00_QiLabs.workspace\toolbox\tools\runners\schedulers\__pycache__
+[2026-07-21 02:27:33] [INFO] Remove directory: C:\QiLabs\00_QiLabs.workspace\toolbox\tools\runners\runners\__pycache__
+[2026-07-21 02:27:33] [INFO] Remove directory: C:\QiLabs\00_QiLabs.workspace\toolbox\tools\rules\__pycache__
+[2026-07-21 02:27:33] [INFO] Remove directory: C:\QiLabs\00_QiLabs.workspace\toolbox\tools\organize\process\__pycache__
+[2026-07-21 02:27:33] [INFO] Remove directory: C:\QiLabs\00_QiLabs.workspace\toolbox\tools\organize\movers\__pycache__
+[2026-07-21 02:27:33] [INFO] Remove directory: C:\QiLabs\00_QiLabs.workspace\toolbox\tools\media\video\__pycache__
+[2026-07-21 02:27:33] [INFO] Remove directory: C:\QiLabs\00_QiLabs.workspace\toolbox\tools\converters\zip\__pycache__
+[2026-07-21 02:27:33] [INFO] Remove directory: C:\QiLabs\00_QiLabs.workspace\toolbox\tools\converters\text\__pycache__
+[2026-07-21 02:27:33] [INFO] Remove directory: C:\QiLabs\00_QiLabs.workspace\toolbox\tools\converters\json\__pycache__
+[2026-07-21 02:27:33] [INFO] Remove directory: C:\QiLabs\00_QiLabs.workspace\toolbox\tools\converters\folders\__pycache__
+[2026-07-21 02:27:33] [INFO] Remove directory: C:\QiLabs\00_QiLabs.workspace\toolbox\tools\converters\extractors\__pycache__
+[2026-07-21 02:27:33] [INFO] Remove directory: C:\QiLabs\00_QiLabs.workspace\toolbox\tools\converters\docs\text_extractor\__pycache__
+[2026-07-21 02:27:33] [INFO] Remove directory: C:\QiLabs\00_QiLabs.workspace\toolbox\tools\converters\docs\pdf_splitter\__pycache__
+[2026-07-21 02:27:33] [INFO] Remove directory: C:\QiLabs\00_QiLabs.workspace\toolbox\tools\converters\csv\__pycache__
+[2026-07-21 02:27:34] [INFO] Remove directory: C:\QiLabs\00_QiLabs.workspace\toolbox\tools\checkers\housekeeping_console\__pycache__
+[2026-07-21 02:27:34] [INFO] Remove directory: C:\QiLabs\00_QiLabs.workspace\toolbox\tools\checkers\housekeeping\__pycache__
+[2026-07-21 02:27:34] [INFO] Remove directory: C:\QiLabs\00_QiLabs.workspace\toolbox\tools\checkers\housekeeping\steps\__pycache__
+[2026-07-21 02:27:36] [INFO] Remove directory: C:\QiLabs\00_QiLabs.workspace\toolbox\tools\checkers\housekeeping\core\__pycache__
+[2026-07-21 02:27:41] [INFO] Remove directory: C:\QiLabs\00_QiLabs.workspace\toolbox\toolbox_core\__pycache__
+[2026-07-21 02:27:41] [INFO] Remove directory: C:\QiLabs\00_QiLabs.workspace\toolbox\core\__pycache__
+[2026-07-21 02:27:42] [INFO] Running: npm cache verify
+[2026-07-21 02:27:42] [WARN] Dry run: skipped npm cache verify
+[2026-07-21 02:27:42] [OK] Safe cleanup completed. Removed items: 0
+[2026-07-21 02:27:42] [STEP] Housekeeping hooks
+[2026-07-21 02:27:42] [INFO] Housekeeping hook disabled: QiLabs Housekeeping Noninteractive
+[2026-07-21 02:27:42] [STEP] Node dependency sync and builds
+[2026-07-21 02:29:13] [ERROR] pipeline failed for C:\QiLabs: The property 'workspaces' cannot be found on this object. Verify that the property exists.
