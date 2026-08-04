@@ -1,20 +1,20 @@
-id: toolbox.dev.extractor
-name: Extractor
+id: toolbox.converters.data_extractor
+name: Data Extractor
 type: toolbox_tool
 language: python
 status: active
 owner: QiLabs
 
 module:
-  package: tools.dev.extractor
-  file: extractor.py
+  package: tools.converters.data_extractor
+  file: data_extractor.py
   class_name: TextExtractorTool
   entrypoint: TextExtractorTool
 
 toolbox:
   ui_enabled: true
-  bucket: dev
-  category: dev
+  bucket: converters
+  category: converters
   launch_surface:
     - QiOne Desktop Tools
   requires_target_directory: true
@@ -32,8 +32,8 @@ safety:
   review_before_live: true
 
 paths:
-  source: tools/dev/extractor/extractor.py
-  readme: tools/dev/extractor/README.md
+  source: tools/converters/data_extractor/data_extractor.py
+  readme: tools/converters/data_extractor/README.md
 
 tags:
   - toolbox

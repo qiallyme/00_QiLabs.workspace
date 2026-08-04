@@ -224,6 +224,8 @@ def requirement_available(requirement: str) -> bool:
 
 def validate_plugin_record(record: dict[str, Any], root: Path, seen: set[str]) -> list[RegistryFinding]:
     findings: list[RegistryFinding] = []
+    if not record.get("enabled", True):
+        return findings
     plugin_id = record.get("plugin_id") or ""
     manifest_path = root / record.get("manifest_path", "")
     plugin_dir = root / record.get("path", "")

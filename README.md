@@ -54,3 +54,14 @@ Copy `.env.example` to `.env` and fill in credentials for:
 - **OpenAI** — embeddings
 
 See `.env.example` for all required variables.
+
+## License
+
+This software is **source-available**, not open source under OSI definitions.
+
+- **Free Use:** Free for individual personal use and qualifying small organizations.
+- **Organization Limits:** A qualifying small organization must have **5 or fewer total personnel** AND **$100,000 USD or less in aggregate gross annual revenue** across its entire Licensee Group (including affiliated and commonly controlled entities).
+- **Commercial License:** Exceeding either limit requires a separate written commercial license.
+- **Contact:** For commercial licensing inquiries, contact the repository owner at `crice4485@gmail.com`.
+- **Full Terms:** The complete [`LICENSE`](LICENSE) file controls if this summary differs.
+

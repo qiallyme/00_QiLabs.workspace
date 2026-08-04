@@ -1,7 +1,7 @@
 {
     "tool_name": "QiLabs Housekeeping Console",
     "version": "0.4.1",
-    "install_path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\_housekeeping",
+    "install_path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\checkers\\housekeeping",
     "qilabs_root": "C:\\QiLabs",
     "workspace_root": "C:\\QiLabs\\00_QiLabs.workspace",
     "vault_root": "C:\\QiLabs\\40_QiVault",

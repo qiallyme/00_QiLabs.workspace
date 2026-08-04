@@ -1,18 +1,14 @@
 # QiLabs Toolbox Validation Report
 
-- Generated: 2026-07-21T02:36:42
-- Plugins: 71
-- Errors: 2
-- Warnings: 8
+- Generated: 2026-08-04T10:34:28
+- Plugins: 67
+- Errors: 0
+- Warnings: 5
 
 ## Plugins
 
 - `beta.audio` - Audio (beta)
-- `converters.export_blueprint` - Export Blueprint Tool (converters)
-- `converters.data_extractor` - Extractor (converters)
-- `converters.extractors` - Extractor (converters)
-- `converters.pdf_splitter` - Pdf Splitter (converters)
-- `converters.text_extractor` - Text Extractor (converters)
+- `converters.data_extractor` - Data Extractor (converters)
 - `finance.cashapp.to.sample.bankstatement` - Cashapp To Sample Bankstatement (finance)
 - `finance.tax.compiler` - Tax Compiler (finance)
 - `finance.zai.ledger.importer` - Zai Ledger Importer (finance)
@@ -81,25 +77,9 @@
 
 ## Findings
 
-- **ERROR** `missing_entry_file` - Entry target does not exist: extractor.py
-  - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\converters\data_extractor\manifest.yaml`
-  - Plugin: `converters.data_extractor`
-  - Fixable: yes
-- **ERROR** `missing_entry_file` - Entry target does not exist: export_blueprint_tool.py
-  - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\converters\export_blueprint\manifest.yaml`
-  - Plugin: `converters.export_blueprint`
-  - Fixable: yes
-- **WARNING** `missing_requirement` - Requirement may be missing: pillow
-  - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\finance\tax_compiler\manifest.yaml`
-  - Plugin: `finance.tax.compiler`
-  - Fixable: yes
 - **WARNING** `missing_requirement` - Requirement may be missing: pillow_heif
   - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\finance\tax_compiler\manifest.yaml`
   - Plugin: `finance.tax.compiler`
-  - Fixable: yes
-- **WARNING** `missing_requirement` - Requirement may be missing: requests
-  - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\finance\zai_ledger_importer\manifest.yaml`
-  - Plugin: `finance.zai.ledger.importer`
   - Fixable: yes
 - **WARNING** `missing_readme` - Missing README.md.
   - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\organize\empowerqnow713_migrator`
@@ -116,8 +96,4 @@
 - **WARNING** `missing_requirement` - Requirement may be missing: rapidfuzz
   - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\organize\vault_router\manifest.yaml`
   - Plugin: `organize.vault.router`
-  - Fixable: yes
-- **WARNING** `missing_requirement` - Requirement may be missing: openpyxl
-  - Path: `C:\QiLabs\00_QiLabs.workspace\toolbox\tools\organize\xlsx_tabs_to_csv\manifest.yaml`
-  - Plugin: `organize.xlsx.tabs.to.csv`
   - Fixable: yes

@@ -32,5 +32,10 @@ __pycache__/
 *.pyc
 
 # ── Codex Agent Caches ────────────────────────────────────────────────
-codex-local-clean-home/.tmp/
+codex-local-*
 
+# ── Transient Backup & Generated Outputs ─────────────────────────────
+*.bak
+*.bak*
+*.backup
+target.qilabs.tree.html

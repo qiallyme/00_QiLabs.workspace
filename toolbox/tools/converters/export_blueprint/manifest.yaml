@@ -2,7 +2,8 @@ id: toolbox.export_blueprint_tool
 name: Export Blueprint Tool
 type: toolbox_tool
 language: python
-status: active
+status: inactive
+enabled: false
 owner: QiLabs
 
 module:
@@ -12,7 +13,7 @@ module:
   entrypoint: ExportBlueprintTool
 
 toolbox:
-  ui_enabled: true
+  ui_enabled: false
   category: blueprint
   launch_surface:
     - QiOne Desktop Tools

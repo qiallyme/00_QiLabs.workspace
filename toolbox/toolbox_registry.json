@@ -1,8 +1,8 @@
 {
   "schema": "qilabs.toolbox.registry.v2",
-  "generated_at": "2026-07-21T02:36:42",
+  "generated_at": "2026-08-04T10:34:28",
   "toolbox_root": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox",
-  "plugin_count": 71,
+  "plugin_count": 67,
   "plugins": [
     {
       "plugin_id": "beta.audio",
@@ -40,102 +40,39 @@
       "manifest_path": "tools/media/audio/manifest.yaml"
     },
     {
-      "plugin_id": "converters.export_blueprint",
-      "tool_id": "converters.export_blueprint",
-      "name": "Export Blueprint Tool",
-      "category": "converters",
-      "description": "Export Blueprint Tool plugin.",
-      "version": "0.1.0",
-      "enabled": true,
-      "requirements": [],
-      "entry": {
-        "type": "legacy_basetool",
-        "target": "export_blueprint_tool.py",
-        "class_name": "ExportBlueprintTool",
-        "working_dir": ".",
-        "open_console": false
-      },
-      "actions": [],
-      "raw": {
-        "id": "toolbox.export_blueprint_tool",
-        "name": "Export Blueprint Tool",
-        "type": "toolbox_tool",
-        "language": "python",
-        "status": "active",
-        "owner": "QiLabs",
-        "module": {
-          "package": "tools.export_blueprint_tool",
-          "file": "export_blueprint_tool.py",
-          "class_name": "ExportBlueprintTool",
-          "entrypoint": "ExportBlueprintTool"
-        },
-        "toolbox": {
-          "ui_enabled": true,
-          "category": "blueprint",
-          "launch_surface": [
-            "QiOne Desktop Tools"
-          ],
-          "requires_target_directory": true
-        },
-        "runtime": {
-          "requires_network": false,
-          "requires_secrets": false
-        },
-        "safety": {
-          "supports_dry_run": true,
-          "supports_live_run": true,
-          "deletes_files": "unknown",
-          "moves_files": "unknown",
-          "modifies_files": "unknown",
-          "review_before_live": true
-        },
-        "paths": {
-          "source": "tools/export_blueprint_tool/export_blueprint_tool.py",
-          "readme": "tools/export_blueprint_tool/README.md"
-        },
-        "tags": [
-          "toolbox",
-          "blueprint",
-          "qione"
-        ]
-      },
-      "path": "tools/converters/export_blueprint",
-      "manifest_path": "tools/converters/export_blueprint/manifest.yaml"
-    },
-    {
       "plugin_id": "converters.data_extractor",
       "tool_id": "converters.data_extractor",
-      "name": "Extractor",
+      "name": "Data Extractor",
       "category": "converters",
-      "description": "Extractor plugin.",
+      "description": "Data Extractor plugin.",
       "version": "0.1.0",
       "enabled": true,
       "requirements": [],
       "entry": {
         "type": "legacy_basetool",
-        "target": "extractor.py",
+        "target": "data_extractor.py",
         "class_name": "TextExtractorTool",
         "working_dir": ".",
         "open_console": false
       },
       "actions": [],
       "raw": {
-        "id": "toolbox.dev.extractor",
-        "name": "Extractor",
+        "id": "toolbox.converters.data_extractor",
+        "name": "Data Extractor",
         "type": "toolbox_tool",
         "language": "python",
         "status": "active",
         "owner": "QiLabs",
         "module": {
-          "package": "tools.dev.extractor",
-          "file": "extractor.py",
+          "package": "tools.converters.data_extractor",
+          "file": "data_extractor.py",
           "class_name": "TextExtractorTool",
           "entrypoint": "TextExtractorTool"
         },
         "toolbox": {
           "ui_enabled": true,
-          "bucket": "dev",
-          "category": "dev",
+          "bucket": "converters",
+          "category": "converters",
           "launch_surface": [
             "QiOne Desktop Tools"
           ],
@@ -154,8 +91,8 @@
           "review_before_live": true
         },
         "paths": {
-          "source": "tools/dev/extractor/extractor.py",
-          "readme": "tools/dev/extractor/README.md"
+          "source": "tools/converters/data_extractor/data_extractor.py",
+          "readme": "tools/converters/data_extractor/README.md"
         },
         "tags": [
           "toolbox",
@@ -165,197 +102,6 @@
       },
       "path": "tools/converters/data_extractor",
       "manifest_path": "tools/converters/data_extractor/manifest.yaml"
-    },
-    {
-      "plugin_id": "converters.extractors",
-      "tool_id": "converters.extractors",
-      "name": "Extractor",
-      "category": "converters",
-      "description": "Extractor plugin.",
-      "version": "0.1.0",
-      "enabled": true,
-      "requirements": [],
-      "entry": {
-        "type": "legacy_basetool",
-        "target": "extractor.py",
-        "class_name": "TextExtractorTool",
-        "working_dir": ".",
-        "open_console": false
-      },
-      "actions": [],
-      "raw": {
-        "id": "toolbox.dev.extractor",
-        "name": "Extractor",
-        "type": "toolbox_tool",
-        "language": "python",
-        "status": "active",
-        "owner": "QiLabs",
-        "module": {
-          "package": "tools.dev.extractor",
-          "file": "extractor.py",
-          "class_name": "TextExtractorTool",
-          "entrypoint": "TextExtractorTool"
-        },
-        "toolbox": {
-          "ui_enabled": true,
-          "bucket": "dev",
-          "category": "dev",
-          "launch_surface": [
-            "QiOne Desktop Tools"
-          ],
-          "requires_target_directory": true
-        },
-        "runtime": {
-          "requires_network": false,
-          "requires_secrets": false
-        },
-        "safety": {
-          "supports_dry_run": true,
-          "supports_live_run": true,
-          "deletes_files": "unknown",
-          "moves_files": "unknown",
-          "modifies_files": "unknown",
-          "review_before_live": true
-        },
-        "paths": {
-          "source": "tools/dev/extractor/extractor.py",
-          "readme": "tools/dev/extractor/README.md"
-        },
-        "tags": [
-          "toolbox",
-          "dev",
-          "qione"
-        ]
-      },
-      "path": "tools/converters/extractors",
-      "manifest_path": "tools/converters/extractors/manifest.yaml"
-    },
-    {
-      "plugin_id": "converters.pdf_splitter",
-      "tool_id": "converters.pdf_splitter",
-      "name": "Pdf Splitter",
-      "category": "converters",
-      "description": "Pdf Splitter plugin.",
-      "version": "0.1.0",
-      "enabled": true,
-      "requirements": [],
-      "entry": {
-        "type": "legacy_basetool",
-        "target": "pdf_splitter.py",
-        "class_name": "BulkPdfSplitterTool",
-        "working_dir": ".",
-        "open_console": false
-      },
-      "actions": [],
-      "raw": {
-        "id": "toolbox.docs.pdf_splitter",
-        "name": "Pdf Splitter",
-        "type": "toolbox_tool",
-        "language": "python",
-        "status": "active",
-        "owner": "QiLabs",
-        "module": {
-          "package": "tools.docs.pdf_splitter",
-          "file": "pdf_splitter.py",
-          "class_name": "BulkPdfSplitterTool",
-          "entrypoint": "BulkPdfSplitterTool"
-        },
-        "toolbox": {
-          "ui_enabled": true,
-          "bucket": "docs",
-          "category": "docs",
-          "launch_surface": [
-            "QiOne Desktop Tools"
-          ],
-          "requires_target_directory": true
-        },
-        "runtime": {
-          "requires_network": false,
-          "requires_secrets": false
-        },
-        "safety": {
-          "supports_dry_run": true,
-          "supports_live_run": true,
-          "deletes_files": "unknown",
-          "moves_files": "unknown",
-          "modifies_files": "unknown",
-          "review_before_live": true
-        },
-        "paths": {
-          "source": "tools/docs/pdf_splitter/pdf_splitter.py",
-          "readme": "tools/docs/pdf_splitter/README.md"
-        },
-        "tags": [
-          "toolbox",
-          "docs",
-          "qione"
-        ]
-      },
-      "path": "tools/converters/docs/pdf_splitter",
-      "manifest_path": "tools/converters/docs/pdf_splitter/manifest.yaml"
-    },
-    {
-      "plugin_id": "converters.text_extractor",
-      "tool_id": "converters.text_extractor",
-      "name": "Text Extractor",
-      "category": "converters",
-      "description": "Text Extractor plugin.",
-      "version": "0.1.0",
-      "enabled": true,
-      "requirements": [],
-      "entry": {
-        "type": "script",
-        "target": "text_extractor.py",
-        "class_name": "",
-        "working_dir": ".",
-        "open_console": false
-      },
-      "actions": [],
-      "raw": {
-        "id": "toolbox.text_extractor",
-        "name": "Text Extractor",
-        "type": "toolbox_tool",
-        "language": "python",
-        "status": "active",
-        "owner": "QiLabs",
-        "module": {
-          "package": "tools.text_extractor",
-          "file": "text_extractor.py",
-          "class_name": "UNKNOWN",
-          "entrypoint": "UNKNOWN"
-        },
-        "toolbox": {
-          "ui_enabled": true,
-          "category": "text",
-          "launch_surface": [
-            "QiOne Desktop Tools"
-          ],
-          "requires_target_directory": true
-        },
-        "runtime": {
-          "requires_network": false,
-          "requires_secrets": false
-        },
-        "safety": {
-          "supports_dry_run": true,
-          "supports_live_run": true,
-          "deletes_files": "unknown",
-          "moves_files": "unknown",
-          "modifies_files": "unknown",
-          "review_before_live": true
-        },
-        "paths": {
-          "source": "tools/text_extractor/text_extractor.py",
-          "readme": "tools/text_extractor/README.md"
-        },
-        "tags": [
-          "toolbox",
-          "text",
-          "qione"
-        ]
-      },
-      "path": "tools/converters/docs/text_extractor",
-      "manifest_path": "tools/converters/docs/text_extractor/manifest.yaml"
     },
     {
       "plugin_id": "finance.cashapp.to.sample.bankstatement",
@@ -5378,102 +5124,39 @@
       "manifest_path": "tools/media/audio/manifest.yaml"
     },
     {
-      "plugin_id": "converters.export_blueprint",
-      "tool_id": "converters.export_blueprint",
-      "name": "Export Blueprint Tool",
-      "category": "converters",
-      "description": "Export Blueprint Tool plugin.",
-      "version": "0.1.0",
-      "enabled": true,
-      "requirements": [],
-      "entry": {
-        "type": "legacy_basetool",
-        "target": "export_blueprint_tool.py",
-        "class_name": "ExportBlueprintTool",
-        "working_dir": ".",
-        "open_console": false
-      },
-      "actions": [],
-      "raw": {
-        "id": "toolbox.export_blueprint_tool",
-        "name": "Export Blueprint Tool",
-        "type": "toolbox_tool",
-        "language": "python",
-        "status": "active",
-        "owner": "QiLabs",
-        "module": {
-          "package": "tools.export_blueprint_tool",
-          "file": "export_blueprint_tool.py",
-          "class_name": "ExportBlueprintTool",
-          "entrypoint": "ExportBlueprintTool"
-        },
-        "toolbox": {
-          "ui_enabled": true,
-          "category": "blueprint",
-          "launch_surface": [
-            "QiOne Desktop Tools"
-          ],
-          "requires_target_directory": true
-        },
-        "runtime": {
-          "requires_network": false,
-          "requires_secrets": false
-        },
-        "safety": {
-          "supports_dry_run": true,
-          "supports_live_run": true,
-          "deletes_files": "unknown",
-          "moves_files": "unknown",
-          "modifies_files": "unknown",
-          "review_before_live": true
-        },
-        "paths": {
-          "source": "tools/export_blueprint_tool/export_blueprint_tool.py",
-          "readme": "tools/export_blueprint_tool/README.md"
-        },
-        "tags": [
-          "toolbox",
-          "blueprint",
-          "qione"
-        ]
-      },
-      "path": "tools/converters/export_blueprint",
-      "manifest_path": "tools/converters/export_blueprint/manifest.yaml"
-    },
-    {
       "plugin_id": "converters.data_extractor",
       "tool_id": "converters.data_extractor",
-      "name": "Extractor",
+      "name": "Data Extractor",
       "category": "converters",
-      "description": "Extractor plugin.",
+      "description": "Data Extractor plugin.",
       "version": "0.1.0",
       "enabled": true,
       "requirements": [],
       "entry": {
         "type": "legacy_basetool",
-        "target": "extractor.py",
+        "target": "data_extractor.py",
         "class_name": "TextExtractorTool",
         "working_dir": ".",
         "open_console": false
       },
       "actions": [],
       "raw": {
-        "id": "toolbox.dev.extractor",
-        "name": "Extractor",
+        "id": "toolbox.converters.data_extractor",
+        "name": "Data Extractor",
         "type": "toolbox_tool",
         "language": "python",
         "status": "active",
         "owner": "QiLabs",
         "module": {
-          "package": "tools.dev.extractor",
-          "file": "extractor.py",
+          "package": "tools.converters.data_extractor",
+          "file": "data_extractor.py",
           "class_name": "TextExtractorTool",
           "entrypoint": "TextExtractorTool"
         },
         "toolbox": {
           "ui_enabled": true,
-          "bucket": "dev",
-          "category": "dev",
+          "bucket": "converters",
+          "category": "converters",
           "launch_surface": [
             "QiOne Desktop Tools"
           ],
@@ -5492,8 +5175,8 @@
           "review_before_live": true
         },
         "paths": {
-          "source": "tools/dev/extractor/extractor.py",
-          "readme": "tools/dev/extractor/README.md"
+          "source": "tools/converters/data_extractor/data_extractor.py",
+          "readme": "tools/converters/data_extractor/README.md"
         },
         "tags": [
           "toolbox",
@@ -5503,197 +5186,6 @@
       },
       "path": "tools/converters/data_extractor",
       "manifest_path": "tools/converters/data_extractor/manifest.yaml"
-    },
-    {
-      "plugin_id": "converters.extractors",
-      "tool_id": "converters.extractors",
-      "name": "Extractor",
-      "category": "converters",
-      "description": "Extractor plugin.",
-      "version": "0.1.0",
-      "enabled": true,
-      "requirements": [],
-      "entry": {
-        "type": "legacy_basetool",
-        "target": "extractor.py",
-        "class_name": "TextExtractorTool",
-        "working_dir": ".",
-        "open_console": false
-      },
-      "actions": [],
-      "raw": {
-        "id": "toolbox.dev.extractor",
-        "name": "Extractor",
-        "type": "toolbox_tool",
-        "language": "python",
-        "status": "active",
-        "owner": "QiLabs",
-        "module": {
-          "package": "tools.dev.extractor",
-          "file": "extractor.py",
-          "class_name": "TextExtractorTool",
-          "entrypoint": "TextExtractorTool"
-        },
-        "toolbox": {
-          "ui_enabled": true,
-          "bucket": "dev",
-          "category": "dev",
-          "launch_surface": [
-            "QiOne Desktop Tools"
-          ],
-          "requires_target_directory": true
-        },
-        "runtime": {
-          "requires_network": false,
-          "requires_secrets": false
-        },
-        "safety": {
-          "supports_dry_run": true,
-          "supports_live_run": true,
-          "deletes_files": "unknown",
-          "moves_files": "unknown",
-          "modifies_files": "unknown",
-          "review_before_live": true
-        },
-        "paths": {
-          "source": "tools/dev/extractor/extractor.py",
-          "readme": "tools/dev/extractor/README.md"
-        },
-        "tags": [
-          "toolbox",
-          "dev",
-          "qione"
-        ]
-      },
-      "path": "tools/converters/extractors",
-      "manifest_path": "tools/converters/extractors/manifest.yaml"
-    },
-    {
-      "plugin_id": "converters.pdf_splitter",
-      "tool_id": "converters.pdf_splitter",
-      "name": "Pdf Splitter",
-      "category": "converters",
-      "description": "Pdf Splitter plugin.",
-      "version": "0.1.0",
-      "enabled": true,
-      "requirements": [],
-      "entry": {
-        "type": "legacy_basetool",
-        "target": "pdf_splitter.py",
-        "class_name": "BulkPdfSplitterTool",
-        "working_dir": ".",
-        "open_console": false
-      },
-      "actions": [],
-      "raw": {
-        "id": "toolbox.docs.pdf_splitter",
-        "name": "Pdf Splitter",
-        "type": "toolbox_tool",
-        "language": "python",
-        "status": "active",
-        "owner": "QiLabs",
-        "module": {
-          "package": "tools.docs.pdf_splitter",
-          "file": "pdf_splitter.py",
-          "class_name": "BulkPdfSplitterTool",
-          "entrypoint": "BulkPdfSplitterTool"
-        },
-        "toolbox": {
-          "ui_enabled": true,
-          "bucket": "docs",
-          "category": "docs",
-          "launch_surface": [
-            "QiOne Desktop Tools"
-          ],
-          "requires_target_directory": true
-        },
-        "runtime": {
-          "requires_network": false,
-          "requires_secrets": false
-        },
-        "safety": {
-          "supports_dry_run": true,
-          "supports_live_run": true,
-          "deletes_files": "unknown",
-          "moves_files": "unknown",
-          "modifies_files": "unknown",
-          "review_before_live": true
-        },
-        "paths": {
-          "source": "tools/docs/pdf_splitter/pdf_splitter.py",
-          "readme": "tools/docs/pdf_splitter/README.md"
-        },
-        "tags": [
-          "toolbox",
-          "docs",
-          "qione"
-        ]
-      },
-      "path": "tools/converters/docs/pdf_splitter",
-      "manifest_path": "tools/converters/docs/pdf_splitter/manifest.yaml"
-    },
-    {
-      "plugin_id": "converters.text_extractor",
-      "tool_id": "converters.text_extractor",
-      "name": "Text Extractor",
-      "category": "converters",
-      "description": "Text Extractor plugin.",
-      "version": "0.1.0",
-      "enabled": true,
-      "requirements": [],
-      "entry": {
-        "type": "script",
-        "target": "text_extractor.py",
-        "class_name": "",
-        "working_dir": ".",
-        "open_console": false
-      },
-      "actions": [],
-      "raw": {
-        "id": "toolbox.text_extractor",
-        "name": "Text Extractor",
-        "type": "toolbox_tool",
-        "language": "python",
-        "status": "active",
-        "owner": "QiLabs",
-        "module": {
-          "package": "tools.text_extractor",
-          "file": "text_extractor.py",
-          "class_name": "UNKNOWN",
-          "entrypoint": "UNKNOWN"
-        },
-        "toolbox": {
-          "ui_enabled": true,
-          "category": "text",
-          "launch_surface": [
-            "QiOne Desktop Tools"
-          ],
-          "requires_target_directory": true
-        },
-        "runtime": {
-          "requires_network": false,
-          "requires_secrets": false
-        },
-        "safety": {
-          "supports_dry_run": true,
-          "supports_live_run": true,
-          "deletes_files": "unknown",
-          "moves_files": "unknown",
-          "modifies_files": "unknown",
-          "review_before_live": true
-        },
-        "paths": {
-          "source": "tools/text_extractor/text_extractor.py",
-          "readme": "tools/text_extractor/README.md"
-        },
-        "tags": [
-          "toolbox",
-          "text",
-          "qione"
-        ]
-      },
-      "path": "tools/converters/docs/text_extractor",
-      "manifest_path": "tools/converters/docs/text_extractor/manifest.yaml"
     },
     {
       "plugin_id": "finance.cashapp.to.sample.bankstatement",
@@ -10681,43 +10173,11 @@
   ],
   "findings": [
     {
-      "severity": "ERROR",
-      "code": "missing_entry_file",
-      "path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\converters\\data_extractor\\manifest.yaml",
-      "message": "Entry target does not exist: extractor.py",
-      "plugin_id": "converters.data_extractor",
-      "fixable": true
-    },
-    {
-      "severity": "ERROR",
-      "code": "missing_entry_file",
-      "path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\converters\\export_blueprint\\manifest.yaml",
-      "message": "Entry target does not exist: export_blueprint_tool.py",
-      "plugin_id": "converters.export_blueprint",
-      "fixable": true
-    },
-    {
-      "severity": "WARNING",
-      "code": "missing_requirement",
-      "path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\finance\\tax_compiler\\manifest.yaml",
-      "message": "Requirement may be missing: pillow",
-      "plugin_id": "finance.tax.compiler",
-      "fixable": true
-    },
-    {
       "severity": "WARNING",
       "code": "missing_requirement",
       "path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\finance\\tax_compiler\\manifest.yaml",
       "message": "Requirement may be missing: pillow_heif",
       "plugin_id": "finance.tax.compiler",
-      "fixable": true
-    },
-    {
-      "severity": "WARNING",
-      "code": "missing_requirement",
-      "path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\finance\\zai_ledger_importer\\manifest.yaml",
-      "message": "Requirement may be missing: requests",
-      "plugin_id": "finance.zai.ledger.importer",
       "fixable": true
     },
     {
@@ -10751,16 +10211,8 @@
       "message": "Requirement may be missing: rapidfuzz",
       "plugin_id": "organize.vault.router",
       "fixable": true
-    },
-    {
-      "severity": "WARNING",
-      "code": "missing_requirement",
-      "path": "C:\\QiLabs\\00_QiLabs.workspace\\toolbox\\tools\\organize\\xlsx_tabs_to_csv\\manifest.yaml",
-      "message": "Requirement may be missing: openpyxl",
-      "plugin_id": "organize.xlsx.tabs.to.csv",
-      "fixable": true
     }
   ],
-  "errors": 2,
-  "warnings": 8
+  "errors": 0,
+  "warnings": 5
 }
